@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<h1>{{msg}}</h1>
+		<h1>头部导航</h1>
 	</div>
 </template>
 

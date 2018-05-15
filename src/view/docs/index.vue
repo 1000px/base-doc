@@ -5,17 +5,24 @@
 -->
 <template>
 	<div class="docs">
-		<h1>{{msg}}</h1>
+		<v-nav></v-nav>
+		<div class="docs-content">
+			<h1>{{msg}}</h1>
+		</div>
 	</div>
 </template>
 
 <script>
+import vNav from '@/components/nav';
 export default {
 	name: 'docs',
 	data () {
 		return {
 			msg: 'vue-base详细文档'
 		};
+	},
+	components: {
+		vNav
 	}
 };
 </script>

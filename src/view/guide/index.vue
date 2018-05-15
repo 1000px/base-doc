@@ -5,17 +5,24 @@
 -->
 <template>
 	<div class="guide">
-		<h1>{{msg}}</h1>
+		<v-nav></v-nav>
+		<div class="guide-content">
+			<h1>{{msg}}</h1>
+		</div>
 	</div>
 </template>
 
 <script>
+import vNav from '@/components/nav';
 export default {
 	name: 'guide',
 	data () {
 		return {
 			msg: 'vue-base脚手架快速引导页'
 		};
+	},
+	components: {
+		vNav
 	}
 };
 </script>
