@@ -1,6 +1,16 @@
 <template>
 	<div class="header">
-		<h1>{{msg}}</h1>
+		<h1>base-vue</h1>
+		<div class="edition">
+
+		</div>
+		<ul class="headerNav">
+			<li>1.0</li>
+			<li>资源</li>
+			<li><router-link to = "/api-file" >API</router-link></li>
+			<li><router-link to = "/guide" >指南</router-link></li>
+		</ul>
+	</div>
 	</div>
 </template>
 

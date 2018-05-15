@@ -9,4 +9,4 @@ import axios from '@/common/ajax';
 */
 export const getUserInfo = (params) => {
 	return axios.ajax('list', 'get', params);
-}
+};

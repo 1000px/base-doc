@@ -12,6 +12,7 @@
 <script>
 export default {
 	name: 'guide',
+	path: '/guide',
 	data () {
 		return {
 			msg: 'vue-base脚手架快速引导页'

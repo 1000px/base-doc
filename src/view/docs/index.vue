@@ -12,6 +12,7 @@
 <script>
 export default {
 	name: 'docs',
+	path: '/docs',
 	data () {
 		return {
 			msg: 'vue-base详细文档'
