@@ -1,15 +1,20 @@
+<!--
+	name: guide/index.vue
+	desc: vue-base脚手架快速入门
+	author: malixiang
+-->
 <template>
-	<div class="header">
+	<div class="guide">
 		<h1>{{msg}}</h1>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'kHeader',
+	name: 'guide',
 	data () {
 		return {
-			msg: '公共头部，一级导航写在这里'
+			msg: 'vue-base脚手架快速引导页'
 		};
 	}
 };
@@ -19,6 +24,5 @@ export default {
 <style scoped>
 h1 {
 	font-weight: normal;
-	color: red;
 }
 </style>

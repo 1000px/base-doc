@@ -1,12 +1,17 @@
 <template>
 	<div class="header">
-		<h1>{{msg}}</h1>
+		<ul>
+            <li><a href="#/docs">左侧列表1</a></li>
+            <li><a href="">左侧列表2</a></li>
+            <li><a href="">左侧列表3</a></li>
+            <li><a href="">左侧列表4</a></li>
+        </ul>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'kHeader',
+	name: 'kNav',
 	data () {
 		return {
 			msg: '公共头部，一级导航写在这里'
@@ -20,5 +25,9 @@ export default {
 h1 {
 	font-weight: normal;
 	color: red;
+}
+.header {
+    float: left;
+    width: 200px;
 }
 </style>

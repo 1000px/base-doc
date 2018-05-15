@@ -1,19 +1,18 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import List from '@/view/test/list.vue';
-import Article from '@/view/test/article.vue';
+import Guide from '@/view/guide/index.vue';
+import Docs from '@/view/docs/index.vue';
 
 Vue.use(Router);
 
 export default new Router({
 	routes: [{
 		path: '',
-		name: 'list',
-		component: List
+		name: 'guide',
+		component: Guide
 	}, {
-		path: '/article/:user',
-		name: 'article',
-		component: Article,
-		props: true
+		path: '/docs',
+		name: 'docs',
+		component: Docs
 	}]
 });

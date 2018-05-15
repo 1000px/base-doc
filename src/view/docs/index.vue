@@ -1,15 +1,20 @@
+<!--
+	name: docs/index.vue
+	desc: vue-base详细文档
+	author: malixiang
+-->
 <template>
-	<div class="header">
+	<div class="docs">
 		<h1>{{msg}}</h1>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'kHeader',
+	name: 'docs',
 	data () {
 		return {
-			msg: '公共头部，一级导航写在这里'
+			msg: 'vue-base详细文档'
 		};
 	}
 };
@@ -19,6 +24,5 @@ export default {
 <style scoped>
 h1 {
 	font-weight: normal;
-	color: red;
 }
 </style>
