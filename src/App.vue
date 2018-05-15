@@ -1,8 +1,13 @@
+// 当前单页应用入口组件
+
 <template>
 	<div id="app">
 		<k-header></k-header>
-		<k-nav></k-nav>
-		<router-view/>
+		<div class="frame">
+			<k-nav></k-nav>
+			<!-- 路由入口 -->
+			<router-view/>
+		</div>
 	</div>
 </template>
 
