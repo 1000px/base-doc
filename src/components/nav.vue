@@ -7,7 +7,7 @@
 	<div class="header">
 		<ul>
             <li v-for="(item, index) in leftList" :key="index">
-				<router-link :to="{path: item.url}">{{item.title}}</router-link>
+				<button @click="getMd(item.url)">{{item.title}}</button>
 			</li>
         </ul>
 	</div>
@@ -25,6 +25,9 @@ export default {
 	methods: {
 		showLeftList: function () {
 			console.log(this.leftList);
+		},
+		getMd: function (url) {
+
 		}
 	}
 };
