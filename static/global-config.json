@@ -1,5 +1,5 @@
 {
-	"BASE_URL": "http://rap.ctsp.kedacom.com/mockjs/12/",
+	"BASE_URL": "http://localhost:8080/",
 	"AJAX_TIMEOUT": "1000",
 	"BASE_IMG_URL": "",
 	"serverUrl": "http://118.31.169.188:90",

@@ -1,3 +1,9 @@
+/**
+ * name: @common/ajax
+ * desc: 项目中使用的ajax服务，基于axios进行封装，可在此对项目中用到的ajax请求数据进行请求、响应拦截
+ * author: malixiang
+ */
+
 import axios from '@/common/ajax/config';
 import router from '@/router';
 
@@ -32,6 +38,11 @@ export default {
 					'Content-type': 'application/json;charset=utf-8'
 				}
 			}).then(response => {
+				let query = url.split('.');
+				if (query[query.length - 1] == 'md' || query[query.length - 1] == 'text') {
+					resolve(response.data);
+					return;
+				}
 				// 请求接口正确且成功时
 				if (response.data.status === 200) {
 					resolve(response.data.result ? response.data.result : response.data);

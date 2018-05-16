@@ -1,10 +1,14 @@
+<!--
+	name: components/nav.vue
+	desc: 公共的左侧导航组件
+	author: malixiang
+-->
 <template>
 	<div class="left-nav">
 		<ul>
-            <li><a href="#/docs">左侧列表1</a></li>
-            <li><a href="">左侧列表2</a></li>
-            <li><a href="">左侧列表3</a></li>
-            <li><a href="">左侧列表4</a></li>
+            <li v-for="(item, index) in leftList" :key="index">
+				<router-link :to="{path: item.url}">{{item.title}}</router-link>
+			</li>
         </ul>
 	</div>
 </template>
@@ -12,10 +16,16 @@
 <script>
 export default {
 	name: 'kNav',
+	props: ['leftList'],
 	data () {
 		return {
 			msg: '公共头部，一级导航写在这里'
 		};
+	},
+	methods: {
+		showLeftList: function () {
+			console.log(this.leftList);
+		}
 	}
 };
 </script>
@@ -30,7 +40,6 @@ export default {
 		padding-right: 30px;
 		li{
 			height: 40px;
-			line-height: 40px;
 		}
 	}
 }

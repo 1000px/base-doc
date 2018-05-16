@@ -36,10 +36,8 @@ export default {
 		width: 1140px;
 		margin: 0 auto;
 		height: 100%;
-		padding-top:45px;
 	.docs-content{
 		padding-left: 200px;
-		width: 100%;
 	}
 	}
 </style>
