@@ -1,0 +1,24 @@
+body, ul, h1 {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+/*定义变量*/
+/*定义清浮动代码块*/
+@mixin clearFix {
+	zoom: 1;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+/*# sourceMappingURL=base.css.map */
