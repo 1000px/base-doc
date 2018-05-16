@@ -24,6 +24,7 @@ import marked from 'marked';
 
 export default {
 	name: 'guide',
+	path: '/guide',
 	data () {
 		return {
 			msg: 'vue-base脚手架快速引导页',
@@ -56,11 +57,15 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='scss' scoped>
-h1 {
-	font-weight: normal;
-	span {
-		color: red;
+<style lang="scss" scoped>
+	@import "../../assets/base.scss";
+.guide{
+	@include clearFix;
+	width: 1140px;
+	margin: 0 auto;
+	height: 100%;
+	.guide-content{
+		padding-left: 200px;
 	}
 }
 </style>

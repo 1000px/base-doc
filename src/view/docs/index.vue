@@ -16,6 +16,7 @@
 import vNav from '@/components/nav';
 export default {
 	name: 'docs',
+	path: '/docs',
 	data () {
 		return {
 			msg: 'vue-base详细文档'
@@ -29,7 +30,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-	font-weight: normal;
-}
+	@import "../../assets/base.scss";
+	.docs{
+	@include clearFix;
+		width: 1140px;
+		margin: 0 auto;
+		height: 100%;
+	.docs-content{
+		padding-left: 200px;
+	}
+	}
 </style>

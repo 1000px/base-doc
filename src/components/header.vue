@@ -1,6 +1,14 @@
 <template>
 	<div class="header">
-		<h1>头部导航</h1>
+		<div class="header-con">
+			<h1>base-vue</h1>
+			<ul class="headerNav">
+				<li><span>1.0</span></li>
+				<li>资源</li>
+				<li><router-link to = "/docs" >API</router-link></li>
+				<li><router-link to = "/"  exact>指南</router-link></li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -16,9 +24,38 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-	font-weight: normal;
-	color: red;
-}
+<style lang="scss" scoped>
+	@import "../assets/base.scss";
+	.header {
+		height: 80px;
+		.header-con{
+			@include clearFix;
+			height: 80px;
+			width: 1140px;
+			line-height: 80px;
+			position: relative;
+			margin:0 auto;
+		}
+		h1 {
+			float: left;
+			height: 80px;
+			line-height: 80px;
+			color: #4ab4ffe8;
+			font-size: 25px;
+		}
+		ul {
+			float: right;
+			li {
+				float: right;
+				padding: 0 22px;
+				color: #888;
+				a{
+					color: #888;
+				}
+				span{
+					font-size: 13px;
+				}
+			}
+		}
+	}
 </style>
