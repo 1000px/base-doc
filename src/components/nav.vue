@@ -27,7 +27,7 @@ export default {
 			console.log(this.leftList);
 		},
 		getMd: function (url) {
-
+			this.$emit('chgCnt', url);
 		}
 	}
 };

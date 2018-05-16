@@ -5,7 +5,7 @@
 -->
 <template>
 	<div class="guide">
-		<k-nav :leftList="guideList"></k-nav>
+		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
 		<div class="guide-content">
 			<div v-html="contentMd"></div>
 		</div>
@@ -40,7 +40,7 @@ export default {
 			this.guideList = res[10001];
 			console.log(10002, this.guideList);
 			// 获取当前第一个导航的内容
-			getGuideItem().then(res => {
+			getGuideItem(this.guideList[0].url).then(res => {
 				console.log(10001, res);
 				this.contentMd = marked(res);
 			}).catch(err => {
@@ -52,6 +52,18 @@ export default {
 	},
 	components: {
 		kNav
+	},
+	methods: {
+		// 切换页面主体区域数据
+		chgCnt (url) {
+			// 根据传来的url地址获取详情
+			getGuideItem(url).then(res => {
+				console.log(10001, res);
+				this.contentMd = marked(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		}
 	}
 };
 </script>

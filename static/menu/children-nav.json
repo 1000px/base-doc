@@ -5,26 +5,32 @@
             "pId": 10001,
             "id": 1001,
             "title": "设计原则",
-            "url": "/standard",
+            "url": "/standard.md",
             "desc": "vue-base脚手架设计思想、编码规范与项目结构"
         }, {
             "pId": 10001,
             "id": 1002,
-            "title": "布局",
-            "url": "/layout",
-            "desc": "项目整体布局与样式介绍"
+            "title": "快速上手",
+            "url": "/quick-start.md",
+            "desc": "设计目的，项目概览"
+        }, {
+            "pId": 10001,
+            "id": 1003,
+            "title": "常见问题",
+            "url": "/faqs.md",
+            "desc": "使用脚手架中可能会遇到的问题与解决方案"
         }],
         "10002": [{
             "pId": 10002,
             "id": 1003,
             "title": "常用命令",
-            "url": "/bins",
+            "url": "/bins.md",
             "desc": "常用打包、开发命令"
         }, {
             "pId": 10002,
             "id": 1004,
             "title": "更新日志",
-            "url": "/log",
+            "url": "/log.md",
             "desc": "版本管控相关信息"
         }]
     }

@@ -18,5 +18,5 @@ export const getGuideList = (id) => {
  * @param id
  */
 export const getGuideItem = (id) => {
-	return axios.ajax('static/content/item.md', 'get', id);
+	return axios.ajax('static/content/' + id, 'get', null);
 };
