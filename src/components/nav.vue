@@ -7,7 +7,7 @@
 	<div class="left-nav">
 		<ul>
             <li v-for="(item, index) in leftList" :key="index">
-				<router-link :to="{path: item.url}">{{item.title}}</router-link>
+				<button @click="getMd(item.url)">{{item.title}}</button>
 			</li>
         </ul>
 	</div>
