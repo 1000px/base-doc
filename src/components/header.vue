@@ -49,6 +49,8 @@ export default {
 				float: right;
 				padding: 0 22px;
 				color: #888;
+				height: 80px;
+				line-height: 80px;
 				a{
 					color: #888;
 				}

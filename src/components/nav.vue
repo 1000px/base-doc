@@ -5,9 +5,9 @@
 -->
 <template>
 	<div class="left-nav">
-		<ul>
+		<ul id="nav-list">
             <li v-for="(item, index) in leftList" :key="index">
-				<button @click="getMd(item.url)">{{item.title}}</button>
+				<h2 @click="getMd(item.url,$event)">{{item.title}}</h2>
 			</li>
         </ul>
 	</div>
@@ -28,7 +28,18 @@ export default {
 		},
 		getMd: function (url) {
 			this.$emit('chgCnt', url);
+			let oNavList = document.getElementById('nav-list').children;
+			for (let i = 0; i < oNavList.length; i++) {
+				oNavList[i].children[0].style.color = '#333';
+			}
+			let oNavListCon = event.currentTarget;
+			oNavListCon.style.color = '#409eff';
 		}
+	},
+	updated: function () {
+		let oNavList = document.getElementById('nav-list').children[0];
+		console.log(oNavList.children[0]);
+		oNavList.children[0].style.color = '#409eff';
 	}
 };
 </script>
@@ -43,6 +54,11 @@ export default {
 		padding-right: 30px;
 		li{
 			height: 40px;
+			h2 {
+				font-size: 17px;
+				color: #333;
+				font-weight: 400;
+			}
 		}
 	}
 }
