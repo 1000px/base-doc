@@ -38,7 +38,6 @@ export default {
 	},
 	updated: function () {
 		let oNavList = document.getElementById('nav-list').children[0];
-		console.log(oNavList.children[0]);
 		oNavList.children[0].style.color = '#409eff';
 	}
 };

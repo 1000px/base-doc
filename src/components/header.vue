@@ -28,6 +28,7 @@ export default {
 	@import "../assets/base.scss";
 	.header {
 		height: 80px;
+		margin-bottom: 40px;
 		.header-con{
 			@include clearFix;
 			height: 80px;
