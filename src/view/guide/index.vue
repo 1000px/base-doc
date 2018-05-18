@@ -7,7 +7,7 @@
 	<div class="guide">
 		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
 		<div class="guide-content">
-			<div v-html="contentMd"></div>
+			<div v-html="contentMd" v-highlight></div>
 		</div>
 	</div>
 </template>

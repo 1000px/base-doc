@@ -9,7 +9,12 @@ import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
 import './assets/markdown.css';
-Vue.config.productionTip = false;
+
+import hljs from 'highlight.js';
+import 'highlight.js/styles/googlecode.css';
+
+
+
 
 Vue.use(Lang);
 Vue.use(utils);
@@ -27,6 +32,13 @@ axios.get('static/global-config.json').then((res) => {
 	});
 }).catch((err) => {
 	window.alert(err);
+});
+Vue.config.productionTip = false; // 样式文件
+Vue.directive('highlight', function (el) {
+	let blocks = el.querySelectorAll('pre code');
+	blocks.forEach((block) => {
+		hljs.highlightBlock(block);
+	});
 });
 // /* eslint-disable no-new */
 // new Vue({
