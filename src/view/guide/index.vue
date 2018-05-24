@@ -7,6 +7,7 @@
 	<div class="guide">
 		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
 		<div class="guide-content">
+			<button @click="cpHTML">复制HTML代码</button>
 			<div v-html="contentMd" v-highlight></div>
 		</div>
 	</div>
@@ -63,6 +64,10 @@ export default {
 			}).catch(err => {
 				console.log(err);
 			});
+		},
+		// 复制组件html代码
+		cpHTML () {
+			console.log('copy html...');
 		}
 	}
 };

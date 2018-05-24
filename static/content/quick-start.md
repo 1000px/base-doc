@@ -1,15 +1,10 @@
 ### 快速开始
-``` Javascript
- function (url) {
-		this.$emit('chgCnt', url);
-		let oNavList = document.getElementById('nav-list').children;
-		for (let i = 0; i < oNavList.length; i++) {
-			oNavList[i].children[0].style.color = '#333';
-		}
-		let oNavListCon = event.currentTarget;
-		oNavListCon.style.color = '#409eff';
-		return aaa;
-}
+``` html
+<template>
+<div class="ibox">
+	<h3>ibox for new error.</h3>
+</div>
+</template>
 ```
 ``` python
 @requires_authorization
