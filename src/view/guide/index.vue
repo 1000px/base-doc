@@ -34,18 +34,6 @@ export default {
 			domEles: ''
 		};
 	},
-	methods: {
-		// 切换页面主体区域数据
-		chgCnt (url) {
-			// 根据传来的url地址获取详情
-			getGuideItem(url).then(res => {
-//				console.log(10001, res);
-				this.contentMd = marked(res);
-			}).catch(err => {
-				console.log(err);
-			});
-		}
-	},
 	computed: {
 
 	},
@@ -88,7 +76,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../../assets/base.scss";
 .guide{
 	@include clearFix;
 	width: 1140px;

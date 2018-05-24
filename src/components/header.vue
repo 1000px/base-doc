@@ -25,7 +25,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../assets/base.scss";
 	.header {
 		height: 80px;
 		margin-bottom: 40px;
