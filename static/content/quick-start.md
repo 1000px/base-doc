@@ -1,5 +1,17 @@
 ### 快速开始
 ``` Javascript
+<template>
+	<div class="header-con">
+		<h1>base-vue</h1>
+		<ul class="headerNav">
+			<li><span>1.0</span></li>
+			<li>资源</li>
+			<li><router-link to = "/docs" >API</router-link></li>
+			<li><router-link to = "/"  exact>指南</router-link></li>
+		</ul>
+	</div>
+</template>
+<script>
  function (url) {
 		this.$emit('chgCnt', url);
 		let oNavList = document.getElementById('nav-list').children;
@@ -10,6 +22,7 @@
 		oNavListCon.style.color = '#409eff';
 		return aaa;
 }
+</script>
 ```
 ``` python
 @requires_authorization

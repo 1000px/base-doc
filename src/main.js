@@ -8,13 +8,11 @@ import utils from './utils';
 import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
+import './assets/base.css';
 import './assets/markdown.css';
 
 import hljs from 'highlight.js';
 import 'highlight.js/styles/googlecode.css';
-
-
-
 
 Vue.use(Lang);
 Vue.use(utils);

@@ -7,7 +7,7 @@
 	<div class="guide">
 		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
 		<div class="guide-content">
-			<div v-html="contentMd" v-highlight></div>
+			<div v-html="contentMd" ref = "guideMd" class="markcss" v-highlight ></div>
 		</div>
 	</div>
 </template>
@@ -29,8 +29,21 @@ export default {
 		return {
 			msg: 'vue-base脚手架快速引导页',
 			guideList: [],
-			contentMd: ''
+			contentMd: '',
+			domEles: ''
 		};
+	},
+	methods: {
+		// 切换页面主体区域数据
+		chgCnt (url) {
+			// 根据传来的url地址获取详情
+			getGuideItem(url).then(res => {
+//				console.log(10001, res);
+				this.contentMd = marked(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		}
 	},
 	computed: {
 
@@ -38,10 +51,10 @@ export default {
 	mounted () {
 		getGuideList().then(res => {
 			this.guideList = res[10001];
-			console.log(10002, this.guideList);
+//			console.log(10002, this.guideList);
 			// 获取当前第一个导航的内容
 			getGuideItem(this.guideList[0].url).then(res => {
-				console.log(10001, res);
+//				console.log(10001, res);
 				this.contentMd = marked(res);
 			}).catch(err => {
 				console.log(err);
@@ -52,18 +65,6 @@ export default {
 	},
 	components: {
 		kNav
-	},
-	methods: {
-		// 切换页面主体区域数据
-		chgCnt (url) {
-			// 根据传来的url地址获取详情
-			getGuideItem(url).then(res => {
-				console.log(10001, res);
-				this.contentMd = marked(res);
-			}).catch(err => {
-				console.log(err);
-			});
-		}
 	}
 };
 </script>
