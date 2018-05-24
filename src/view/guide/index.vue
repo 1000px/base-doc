@@ -7,7 +7,6 @@
 	<div class="guide">
 		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
 		<div class="guide-content">
-			<button @click="cpHTML">复制HTML代码</button>
 			<div v-html="contentMd" class="markcss" ref="guideMd" v-highlight></div>
 		</div>
 	</div>
@@ -25,7 +24,6 @@ import marked from 'marked';
 
 export default {
 	name: 'guide',
-	path: '/guide',
 	data () {
 		return {
 			msg: 'vue-base脚手架快速引导页',

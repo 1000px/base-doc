@@ -40,6 +40,10 @@ module.exports = {
     'no-multiple-empty-lines': 'off',
     // 允许多余空格
     'no-trailing-spaces': 'off',
+    // 取消函数名与前括号之间的空格
+    'space-before-function-paren': 'off',
+    // 取消关键字后空格
+    'keyword-spacing': 'off',
     // end of file last line
     'eol-last': 'off',
 	  // promise reject不需要error对象

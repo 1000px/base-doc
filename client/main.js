@@ -1,6 +1,6 @@
 const {app, BrowserWindow} = require('electron');
-const path = require('path');
 const url = require('url');
+const path = require('path');
 
 // 保持一个对于window对象的全局引用，如果你部这样做，
 // 当javascript对象被垃圾回收，window会被自动关闭
@@ -10,7 +10,11 @@ function createWindow() {
 	// 创建浏览器窗口
 	win = new BrowserWindow({ width: 800, height: 600 });
 	// 加载应用的index.html
-	win.loadURL(`file://${__dirname}/client/index.html`);
+	win.loadURL(url.format({
+		pathname: path.join(__dirname, './index.html'),
+		protocol: 'file',
+		slashed: true
+	}));
 	// 打开开发者工具
 	// win.webContents.openDevTools();
 	
@@ -40,4 +44,4 @@ app.on('activate', () => {
 	if(win === null) {
 		createWindow();
 	}
-})
+});
