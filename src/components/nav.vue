@@ -5,9 +5,9 @@
 -->
 <template>
 	<div class="left-nav">
-		<ul id="nav-list">
+		<ul>
             <li v-for="(item, index) in leftList" :key="index">
-				<h2 @click="getMd(item.url,$event)">{{item.title}}</h2>
+				<h2 @click="getMd(item.url, index)" ref="navH">{{item.title}}</h2>
 			</li>
         </ul>
 	</div>
@@ -24,21 +24,18 @@ export default {
 	},
 	methods: {
 		showLeftList: function () {
-			console.log(this.leftList);
+//			console.log(this.leftList);
 		},
-		getMd: function (url) {
+		getMd: function (url, index) {
 			this.$emit('chgCnt', url);
-			let oNavList = document.getElementById('nav-list').children;
-			for (let i = 0; i < oNavList.length; i++) {
-				oNavList[i].children[0].style.color = '#333';
+			for (let i in this.$refs.navH) {
+				this.$refs.navH[i].style.color = '#333';
 			}
-			let oNavListCon = event.currentTarget;
-			oNavListCon.style.color = '#409eff';
+			this.$refs.navH[index].style.color = '#409eff';
 		}
 	},
 	updated: function () {
-		let oNavList = document.getElementById('nav-list').children[0];
-		oNavList.children[0].style.color = '#409eff';
+		this.$refs.navH[0].style.color = '#409eff';
 	}
 };
 </script>
@@ -57,6 +54,7 @@ export default {
 				font-size: 17px;
 				color: #333;
 				font-weight: 400;
+				cursor: pointer;
 			}
 		}
 	}

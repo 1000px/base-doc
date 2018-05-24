@@ -3,7 +3,7 @@
 		<div class="header-con">
 			<h1>base-vue</h1>
 			<ul class="headerNav">
-				<li><span>1.0</span></li>
+				<li><p><span>1.0 ∨</span></p></li>
 				<li>资源</li>
 				<li><router-link to = "/docs" >API</router-link></li>
 				<li><router-link to = "/"  exact>指南</router-link></li>
@@ -52,11 +52,14 @@ export default {
 				color: #888;
 				height: 80px;
 				line-height: 80px;
+				cursor: pointer;
 				a{
 					color: #888;
 				}
 				span{
 					font-size: 13px;
+					padding: 5px 15px;
+					border: 1px solid #eee;
 				}
 			}
 		}

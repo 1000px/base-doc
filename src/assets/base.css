@@ -1,18 +1,17 @@
 @charset "UTF-8";
-body, ul {
+body, ul, h1, p {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 li {
-  list-style: none;
-}
+  list-style: none; }
 
 a {
   text-decoration: none;
-  color: #000;
-}
+  color: #000; }
 
-/*定义变量*/
-/*定义清浮动代码块*/
+/*瀹氫箟鍙橀噺*/
+/*瀹氫箟娓呮诞鍔ㄤ唬鐮佸潡*/
+/*# sourceMappingURL=base.css.map */
+
 /*# sourceMappingURL=base.css.map */
