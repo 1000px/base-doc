@@ -14,7 +14,6 @@
 
 <script>
 export default {
-	name: 'kHeader',
 	data () {
 		return {
 			msg: '公共头部，一级导航写在这里'
@@ -30,11 +29,11 @@ export default {
 		margin-bottom: 40px;
 		.header-con{
 			@include clearFix;
-			height: 80px;
-			width: 1140px;
-			line-height: 80px;
 			position: relative;
 			margin:0 auto;
+			height: 80px;
+			/*width: 1140px;*/
+			line-height: 80px;
 		}
 		h1 {
 			float: left;
@@ -48,17 +47,17 @@ export default {
 			li {
 				float: right;
 				padding: 0 22px;
-				color: #888;
 				height: 80px;
 				line-height: 80px;
+				color: #888;
 				cursor: pointer;
 				a{
 					color: #888;
 				}
 				span{
-					font-size: 13px;
 					padding: 5px 15px;
 					border: 1px solid #eee;
+					font-size: 13px;
 				}
 			}
 		}

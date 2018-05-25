@@ -6,7 +6,7 @@
 <template>
 	<div class="guide">
 		<k-nav :leftList="guideList" @chgCnt="chgCnt"></k-nav>
-		<div class="guide-content">
+		<div class="right-content">
 			<div v-html="contentMd" class="markcss" ref="guideMd" v-highlight></div>
 		</div>
 	</div>
@@ -23,7 +23,6 @@ import {getGuideList, getGuideItem} from '@/service/guide';
 import marked from 'marked';
 
 export default {
-	name: 'guide',
 	data () {
 		return {
 			msg: 'vue-base脚手架快速引导页',
@@ -34,6 +33,22 @@ export default {
 	},
 	computed: {
 
+	},
+	methods: {
+		// 切换页面主体区域数据
+		chgCnt (url) {
+			// 根据传来的url地址获取详情
+			getGuideItem(url).then(res => {
+				console.log(10001, res);
+				this.contentMd = marked(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		},
+		// 复制组件html代码
+		cpHTML () {
+			console.log('copy html...');
+		}
 	},
 	mounted () {
 		getGuideList().then(res => {
@@ -52,23 +67,8 @@ export default {
 	},
 	components: {
 		kNav
-	},
-	methods: {
-		// 切换页面主体区域数据
-		chgCnt (url) {
-			// 根据传来的url地址获取详情
-			getGuideItem(url).then(res => {
-				console.log(10001, res);
-				this.contentMd = marked(res);
-			}).catch(err => {
-				console.log(err);
-			});
-		},
-		// 复制组件html代码
-		cpHTML () {
-			console.log('copy html...');
-		}
 	}
+
 };
 </script>
 
@@ -76,11 +76,6 @@ export default {
 <style lang="scss" scoped>
 .guide{
 	@include clearFix;
-	width: 1140px;
-	margin: 0 auto;
-	height: 100%;
-	.guide-content{
-		padding-left: 200px;
-	}
+	@include content;
 }
 </style>

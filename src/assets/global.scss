@@ -1,0 +1,65 @@
+body, ul, h1, p {
+  margin: 0;
+  padding: 0;
+}
+body{
+	padding:0 30px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* 定义变量 */
+/* Color 主色调、文字颜色、辅助色 */
+/* Main Color */
+$mainColor: '#4999FF';
+/* Status Color */
+$successColor: '#63C532';
+$waringColor: '#faad14';
+$dangerColor: '#f36464';
+/* Text Color */
+$textColor1: '#252525';
+$textColor2: '#575A5F';
+$textColor3: '#8C9097';
+$textColor4: '#BEC1C9';
+$textColor5: '#D2D6DC';
+/* Line Color */
+$lineColor1: '#dcdfe6';
+$lineColor2: '#e4e7ed';
+$lineColor3: '#ebeef5';
+$lineColor4: '#f2f6fc';
+/* Background Color */
+$bgColor1: '#f0f2f5';
+$bgColor2: '#f5f7fa';
+$bgColor3: '#f9fafc';
+/* Typography */
+/* font-family */
+$typography: 'PingFang SC', 'Hiragino Sans GB', 'Micorosoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial';
+/* font-size */
+$extraLarge: '20px';
+$large: '18px';
+$medium: '16px';
+$small: '14px';
+$extraSmall: '13px';
+$extraExtraSmall: '12px';
+/*定义代码块*/
+/* 清浮动 */
+@mixin clearFix {
+	zoom: 1;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+@mixin content{
+	//width: 1140px;
+	height: 100%;
+	margin: 0 auto;
+	.right-content {
+		padding-left: 200px;
+	}
+}
+/*# sourceMappingURL=base.css.map */

@@ -15,7 +15,6 @@
 
 <script>
 export default {
-	name: 'kNav',
 	props: ['leftList'],
 	data () {
 		return {
@@ -42,7 +41,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../assets/base.scss";
+	@import "../assets/global";
 .left-nav {
     float: left;
     width: 200px;

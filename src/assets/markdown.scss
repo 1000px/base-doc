@@ -29,15 +29,13 @@
 		&:focus{
 			outline: thin dotted;
 		}
-		&:active,&:hover{
-			outline: 0;
+		&:link,&:visited {
+			color: #b58900;
 		}
-		&:hover{
+		&:hover,&:active{
+			outline: 0;
 			color: #cb4b16;
 			text-decoration: underline;
-		}
-		&:visited{
-			color: #cb4b16;
 		}
 	}
 	ul,ol{
@@ -135,6 +133,7 @@
 		padding: 0;
 	}
 	table{
+		width: 100%;
 		margin: 0 auto;
 		border-collapse:collapse;
 		border:none;
@@ -174,6 +173,4 @@
 		right: 15px;
 		width: 220px;
 	}
-
-
 }

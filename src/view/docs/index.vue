@@ -6,7 +6,7 @@
 <template>
 	<div class="docs">
 		<v-nav></v-nav>
-		<div class="docs-content">
+		<div class="right-content">
 			<h1>{{msg}}</h1>
 		</div>
 	</div>
@@ -15,8 +15,6 @@
 <script>
 import vNav from '@/components/nav';
 export default {
-	name: 'docs',
-	path: '/docs',
 	data () {
 		return {
 			msg: 'vue-base详细文档'
@@ -30,14 +28,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../../assets/base.scss";
+	@import "../../assets/global";
 	.docs{
-	@include clearFix;
-		width: 1140px;
-		margin: 0 auto;
-		height: 100%;
-	.docs-content{
-		padding-left: 200px;
-	}
+		@include clearFix;
+		@include content;
 	}
 </style>
