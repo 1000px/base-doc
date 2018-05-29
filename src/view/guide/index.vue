@@ -53,10 +53,8 @@ export default {
 	mounted () {
 		getGuideList().then(res => {
 			this.guideList = res[10001];
-//			console.log(10002, this.guideList);
 			// 获取当前第一个导航的内容
 			getGuideItem(this.guideList[0].url).then(res => {
-//				console.log(10001, res);
 				this.contentMd = marked(res);
 			}).catch(err => {
 				console.log(err);

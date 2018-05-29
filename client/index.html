@@ -2,9 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>管理平台</title>
+		<title>UI解决方案文档管理平台</title>
 	</head>
 	<body>
-		<h1>列表页</h1>
+		<h1>组件列表</h1>
+		<button id="open_file">打开文件</button>
+		<div id="cnt"></div>
+		<script>
+			var fs = require('fs');
+			var btn = document.getElementById('open_file');
+			var cnt = document.getElementById('cnt');
+			console.log(1000, fs);
+			btn.addEventListener('click', function(e) {
+				console.log('btn be clicked...');
+				fs.readFile('static/menu/parent-nav.json', function(err, data) {
+					console.log(1001, err);
+					console.log(1001, data);
+					cnt.textContent = data;
+				})
+			});
+		</script>
 	</body>
 </html>

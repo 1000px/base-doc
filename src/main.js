@@ -36,11 +36,3 @@ Vue.directive('highlight', function (el) {
 		hljs.highlightBlock(block);
 	});
 });
-// /* eslint-disable no-new */
-// new Vue({
-// 	el: '#app',
-// 	router,
-// 	store,
-// 	template: '<App/>',
-// 	components: { App }
-// });
