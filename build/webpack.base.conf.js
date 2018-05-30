@@ -4,6 +4,47 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+const markdownItContainer = require('markdown-it-container')
+const striptags = require('./strip-tags')
+
+const vueMarkdown = {
+    preprocess: (MarkdownIt, source) => {
+        MarkdownIt.renderer.rules.table_open = function() {
+            return '<table class="table">'
+        }
+        MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(MarkdownIt.renderer.rules.fence);
+
+        // ```code```给这种样式加个class code_inline
+        const code_inline = MarkdownIt.renderer.rules.code_inline;
+        MarkdownIt.renderer.rules.code_inline = function(...args) {
+            args[0][args[1]].attrJoin('class', 'code_inline');
+            return code_inline(...args);
+        }
+        return source;
+    },
+    use: [
+        [markdownItContainer, 'demo', {
+          validate: params => params.trim().match(/^demo\s*(.*)$/),
+          render: function(tokens, idx) {
+    
+            var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+    
+            if (tokens[idx].nesting === 1) {
+              var desc = tokens[idx + 2].content;
+              const html = utils.convertHtml(striptags(tokens[idx + 1].content, 'script'))
+              // 移除描述，防止被添加到代码块
+              tokens[idx + 2].children = [];
+    
+              return `<demo-block>
+                            <div slot="desc">${html}</div>
+                            <div slot="highlight">`;
+            }
+            return '</div></demo-block>\n';
+          }
+        }]
+    ]
+}
+
 function resolve (dir) {
 	return path.join(__dirname, '..', dir)
 }
@@ -11,7 +52,7 @@ function resolve (dir) {
 module.exports = {
 	context: path.resolve(__dirname, '../'),
 	entry: {
-		app: ['babel-polyfill', './src/main.js']
+		app: ['babel-polyfill', './examples/main.js']
 	},
 	output: {
 		path: config.build.assetsRoot,
@@ -24,7 +65,7 @@ module.exports = {
 		extensions: ['.js', '.vue', '.json'],
 		alias: {
 			'vue$': 'vue/dist/vue.esm.js',
-			'@': resolve('src'),
+			'@': resolve('examples'),
 			'static': path.resolve(__dirname, '../static')
 		}
 	},
@@ -34,7 +75,7 @@ module.exports = {
 				test: /\.(js|vue)$/,
 				loader: 'eslint-loader',
 				enforce: 'pre',
-				include: [resolve('src'), resolve('test')],
+				include: [resolve('examples'), resolve('test')],
 				options: {
 					formatter: require('eslint-friendly-formatter'),
 					emitWarning: !config.dev.showEslintErrorsInOverlay
@@ -48,7 +89,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				include: [resolve('src'), resolve('test')]
+				include: [resolve('examples'), resolve('test')]
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -77,7 +118,12 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loaders: ["style", "css", "sass"]
-			}
+            },
+            {
+                test: /\.md$/,
+                loader: 'vue-markdown-loader',
+                options: vueMarkdown
+            }
 		]
 	}
 }

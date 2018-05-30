@@ -5,7 +5,7 @@
             "pId": 10001,
             "id": 1001,
             "title": "设计原则",
-            "url": "/standard.md",
+            "url": "#/alert",
             "desc": "vue-base脚手架设计思想、编码规范与项目结构"
         }, {
             "pId": 10001,
