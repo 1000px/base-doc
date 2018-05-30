@@ -5,6 +5,7 @@ const cheerio = require('cheerio')
 
 module.exports = (str, tags) => {
     const $ = cheerio.load(str, { decodeEntities: false })
+    console.log(1001, $)
 
     if (!tags || tags.length === 0) {
         return str

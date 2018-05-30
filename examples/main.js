@@ -9,6 +9,9 @@ import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
 
+import 'highlight.js/styles/googlecode.css';
+
+Vue.config.productionTip = false;
 Vue.use(Lang);
 Vue.component('demo-block', demoBlock);
 axios.get('static/global-config.json').then((res) => {
@@ -26,4 +29,3 @@ axios.get('static/global-config.json').then((res) => {
 }).catch((err) => {
 	window.alert(err);
 });
-Vue.config.productionTip = false;
