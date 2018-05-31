@@ -4,7 +4,7 @@
 	author: malixiang
 -->
 <template>
-	<div class="overview">
+	<div class="overview content">
 		<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
 		<div class="right-content markcss">
 			<router-view/>

@@ -4,7 +4,7 @@
 	author: malixiang
 -->
 <template>
-	<div class="api">
+	<div class="api content">
 		<k-nav :left-nav="splitNav"></k-nav>
 		<div class="right-content markcss">
 			<router-view/>
@@ -40,9 +40,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../../assets/global";
-	.right-content{
+	/*.content{
 		@include clearFix;
 		@include content;
-	}
+	}*/
 </style>

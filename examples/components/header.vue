@@ -26,6 +26,7 @@ export default {
 	.header {
 		height: 80px;
 		margin-bottom: 40px;
+
 		.header-con{
 			@include clearFix;
 			position: relative;

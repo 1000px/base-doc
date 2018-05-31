@@ -34,21 +34,7 @@ $extraSmall: '13px';
 $extraExtraSmall: '12px';
 /*定义代码块*/
 /* 清浮动 */
-@mixin clearFix {
-	zoom: 1;
-	&:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-}
-@mixin content{
-	//width: 1140px;
-	height: 100%;
-	margin: 0 auto;
-	.right-content {
-		padding-left: 200px;
-	}
-}
+
+
 /*# sourceMappingURL=base.css.map */
 
