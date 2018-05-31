@@ -1,12 +1,12 @@
 <template>
 	<div class="header">
 		<div class="header-con">
-			<h1>base-vue</h1>
+			<h1><router-link to="/">KFront Base</router-link></h1>
 			<ul class="headerNav">
 				<li><p><span>1.0 ∨</span></p></li>
 				<li>资源</li>
-				<li><router-link to = "/docs" >API</router-link></li>
-				<li><router-link to = "/"  exact>指南</router-link></li>
+				<li><router-link to="/api">API</router-link></li>
+				<li><router-link to="/overview">指南</router-link></li>
 			</ul>
 		</div>
 	</div>
@@ -16,7 +16,6 @@
 export default {
 	data () {
 		return {
-			msg: '公共头部，一级导航写在这里'
 		};
 	}
 };

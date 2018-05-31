@@ -4,10 +4,9 @@
 	author: malixiang
 -->
 <template>
-	<div class="docs">
-		<k-nav></k-nav>
-		<div class="right-content">
-			{{msg}}
+	<div class="overview">
+		<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
+		<div class="right-content markcss">
 			<router-view/>
 		</div>
 	</div>
@@ -15,12 +14,24 @@
 
 <script>
 import kNav from '@/components/nav';
+import navLists from '@/nav-config.json';
 
 export default {
 	data () {
 		return {
-			msg: 'vue-base文档'
+			path: '/overview/'
 		};
+	},
+	computed: {
+		splitNav: () => {
+			let menus;
+			navLists.forEach((item) => {
+				if(item['path'] === '/overview') {
+					menus = item.items;
+				}
+			});
+			return menus;
+		}
 	},
 	components: {
 		kNav

@@ -1,13 +1,12 @@
 [
 	{
 		"name": "index",
-		"path": "/index",
+		"path": "/",
 		"type": "page",
 		"id": "10001",
 		"pId": "0",
 		"desc": "主页"
 	}, {
-		"name": "overview",
 		"path": "/overview",
         "type": "page",
         "id": "10002",
@@ -16,28 +15,28 @@
         "items": [
             {
                 "name": "introduce",
-                "path": "/introduce",
+				"path": "",
                 "type": "md",
                 "id": "10002001",
                 "pId": "10002",
                 "desc": "介绍"
             }, {
                 "name": "install",
-                "path": "/install",
+                "path": "install",
                 "type": "md",
                 "id": "10002002",
                 "pId": "10002",
                 "desc": "安装"
             }, {
                 "name": "quick-start",
-                "path": "/quick-start",
+                "path": "quick-start",
                 "type": "md",
                 "id": "10002003",
                 "pId": "10002",
                 "desc": "快速开始"
             }, {
                 "name": "log",
-                "path": "/logs",
+                "path": "logs",
                 "type": "md",
                 "id": "10002004",
                 "pId": "10002",
@@ -45,33 +44,40 @@
             }
         ]
 	}, {
-        "name": "api",
-        "path": "/api",
-        "type": "md",
+		"path": "/api",
+        "type": "page",
         "id": "10003",
         "pId": "0",
         "desc": "文档详情",
         "items": [
-            {
-                "name": "alert",
-                "path": "/alert",
+			{
+                "name": "default",
+                "path": "",
                 "type": "md",
                 "id": "10003001",
+                "pId": "10003",
+                "desc": "概述",
+                "category": "index",
+                "category-desc": "文档概述"
+            },
+            {
+                "name": "alert",
+                "path": "alert",
+                "type": "md",
+                "id": "10003002",
                 "pId": "10003",
                 "desc": "提示框",
                 "category": "base",
                 "category-desc": "基础组件"
             }, {
                 "name": "button",
-                "path": "/path",
+                "path": "path",
                 "type": "md",
-                "id": "10003002",
+                "id": "10003003",
                 "pId": "10003",
                 "desc": "按钮",
                 "category": "base",
                 "category-desc": "基础组件"
-            }, {
-                
             }
         ]
     }

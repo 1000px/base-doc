@@ -4,22 +4,33 @@
 	author: malixiang
 -->
 <template>
-	<div class="docs">
-		<k-nav></k-nav>
-		<div class="right-content">
-			<h1>{{msg}}</h1>
+	<div class="api">
+		<k-nav :left-nav="splitNav"></k-nav>
+		<div class="right-content markcss">
+			<router-view/>
 		</div>
 	</div>
 </template>
 
 <script>
 import kNav from '@/components/nav';
+import navLists from '@/nav-config.json';
 
 export default {
-	data () {
+	data() {
 		return {
-			msg: 'api'
 		};
+	},
+	computed: {
+		splitNav: () => {
+			let menus;
+			navLists.forEach((item) => {
+				if(item['path'] === '/api') {
+					menus = item.items;
+				}
+			});
+			return menus;
+		}
 	},
 	components: {
 		kNav

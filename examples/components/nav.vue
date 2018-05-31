@@ -5,25 +5,20 @@
 -->
 <template>
 	<div class="left-nav">
-		<div v-for="title in (Object.keys(data))" class="group-container">
-			<p class="side-nav-title">{{title}}</p>
-			<div class="side-nav-items" v-for="nav in data[title]" v-if="nav.desc">
-				<router-link :class="$route.name===nav.name ? 'active' : ''" v-if="nav.name" :to="{name: nav.name}">{{nav.desc}}</router-link>
-				<p v-else class="side-nav-group">{{nav.desc}}</p>
-				<div v-for="item in nav.items">
-					<router-link :to="{name: item.name}" :class="$route.name===item.name ? 'active' : ''" class="slid-nav-component">{{item.desc}}</router-link>
-				</div>
-			</div>
-		</div>
+		<ul>
+			<li v-for="nav in leftNav" :key="nav.id">
+				<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
+			</li>
+		</ul>
 	</div>
 </template>
 
 <script>
-import navConf from '../nav-api.json';
 export default {
+	props: ['leftNav', 'curPath'],
 	data () {
 		return {
-			data: navConf
+
 		};
 	}
 };
