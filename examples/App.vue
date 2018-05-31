@@ -9,12 +9,8 @@
 
 <script>
 import kHeader from '@/components/header.vue';
-import markdownContainer from 'markdown-it-container';
 export default {
 	name: 'app',
-	mounted() {
-		console.dir(markdownContainer);
-	},
 	components: {
 		kHeader
 	}

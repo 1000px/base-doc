@@ -17,7 +17,7 @@ Vue.component('demo-block', demoBlock);
 axios.get('static/global-config.json').then((res) => {
 	Vue.prototype.g_Config = res.data;
 	axios.setConfig(Vue.prototype.g_Config);
-
+	console.log(1000, router);
 	/* eslint-disable no-new */
 	new Vue({
 		el: '#app',

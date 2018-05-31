@@ -1,0 +1,78 @@
+[
+	{
+		"name": "index",
+		"path": "/index",
+		"type": "page",
+		"id": "10001",
+		"pId": "0",
+		"desc": "主页"
+	}, {
+		"name": "overview",
+		"path": "/overview",
+        "type": "page",
+        "id": "10002",
+        "pId": "0",
+        "desc": "概览，引导用户使用脚手架与UI解决方案",
+        "items": [
+            {
+                "name": "introduce",
+                "path": "/introduce",
+                "type": "md",
+                "id": "10002001",
+                "pId": "10002",
+                "desc": "介绍"
+            }, {
+                "name": "install",
+                "path": "/install",
+                "type": "md",
+                "id": "10002002",
+                "pId": "10002",
+                "desc": "安装"
+            }, {
+                "name": "quick-start",
+                "path": "/quick-start",
+                "type": "md",
+                "id": "10002003",
+                "pId": "10002",
+                "desc": "快速开始"
+            }, {
+                "name": "log",
+                "path": "/logs",
+                "type": "md",
+                "id": "10002004",
+                "pId": "10002",
+                "desc": "更新日志"
+            }
+        ]
+	}, {
+        "name": "api",
+        "path": "/api",
+        "type": "md",
+        "id": "10003",
+        "pId": "0",
+        "desc": "文档详情",
+        "items": [
+            {
+                "name": "alert",
+                "path": "/alert",
+                "type": "md",
+                "id": "10003001",
+                "pId": "10003",
+                "desc": "提示框",
+                "category": "base",
+                "category-desc": "基础组件"
+            }, {
+                "name": "button",
+                "path": "/path",
+                "type": "md",
+                "id": "10003002",
+                "pId": "10003",
+                "desc": "按钮",
+                "category": "base",
+                "category-desc": "基础组件"
+            }, {
+                
+            }
+        ]
+    }
+]

@@ -5,37 +5,26 @@
 -->
 <template>
 	<div class="left-nav">
-		<ul>
-            <li v-for="(item, index) in leftList" :key="index">
-				<!-- <h2 @click="getMd(item.url, index)" ref="navH">{{item.title}}</h2> -->
-                <a :href="item.url">{{item.title}}</a>
-            </li>
-        </ul>
+		<div v-for="title in (Object.keys(data))" class="group-container">
+			<p class="side-nav-title">{{title}}</p>
+			<div class="side-nav-items" v-for="nav in data[title]" v-if="nav.desc">
+				<router-link :class="$route.name===nav.name ? 'active' : ''" v-if="nav.name" :to="{name: nav.name}">{{nav.desc}}</router-link>
+				<p v-else class="side-nav-group">{{nav.desc}}</p>
+				<div v-for="item in nav.items">
+					<router-link :to="{name: item.name}" :class="$route.name===item.name ? 'active' : ''" class="slid-nav-component">{{item.desc}}</router-link>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
+import navConf from '../nav-api.json';
 export default {
-	props: ['leftList'],
 	data () {
 		return {
-			msg: '公共头部，一级导航写在这里'
+			data: navConf
 		};
-	},
-	methods: {
-		showLeftList: function () {
-//			console.log(this.leftList);
-		},
-		getMd: function (url, index) {
-			this.$emit('chgCnt', url);
-			// for (let i in this.$refs.navH) {
-			// 	this.$refs.navH[i].style.color = '#333';
-			// }
-			// this.$refs.navH[index].style.color = '#409eff';
-		}
-	},
-	updated: function () {
-		// this.$refs.navH[0].style.color = '#409eff';
 	}
 };
 </script>

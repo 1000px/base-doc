@@ -5,23 +5,25 @@
 -->
 <template>
 	<div class="docs">
-		<v-nav></v-nav>
+		<k-nav></k-nav>
 		<div class="right-content">
-			<h1>{{msg}}</h1>
+			{{msg}}
+			<router-view/>
 		</div>
 	</div>
 </template>
 
 <script>
-import vNav from '@/components/nav';
+import kNav from '@/components/nav';
+
 export default {
 	data () {
 		return {
-			msg: 'vue-base详细文档'
+			msg: 'vue-base文档'
 		};
 	},
 	components: {
-		vNav
+		kNav
 	}
 };
 </script>

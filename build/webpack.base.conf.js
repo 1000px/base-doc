@@ -9,8 +9,6 @@ const striptags = require('./strip-tags')
 
 const vueMarkdown = {
     preprocess: (MarkdownIt, source) => {
-        console.log(1000, MarkdownIt),
-        console.log(1001, source);
         MarkdownIt.renderer.rules.table_open = function() {
             return '<table class="table">'
         }
@@ -28,14 +26,16 @@ const vueMarkdown = {
           validate: params => params.trim().match(/^demo\s*(.*)$/),
           render: function(tokens, idx) {
             var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
-    
+
             if (tokens[idx].nesting === 1) {
                 var description = (m && m.length > 1) ? m[1] : '';
                 var content = tokens[idx + 1].content;
-                var tags = ['script', 'style']
-                var html = utils.convertHtml(striptags(content, tags)).replace(/(<[^>]*)=""(?=.*>)/g, '$1');
-                var script = striptags.fetch(content, 'script');
-                var style = striptags.fetch(content, 'style');
+
+                var tags = ['script', 'head']
+                var html = utils.convertHtml(striptags(content, tags))
+					.replace(/(<[^>]*)=""(?=.*>)/g, '$1');
+                // var script = striptags.fetch(content, 'script');
+                // var style = striptags.fetch(content, 'style');
                 var descriptionHTML = description
                   ? md.render(description)
                   : '';
