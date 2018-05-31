@@ -41,7 +41,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 	@import "../../assets/global";
-	.docs{
+	.right-content{
 		@include clearFix;
 		@include content;
 	}
