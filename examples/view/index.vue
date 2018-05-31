@@ -1,10 +1,10 @@
 <!--
-	name: docs/index.vue
-	desc: vue-base详细文档
+	name: index.vue
+	desc: 首页
 	author: malixiang
 -->
 <template>
-	<div class="overview">
+	<div class="home">
 		<div class="right-content">
 			<h3>首页</h3>
 		</div>

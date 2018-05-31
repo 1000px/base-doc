@@ -2,7 +2,7 @@
 
 <template>
 	<div id="app">
-		<k-header v-if="isIndex"></k-header>
+		<k-header v-if="!isIndex"></k-header>
 		<router-view/>
 	</div>
 </template>
@@ -18,7 +18,7 @@ export default {
 	},
 	watch: {
 		$route() {
-			this.$route.path !== '/' ? (this.isIndex = true) : (this.isIndex = false);
+			// this.$route.path !== '/' ? (this.isIndex = true) : (this.isIndex = false);
 		}
 	},
 	components: {

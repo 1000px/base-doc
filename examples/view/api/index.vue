@@ -1,6 +1,6 @@
 <!--
-	name: docs/index.vue
-	desc: vue-base详细文档
+	name: api/index.vue
+	desc: 文档详情页
 	author: malixiang
 -->
 <template>
