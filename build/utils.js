@@ -61,7 +61,10 @@ exports.cssLoaders = function (options) {
 		scss: generateLoaders('sass').concat({
 			loader: 'sass-resources-loader',
 			options: {
-				resources: path.resolve(__dirname, '../examples/assets/*.scss')
+				resources: [
+					path.resolve(__dirname, '../examples/assets/*.scss'),
+					path.resolve(__dirname, '../styles/index.scss')
+				]
 			}
 		}),
 		stylus: generateLoaders('stylus'),
