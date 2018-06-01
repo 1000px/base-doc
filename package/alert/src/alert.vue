@@ -9,8 +9,9 @@
 		<div class="w-alert__content">
 			<span class="w-alert__title"
 				:class="isBoldTitle"
-				style="">{{this.title}}</span>
+				:style="titleStyle">{{this.title}}</span>
 			<p class="w-alert__description"
+                :style="descriptionStyle"
 				v-if="description">{{description}}</p>
 			<i v-if="closable"
 			class="w-alert__closebtn"
@@ -86,7 +87,17 @@ export default {
 		},
 		isBigIcon() {
 			return this.description ? "is-big" : "";
-		}
+		},
+        titleStyle () {
+          if (this.description) {
+            return 'font-size: 14px;line-height: 20px;letter-spacing: -0.34px;';
+          } else {
+            return 'font-size: 12px;line-height: 17px;letter-spacing: -0.29px;';
+          }
+        },
+        descriptionStyle () {
+          return 'margin: 0;font-size: 12px;line-height: 17px;letter-spacing: -0.29px;';
+        }
 	},
 	methods: {
 		close(e) {
