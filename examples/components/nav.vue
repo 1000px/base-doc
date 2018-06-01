@@ -6,8 +6,14 @@
 <template>
 	<div class="left-nav">
 		<ul>
-			<li v-for="nav in leftNav" :key="nav.id">
-				<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
+			<li v-for="(val, key, index) in _navLeft">
+				<h3 v-if="_navLeft[key]['list']">{{_navLeft[key]['desc']}}</h3>
+				<h3 v-else><router-link :to="{name: key}" exact>{{_navLeft[key]['desc']}}</router-link></h3>
+				<ul>
+					<li v-for="nav in _navLeft[key]['list']">
+						<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</div>
@@ -15,25 +21,45 @@
 
 <script>
 export default {
-	props: ['leftNav', 'curPath'],
-	data () {
+	props: ['leftNav'],
+	data() {
 		return {
 
 		};
+	},
+	computed: {
+		_navLeft: function() {
+			let _navMap = {};
+			this.leftNav && this.leftNav.length > 0 && this.leftNav.forEach((navItem) => {
+				if(navItem['category']) {
+					if(!_navMap[navItem['category']]) {
+						_navMap[navItem['category']] = {};
+						_navMap[navItem['category']]['list'] = [];
+						_navMap[navItem['category']]['desc'] = navItem['category-desc'];
+					}
+					_navMap[navItem['category']]['list'].push(navItem);
+				} else {
+					_navMap[navItem['name']] = {};
+					_navMap[navItem['name']]['desc'] = navItem['desc'];
+				}
+			});
+			return _navMap;
+		}
+	},
+	mounted() {
+		console.log(this._navLeft);
 	}
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	@import "../assets/global";
 .left-nav {
     float: left;
     width: 200px;
-	ul{
+	ul {
 		padding-right: 30px;
-		li{
-			height: 40px;
+		li {
 			h2 {
 				font-size: 17px;
 				color: #333;

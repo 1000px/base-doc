@@ -44,7 +44,6 @@
             }
         ]
 	}, {
-		"name": "api",
 		"path": "/api",
         "type": "page",
         "id": "10003",
@@ -57,9 +56,9 @@
                 "type": "md",
                 "id": "10003001",
                 "pId": "10003",
-                "desc": "概述",
+                "desc": "综述",
                 "category": "index",
-                "category-desc": "文档概述"
+                "category-desc": "文档概要"
             },
             {
                 "name": "color",
