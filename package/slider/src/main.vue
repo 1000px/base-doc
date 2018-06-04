@@ -7,7 +7,7 @@
 		 :aria-orientation="vertical ? 'vertical': 'horizontal'"
 		 :aria-disabled="sliderDisabled"
 	>
-		<el-input-number
+		<!--<el-input-number
 			v-model="firstValue"
 			v-if="showInput && !range"
 			class="el-slider__input"
@@ -20,7 +20,7 @@
 			:max="max"
 			:debounce="debounce"
 			:size="inputSize">
-		</el-input-number>
+		</el-input-number>-->
 		<div class="el-slider__runway"
 			 :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"
 			 :style="runwayStyle"
@@ -54,9 +54,9 @@
 </template>
 
 <script type="text/babel">
-	import ElInputNumber from 'element-ui/packages/input-number';
+//	import ElInputNumber from 'element-ui/packages/input-number';
 	import SliderButton from './button.vue';
-	import Emitter from 'element-ui/src/mixins/emitter';
+	import Emitter from '@/src/mixins/emitter';
 
 	export default {
 		name: 'ElSlider',
@@ -133,7 +133,7 @@
 		},
 
 		components: {
-			ElInputNumber,
+//			ElInputNumber,
 			SliderButton
 		},
 

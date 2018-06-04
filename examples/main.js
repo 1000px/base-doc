@@ -8,8 +8,7 @@ import demoBlock from '@/components/demo-block';
 import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
-import KFront from '../package';
-
+import KFront from '../package/index.js';
 
 import 'highlight.js/styles/googlecode.css';
 
@@ -27,7 +26,8 @@ axios.get('static/global-config.json').then((res) => {
 		router,
 		store,
 		template: '<App/>',
-		components: {App}
+		components: {App},
+		render: h => h(App)
 	});
 }).catch((err) => {
 	window.alert(err);

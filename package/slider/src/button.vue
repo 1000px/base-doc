@@ -16,25 +16,25 @@
 		@keydown.down.prevent="onLeftKeyDown"
 		@keydown.up.prevent="onRightKeyDown"
 	>
-		<el-tooltip
-			placement="top"
-			ref="tooltip"
-			:popper-class="tooltipClass"
-			:disabled="!showTooltip">
-			<span slot="content">{{ formatValue }}</span>
-			<div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
-		</el-tooltip>
+		<!--<el-tooltip-->
+			<!--placement="top"-->
+			<!--ref="tooltip"-->
+			<!--:popper-class="tooltipClass"-->
+			<!--:disabled="!showTooltip">-->
+			<!--<span slot="content">{{ formatValue }}</span>-->
+			<!--<div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>-->
+		<!--</el-tooltip>-->
 	</div>
 </template>
 
 <script>
-	import ElTooltip from 'element-ui/packages/tooltip';
+//	import ElTooltip from '../../tooltip';
 
 	export default {
 		name: 'ElSliderButton',
 
 		components: {
-			ElTooltip
+//			ElTooltip
 		},
 
 		props: {
@@ -45,8 +45,8 @@
 			vertical: {
 				type: Boolean,
 				default: false
-			},
-			tooltipClass: String
+			}
+//			tooltipClass: String
 		},
 
 		data() {
@@ -81,9 +81,9 @@
 				return this.$parent.step;
 			},
 
-			showTooltip() {
-				return this.$parent.showTooltip;
-			},
+//			showTooltip() {
+//				return this.$parent.showTooltip;
+//			},
 
 			precision() {
 				return this.$parent.precision;
@@ -94,11 +94,11 @@
 			},
 
 			enableFormat() {
-				return this.$parent.formatTooltip instanceof Function;
+//				return this.$parent.formatTooltip instanceof Function;
 			},
 
 			formatValue() { // (1 && 2) || 3
-				return (this.enableFormat && this.$parent.formatTooltip(this.value)) || this.value;
+//				return (this.enableFormat && this.$parent.formatTooltip(this.value)) || this.value;
 			},
 
 			wrapperStyle() {
@@ -113,22 +113,22 @@
 		},
 
 		methods: {
-			displayTooltip() {
-				this.$refs.tooltip && (this.$refs.tooltip.showPopper = true);
-			},
-
-			hideTooltip() {
-				this.$refs.tooltip && (this.$refs.tooltip.showPopper = false);
-			},
+//			displayTooltip() {
+//				this.$refs.tooltip && (this.$refs.tooltip.showPopper = true);
+//			},
+//
+//			hideTooltip() {
+//				this.$refs.tooltip && (this.$refs.tooltip.showPopper = false);
+//			},
 
 			handleMouseEnter() {
 				this.hovering = true;
-				this.displayTooltip();
+//				this.displayTooltip();
 			},
 
 			handleMouseLeave() {
 				this.hovering = false;
-				this.hideTooltip();
+//				this.hideTooltip();
 			},
 
 			onButtonDown(event) {
@@ -170,7 +170,7 @@
 			onDragging(event) {
 				if (this.dragging) {
 					this.isClick = false;
-					this.displayTooltip();
+//					this.displayTooltip();
 					this.$parent.resetSize();
 					let diff = 0;
 					if (event.type === 'touchmove') {
@@ -197,7 +197,7 @@
 					 */
 					setTimeout(() => {
 						this.dragging = false;
-						this.hideTooltip();
+//						this.hideTooltip();
 						if (!this.isClick) {
 							this.setPosition(this.newPosition);
 							this.$parent.emitChange();
@@ -224,7 +224,7 @@
 				value = parseFloat(value.toFixed(this.precision));
 				this.$emit('input', value);
 				this.$nextTick(() => {
-					this.$refs.tooltip && this.$refs.tooltip.updatePopper();
+//					this.$refs.tooltip && this.$refs.tooltip.updatePopper();
 				});
 				if (!this.dragging && this.value !== this.oldValue) {
 					this.oldValue = this.value;

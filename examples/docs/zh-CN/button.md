@@ -1,10 +1,27 @@
 <script>
   export default {
-    methods: {
-      hello() {
-        alert('Hello World!');
-      }
-    }
+	data() {
+		return {
+			list: null,
+				options: [{
+				  value: '选项1',
+				  label: '黄金糕'
+				}, {
+				  value: '选项2',
+				  label: '双皮奶'
+				}, {
+				  value: '选项3',
+				  label: '蚵仔煎'
+				}, {
+				  value: '选项4',
+				  label: '龙须面'
+				}, {
+				  value: '选项5',
+				  label: '北京烤鸭'
+				}]
+		}
+	}
+
   }
 </script>
 <style>
@@ -15,6 +32,27 @@
   .demo-box.demo-alert .el-alert:first-child {
     margin: 0;
   }
+  .demo-box.demo-button {
+      .el-row {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .el-button + .el-button {
+        margin-left: 10px;
+      }
+      .el-button-group {
+        .el-button + .el-button {
+          margin-left: 0;
+        }
+
+        & + .el-button-group {
+          margin-left: 10px;
+        }
+      }
+    }
 </style>
 
 ## button 警告
@@ -25,22 +63,20 @@
 
 页面中的非浮层元素，不会自动消失。
 
-:::demo Alert 组件提供四种主题，由`type`属性指定，默认值为`info`。
-```html
-<div class="demo">
-    <table>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-    </table>
-</div>
+
+:::demo
+```
+
+  <k-button>默认按钮</k-button>
+  <k-button type="primary">主要按钮</k-button>
+  <k-button type="success">成功按钮</k-button>
+  <k-button type="info">信息按钮</k-button>
+  <k-button type="warning">警告按钮</k-button>
+  <k-button type="danger">危险按钮</k-button>
+
+
 ```
 :::
-
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
