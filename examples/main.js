@@ -9,6 +9,7 @@ import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
 import KFront from '../package';
+import locale from './../public//locale/lang/en';
 
 
 import 'highlight.js/styles/googlecode.css';
@@ -16,19 +17,20 @@ import 'highlight.js/styles/googlecode.css';
 Vue.config.productionTip = false;
 Vue.use(Lang);
 Vue.use(KFront);
+Vue.use(locale);
 Vue.component('demo-block', demoBlock);
 axios.get('static/global-config.json').then((res) => {
-	Vue.prototype.g_Config = res.data;
-	axios.setConfig(Vue.prototype.g_Config);
+    Vue.prototype.g_Config = res.data;
+    axios.setConfig(Vue.prototype.g_Config);
 
-	/* eslint-disable no-new */
-	new Vue({
-		el: '#app',
-		router,
-		store,
-		template: '<App/>',
-		components: {App}
-	});
+    /* eslint-disable no-new */
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        template: '<App/>',
+        components: {App}
+    });
 }).catch((err) => {
-	window.alert(err);
+    window.alert(err);
 });
