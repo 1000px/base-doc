@@ -10,12 +10,22 @@ const components = [
 const install = function (Vue, opts = {}) {
 	// locale.use(opts.locale);
 	// locale.i18n(opts.i18n);
+import Slider from './slider/index.js';
+import locale from './../public/locale';
 
-	components.map(component => {
-		Vue.component(component.name, component);
-	});
+const components = [
+    Slider
+];
 
-	// Vue.use(Loading.directive);
+const install = function (Vue, opts = {}) {
+    locale.use(opts.locale);
+    locale.i18n(opts.i18n);
+
+    components.map(component => {
+        Vue.component(component.name, component);
+    });
+
+    // Vue.use(Loading.directive);
 
 	/!* Vue.prototype.$ELEMENT = {
 		size: opts.size || '',
@@ -29,24 +39,35 @@ const install = function (Vue, opts = {}) {
 	// Vue.prototype.$prompt = MessageBox.prompt
 	// Vue.prototype.$notify = Notification
 	// Vue.prototype.$message = Message
-};
+    /* Vue.prototype.$ELEMENT = {
+     size: opts.size || '',
+     zIndex: opts.zIndex || 2000
+     }; */
 
-/!* istanbul ignore if *!/
-if (typeof window !== 'undefined' && window.Vue) {
-	install(window.Vue);
-}
+    /* Vue.prototype.$loading = Loading.service;
+     Vue.prototype.$msgbox = MessageBox;
+     Vue.prototype.$alert = MessageBox.alert;
+     Vue.prototype.$confirm = MessageBox.confirm;
+     Vue.prototype.$prompt = MessageBox.prompt;
+     Vue.prototype.$notify = Notification;
+     Vue.prototype.$message = Message; */
 
-module.exports = {
-	// Slider,
-	Button
-};
-
-*/
+// /!* istanbul ignore if *!/
+// if (typeof window !== 'undefined' && window.Vue) {
+//     install(window.Vue);
+// }
+//
+// module.exports = {
+// 	Button,
+//     locale: locale.use,
+//     i18n: locale.i18n,
+//     Slider
+// };
 import KButton from './button/index.js';
 const components = [
 	KButton
-
 ];
+console.log(1000, KButton);
 const install = function(Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
