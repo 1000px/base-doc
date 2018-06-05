@@ -7,11 +7,10 @@
       KcBreadcrumb: KcBreadcrumb,
       KcBreadcrumbItem: KcBreadcrumbItem
     }
-
   }
 </script>
 <style>
-  .demo .el-breadcrumb{
+  .demo .kc-breadcrumb{
     margin: 20px 0  20px 0;
   }
  
