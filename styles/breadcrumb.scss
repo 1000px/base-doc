@@ -3,8 +3,8 @@
 @import "common/var";
 
 @include b(breadcrumb) {
-  font-size: 14px;
-  line-height: 1;
+  font-size: 12px;
+  line-height: 14px;
   @include utils-clearfix;
 
   @include e(separator) {
@@ -22,13 +22,14 @@
     float: left;
 
     @include e(inner) {
-      color: $--color-text-regular;
+      // color: $--color-text-regular;
+      color:  #575A5F;
 
       &.is-link, & a {
-        font-weight: bold;
         text-decoration: none;
         transition: $--color-transition-base;
-        color: $--color-text-primary;
+        // color: $--color-text-primary;
+        color: #8C9097;
 
         &:hover {
           color: $--color-primary;
@@ -38,16 +39,17 @@
     }
 
     &:last-child {
-      .kc-breadcrumb__inner,
-      .kc-breadcrumb__inner a {
+      .el-breadcrumb__inner,
+      .el-breadcrumb__inner a {
         &, &:hover {
           font-weight: normal;
-          color: $--color-text-regular;
+          // color: $--color-text-regular;
+          color: #4999FF;
           cursor: text;
         }
       }
 
-      .kc-breadcrumb__separator {
+      .el-breadcrumb__separator {
         display: none;
       }
     }
