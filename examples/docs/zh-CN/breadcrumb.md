@@ -1,19 +1,4 @@
 
-<script>
-  import KcBreadcrumb from './../../../package/breadcrumb/index';
-  import KcBreadcrumbItem from './../../../package/breadcrumb-item/index';
-  export default {
-    components: {
-      KcBreadcrumb: KcBreadcrumb,
-      KcBreadcrumbItem: KcBreadcrumbItem
-    }
-  }
-</script>
-
-<style>
-  
-</style>
-
 ## breadcrumb 面包屑
 
 显示当前页面的路径，快速返回之前的任意页面。

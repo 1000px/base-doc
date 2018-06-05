@@ -64,8 +64,12 @@ const install = function (Vue, opts = {}) {
 //     Slider
 // };
 import KButton from './button/index.js';
+import KcBreadcrumb from './breadcrumb/index.js';
+import KcBreadcrumbItem from './breadcrumb-item/index.js';
 const components = [
-	KButton
+	KButton,
+	KcBreadcrumb,
+	KcBreadcrumbItem
 ];
 console.log(1000, KButton);
 const install = function(Vue) {
@@ -79,5 +83,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
-	KButton
+	KButton,
+	KcBreadcrumb,
+	KcBreadcrumbItem
 };
