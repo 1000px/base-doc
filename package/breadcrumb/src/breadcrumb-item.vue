@@ -1,5 +1,6 @@
 <template>
   <span class="el-breadcrumb__item">
+    <span v-if="itemIcon"><i class="icon" :class="itemIcon"></i></span>
     <span
       :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
       ref="link"
@@ -15,7 +16,8 @@
     name: 'KcBreadcrumbItem',
     props: {
       to: {},
-      replace: Boolean
+      replace: Boolean,
+      itemIcon: String
     },
     data() {
       return {
