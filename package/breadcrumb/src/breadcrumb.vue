@@ -25,7 +25,7 @@
     },
 
     mounted() {
-      const items = this.$kc.querySelectorAll('.kc-breadcrumb__item');
+      const items = this.$el.querySelectorAll('.kc-breadcrumb__item');
       if (items.length) {
         items[items.length - 1].setAttribute('aria-current', 'page');
       }
