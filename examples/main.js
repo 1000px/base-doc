@@ -10,16 +10,16 @@ import store from '@/store';
 import 'normalize.css';
 
 import KFront from '../package/';
-import locale from './../public/locale/lang/en';
+// import locale from './../public/locale/lang/en';
 
 import 'highlight.js/styles/googlecode.css';
 
 Vue.config.productionTip = false;
 Vue.use(Lang);
 Vue.use(KFront);
-Vue.use(locale);
+// Vue.use(locale);
 Vue.component('demo-block', demoBlock);
-console.log(12234, KFront);
+
 axios.get('static/global-config.json').then((res) => {
 	Vue.prototype.g_Config = res.data;
 	axios.setConfig(Vue.prototype.g_Config);
@@ -30,8 +30,7 @@ axios.get('static/global-config.json').then((res) => {
 		router,
 		store,
 		template: '<App/>',
-		components: {App},
-		render: h => h(App)
+		components: {App}
 	});
 }).catch((err) => {
 	window.alert(err);

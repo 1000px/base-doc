@@ -62,11 +62,10 @@ export default {
 	ul {
 		padding-right: 30px;
 		li {
-			h2 {
-				font-size: 17px;
-				color: #333;
-				font-weight: 400;
-				cursor: pointer;
+			ul{
+				li{
+					padding: 5px 0;
+				}
 			}
 		}
 	}
