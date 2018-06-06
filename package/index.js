@@ -1,4 +1,6 @@
 import Badge from './badge';
+import Breadcrumb from './breadcrumb';
+import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Dropdown from './dropdown';
@@ -9,6 +11,8 @@ import Row from './row';
 
 const components = [
 	Badge,
+	Breadcrumb,
+	BreadcrumbItem,
 	Button,
 	ButtonGroup,
 	Dropdown,
@@ -17,6 +21,7 @@ const components = [
 	Input,
 	Row
 ];
+
 const install = function(Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
@@ -29,6 +34,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
 	install,
 	Badge,
+	Breadcrumb,
+	BreadcrumbItem,
 	Button,
 	ButtonGroup,
 	Dropdown,
