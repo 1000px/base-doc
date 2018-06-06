@@ -13,6 +13,8 @@ import KFront from '../package/';
 // import locale from './../public/locale/lang/en';
 
 import 'highlight.js/styles/googlecode.css';
+import './assets/styles/common.css';
+import './assets/styles/fonts/style.css';
 
 Vue.config.productionTip = false;
 Vue.use(Lang);

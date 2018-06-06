@@ -1,3 +1,11 @@
 ### avatar 头像
+nihzsd
 
-开发中...
+:::demo
+```html
+<i class="el-icon-eidt"></i>
+	<kc-avatar>sdfsd</kc-avatar>
+	<kc-avatar><kc-icon name="'edit"></kc-icon></kc-avatar>
+	<kc-avatar icon="delete" />
+```
+:::
