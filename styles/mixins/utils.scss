@@ -10,7 +10,7 @@
   @at-root {
     #{$selector}::before,
     #{$selector}::after {
-      display: table;
+      display: block;
       content: "";
     }
     #{$selector}::after {

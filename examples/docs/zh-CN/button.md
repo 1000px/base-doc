@@ -1,23 +1,21 @@
-<style>
-  .demo-box.demo-button {
-    .el-row {
-      margin-bottom: 20px;
+<style lang="scss">
+  .demo-block {
+    div{
+    	.el-row {
+              margin-bottom: 20px;
+            }
+            .el-button + .el-button {
+              margin-left: 10px;
+            }
+            .el-button-group {
+              .el-button + .el-button {
+                margin-left: 0;
+              }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    .el-button + .el-button {
-      margin-left: 10px;
-    }
-    .el-button-group {
-      .el-button + .el-button {
-        margin-left: 0;
-      }
-
-      & + .el-button-group {
-        margin-left: 10px;
-      }
+              & + .el-button-group {
+                margin-left: 10px;
+              }
+            }
     }
   }
 </style>

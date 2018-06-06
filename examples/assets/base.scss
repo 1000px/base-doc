@@ -27,11 +27,11 @@ a {
 	//width: 1140px;
 	height: 100%;
 	margin: 0 auto;
+	position: relative;
 	.right-content {
 		padding-left: 200px;
 	}
 }
 .content{
-	@include clearFix;
 	@include content;
 }
