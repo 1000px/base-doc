@@ -14,7 +14,7 @@ import KFront from '../package/';
 
 import 'highlight.js/styles/googlecode.css';
 import '@/assets/styles/common.css';
-import '@/assets/styles/fonts/iconfont.css';
+import '@/assets/styles/fonts/style.css';
 
 Vue.config.productionTip = false;
 Vue.use(Lang);
