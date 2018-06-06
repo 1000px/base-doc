@@ -4,6 +4,8 @@ import Breadcrumb from './breadcrumb';
 import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
+import Card from './card';
+import Col from './col';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
@@ -18,6 +20,8 @@ const components = [
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
+	Card,
+	Col,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -42,6 +46,8 @@ export default {
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
+	Card,
+	Col,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
