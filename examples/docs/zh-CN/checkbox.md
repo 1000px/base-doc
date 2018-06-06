@@ -12,6 +12,8 @@
         checked4: false,
         checked5: false,
         checked6: true,
+        checked7: true,
+        checked8: false,
         isValid: '可用',
         checkAll: false,
         cities: cityOptions,
@@ -42,6 +44,13 @@
     }
   };
 </script>
+
+<style>
+  .docs-demo.
+  .docs-trans {
+    margin-top: 20px;
+  }
+</style>
 ## Checkbox 多选框
 一组备选项中进行多选
 
@@ -52,19 +61,18 @@
 :::demo 在`el-checkbox`元素中定义`v-model`绑定变量，单一的`checkbox`中，默认绑定变量的值会是`Boolean`，选中为`true`。
 
 ```html
-<template>
-  <!-- `checked` 为 true 或 false -->
-  <el-checkbox v-model="checked">备选项</el-checkbox>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        checked: true
-      };
-    }
-  };
-</script>
+  <kc-checkbox v-model="checked">备选项1</kc-checkbox>
+  <kc-checkbox>备选项2</kc-checkbox>
+
+  <script>
+    export default {
+      data() {
+        return {
+          checked: true
+        };
+      }
+    };
+  </script>
 ```
 :::
 
@@ -75,10 +83,9 @@
 :::demo 设置`disabled`属性即可。
 
 ```html
-<template>
-  <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
-  <el-checkbox v-model="checked2" disabled>备选项</el-checkbox>
-</template>
+  <kc-checkbox v-model="checked1" disabled>备选项1</kc-checkbox>
+  <kc-checkbox v-model="checked2" disabled>备选项</kc-checkbox>
+
 <script>
   export default {
     data() {
@@ -99,15 +106,13 @@
 :::demo `checkbox-group`元素能把多个 checkbox 管理为一组，只需要在 Group 中使用`v-model`绑定`Array`类型的变量即可。 `el-checkbox` 的 `label`属性是该 checkbox 对应的值，若该标签中无内容，则该属性也充当 checkbox 按钮后的介绍。`label`与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。
 
 ```html
-<template>
-  <el-checkbox-group v-model="checkList">
-    <el-checkbox label="复选框 A"></el-checkbox>
-    <el-checkbox label="复选框 B"></el-checkbox>
-    <el-checkbox label="复选框 C"></el-checkbox>
-    <el-checkbox label="禁用" disabled></el-checkbox>
-    <el-checkbox label="选中且禁用" disabled></el-checkbox>
-  </el-checkbox-group>
-</template>
+  <kc-checkbox-group v-model="checkList">
+    <kc-checkbox label="复选框 A"></kc-checkbox>
+    <kc-checkbox label="复选框 B"></kc-checkbox>
+    <kc-checkbox label="复选框 C"></kc-checkbox>
+    <kc-checkbox label="禁用" disabled></kc-checkbox>
+    <kc-checkbox label="选中且禁用" disabled></kc-checkbox>
+  </kc-checkbox-group>
 
 <script>
   export default {
@@ -121,159 +126,26 @@
 ```
 :::
 
-### indeterminate 状态
 
-`indeterminate` 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果
-
-:::demo
-
-```html
-<template>
-  <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
-  <div style="margin: 15px 0;"></div>
-  <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
-</template>
-<script>
-  const cityOptions = ['上海', '北京', '广州', '深圳'];
-  export default {
-    data() {
-      return {
-        checkAll: false,
-        checkedCities: ['上海', '北京'],
-        cities: cityOptions,
-        isIndeterminate: true
-      };
-    },
-    methods: {
-      handleCheckAllChange(val) {
-        this.checkedCities = val ? cityOptions : [];
-        this.isIndeterminate = false;
-      },
-      handleCheckedCitiesChange(value) {
-        let checkedCount = value.length;
-        this.checkAll = checkedCount === this.cities.length;
-        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-      }
-    }
-  };
-</script>
-```
-:::
-
-### 可选项目数量的限制
-
-使用 `min` 和 `max` 属性能够限制可以被勾选的项目的数量。
-
-:::demo
-
-```html
-<template>
-  <el-checkbox-group
-    v-model="checkedCities1"
-    :min="1"
-    :max="2">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
-</template>
-<script>
-  const cityOptions = ['上海', '北京', '广州', '深圳'];
-  export default {
-    data() {
-      return {
-        checkedCities1: ['上海', '北京'],
-        cities: cityOptions
-      };
-    }
-  };
-</script>
-```
-
-:::
-
-### 按钮样式
-
-按钮样式的多选组合。
-
-:::demo 只需要把`el-checkbox`元素替换为`el-checkbox-button`元素即可。此外，Element 还提供了`size`属性。
-```html
-<template>
-  <div>
-    <el-checkbox-group v-model="checkboxGroup1">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
-  </div>
-  <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="medium">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
-  </div>
-  <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup3" size="small">
-      <el-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
-  </div>
-  <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
-  </div>
-</template>
-<script>
-  const cityOptions = ['上海', '北京', '广州', '深圳'];
-  export default {
-    data () {
-      return {
-        checkboxGroup1: ['上海'],
-        checkboxGroup2: ['上海'],
-        checkboxGroup3: ['上海'],
-        checkboxGroup4: ['上海'],
-        cities: cityOptions
-      };
-    }
-  }
-</script>
-```
-:::
 
 ### 带有边框
 
 :::demo 设置`border`属性可以渲染为带有边框的多选框。
 ```html
-<template>
   <div>
-    <el-checkbox v-model="checked3" label="备选项1" border></el-checkbox>
-    <el-checkbox v-model="checked4" label="备选项2" border></el-checkbox>
+    <kc-checkbox v-model="checked3" label="备选项1" border></kc-checkbox>
+    <kc-checkbox v-model="checked4" label="备选项2" border></kc-checkbox>
+    <kc-checkbox v-model="checked7" label="备选项2" border disabled></kc-checkbox>
+    <kc-checkbox v-model="checked8" label="备选项2" border disabled></kc-checkbox>
   </div>
-  <div style="margin-top: 20px">
-    <el-checkbox v-model="checked5" label="备选项1" border size="medium"></el-checkbox>
-    <el-checkbox v-model="checked6" label="备选项2" border size="medium"></el-checkbox>
-  </div>
-  <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup5" size="small">
-      <el-checkbox label="备选项1" border></el-checkbox>
-      <el-checkbox label="备选项2" border disabled></el-checkbox>
-    </el-checkbox-group>
-  </div>
-  <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup6" size="mini" disabled>
-      <el-checkbox label="备选项1" border></el-checkbox>
-      <el-checkbox label="备选项2" border></el-checkbox>
-    </el-checkbox-group>
-  </div>
-</template>
-
 <script>
   export default {
     data () {
       return {
         checked3: true,
         checked4: false,
-        checked5: false,
-        checked6: true,
-        checkboxGroup5: [],
-        checkboxGroup6: []
+        checked7: true,
+        checked8: false
       };
     }
   }
