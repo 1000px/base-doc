@@ -82,10 +82,10 @@
 
 :::demo
 ```html
-<i class="icon icon-erweima"></i>
-<i class="el-icon-share"></i>
+<i class="el-icon-edit"></i>
 <i class="el-icon-delete"></i>
-<kc-button type="primary" icon="icon-jinggao">搜索</kc-button>
+<i class="el-icon-share"></i>
+<kc-button type="primary" icon="search">搜索</kc-button>
 
 ```
 :::
