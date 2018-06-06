@@ -57,16 +57,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .left-nav {
-    float: left;
+    position: absolute;
+	left: 0;
+	top: 0;
     width: 200px;
 	ul {
-		padding-right: 30px;
 		li {
-			h2 {
-				font-size: 17px;
-				color: #333;
-				font-weight: 400;
-				cursor: pointer;
+			h3{
+				margin-top: 0;
+			}
+			ul{
+				margin-bottom: 20px;
+				li{
+					padding: 5px 0;
+				}
 			}
 		}
 	}
