@@ -1,10 +1,10 @@
 <script>
-	import Emitter from 'element-ui/src/mixins/emitter';
+	import Emitter from '_src/mixins/emitter';
 
 	export default {
-		name: 'ElCheckboxGroup',
+		name: 'KcCheckboxGroup',
 
-		componentName: 'ElCheckboxGroup',
+		componentName: 'KcCheckboxGroup',
 
 		mixins: [Emitter],
 

@@ -5,6 +5,9 @@ import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Card from './card';
+import Checkbox from './checkbox';
+import CheckboxGroup from './checkbox-group';
+import CheckboxButton from './checkbox-button';
 import Col from './col';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
@@ -21,6 +24,9 @@ const components = [
 	Button,
 	ButtonGroup,
 	Card,
+	Checkbox,
+	CheckboxButton,
+	CheckboxGroup,
 	Col,
 	Dropdown,
 	DropdownItem,
@@ -47,6 +53,9 @@ export default {
 	Button,
 	ButtonGroup,
 	Card,
+	Checkbox,
+	CheckboxButton,
+	CheckboxGroup,
 	Col,
 	Dropdown,
 	DropdownItem,
