@@ -41,7 +41,7 @@ const vueMarkdown = {
                   : '';
 
                 return `<demo-block>
-                            <div slot="desc">${html}</div>
+                            <div class="source" slot="desc">${html}</div>
                             ${descriptionHTML}
                             <div slot="highlight">`;
             }

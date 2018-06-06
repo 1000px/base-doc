@@ -51,7 +51,7 @@
 
 <script>
 import throttle from 'throttle-debounce/throttle';
-import { addResizeListener, removeResizeListener } from '/src/utils/resize-event';
+import { addResizeListener, removeResizeListener } from '_src/utils/resize-event';
 
 export default {
 	name: 'KcCarousel',
