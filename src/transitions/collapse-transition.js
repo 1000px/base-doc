@@ -1,7 +1,8 @@
-import {addClass, removeClass} from '@/src/utils/dom';
+import {addClass, removeClass} from '_src/utils/dom';
 
 class Transition {
 	beforeEnter(el) {
+		console.log(11111);
 		addClass(el, 'collapse-transition');
 		if (!el.dataset) el.dataset = {};
 
@@ -14,6 +15,7 @@ class Transition {
 	}
 
 	enter(el) {
+		console.log(22222);
 		el.dataset.oldOverflow = el.style.overflow;
 		if (el.scrollHeight !== 0) {
 			el.style.height = el.scrollHeight + 'px';
@@ -29,6 +31,7 @@ class Transition {
 	}
 
 	afterEnter(el) {
+		console.log(33333);
 		// for safari: remove class then reset height is necessary
 		removeClass(el, 'collapse-transition');
 		el.style.height = '';
@@ -36,6 +39,7 @@ class Transition {
 	}
 
 	beforeLeave(el) {
+		console.log(44444);
 		if (!el.dataset) el.dataset = {};
 		el.dataset.oldPaddingTop = el.style.paddingTop;
 		el.dataset.oldPaddingBottom = el.style.paddingBottom;
@@ -46,6 +50,7 @@ class Transition {
 	}
 
 	leave(el) {
+		console.log(55555);
 		if (el.scrollHeight !== 0) {
 			// for safari: add class after set height, or it will jump to zero height suddenly, weired
 			addClass(el, 'collapse-transition');
@@ -56,6 +61,7 @@ class Transition {
 	}
 
 	afterLeave(el) {
+		console.log(66666);
 		removeClass(el, 'collapse-transition');
 		el.style.height = '';
 		el.style.overflow = el.dataset.oldOverflow;
@@ -65,13 +71,13 @@ class Transition {
 }
 
 export default {
-	name: 'ElCollapseTransition',
+	name: 'KcCollapseTransition',
 	functional: true,
 	render(h, {children}) {
 		const data = {
 			on: new Transition()
 		};
 
-		return h('transition', data, children)
+		return h('transition', data, children);
 	}
 };
