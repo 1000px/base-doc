@@ -16,6 +16,9 @@ import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
 import Icon from './icon';
 import Input from './input';
+import Radio from './radio';
+import RadioButton from './radio-button';
+import RadioGroup from './radio-group';
 import Row from './row';
 
 const components = [
@@ -37,6 +40,9 @@ const components = [
 	DropdownMemu,
 	Icon,
 	Input,
+	Radio,
+	RadioButton,
+	RadioGroup,
 	Row
 ];
 const install = function(Vue) {
@@ -68,5 +74,8 @@ export default {
 	DropdownMemu,
 	Icon,
 	Input,
+	Radio,
+	RadioButton,
+	RadioGroup,
 	Row
 };
