@@ -27,6 +27,7 @@
 
     &.is-disabled {
       border-color: $--border-color-lighter;
+      background-color: $--border-background-color-base;
       cursor: not-allowed;
     }
 
@@ -40,7 +41,7 @@
       height: $--checkbox-bordered-medium-height;
 
       .el-checkbox__label {
-        line-height: 17px;
+        line-height: 14px;
         font-size: $--button-medium-font-size;
       }
 
@@ -235,8 +236,9 @@
   @include e(label) {
     display: inline-block;
     padding-left: 10px;
-    line-height: 19px;
-    font-size: $--checkbox-font-size;
+    line-height: 14px;
+    // font-size: $--checkbox-font-size;
+    font-size: 14px;
   }
 
   & + .el-checkbox {

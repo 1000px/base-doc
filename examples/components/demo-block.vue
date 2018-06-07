@@ -1,6 +1,7 @@
 <template>
-	<div class="demo-block docs-demo-wrapper">
-		<slot name="desc" class="aaa"></slot>
+	<div class="demo-block demo-box"
+		 :class="[blockClass]">
+		<slot name="desc"></slot>
 		<div :style="{height: isExpand ? 'auto' : '0'}" class="demo-container">
 			<div span="14">
 				<div class="docs-demo docs-demo--expand">
@@ -15,18 +16,24 @@
 </template>
 
 <script>
-	export default {
-		data () {
-			return {
-				isExpand: false
-			};
-		},
-		methods: {
-			toggle () {
-				this.isExpand = !this.isExpand;
-			}
+export default {
+	data () {
+		return {
+			isExpand: false
+		};
+	},
+	computed: {
+		blockClass () {
+//			return `demo-${ this.lang } demo-${ this.$router.currentRoute.path.split('/').pop() }`;
+			return `demo-zh-CN demo-${this.$router.currentRoute.path.split('/').pop()}`;
 		}
-	};
+	},
+	methods: {
+		toggle () {
+			this.isExpand = !this.isExpand;
+		}
+	}
+};
 </script>
 
 <style lang="scss">

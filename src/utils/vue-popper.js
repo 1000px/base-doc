@@ -157,7 +157,7 @@ export default {
 			let origin = placementMap[placement];
 			this.popperJS._popper.style.transformOrigin = typeof this.transformOrigin === 'string'
 				? this.transformOrigin
-				: ['top', 'bottom'].indexOf(placement) > -1 ? `center ${ origin }` : `${ origin } center`;
+				: ['top', 'bottom'].indexOf(placement) > -1 ? `center ${origin}` : `${origin} center`;
 		},
 
 		appendArrow(element) {
