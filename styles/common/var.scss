@@ -124,13 +124,13 @@ $--checkbox-input-border: $--border-base !default;
 $--checkbox-input-border-color: $--border-color-base !default;
 $--checkbox-icon-color: $--color-white !default;
 
-$--checkbox-disabled-input-border-color: $--border-color-base !default;
-$--checkbox-disabled-input-fill: #edf2fc !default;
+$--checkbox-disabled-input-border-color: $--disabled-border-base !default;
+$--checkbox-disabled-input-fill: $--disabled-fill-base !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
-$--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
-$--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
-$--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
+$--checkbox-disabled-checked-input-fill: $--color-text-placeholder !default;
+$--checkbox-disabled-checked-input-border-color: $--color-text-placeholder !default;
+$--checkbox-disabled-checked-icon-color: #fff !default;
 
 $--checkbox-checked-text-color: $--color-primary !default;
 $--checkbox-checked-input-border-color: $--color-primary !default;
@@ -421,8 +421,8 @@ $--button-default-fill: $--color-white !default;
 $--button-default-border: $--border-color-base !default;
 
 $--button-disabled-color: $--color-text-placeholder !default;
-$--button-disabled-fill: $--color-white !default;
-$--button-disabled-border: $--border-color-lighter !default;
+$--button-disabled-fill: $--color-text-placeholder !default;
+$--button-disabled-border: $--color-text-placeholder !default;
 
 $--button-primary-border: $--color-primary !default;
 $--button-primary-color: $--color-white !default;

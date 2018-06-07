@@ -6,8 +6,7 @@
 @include b(checkbox) {
   color: $--checkbox-color;
   font-weight: $--checkbox-font-weight;
-  // font-size: $--font-size-base;
-  font-size: 14px;
+  font-size: $--font-size-base;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -17,8 +16,7 @@
   @include when(bordered) {
     padding: $--checkbox-bordered-padding;
     border-radius: $--border-radius-base;
-    // border: $--border-base;
-    border: 1px solid #DCDFE6;
+    border: $--border-base;
     box-sizing: border-box;
     line-height: normal;
     height: $--checkbox-bordered-height;
@@ -28,10 +26,8 @@
     }
 
     &.is-disabled {
-      // border-color: $--border-color-lighter;
-      border-color: #DCDFE6;
-      background-color: #F5F7FA;
-      color: #DCDFE6;
+      border-color: $--border-color-lighter;
+      background-color: $--border-background-color-base;
       cursor: not-allowed;
     }
 
@@ -46,15 +42,12 @@
 
       .el-checkbox__label {
         line-height: 14px;
-        // font-size: $--button-medium-font-size;
-        font-size: 14px;
+        font-size: $--button-medium-font-size;
       }
 
       .el-checkbox__inner {
-        // height: $--checkbox-bordered-medium-input-height;
-        // width: $--checkbox-bordered-medium-input-width;
-        width: 14px;
-        height: 14px;
+        height: $--checkbox-bordered-medium-input-height;
+        width: $--checkbox-bordered-medium-input-width;
       }
     }
 
@@ -111,10 +104,8 @@
 
     @include when(disabled) {
       .el-checkbox__inner {
-        // background-color: $--checkbox-disabled-input-fill;
-        // border-color: $--checkbox-disabled-input-border-color;
-        background-color: #F0F2F5;
-        border-color: #D5D8DE;
+        background-color: $--checkbox-disabled-input-fill;
+        border-color: $--checkbox-disabled-input-border-color;
         cursor: not-allowed;
 
         &::after {
@@ -129,14 +120,11 @@
 
       &.is-checked {
         .el-checkbox__inner {
-          // background-color: $--checkbox-disabled-checked-input-fill;
-          // border-color: $--checkbox-disabled-checked-input-border-color;
-          background-color: #BEC1C9;
-          border-color: #BEC1C9;
+          background-color: $--checkbox-disabled-checked-input-fill;
+          border-color: $--checkbox-disabled-checked-input-border-color;
 
           &::after {
-            // border-color: $--checkbox-disabled-checked-icon-color;
-            border-color:#fff;
+            border-color: $--checkbox-disabled-checked-icon-color;
           }
         }
       }
@@ -154,18 +142,15 @@
       }
 
       & + span.el-checkbox__label {
-        // color: $--disabled-color-base;
-        color: #BEC1C9;
+        color: $--disabled-color-base;
         cursor: not-allowed;
       }
     }
 
     @include when(checked) {
       .el-checkbox__inner {
-        // background-color: $--checkbox-checked-input-fill;
-        // border-color: $--checkbox-checked-input-border-color;
-        background-color: #4999FF;
-        border-color: #4999FF;
+        background-color: $--checkbox-checked-input-fill;
+        border-color: $--checkbox-checked-input-border-color;
 
         &::after {
           transform: rotate(45deg) scaleY(1);
@@ -311,10 +296,8 @@
   &.is-checked {
     & .el-checkbox-button__inner {
       color: $--checkbox-button-checked-color;
-      // background-color: $--checkbox-button-checked-fill;
-      // border-color: $--checkbox-button-checked-border-color;
-      background-color: #4999FF;
-      border-color: #4999FF;
+      background-color: $--checkbox-button-checked-fill;
+      border-color: $--checkbox-button-checked-border-color;
       box-shadow: -1px 0 0 0 $--color-primary-light-4;
     }
     &:first-child .el-checkbox-button__inner {
@@ -324,14 +307,11 @@
 
   &.is-disabled {
     & .el-checkbox-button__inner {
-      // color: $--button-disabled-color;
-      color: #BEC1C9;
+      color: $--button-disabled-color;
       cursor: not-allowed;
       background-image: none;
-      // background-color: $--button-disabled-fill;
-      // border-color: $--button-disabled-border;
-      background-color:  #BEC1C9;
-      border-color:  #BEC1C9;
+      background-color: $--button-disabled-fill;
+      border-color: $--button-disabled-border;
       box-shadow: none;
     }
     &:first-child .el-checkbox-button__inner {
