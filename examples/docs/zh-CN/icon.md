@@ -85,7 +85,9 @@
 <i class="el-icon-edit"></i>
 <i class="el-icon-delete"></i>
 <i class="el-icon-share"></i>
-<kc-button type="primary" icon="search">搜索</kc-button>
+<kc-icon name="info"></kc-icon>
+<kc-button type="primary" icon="el-icon-search">搜索</kc-button>
+<kc-button type="primary"><kc-icon name="error"></kc-icon></kc-button>
 
 ```
 :::

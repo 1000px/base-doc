@@ -5,6 +5,8 @@ import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Card from './card';
+import Carousel from './carousel';
+import CarouselItem from './carousel-item';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import CheckboxButton from './checkbox-button';
@@ -27,6 +29,8 @@ const components = [
 	Button,
 	ButtonGroup,
 	Card,
+	Carousel,
+	CarouselItem,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
@@ -59,6 +63,8 @@ export default {
 	Button,
 	ButtonGroup,
 	Card,
+	Carousel,
+	CarouselItem,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
