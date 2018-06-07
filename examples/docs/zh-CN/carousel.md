@@ -85,7 +85,6 @@
       </kc-carousel-item>
     </kc-carousel>
   </div>
-
 <style>
   .el-carousel__item h3 {
     color: #475669;
@@ -112,13 +111,11 @@
 
 :::demo `indicator-position`属性定义了指示器的位置。默认情况下，它会显示在走马灯内部，设置为`outside`则会显示在外部；设置为`none`则不会显示指示器。
 ```html
-<template>
   <kc-carousel indicator-position="outside">
     <kc-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
     </kc-carousel-item>
   </kc-carousel>
-</template>
 
 <style>
   .el-carousel__item h3 {
@@ -145,13 +142,11 @@
 
 :::demo `arrow`属性定义了切换箭头的显示时机。默认情况下，切换箭头只有在鼠标 hover 到走马灯上时才会显示；若将`arrow`设置为`always`，则会一直显示；设置为`never`，则会一直隐藏。
 ```html
-<template>
   <kc-carousel :interval="5000" arrow="always">
     <kc-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
     </kc-carousel-item>
   </kc-carousel>
-</template>
 
 <style>
   .kc-carousel__item h3 {
@@ -178,13 +173,11 @@
 
 :::demo 将`type`属性设置为`card`即可启用卡片模式。从交互上来说，卡片模式和一般模式的最大区别在于，可以通过直接点击两侧的幻灯片进行切换。
 ```html
-<template>
   <kc-carousel :interval="4000" type="card" height="200px">
     <kc-carousel-item v-for="item in 6" :key="item">
       <h3>{{ item }}</h3>
     </kc-carousel-item>
   </kc-carousel>
-</template>
 
 <style>
   .el-carousel__item h3 {

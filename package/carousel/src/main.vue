@@ -155,7 +155,7 @@ export default {
 		},
 
 		updateItems() {
-			this.items = this.$children.filter(child => child.$options.name === 'ElCarouselItem');
+			this.items = this.$children.filter(child => child.$options.name === 'KcCarouselItem');
 		},
 
 		resetItemPosition(oldIndex) {
