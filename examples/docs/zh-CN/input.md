@@ -254,55 +254,6 @@ export default {
 ```
 :::
 
-
-### 带 icon 的输入框
-
-带有图标标记输入类型
-
-:::demo 可以通过 `prefix-icon` 和 `suffix-icon` 属性在 input 组件首部和尾部增加显示图标，也可以通过 slot 来放置图标。
-```html
-<div class="demo-input-suffix">
-  属性方式：
-  <kc-input
-    placeholder="请选择日期"
-    suffix-icon="el-icon-date"
-    v-model="input2">
-  </kc-input>
-  <kc-input
-    placeholder="请输入内容"
-    prefix-icon="el-icon-search"
-    v-model="input21">
-  </kc-input>
-</div>
-<div class="demo-input-suffix">
-  slot 方式：
-  <kc-input
-    placeholder="请选择日期"
-    v-model="input22">
-    <i slot="suffix" class="el-input__icon kc-icon-date"></i>
-  </kc-input>
-  <kc-input
-    placeholder="请输入内容"
-    v-model="input23">
-    <i slot="prefix" class="el-input__icon kc-icon-search"></i>
-  </kc-input>
-</div>
-
-<script>
-export default {
-  data() {
-    return {
-      input2: '',
-      input21: '',
-      input22: '',
-      input23: ''
-    }
-  }
-}
-</script>
-```
-:::
-
 ### 文本域
 
 用于输入多行文本信息，通过将 `type` 属性的值指定为 textarea。
@@ -358,6 +309,29 @@ export default {
   }
 }
 </script>
+```
+:::
+
+###  带 icon 的输入框
+
+可前置或后置元素，一般为标签或按钮
+
+:::demo 可通过 slot 来指定在 input 中前置或者后置内容。
+```html
+<div>
+  <kc-input
+    placeholder="请输入内容"
+    prefix-icon="el-icon-message"
+  >
+  </kc-input>
+</div>
+<div style="margin-top:15px">
+  <kc-input
+    placeholder="请输入内容"
+    suffix-icon="el-icon-time"
+  >
+  </kc-input>
+</div>
 ```
 :::
 
