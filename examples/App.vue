@@ -2,8 +2,8 @@
 
 <template>
 	<div id="app">
-		<k-header v-if="!isIndex"></k-header>
-		<router-view/>
+		<k-header></k-header>
+		<router-view class="view-box"/>
 	</div>
 </template>
 
@@ -13,13 +13,7 @@ export default {
 	name: 'app',
 	data() {
 		return {
-			isIndex: false
 		};
-	},
-	watch: {
-		$route() {
-			// this.$route.path !== '/' ? (this.isIndex = true) : (this.isIndex = false);
-		}
 	},
 	components: {
 		kHeader
@@ -29,8 +23,6 @@ export default {
 
 <style lang="scss">
 #app {
-	.active {
-		color: #409eff;
-	}
+	font-family: $typography;
 }
 </style>

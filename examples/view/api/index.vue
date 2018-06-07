@@ -4,10 +4,20 @@
 	author: malixiang
 -->
 <template>
-	<div class="api content">
-		<k-nav :left-nav="splitNav"></k-nav>
-		<div class="right-content markcss">
-			<router-view/>
+	<div>
+		<div class="api view-content">
+			<k-nav :left-nav="splitNav"></k-nav>
+			<div class="right-content markcss"  ref="markCon">
+				<router-view/>
+			</div>
+		</div>
+		<div class="sm-nav" @mouseenter="enter" @mouseleave="leave">
+			<ul>
+				<li v-for="(item, index) in smNav" :key="index" >
+					<a :href="('#'+item.innerText)">{{item.innerText}}</a>
+				</li>
+			</ul>
+
 		</div>
 	</div>
 </template>
@@ -19,6 +29,7 @@ import navLists from '@/nav-config.json';
 export default {
 	data() {
 		return {
+			smNav: [{innerText: '目'}, {innerText: '录'}]
 		};
 	},
 	computed: {
@@ -30,6 +41,21 @@ export default {
 				}
 			});
 			return menus;
+		}
+	},
+	methods: {
+		enter: function () {
+			let hList = this.$refs.markCon.querySelectorAll('h3');
+
+			if (hList.length > 0) {
+				this.smNav = hList;
+				for(let i = 0; i < hList.length; i++) {
+					hList[i].id = hList[i].innerText;
+				}
+			}
+		},
+		leave: function () {
+			this.smNav = [{innerText: '目'}, {innerText: '录'}];
 		}
 	},
 	components: {

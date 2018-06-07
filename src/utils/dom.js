@@ -3,7 +3,7 @@
 import Vue from 'vue';
 
 const isServer = Vue.prototype.$isServer;
-const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
+const SPECIAL_CHARS_REGEXP = /([:-_]+(.))/g;
 const MOZ_HACK_REGEXP = /^moz([A-Z])/;
 const ieVersion = isServer ? 0 : Number(document.documentMode);
 
@@ -64,7 +64,7 @@ export const once = function (el, event, fn) {
 };
 
 /* istanbul ignore next */
-export function hasClass(el, cls) {
+export function hasClass (el, cls) {
 	if (!el || !cls) return false;
 	if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
 	if (el.classList) {
@@ -75,7 +75,7 @@ export function hasClass(el, cls) {
 };
 
 /* istanbul ignore next */
-export function addClass(el, cls) {
+export function addClass (el, cls) {
 	if (!el) return;
 	var curClass = el.className;
 	var classes = (cls || '').split(' ');
@@ -96,7 +96,7 @@ export function addClass(el, cls) {
 };
 
 /* istanbul ignore next */
-export function removeClass(el, cls) {
+export function removeClass (el, cls) {
 	if (!el || !cls) return;
 	var classes = cls.split(' ');
 	var curClass = ' ' + el.className + ' ';
@@ -126,14 +126,14 @@ export const getStyle = ieVersion < 9 ? function (element, styleName) {
 	}
 	try {
 		switch (styleName) {
-			case 'opacity':
-				try {
-					return element.filters.item('alpha').opacity / 100;
-				} catch (e) {
-					return 1.0;
-				}
-			default:
-				return (element.style[styleName] || element.currentStyle ? element.currentStyle[styleName] : null);
+		case 'opacity':
+			try {
+				return element.filters.item('alpha').opacity / 100;
+			} catch (e) {
+				return 1.0;
+			}
+		default:
+			return (element.style[styleName] || element.currentStyle ? element.currentStyle[styleName] : null);
 		}
 	} catch (e) {
 		return element.style[styleName];
@@ -154,7 +154,7 @@ export const getStyle = ieVersion < 9 ? function (element, styleName) {
 };
 
 /* istanbul ignore next */
-export function setStyle(element, styleName, value) {
+export function setStyle (element, styleName, value) {
 	if (!element || !styleName) return;
 
 	if (typeof styleName === 'object') {

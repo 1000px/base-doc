@@ -5,7 +5,7 @@
 -->
 <template>
 	<div class="home">
-		<div class="right-content">
+		<div>
 			<h3>首页</h3>
 		</div>
 	</div>

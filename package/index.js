@@ -8,6 +8,8 @@ import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
 import Input from './input';
 import Row from './row';
+import Scrollbar from './scrollbar';
+
 
 const components = [
 	Badge,
@@ -19,7 +21,8 @@ const components = [
 	DropdownItem,
 	DropdownMemu,
 	Input,
-	Row
+	Row,
+	Scrollbar
 ];
 
 const install = function(Vue) {
@@ -42,5 +45,6 @@ export default {
 	DropdownItem,
 	DropdownMemu,
 	Input,
-	Row
+	Row,
+	Scrollbar
 };

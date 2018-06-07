@@ -29,6 +29,6 @@ let addComponent = (routers) => {
 addComponent(routes);
 
 export default new Router({
-	routes: routes,
-	linkActiveClass: 'active'
+	routes: routes
+	// linkActiveClass: 'active'
 });
