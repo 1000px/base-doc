@@ -13,6 +13,7 @@ import CheckboxButton from './checkbox-button';
 import Col from './col';
 import Collapse from './collapse';
 import CollapseItem from './collapse-item';
+import CollapseTransition from '_src/transitions/collapse-transition';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
@@ -39,6 +40,7 @@ const components = [
 	Col,
 	Collapse,
 	CollapseItem,
+	CollapseTransition,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -75,6 +77,7 @@ export default {
 	Col,
 	Collapse,
 	CollapseItem,
+	CollapseTransition,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
