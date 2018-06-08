@@ -37,11 +37,13 @@ export default {
 </script>
 
 <style lang="scss">
-	.demo-block > div:nth-child(1) {
+	.source{
 		border: 1px solid #E0EBF3;
-		padding: 27px 24px 0 ;
+		padding: 24px;
 	}
-
+	.demo-box.demo-button .el-row:last-child {
+		margin-bottom: 0;
+	}
 	.demo-container {
 		transition: max-height .3s ease;
 		overflow: hidden;
