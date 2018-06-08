@@ -26,6 +26,8 @@ import RadioGroup from './radio-group';
 import Row from './row';
 import Scrollbar from './scrollbar';
 import Tag from './tag';
+import Tooltip from './tooltip';
+
 const components = [
 	Avatar,
 	Badge,
@@ -54,7 +56,8 @@ const components = [
 	RadioButton,
 	RadioGroup,
 	Row,
-	Tag
+	Tag,
+	Tooltip
 ];
 const install = function(Vue) {
 	if (install.installed) return;
@@ -94,5 +97,6 @@ export default {
 	RadioButton,
 	RadioGroup,
 	Row,
-	Tag
+	Tag,
+	Tooltip
 };

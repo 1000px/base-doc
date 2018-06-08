@@ -45,8 +45,7 @@ export default {
 
 		if (gutter) {
 			const gutterWith = `-${gutter}px`;
-			const gutterRight = `-${gutter + 50}px`;
-			const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterRight}; padding-right: ${gutter + 50}px;`;
+			const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterWith};`;
 			if (Array.isArray(this.wrapStyle)) {
 				style = toObject(this.wrapStyle);
 				style.marginRight = style.marginBottom = gutterWith;
