@@ -53,9 +53,9 @@
 :::demo
 ```html
   <kc-breadcrumb>
-    <kc-breadcrumb-item item-icon="icon-home">首页</kc-breadcrumb-item>
-    <kc-breadcrumb-item item-icon="icon-active-manage">活动管理</kc-breadcrumb-item>
-    <kc-breadcrumb-item item-icon="icon-active-list">活动列表</kc-breadcrumb-item>
+    <kc-breadcrumb-item item-icon="el-icon-menu">首页</kc-breadcrumb-item>
+    <kc-breadcrumb-item>活动管理</kc-breadcrumb-item>
+    <kc-breadcrumb-item>活动列表</kc-breadcrumb-item>
     <kc-breadcrumb-item>活动详情</kc-breadcrumb-item>
   </kc-breadcrumb>
 ```

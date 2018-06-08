@@ -2,13 +2,14 @@
 	<div :class="[
     type === 'textarea' ? 'el-textarea' : 'el-input',
     inputSize ? 'el-input--' + inputSize : '',
+		search === true ? 'el-input-group__search' : '',
     {
       'is-disabled': inputDisabled,
       'el-input-group': $slots.prepend || $slots.append,
       'el-input-group--append': $slots.append,
       'el-input-group--prepend': $slots.prepend,
       'el-input--prefix': $slots.prefix || prefixIcon,
-      'el-input--suffix': $slots.suffix || suffixIcon || clearable
+      'el-input--suffix': $slots.suffix || suffixIcon || clearable,
     }
     ]"
 		 @mouseenter="hovering = true"
@@ -37,6 +38,7 @@
 				@blur="handleBlur"
 				@change="handleChange"
 				:aria-label="label"
+				:search="search"
 			>
 			<!-- 前置内容 -->
 			<span class="el-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
@@ -70,7 +72,7 @@
         </i>
       </span>
 			<!-- 后置元素 -->
-			<div class="el-input-group__append" v-if="$slots.append">
+			<div class="el-input-group__append"  v-if="$slots.append">
 				<slot name="append"></slot>
 			</div>
 		</template>
@@ -163,7 +165,8 @@
 				type: Boolean,
 				default: false
 			},
-			tabindex: String
+			tabindex: String,
+			search: Boolean
 		},
 
 		computed: {
