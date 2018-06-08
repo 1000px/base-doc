@@ -14,8 +14,8 @@
   .docs-demo__triangle {
     margin-top: 20px;
   }
-  .box {
-    
+  .box .el-tooltip{
+    margin-top: 15px;
   }
 </style>
 
