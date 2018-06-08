@@ -18,6 +18,7 @@ import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
 import Icon from './icon';
 import Input from './input';
+import InputNumber from './input-number';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -45,6 +46,7 @@ const components = [
 	DropdownMemu,
 	Icon,
 	Input,
+	InputNumber,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -82,6 +84,7 @@ export default {
 	DropdownMemu,
 	Icon,
 	Input,
+	InputNumber,
 	Radio,
 	RadioButton,
 	RadioGroup,

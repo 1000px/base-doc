@@ -1,8 +1,8 @@
-import ElInputNumber from './src/input-number';
+import KcInputNumber from './src/input-number';
 
 /* istanbul ignore next */
-ElInputNumber.install = function(Vue) {
-	Vue.component(ElInputNumber.name, ElInputNumber);
+KcInputNumber.install = function(Vue) {
+	Vue.component(KcInputNumber.name, KcInputNumber);
 };
 
-export default ElInputNumber;
+export default KcInputNumber;
