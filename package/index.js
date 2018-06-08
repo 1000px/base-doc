@@ -24,6 +24,7 @@ import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Tag from './tag';
+import Tooltip from './tooltip';
 
 const components = [
 	Avatar,
@@ -51,7 +52,8 @@ const components = [
 	RadioButton,
 	RadioGroup,
 	Row,
-	Tag
+	Tag,
+	Tooltip
 ];
 const install = function(Vue) {
 	if (install.installed) return;
@@ -89,5 +91,6 @@ export default {
 	RadioButton,
 	RadioGroup,
 	Row,
-	Tag
+	Tag,
+	Tooltip
 };
