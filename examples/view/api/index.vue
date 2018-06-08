@@ -7,9 +7,9 @@
 	<div>
 		<div class="api view-content">
 			<k-nav :left-nav="splitNav"></k-nav>
-			<div class="right-content markcss"  ref="markCon">
+			<kc-scrollbar class="right-content markcss" ref="markCon">
 				<router-view/>
-			</div>
+			</kc-scrollbar>
 		</div>
 		<div class="sm-nav" @mouseenter="enter" @mouseleave="leave">
 			<ul>
@@ -25,6 +25,8 @@
 <script>
 import kNav from '@/components/nav';
 import navLists from '@/nav-config.json';
+import KcScrollbar from '../../../package/scrollbar/src/main';
+
 
 export default {
 	data() {
@@ -45,7 +47,8 @@ export default {
 	},
 	methods: {
 		enter: function () {
-			let hList = this.$refs.markCon.querySelectorAll('h3');
+//			console.log(this.$refs.markCon.$el.querySelectorAll('h3'));
+			let hList = this.$refs.markCon.$el.querySelectorAll('h3');
 
 			if (hList.length > 0) {
 				this.smNav = hList;
@@ -59,6 +62,7 @@ export default {
 		}
 	},
 	components: {
+		KcScrollbar,
 		kNav
 	}
 };

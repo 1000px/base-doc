@@ -4,12 +4,12 @@
 	author: malixiang
 -->
 <template>
-	<div >
+	<div>
 		<div class="overview view-content">
 			<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
-			<div class="right-content markcss">
+			<kc-scrollbar class="right-content markcss">
 				<router-view/>
-			</div>
+			</kc-scrollbar>
 		</div>
 	</div>
 </template>
@@ -17,7 +17,6 @@
 <script>
 import kNav from '@/components/nav';
 import navLists from '@/nav-config.json';
-
 export default {
 	data () {
 		return {

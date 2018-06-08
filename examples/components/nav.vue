@@ -4,7 +4,7 @@
 	author: malixiang
 -->
 <template>
-	<div class="left-nav">
+	<kc-scrollbar class="left-nav">
 		<ul>
 			<li v-for="(val, key, index) in _navLeft">
 				<h3 v-if="_navLeft[key]['list']">
@@ -23,12 +23,14 @@
 			</li>
 		</ul>
 
-	</div>
+	</kc-scrollbar>
 
 </template>
 
 <script>
+
 	export default {
+
 		props: ['leftNav'],
 		data () {
 			return {};
@@ -53,17 +55,24 @@
 			}
 		},
 		mounted () {
-			console.log(this._navLeft);
+//			console.log(this._navLeft);
 		}
 	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
 	.left-nav {
 		position: relative;
 		overflow: hidden;
-		flex-grow: 1;
+		width: 250px;
+		/*height: 100%;*/
+		height: calc(100vh - 234px);
+		float: left;
+		/*position: absolute;*/
+		/*top: 0;*/
+		/*left: 0;*/
 		ul {
 			> li {
 				h3 {
@@ -73,12 +82,6 @@
 					span {
 						padding-left: 24px;
 					}
-					> a {
-						font-family: PingFangSC-Regular;
-						font-size: 14px;
-						color: #273B55;
-					}
-
 					ul {
 						padding: 10px 0;
 						li {
@@ -93,6 +96,9 @@
 								font-size: 12px;
 								color: #273B55;
 								font-weight: 500;
+								&:hover{
+									color: #4999FF;
+								}
 							}
 							.router-link-active {
 								opacity: 0.9;
@@ -124,6 +130,9 @@
 						font-family: $typography;
 						font-size: 14px;
 						color: #273B55;
+						&:hover{
+							color: #4999FF;
+						}
 					}
 				}
 			}

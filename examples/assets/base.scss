@@ -12,6 +12,7 @@ li {
 a {
 	text-decoration: none;
 	color: #666;
+
 }
 /*定义代码块*/
 /* 清浮动 */
@@ -25,18 +26,22 @@ a {
 }
 /*内容布局*/
 @mixin content{
+	@include clearFix;
 	position: relative;
 	width: 90%;
-	height: 100%;
+	//height: 100%;
 	margin: 0 auto;
+	height: calc(100vh - 168px);
 	padding:32px 0;
 	background: #fff;
 	.right-content {
 		padding:0 50px;
-		box-sizing: border-box;
-		flex-grow: 6;
+		//box-sizing: border-box;
+		//flex-grow: 1;
+		//float: left;
 		overflow: hidden;
-
+		margin-left: 250px;
+		height: calc(100vh - 242px);
 	}
 }
 /*下部内容布局*/
@@ -49,9 +54,9 @@ a {
 	overflow: hidden;
 	.view-content{
 		@include content;
-		@include clearFix;
+		//position: relative;
 		box-sizing: border-box;
-		display: flex;
+		//display: flex;
 	}
 	.sm-nav{
 		position: absolute;
@@ -74,4 +79,6 @@ a {
 		}
 	}
 }
-
+.el-scrollbar__wrap {
+	overflow-x: hidden;
+}

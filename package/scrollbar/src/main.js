@@ -7,7 +7,7 @@ import Bar from './bar';
 
 /* istanbul ignore next */
 export default {
-	name: 'ElScrollbar',
+	name: 'KcScrollbar',
 
 	components: {Bar},
 
@@ -45,8 +45,8 @@ export default {
 
 		if (gutter) {
 			const gutterWith = `-${gutter}px`;
-			const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterWith};`;
-
+			const gutterRight = `-${gutter + 50}px`;
+			const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterRight}; padding-right: ${gutter + 50}px;`;
 			if (Array.isArray(this.wrapStyle)) {
 				style = toObject(this.wrapStyle);
 				style.marginRight = style.marginBottom = gutterWith;

@@ -1,4 +1,4 @@
-import { on, off } from 'src/src/utils/dom';
+import { on, off } from '_src/utils/dom';
 import { renderThumbStyle, BAR_MAP } from './util';
 
 /* istanbul ignore next */
