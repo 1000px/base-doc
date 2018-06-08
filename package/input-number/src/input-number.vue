@@ -26,7 +26,7 @@
 			@keydown.enter="increase">
       <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
-		<el-input
+		<kc-input
 			ref="input"
 			:value="currentValue"
 			:disabled="inputNumberDisabled"
@@ -46,16 +46,16 @@
 			<template slot="append" v-if="$slots.append">
 				<slot name="append"></slot>
 			</template>
-		</el-input>
+		</kc-input>
 	</div>
 </template>
 <script>
-	import ElInput from 'element-ui/packages/input';
-	import Focus from 'element-ui/src/mixins/focus';
-	import RepeatClick from 'element-ui/src/directives/repeat-click';
+	import KcInput from './../../input';
+	import Focus from '_src/mixins/focus';
+	import RepeatClick from '_src/directives/repeat-click';
 
 	export default {
-		name: 'ElInputNumber',
+		name: 'KcInputNumber',
 		mixins: [Focus('input')],
 		inject: {
 			elForm: {
@@ -69,7 +69,7 @@
 			repeatClick: RepeatClick
 		},
 		components: {
-			ElInput
+			KcInput
 		},
 		props: {
 			step: {

@@ -4,75 +4,148 @@
 	author: malixiang
 -->
 <template>
-	<div class="left-nav">
+	<kc-scrollbar class="left-nav">
 		<ul>
 			<li v-for="(val, key, index) in _navLeft">
-				<h3 v-if="_navLeft[key]['list']">{{_navLeft[key]['desc']}}</h3>
-				<h3 v-else><router-link :to="{name: key}" exact>{{_navLeft[key]['desc']}}</router-link></h3>
-				<ul>
-					<li v-for="nav in _navLeft[key]['list']">
-						<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
-					</li>
-				</ul>
+				<h3 v-if="_navLeft[key]['list']">
+					<span>{{_navLeft[key]['desc']}}</span>
+					<i></i>
+					<ul>
+						<li v-for="nav in _navLeft[key]['list']">
+							<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
+						</li>
+					</ul>
+				</h3>
+				<h4 v-else>
+					<router-link :to="{name: key}" exact>{{_navLeft[key]['desc']}}</router-link>
+				</h4>
+
 			</li>
 		</ul>
 
-	</div>
+	</kc-scrollbar>
 
 </template>
 
 <script>
-export default {
-	props: ['leftNav'],
-	data() {
-		return {
 
-		};
-	},
-	computed: {
-		_navLeft: function() {
-			let _navMap = {};
-			this.leftNav && this.leftNav.length > 0 && this.leftNav.forEach((navItem) => {
-				if(navItem['category']) {
-					if(!_navMap[navItem['category']]) {
-						_navMap[navItem['category']] = {};
-						_navMap[navItem['category']]['list'] = [];
-						_navMap[navItem['category']]['desc'] = navItem['category-desc'];
+	export default {
+
+		props: ['leftNav'],
+		data () {
+			return {};
+		},
+		computed: {
+			_navLeft: function () {
+				let _navMap = {};
+				this.leftNav && this.leftNav.length > 0 && this.leftNav.forEach((navItem) => {
+					if (navItem['category']) {
+						if (!_navMap[navItem['category']]) {
+							_navMap[navItem['category']] = {};
+							_navMap[navItem['category']]['list'] = [];
+							_navMap[navItem['category']]['desc'] = navItem['category-desc'];
+						}
+						_navMap[navItem['category']]['list'].push(navItem);
+					} else {
+						_navMap[navItem['name']] = {};
+						_navMap[navItem['name']]['desc'] = navItem['desc'];
 					}
-					_navMap[navItem['category']]['list'].push(navItem);
-				} else {
-					_navMap[navItem['name']] = {};
-					_navMap[navItem['name']]['desc'] = navItem['desc'];
-				}
-			});
-			return _navMap;
+				});
+				return _navMap;
+			}
+		},
+		mounted () {
+//			console.log(this._navLeft);
 		}
-	},
-	mounted() {
-		console.log(this._navLeft);
-	}
-};
+	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.left-nav {
-    position: absolute;
-	left: 0;
-	top: 0;
-    width: 200px;
-	ul {
-		li {
-			h3{
-				margin-top: 0;
-			}
-			ul{
-				margin-bottom: 20px;
-				li{
-					padding: 5px 0;
+
+	.left-nav {
+		position: relative;
+		overflow: hidden;
+		width: 250px;
+		/*height: 100%;*/
+		height: calc(100vh - 234px);
+		float: left;
+		/*position: absolute;*/
+		/*top: 0;*/
+		/*left: 0;*/
+		ul {
+			> li {
+				h3 {
+					font-size: 14px;
+					color: #273B55;
+					font-weight: bold;
+					span {
+						padding-left: 24px;
+					}
+					ul {
+						padding: 10px 0;
+						li {
+							position: relative;
+							padding-left: -24px;
+							height: 37px;
+							line-height: 37px;
+							> a {
+								padding-left: 24px;
+								display: block;
+								font-family: $typography;
+								font-size: 12px;
+								color: #273B55;
+								font-weight: 500;
+								&:hover{
+									color: #4999FF;
+								}
+							}
+							.router-link-active {
+								opacity: 0.9;
+								font-family: $typography;
+								font-size: $medium;
+								color: #5572F1;
+								background: #F6F9FF;
+								&::after {
+									position: absolute;
+									bottom: 0;
+									left: 0;
+									width: 4px;
+									height: 100%;
+									display: inline-block;
+									content: "";
+									// transform: rotate(-90deg);
+									background: #6781F2;
+									box-shadow: 3px 0 8px 0 rgba(103, 129, 242, 0.41);
+									border-radius: 100px;
+								}
+							}
+						}
+					}
 				}
+				h4{
+					height: 37px;
+					padding-left: 15px;
+					a{
+						font-family: $typography;
+						font-size: 14px;
+						color: #273B55;
+						&:hover{
+							color: #4999FF;
+						}
+					}
+				}
+			}
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 0px;
+				height: 100%;
+				display: inline-block;
+				content: "";
+				border-right: 1px solid #E0EBF3;
 			}
 		}
 	}
-}
 </style>

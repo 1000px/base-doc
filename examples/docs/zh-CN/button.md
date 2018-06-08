@@ -93,8 +93,10 @@
 
 :::demo
 ```html
+<kc-row>
 <kc-button type="text">文字按钮</kc-button>
 <kc-button type="text" disabled>文字按钮</kc-button>
+</kc-row>
 ```
 :::
 
@@ -105,11 +107,13 @@
 :::demo 设置`icon`属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 ```html
+<kc-row>
 <kc-button type="primary" icon="el-icon-edit"></kc-button>
 <kc-button type="primary" icon="el-icon-share"></kc-button>
 <kc-button type="primary" icon="el-icon-delete"></kc-button>
 <kc-button type="primary" icon="el-icon-search">搜索</kc-button>
 <kc-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></kc-button>
+</kc-row>
 ```
 :::
 
@@ -120,6 +124,7 @@
 :::demo 使用`<kc-button-group>`标签来嵌套你的按钮。
 
 ```html
+<kc-row>
 <kc-button-group>
   <kc-button type="primary" icon="el-icon-arrow-left">上一页</kc-button>
   <kc-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></kc-button>
@@ -129,6 +134,7 @@
   <kc-button type="primary" icon="el-icon-share"></kc-button>
   <kc-button type="primary" icon="el-icon-delete"></kc-button>
 </kc-button-group>
+</kc-row>
 ```
 :::
 
@@ -139,7 +145,9 @@
 :::demo 要设置为 loading 状态，只要设置`loading`属性为`true`即可。
 
 ```html
+<kc-row>
 <kc-button type="primary" :loading="true">加载中</kc-button>
+</kc-row>
 ```
 :::
 

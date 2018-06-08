@@ -62,8 +62,8 @@ exports.cssLoaders = function (options) {
 			loader: 'sass-resources-loader',
 			options: {
 				resources: [
-					path.resolve(__dirname, '../examples/assets/*.scss'),
-					path.resolve(__dirname, '../styles/index.scss')
+					path.resolve(__dirname, '../styles/index.scss'),
+					path.resolve(__dirname, '../examples/assets/*.scss')
 				]
 			}
 		}),

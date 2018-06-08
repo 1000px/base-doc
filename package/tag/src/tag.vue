@@ -17,7 +17,7 @@
 </template>
 <script>
 	export default {
-		name: 'ElTag',
+		name: 'KcTag',
 		props: {
 			text: String,
 			closable: Boolean,

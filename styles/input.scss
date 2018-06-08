@@ -199,6 +199,7 @@
     @include e(inner) {
       height: $--input-small-height;
       line-height: $--input-small-height;
+      border-radius: 3px;
     }
 
     .el-input__icon {
@@ -211,6 +212,7 @@
     @include e(inner) {
       height: $--input-mini-height;
       line-height: $--input-mini-height;
+      border-radius: 3px;
     }
 
     .el-input__icon {
@@ -299,6 +301,7 @@
       border-color: transparent;
     }
   }
+
 }
 
 /** disalbe default clear on IE */
@@ -306,4 +309,24 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+.el-input-group__append {
+  .el-button--primary {
+    background-color: $--color-primary !important;
+    color: $--color-white !important;
+  }
+  .el-button--default {
+    background-color: $--color-white !important;
+    // color: #606266 !important;
+  }
+}
+
+.el-input-group__search {
+  .el-input__inner {
+    border-right: none;
+  }
+  :focus{
+    border-right: 1px solid $--color-primary;
+  }
 }

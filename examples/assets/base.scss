@@ -1,9 +1,10 @@
-body, ul, h1, p {
+body, ul, h1,h2,h3,h4,h5,h6, p {
 	margin: 0;
 	padding: 0;
+
 }
-body{
-	padding:0 30px;
+html, body, #app{
+	height: 100%;
 }
 li {
 	list-style: none;
@@ -11,6 +12,7 @@ li {
 a {
 	text-decoration: none;
 	color: #666;
+
 }
 /*定义代码块*/
 /* 清浮动 */
@@ -24,14 +26,67 @@ a {
 }
 /*内容布局*/
 @mixin content{
-	//width: 1140px;
-	height: 100%;
-	margin: 0 auto;
+	@include clearFix;
 	position: relative;
+	width: 90%;
+	//height: 100%;
+	margin: 0 auto;
+	height: calc(100vh - 168px);
+	padding:32px 0;
+	background: #fff;
 	.right-content {
-		padding-left: 200px;
+		height: calc(100vh - 242px);
+		padding:0 50px;
+		//box-sizing: border-box;
+		//flex-grow: 1;
+		//float: left;
+		margin-left: 250px;
+		overflow: hidden;
+		> div.scrollBox{
+			overflow-y: auto;
+			height: 100%;
+			margin-right: -67px;
+			padding-right: 67px;
+		}
+
 	}
 }
-.content{
-	@include content;
+/*下部内容布局*/
+.view-box{
+	width: 100%;
+	height: calc(100% - 168px);//减去header高度和padding
+	padding: 44px 0;
+	position: relative;
+	background: #F8F8FC;
+	overflow: hidden;
+	.view-content{
+		@include content;
+		//position: relative;
+		box-sizing: border-box;
+		//display: flex;
+	}
+	.sm-nav{
+		position: absolute;
+		top: 44px;
+		right: 0;
+		z-index: 99;
+		background: #FFFFFF;
+		box-shadow: -2px 2px 3px 0 rgba(0,0,0,0.04);
+		border-radius: 2px 0 0 2px;
+		ul{
+			li{
+				height: 18px;
+				padding: 4px 10px;
+				a{
+					line-height: 18px;
+					font-size: 12px;
+					color: #273B55;
+					display: block;
+				}
+			}
+		}
+	}
+}
+.el-scrollbar__wrap {
+	overflow-x: hidden;
 }
