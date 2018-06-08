@@ -11,6 +11,8 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import CheckboxButton from './checkbox-button';
 import Col from './col';
+import Collapse from './collapse';
+import CollapseItem from './collapse-item';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
@@ -20,6 +22,7 @@ import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
+import Tag from './tag';
 
 const components = [
 	Avatar,
@@ -35,6 +38,8 @@ const components = [
 	CheckboxButton,
 	CheckboxGroup,
 	Col,
+	Collapse,
+	CollapseItem,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -43,7 +48,8 @@ const components = [
 	Radio,
 	RadioButton,
 	RadioGroup,
-	Row
+	Row,
+	Tag
 ];
 const install = function(Vue) {
 	if (install.installed) return;
@@ -69,6 +75,8 @@ export default {
 	CheckboxButton,
 	CheckboxGroup,
 	Col,
+	Collapse,
+	CollapseItem,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -77,5 +85,6 @@ export default {
 	Radio,
 	RadioButton,
 	RadioGroup,
-	Row
+	Row,
+	Tag
 };

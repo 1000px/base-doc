@@ -1,5 +1,6 @@
 <template>
-	<div class="demo-block docs-demo-wrapper">
+	<div class="demo-block demo-box"
+		 :class="[blockClass]">
 		<slot name="desc"></slot>
 		<div :style="{height: isExpand ? 'auto' : '0'}" class="demo-container">
 			<div span="14">
@@ -20,6 +21,12 @@ export default {
 		return {
 			isExpand: false
 		};
+	},
+	computed: {
+		blockClass() {
+//			return `demo-${ this.lang } demo-${ this.$router.currentRoute.path.split('/').pop() }`;
+			return `demo-zh-CN demo-${this.$router.currentRoute.path.split('/').pop()}`;
+		}
 	},
 	methods: {
 		toggle() {
