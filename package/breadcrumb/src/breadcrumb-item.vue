@@ -1,6 +1,6 @@
 <template>
   <span class="el-breadcrumb__item">
-    <span v-if="itemIcon"><i class="icon" :class="itemIcon"></i></span>
+    <span v-if="itemIcon"><i class="icon" :class="itemIcon" style="font-size:12px;color:#8C9097;background-color:#fff;"></i></span>
     <span
       :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
       ref="link"
