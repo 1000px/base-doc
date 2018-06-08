@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
 	.demo-block > div:nth-child(1) {
 		border: 1px solid #E0EBF3;
-		padding: 27px 0 0 24px;
+		padding: 27px 24px 0 ;
 	}
 
 	.demo-container {

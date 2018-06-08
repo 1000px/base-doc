@@ -7,9 +7,11 @@
 	<div>
 		<div class="overview view-content">
 			<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
-			<kc-scrollbar class="right-content markcss">
-				<router-view/>
-			</kc-scrollbar>
+			<div class="right-content markcss">
+				<div class="scrollBox">
+					<router-view/>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>

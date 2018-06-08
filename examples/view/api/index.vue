@@ -7,9 +7,11 @@
 	<div>
 		<div class="api view-content">
 			<k-nav :left-nav="splitNav"></k-nav>
-			<kc-scrollbar class="right-content markcss" ref="markCon">
-				<router-view/>
-			</kc-scrollbar>
+			<div class="right-content markcss" ref="markCon">
+				<div class="scrollBox">
+					<router-view/>
+				</div>
+			</div>
 		</div>
 		<div class="sm-nav" @mouseenter="enter" @mouseleave="leave">
 			<ul>
@@ -48,7 +50,7 @@ export default {
 	methods: {
 		enter: function () {
 //			console.log(this.$refs.markCon.$el.querySelectorAll('h3'));
-			let hList = this.$refs.markCon.$el.querySelectorAll('h3');
+			let hList = this.$refs.markCon.querySelectorAll('h3');
 
 			if (hList.length > 0) {
 				this.smNav = hList;

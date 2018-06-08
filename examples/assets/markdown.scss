@@ -173,4 +173,7 @@
 		right: 15px;
 		width: 220px;
 	}
+	.icon-list{
+		@include clearFix;
+	}
 }
