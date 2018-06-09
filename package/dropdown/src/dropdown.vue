@@ -87,7 +87,7 @@
 
 		watch: {
 			visible(val) {
-				this.broadcast('ElDropdownMenu', 'visible', val);
+				this.broadcast('KcDropdownMenu', 'visible', val);
 				this.$emit('visible-change', val);
 			},
 			focusing(val) {
