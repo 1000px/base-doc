@@ -1,8 +1,8 @@
-import DropdownItem from '../dropdown/src/dropdown-item';
+import KcDropdownItem from '../dropdown/src/dropdown-item';
 
 /* istanbul ignore next */
-DropdownItem.install = function(Vue) {
-	Vue.component(DropdownItem.name, DropdownItem);
+KcDropdownItem.install = function(Vue) {
+	Vue.component(KcDropdownItem.name, KcDropdownItem);
 };
 
-export default DropdownItem;
+export default KcDropdownItem;

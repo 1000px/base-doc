@@ -19,6 +19,7 @@ import DropdownMemu from './dropdown-menu';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
+import Layout from './layout';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -48,12 +49,13 @@ const components = [
 	DropdownMemu,
 	Icon,
 	Input,
-	Scrollbar,
 	InputNumber,
+	Layout,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Row,
+	Scrollbar,
 	Tag,
 	Tooltip
 ];
@@ -88,12 +90,13 @@ export default {
 	DropdownMemu,
 	Icon,
 	Input,
-	Scrollbar,
 	InputNumber,
+	Layout,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Row,
+	Scrollbar,
 	Tag,
 	Tooltip
 };

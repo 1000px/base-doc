@@ -1,8 +1,8 @@
-import ButtonGroup from '../button/src/button-group';
+import KcButtonGroup from '../button/src/button-group';
 
 /* istanbul ignore next */
-ButtonGroup.install = function(Vue) {
-	Vue.component(ButtonGroup.name, ButtonGroup);
+KcButtonGroup.install = function(Vue) {
+	Vue.component(KcButtonGroup.name, KcButtonGroup);
 };
 
-export default ButtonGroup;
+export default KcButtonGroup;
