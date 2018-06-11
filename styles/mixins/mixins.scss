@@ -169,6 +169,13 @@
     }
   }
 }
+@mixin status($status) {
+	@at-root {
+		&.#{$status-prefix + $status} {
+			@content
+		}
+	}
+}
 
 @mixin extend-rule($name) {
   @extend #{'%shared-'+$name};

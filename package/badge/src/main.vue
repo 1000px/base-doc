@@ -6,7 +6,7 @@
 				v-show="!hidden && content"
 				v-text="isDot ? '' : content"
 				class="el-badge__content"
-				:class="{ 'is-fixed': $slots.default, 'is-dot': isDot }">
+				:class="[{ 'is-fixed': $slots.default, 'is-dot': isDot }, status ? 'status-'+status : '']">
 			</sup>
 		</transition>
 	</div>
@@ -20,7 +20,8 @@ export default {
 		value: {},
 		max: Number,
 		isDot: Boolean,
-		hidden: Boolean
+		hidden: Boolean,
+		status: String
 	},
 
 	computed: {
