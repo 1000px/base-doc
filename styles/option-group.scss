@@ -13,20 +13,22 @@
     margin: 0;
     padding: 0;
 
-    &:not(:last-of-type) {
-      padding-bottom: 24px;
+    // 隐藏分割线
+    // &:not(:last-of-type) {
+    //   padding-bottom: 24px;
 
-      &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        left: $gap;
-        right: $gap;
-        bottom: 12px;
-        height: 1px;
-        background: $--border-color-light;
-      }
-    }
+    //   &::after {
+    //     content: '';
+    //     position: absolute;
+    //     display: block;
+    //     left: $gap;
+    //     right: $gap;
+    //     bottom: 12px;
+    //     height: 1px;
+    //     background: $--border-color-light;
+    //   }
+    // }
+
   }
 
   @include e(title) {

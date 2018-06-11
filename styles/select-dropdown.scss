@@ -1,6 +1,6 @@
 @import "mixins/mixins";
 @import "common/var";
-@import "./popper";
+// @import "./popper";
 
 @include b(select-dropdown) {
   position: absolute;
@@ -12,6 +12,11 @@
   box-sizing: border-box;
   margin: 5px 0;
 
+  & .el-select-dropdown__item:hover {
+    color: $--select-option-hover-color;
+    font-weight: 700;
+  }
+
   @include when(multiple) {
     & .el-select-dropdown__item.selected {
       color: $--select-option-selected;
@@ -19,6 +24,8 @@
 
       &.hover {
         background-color: $--select-option-hover-background;
+        color: $--select-option-hover-color;
+        font-weight: 700;
       }
 
       &::after {
@@ -26,6 +33,7 @@
         right: 20px;
         font-family: 'element-icons';
         content: "\E611";
+        color: $--color-primary;
         font-size: 12px;
         font-weight: bold;
         -webkit-font-smoothing: antialiased;
@@ -56,4 +64,9 @@
   padding: $--select-dropdown-padding;
   margin: 0;
   box-sizing: border-box;
+}
+
+.el-select-dropdown__wrap .el-select-dropdown__item:last-child,
+.el-select-dropdown__wrap .el-select-dropdown__list:last-child {
+  margin-bottom: 18px;
 }

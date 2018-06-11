@@ -322,11 +322,20 @@
 				currentPlaceholder: '',
 				menuVisibleOnFocus: false,
 				isOnComposition: false,
-				isSilentBlur: false
+				isSilentBlur: false,
 			};
 		},
 
 		watch: {
+			selectedLabel (val) {
+				let dom = this.$refs.reference.$el
+				let input = dom.firstElementChild
+				if(val.length === 0) {
+					input.style.backgroundColor = '#fff'
+				} else {
+					input.style.backgroundColor = '#F5F7FA'
+				}
+			},
 			selectDisabled() {
 				this.$nextTick(() => {
 					this.resetInputHeight();
