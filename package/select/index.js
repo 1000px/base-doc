@@ -1,8 +1,8 @@
-import Select from './src/select';
+import KcSelect from './src/select';
 
 /* istanbul ignore next */
-Select.install = function(Vue) {
-	Vue.component(Select.name, Select);
+KcSelect.install = function(Vue) {
+	Vue.component(KcSelect.name, KcSelect);
 };
 
-export default Select;
+export default KcSelect;

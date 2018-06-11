@@ -10,7 +10,7 @@
 			ref="tags"
 			:style="{ 'max-width': inputWidth - 32 + 'px' }">
       <span v-if="collapseTags && selected.length">
-        <el-tag
+        <kc-tag
 			:closable="!selectDisabled"
 			:size="collapseTagSize"
 			:hit="selected[0].hitState"
@@ -18,18 +18,18 @@
 			@close="deleteTag($event, selected[0])"
 			disable-transitions>
           <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
-        </el-tag>
-        <el-tag
+        </kc-tag>
+        <kc-tag
 			v-if="selected.length > 1"
 			:closable="false"
 			:size="collapseTagSize"
 			type="info"
 			disable-transitions>
           <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
-        </el-tag>
+        </kc-tag>
       </span>
 			<transition-group @after-leave="resetInputHeight" v-if="!collapseTags">
-				<el-tag
+				<kc-tag
 					v-for="item in selected"
 					:key="getValueKey(item)"
 					:closable="!selectDisabled"
@@ -39,7 +39,7 @@
 					@close="deleteTag($event, item)"
 					disable-transitions>
 					<span class="el-select__tags-text">{{ item.currentLabel }}</span>
-				</el-tag>
+				</kc-tag>
 			</transition-group>
 
 			<input
@@ -68,7 +68,7 @@
 				:style="{ width: inputLength + 'px', 'max-width': inputWidth - 42 + 'px' }"
 				ref="input">
 		</div>
-		<el-input
+		<kc-input
 			ref="reference"
 			v-model="selectedLabel"
 			type="text"
@@ -99,12 +99,12 @@
 			   :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"
 			   @click="handleIconClick"
 			></i>
-		</el-input>
+		</kc-input>
 		<transition
 			name="el-zoom-in-top"
 			@before-enter="handleMenuEnter"
 			@after-leave="doDestroy">
-			<el-select-menu
+			<kc-select-menu
 				ref="popper"
 				:append-to-body="popperAppendToBody"
 				v-show="visible && emptyText !== false">
@@ -128,29 +128,29 @@
             (!allowCreate || loading || (allowCreate && options.length === 0 ))">
 					{{ emptyText }}
 				</p>
-			</el-select-menu>
+			</kc-select-menu>
 		</transition>
 	</div>
 </template>
 
 <script type="text/babel">
-	import Emitter from 'element-ui/src/mixins/emitter';
-	import Focus from 'element-ui/src/mixins/focus';
-	import Locale from 'element-ui/src/mixins/locale';
-	import ElInput from 'element-ui/packages/input';
-	import ElSelectMenu from './select-dropdown.vue';
-	import ElOption from './option.vue';
-	import ElTag from 'element-ui/packages/tag';
-	import ElScrollbar from 'element-ui/packages/scrollbar';
+	import Emitter from '_src/mixins/emitter';
+	import Focus from '_src/mixins/focus';
+	import Locale from '_src/mixins/locale';
+	import KcInput from './../../input';
+	import KcSelectMenu from './select-dropdown.vue';
+	import KcOption from './option.vue';
+	import KcTag from './../../tag';
+	import ElScrollbar from './../../scrollbar';
 	import debounce from 'throttle-debounce/debounce';
-	import Clickoutside from 'element-ui/src/utils/clickoutside';
-	import {addClass, removeClass, hasClass} from 'element-ui/src/utils/dom';
-	import {addResizeListener, removeResizeListener} from 'element-ui/src/utils/resize-event';
-	import {t} from 'element-ui/src/locale';
-	import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
-	import {getValueByPath, valueEquals} from '/src/utils/util';
+	import Clickoutside from '_src/utils/clickoutside';
+	import {addClass, removeClass, hasClass} from '_src/utils/dom';
+	import {addResizeListener, removeResizeListener} from '_src/utils/resize-event';
+	import {t} from '_src/locale';
+	import scrollIntoView from '_src/utils/scroll-into-view';
+	import {getValueByPath, valueEquals} from '_src/utils/util';
 	import NavigationMixin from './navigation-mixin';
-	import {isKorean} from 'element-ui/src/utils/shared';
+	import {isKorean} from '_src/utils/shared';
 
 	const sizeMap = {
 		'medium': 36,
@@ -161,9 +161,9 @@
 	export default {
 		mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
 
-		name: 'ElSelect',
+		name: 'KcSelect',
 
-		componentName: 'ElSelect',
+		componentName: 'KcSelect',
 
 		inject: {
 			elForm: {
@@ -243,10 +243,10 @@
 		},
 
 		components: {
-			ElInput,
-			ElSelectMenu,
-			ElOption,
-			ElTag,
+			KcInput,
+			KcSelectMenu,
+			KcOption,
+			KcTag,
 			ElScrollbar
 		},
 
@@ -359,7 +359,7 @@
 			visible(val) {
 				if (!val) {
 					this.handleIconHide();
-					this.broadcast('ElSelectDropdown', 'destroyPopper');
+					this.broadcast('KcSelectDropdown', 'destroyPopper');
 					if (this.$refs.input) {
 						this.$refs.input.blur();
 					}
@@ -388,7 +388,7 @@
 					}
 				} else {
 					this.handleIconShow();
-					this.broadcast('ElSelectDropdown', 'updatePopper');
+					this.broadcast('KcSelectDropdown', 'updatePopper');
 					if (this.filterable) {
 						this.query = this.remote ? '' : this.selectedLabel;
 						this.handleQueryChange(this.query);
@@ -397,9 +397,9 @@
 						} else {
 							if (!this.remote) {
 								this.broadcast('ElOption', 'queryChange', '');
-								this.broadcast('ElOptionGroup', 'queryChange');
+								this.broadcast('KcOptionGroup', 'queryChange');
 							}
-							this.broadcast('ElInput', 'inputSelect');
+							this.broadcast('KcInput', 'inputSelect');
 						}
 					}
 				}
@@ -409,7 +409,7 @@
 			options() {
 				if (this.$isServer) return;
 				this.$nextTick(() => {
-					this.broadcast('ElSelectDropdown', 'updatePopper');
+					this.broadcast('KcSelectDropdown', 'updatePopper');
 				});
 				if (this.multiple) {
 					this.resetInputHeight();
@@ -446,7 +446,7 @@
 				}
 				this.previousQuery = val;
 				this.$nextTick(() => {
-					if (this.visible) this.broadcast('ElSelectDropdown', 'updatePopper');
+					if (this.visible) this.broadcast('KcSelectDropdown', 'updatePopper');
 				});
 				this.hoverIndex = -1;
 				if (this.multiple && this.filterable) {
@@ -460,11 +460,11 @@
 					this.remoteMethod(val);
 				} else if (typeof this.filterMethod === 'function') {
 					this.filterMethod(val);
-					this.broadcast('ElOptionGroup', 'queryChange');
+					this.broadcast('KcOptionGroup', 'queryChange');
 				} else {
 					this.filteredOptionsCount = this.optionsCount;
-					this.broadcast('ElOption', 'queryChange', val);
-					this.broadcast('ElOptionGroup', 'queryChange');
+					this.broadcast('KcOption', 'queryChange', val);
+					this.broadcast('KcOptionGroup', 'queryChange');
 				}
 				if (this.defaultFirstOption && (this.filterable || this.remote) && this.filteredOptionsCount) {
 					this.checkDefaultFirstOption();
@@ -501,7 +501,7 @@
 			emitChange(val) {
 				if (!valueEquals(this.value, val)) {
 					this.$emit('change', val);
-					this.dispatch('ElFormItem', 'el.form.change', val);
+					this.dispatch('KcFormItem', 'el.form.change', val);
 				}
 			},
 
@@ -649,7 +649,7 @@
 						sizeInMap
 					) + 'px';
 					if (this.visible && this.emptyText !== false) {
-						this.broadcast('ElSelectDropdown', 'updatePopper');
+						this.broadcast('KcSelectDropdown', 'updatePopper');
 					}
 				});
 			},
@@ -846,7 +846,7 @@
 			this.$on('handleOptionClick', this.handleOptionSelect);
 			this.$on('setSelected', this.setSelected);
 			this.$on('fieldReset', () => {
-				this.dispatch('ElFormItem', 'el.form.change');
+				this.dispatch('KcFormItem', 'el.form.change');
 			});
 		},
 

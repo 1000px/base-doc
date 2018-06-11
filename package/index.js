@@ -25,7 +25,10 @@ import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
+import Select from './select';
 import Scrollbar from './scrollbar';
+import Option from './option';
+import OptionGroup from './option-group';
 import Tag from './tag';
 import Tooltip from './tooltip';
 
@@ -57,7 +60,10 @@ const components = [
 	RadioButton,
 	RadioGroup,
 	Row,
+	Select,
 	Scrollbar,
+	Option,
+	OptionGroup,
 	Tag,
 	Tooltip
 ];
@@ -99,7 +105,10 @@ export default {
 	RadioButton,
 	RadioGroup,
 	Row,
+	Select,
 	Scrollbar,
+	Option,
+	OptionGroup,
 	Tag,
 	Tooltip
 };
