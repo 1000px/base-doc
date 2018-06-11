@@ -26,6 +26,7 @@ import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Select from './select';
+import Switch from './switch';
 import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
@@ -61,6 +62,7 @@ const components = [
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,
@@ -106,6 +108,7 @@ export default {
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,
