@@ -3,7 +3,7 @@
 		<slot></slot>
 		<transition name="el-zoom-in-center">
 			<sup
-				v-show="!hidden && content"
+				v-show="!hidden && (content || showZero)"
 				v-text="isDot ? '' : content"
 				class="el-badge__content"
 				:class="[{ 'is-fixed': $slots.default, 'is-dot': isDot }, status ? 'status-'+status : '']">
@@ -21,7 +21,8 @@ export default {
 		max: Number,
 		isDot: Boolean,
 		hidden: Boolean,
-		status: String
+		status: String,
+		showZero: Boolean
 	},
 
 	computed: {

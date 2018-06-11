@@ -23,6 +23,9 @@
 <kc-badge :value="12" class="item">
 	<div class="avatar-bg"></div>
 </kc-badge>
+<kc-badge :value="0" :show-zero="true" class="item">
+	<div class="avatar-bg"></div>
+</kc-badge>
 <kc-badge :value="0" class="item">
 	<div class="avatar-bg"></div>
 </kc-badge>
@@ -92,15 +95,17 @@
 
 ```html
 <kc-badge is-dot :value="10" class="item">
-<kc-icon name="bell"></kc-icon>
+	<kc-icon name="bell"></kc-icon>
 </kc-badge>
 <kc-badge is-dot :value="0" class="item">
-<kc-icon name="bell"></kc-icon>
+	<kc-icon name="bell"></kc-icon>
 </kc-badge>
 <kc-badge is-dot :value="100" class="item">
-<a>链接</a>
+	<a>链接</a>
 </kc-badge>
-
+<kc-badge is-dot :value="0" :show-zero="true" class="item">
+	<kc-icon name="bell"></kc-icon>
+</kc-badge>
 <style>
 .item {
   margin-right: 40px;
@@ -208,8 +213,10 @@ vertical-align: middle;
 ### Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
-| value          | 显示值      | string, number          |          —             |    —     |
-| max          |  最大值，超过最大值会显示 '{max}+'，要求 value 是 Number 类型    | number  |         —              |     —    |
+| value          | 显示值，大于max时显示为${max}+，为0时隐藏(show-zero为默认值时)      | string, number          |          —             |    —     |
+| max          |  最大值，超过最大值会显示 '{max}+'，要求 value 是 Number 类型    | number  |         —              |     99    |
 | is-dot       | 小圆点    | boolean  |  —  |  false |
 | hidden | 隐藏 badge | boolean | — | false |
+|status	 | 设置badge为状态点 | Enum{ 'success', 'processing', 'default', 'error', 'warming' } | — | — |
+| show-zero | 设置当value为0时，是否展示badge | boolean | — | false |
 
