@@ -1,3 +1,4 @@
+import Autocomplete from './autocomplete';
 import Avatar from './avatar/index.js';
 import Badge from './badge';
 import Breadcrumb from './breadcrumb';
@@ -29,6 +30,7 @@ import Tag from './tag';
 import Tooltip from './tooltip';
 
 const components = [
+	Autocomplete,
 	Avatar,
 	Badge,
 	Breadcrumb,
@@ -70,6 +72,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
+	Autocomplete,
 	Avatar,
 	Badge,
 	Breadcrumb,

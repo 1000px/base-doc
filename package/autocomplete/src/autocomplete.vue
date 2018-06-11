@@ -7,7 +7,7 @@
     :aria-expanded="suggestionVisible"
     :aria-owns="id"
   >
-    <el-input
+    <kc-input
       ref="input"
       v-bind="$props"
       @compositionstart.native="handleComposition"
@@ -34,7 +34,7 @@
       <template slot="suffix" v-if="$slots.suffix">
         <slot name="suffix"></slot>
       </template>
-    </el-input>
+    </kc-input>
     <el-autocomplete-suggestions
       visible-arrow
       :class="[popperClass ? popperClass : '']"
@@ -60,23 +60,23 @@
 </template>
 <script>
 	import debounce from 'throttle-debounce/debounce';
-	import ElInput from 'element-ui/packages/input';
-	import Clickoutside from 'element-ui/src/utils/clickoutside';
+	import KcInput from './../../input';
+	import Clickoutside from '_src/utils/clickoutside';
 	import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';
-	import Emitter from 'element-ui/src/mixins/emitter';
-	import Migrating from 'element-ui/src/mixins/migrating';
-	import { generateId } from 'element-ui/src/utils/util';
-	import Focus from 'element-ui/src/mixins/focus';
+	import Emitter from '_src/mixins/emitter';
+	import Migrating from '_src/mixins/migrating';
+	import { generateId } from '_src/utils/util';
+	import Focus from '_src/mixins/focus';
 
 	export default {
-		name: 'ElAutocomplete',
+		name: 'KcAutocomplete',
 
 		mixins: [Emitter, Focus('input'), Migrating],
 
-		componentName: 'ElAutocomplete',
+		componentName: 'KcAutocomplete',
 
 		components: {
-			ElInput,
+			KcInput,
 			ElAutocompleteSuggestions
 		},
 		directives: { Clickoutside },
