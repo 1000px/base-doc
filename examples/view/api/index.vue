@@ -4,7 +4,7 @@
 	author: malixiang
 -->
 <template>
-	<div>
+	<div class="view-box">
 		<div class="api view-content">
 			<k-nav :left-nav="splitNav"></k-nav>
 			<div class="right-content markcss" ref="markCon">

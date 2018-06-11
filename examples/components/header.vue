@@ -1,5 +1,5 @@
 <template>
-	<div class="header">
+	<div class="header" :class="{indexStyle: indexStyle, moduleStyle: moduleStyle}">
 		<div class="header-con">
 			<h1><router-link to="/">KFront Base</router-link></h1>
 			<ul class="headerNav">
@@ -17,7 +17,24 @@
 export default {
 	data () {
 		return {
+			indexStyle: true,
+			moduleStyle: false
 		};
+	},
+	watch: {
+		'$route' (to, from) {
+			// console.log(to.path.split('/')[1]);
+			let aaq = this.$route.path.split('/')[1];
+
+			if (aaq == '') {
+				this.indexStyle = true;
+				this.moduleStyle = false;
+				// this.$refs.qqq.style.background == 'red';
+			}else {
+				this.indexStyle = false;
+				this.moduleStyle = true;
+			}
+		}
 	}
 };
 </script>
@@ -26,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 	.header {
 		height: 80px;
+		margin: 0 auto;
 		.header-con{
 			@include clearFix;
 			margin:0 auto;
@@ -87,6 +105,7 @@ export default {
 						border-radius: 100px;
 					}
 				}
+
 				/*span{
 					padding: 5px 15px;
 					border: 1px solid #eee;
@@ -94,6 +113,25 @@ export default {
 				}*/
 			}
 		}
+
+	}
+	.indexStyle{
+		position: relative;
+		z-index: 99;
+		width: 1200px;
+		background-color: rgba(255, 255, 255, 0) ;
+		color: #fff;
+		transition: all .3s;
+		.header-con{
+			width: 100%;
+		}
+	}
+	.moduleStyle{
+		width: 100%;
+
+		background-color: rgba(255, 255, 255,1) ;
+		background-image: none;
+		transition: all .3s;
 	}
 
 </style>
