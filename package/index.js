@@ -18,6 +18,8 @@ import CollapseTransition from '_src/transitions/collapse-transition';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
+import Form from './form';
+import FormItem from './form-item';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
@@ -27,6 +29,7 @@ import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Select from './select';
+import Switch from './switch';
 import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
@@ -54,6 +57,8 @@ const components = [
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
@@ -63,6 +68,7 @@ const components = [
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,
@@ -100,6 +106,8 @@ export default {
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
@@ -109,6 +117,7 @@ export default {
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,

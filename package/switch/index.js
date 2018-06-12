@@ -1,9 +1,9 @@
-import Switch from './src/component';
+import KcSwitch from './src/component';
 
 /* istanbul ignore next */
-Switch.install = function(Vue) {
-	Vue.component(Switch.name, Switch);
+KcSwitch.install = function(Vue) {
+	Vue.component(KcSwitch.name, KcSwitch);
 };
 
-export default Switch;
+export default KcSwitch;
 
