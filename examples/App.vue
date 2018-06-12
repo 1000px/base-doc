@@ -3,7 +3,7 @@
 <template>
 	<div id="app">
 		<k-header></k-header>
-		<router-view class="view-box"/>
+		<router-view />
 	</div>
 </template>
 
