@@ -1,12 +1,12 @@
 <style lang="scss">
-@mixin clearFix {
-	zoom: 1;
-	&:after {
-		content: '';
-		display: block;
-		clear: both;
+	@mixin clearFix {
+		zoom: 1;
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 	}
-}
 		ul.dev-list{
 			@include clearFix;
 			li:nth-child(1) i {
