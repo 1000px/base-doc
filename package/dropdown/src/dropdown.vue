@@ -2,8 +2,8 @@
 	import Clickoutside from '_src/utils/clickoutside';
 	import Emitter from '_src/mixins/emitter';
 	import Migrating from '_src/mixins/migrating';
-	import Button from '../../button';
-	import ButtonGroup from '../../button-group';
+	import KcButton from '../../button';
+	import KcButtonGroup from '../../button-group';
 	import {generateId} from '_src/utils/util';
 
 	export default {
@@ -16,8 +16,8 @@
 		directives: {Clickoutside},
 
 		components: {
-			Button,
-			ButtonGroup
+			KcButton,
+			KcButtonGroup
 		},
 
 		provide() {
@@ -87,7 +87,7 @@
 
 		watch: {
 			visible(val) {
-				this.broadcast('ElDropdownMenu', 'visible', val);
+				this.broadcast('KcDropdownMenu', 'visible', val);
 				this.$emit('visible-change', val);
 			},
 			focusing(val) {
@@ -251,23 +251,23 @@
 
 			let triggerElm = !splitButton
 				? this.$slots.default
-				: (<el-button-group>
-					<el-button
+				: (<kc-button-group>
+					<kc-button
 						type = {type}
 						size = {dropdownSize}
 						nativeOn-click = {handleMainButtonClick} >
 						{this.$slots.default
 						}
-					</el-button>
-					<el-button
+					</kc-button>
+					<kc-button
 						ref = "trigger"
 						type = {type}
 						size = {dropdownSize}
 						class
 						= "el-dropdown__caret-button" >
 						<i class="el-dropdown__icon el-icon-arrow-down"></i>
-					</el-button>
-				</el-button-group>
+					</kc-button>
+				</kc-button-group>
 				);
 
 				return (

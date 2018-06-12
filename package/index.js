@@ -1,3 +1,4 @@
+import Autocomplete from './autocomplete';
 import Avatar from './avatar/index.js';
 import Badge from './badge';
 import Breadcrumb from './breadcrumb';
@@ -20,15 +21,20 @@ import DropdownMemu from './dropdown-menu';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
+import Layout from './layout';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
+import Select from './select';
 import Scrollbar from './scrollbar';
+import Option from './option';
+import OptionGroup from './option-group';
 import Tag from './tag';
 import Tooltip from './tooltip';
 
 const components = [
+	Autocomplete,
 	Avatar,
 	Badge,
 	Breadcrumb,
@@ -50,12 +56,16 @@ const components = [
 	DropdownMemu,
 	Icon,
 	Input,
-	Scrollbar,
 	InputNumber,
+	Layout,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Row,
+	Select,
+	Scrollbar,
+	Option,
+	OptionGroup,
 	Tag,
 	Tooltip
 ];
@@ -70,6 +80,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
+	Autocomplete,
 	Avatar,
 	Badge,
 	Breadcrumb,
@@ -91,12 +102,16 @@ export default {
 	DropdownMemu,
 	Icon,
 	Input,
-	Scrollbar,
 	InputNumber,
+	Layout,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Row,
+	Select,
+	Scrollbar,
+	Option,
+	OptionGroup,
 	Tag,
 	Tooltip
 };

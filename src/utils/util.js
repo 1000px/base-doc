@@ -91,3 +91,45 @@ export const valueEquals = (a, b) => {
 	}
 	return true;
 };
+
+// Find component downward
+export function findComponentDownward (context, componentName) {
+	const childrens = context.$children;
+	let children = null;
+
+	if (childrens.length) {
+		for (const child of childrens) {
+			const name = child.$options.name;
+			if (name === componentName) {
+				children = child;
+				break;
+			} else {
+				children = findComponentDownward(child, componentName);
+				if (children) break;
+			}
+		}
+	}
+	return children;
+}
+export const dimensionMap = {
+	xs: '480px',
+	sm: '768px',
+	md: '992px',
+	lg: '1200px',
+	xl: '1600px'
+};
+export function setMatchMedia () {
+	if (typeof window !== 'undefined') {
+		const matchMediaPolyfill = mediaQuery => {
+			return {
+				media: mediaQuery,
+				matches: false,
+				on() {},
+				off() {}
+			};
+		};
+		window.matchMedia = window.matchMedia || matchMediaPolyfill;
+	}
+}
+
+

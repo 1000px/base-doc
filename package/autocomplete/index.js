@@ -1,8 +1,8 @@
-import ElAutocomplete from './src/autocomplete';
+import KcAutocomplete from './src/autocomplete';
 
 /* istanbul ignore next */
-ElAutocomplete.install = function(Vue) {
-	Vue.component(ElAutocomplete.name, ElAutocomplete);
+KcAutocomplete.install = function(Vue) {
+	Vue.component(KcAutocomplete.name, KcAutocomplete);
 };
 
-export default ElAutocomplete;
+export default KcAutocomplete;
