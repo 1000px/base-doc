@@ -79,7 +79,7 @@
 			isGroup() {
 				let parent = this.$parent;
 				while (parent) {
-					if (parent.$options.componentName !== 'ElRadioGroup') {
+					if (parent.$options.componentName !== 'KcRadioGroup') {
 						parent = parent.$parent;
 					} else {
 						this._radioGroup = parent;
@@ -94,7 +94,7 @@
 				},
 				set(val) {
 					if (this.isGroup) {
-						this.dispatch('ElRadioGroup', 'input', [val]);
+						this.dispatch('KcRadioGroup', 'input', [val]);
 					} else {
 						this.$emit('input', val);
 					}
@@ -123,7 +123,7 @@
 			handleChange() {
 				this.$nextTick(() => {
 					this.$emit('change', this.model);
-					this.isGroup && this.dispatch('ElRadioGroup', 'handleChange', this.model);
+					this.isGroup && this.dispatch('KcRadioGroup', 'handleChange', this.model);
 				});
 			}
 		}

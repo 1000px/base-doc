@@ -70,7 +70,7 @@
 			_radioGroup() {
 				let parent = this.$parent;
 				while (parent) {
-					if (parent.$options.componentName !== 'ElRadioGroup') {
+					if (parent.$options.componentName !== 'KcRadioGroup') {
 						parent = parent.$parent;
 					} else {
 						return parent;
@@ -103,7 +103,7 @@
 		methods: {
 			handleChange() {
 				this.$nextTick(() => {
-					this.dispatch('ElRadioGroup', 'handleChange', this.value);
+					this.dispatch('KcRadioGroup', 'handleChange', this.value);
 				});
 			}
 		}

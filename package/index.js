@@ -14,9 +14,13 @@ import CheckboxButton from './checkbox-button';
 import Col from './col';
 import Collapse from './collapse';
 import CollapseItem from './collapse-item';
+import CollapseTransition from '_src/transitions/collapse-transition';
+import DatePicker from './date-picker';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
+import Form from './form';
+import FormItem from './form-item';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
@@ -26,10 +30,13 @@ import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Select from './select';
+import Switch from './switch';
 import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
 import Tag from './tag';
+import TimePicker from './time-picker';
+import TimeSelect from './time-select';
 import Tooltip from './tooltip';
 
 const components = [
@@ -49,9 +56,13 @@ const components = [
 	Col,
 	Collapse,
 	CollapseItem,
+	CollapseTransition,
+	DatePicker,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
@@ -61,10 +72,13 @@ const components = [
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 ];
 const install = function(Vue) {
@@ -94,9 +108,13 @@ export default {
 	Col,
 	Collapse,
 	CollapseItem,
+	CollapseTransition,
+	DatePicker,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
@@ -106,9 +124,12 @@ export default {
 	RadioGroup,
 	Row,
 	Select,
+	Switch,
 	Scrollbar,
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 };

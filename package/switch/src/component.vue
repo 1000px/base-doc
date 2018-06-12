@@ -36,11 +36,11 @@
 	</div>
 </template>
 <script>
-	import Focus from 'element-ui/src/mixins/focus';
-	import Migrating from 'element-ui/src/mixins/migrating';
+	import Focus from '_src/mixins/focus';
+	import Migrating from '_src/mixins/migrating';
 
 	export default {
-		name: 'ElSwitch',
+		name: 'KcSwitch',
 		mixins: [Focus('input'), Migrating],
 		inject: {
 			elForm: {
