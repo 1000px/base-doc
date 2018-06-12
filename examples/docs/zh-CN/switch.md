@@ -28,14 +28,10 @@
 
 ### 基本用法
 
-:::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
+:::demo 绑定`v-model`到一个`Boolean`类型的变量
 
 ```html
-<kc-switch
-  v-model="value2"
-  active-color="#13ce66"
-  inactive-color="#ff4949">
-</kc-switch>
+<kc-switch  v-model="value2"></kc-switch>
 
 <script>
   export default {
@@ -48,66 +44,6 @@
   };
 </script>
 ```
-:::
-
-### 文字描述
-
-:::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
-
-```html
-<kc-switch
-  v-model="value3"
-  active-text="按月付费"
-  inactive-text="按年付费">
-</kc-switch>
-<kc-switch
-  style="display: block"
-  v-model="value4"
-  active-color="#13ce66"
-  inactive-color="#ff4949"
-  active-text="按月付费"
-  inactive-text="按年付费">
-</kc-switch>
-
-<script>
-  export default {
-    data() {
-      return {
-        value3: true,
-        value4: true
-      }
-    }
-  };
-</script>
-```
-:::
-
-### 扩展的 value 类型
-
-:::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
-
-```html
-<kc-tooltip :content="'Switch value: ' + value5" placement="top">
-  <kc-switch
-    v-model="value5"
-    active-color="#13ce66"
-    inactive-color="#ff4949"
-    active-value="100"
-    inactive-value="0">
-  </kc-switch>
-</kc-tooltip>
-
-<script>
-  export default {
-    data() {
-      return {
-        value5: '100'
-      }
-    }
-  };
-</script>
-```
-
 :::
 
 ### 禁用状态
@@ -136,6 +72,60 @@
 </script>
 ```
 :::
+
+### 文字描述
+
+:::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
+
+```html
+<kc-switch
+  v-model="value3"
+  active-text="按月付费"
+  inactive-text="按年付费">
+</kc-switch>
+
+<script>
+  export default {
+    data() {
+      return {
+        value3: true,
+        value4: true
+      }
+    }
+  };
+</script>
+```
+:::
+
+
+### 扩展的 value 类型
+
+设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
+
+:::demo
+```html
+<kc-tooltip :content="'Switch value: ' + value5" placement="top">
+  <kc-switch
+    v-model="value5"
+    active-value="100"
+    inactive-value="0">
+  </kc-switch>
+</kc-tooltip>
+
+<script>
+  export default {
+    data() {
+      return {
+        value5: '100'
+      }
+    }
+  };
+</script>
+```
+
+:::
+
+
 
 
 ### Attributes

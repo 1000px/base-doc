@@ -16,6 +16,10 @@
     }
   }
 
+  .el-switch__core {
+    border: 1px solid #C0C0C0;
+  }
+
   @include e(label) {
     transition: .2s;
     height: $--switch-height;
@@ -24,7 +28,7 @@
     font-weight: 500;
     cursor: pointer;
     vertical-align: middle;
-    color: $--color-text-primary;
+    color: $--switch-label-color;
 
     @include when(active) {
       color: $--color-primary;
@@ -60,7 +64,7 @@
     position: relative;
     width: $--switch-width;
     height: $--switch-height;
-    border: 1px solid $--switch-off-color;
+    border: 1px solid $--color-primary;
     outline: none;
     border-radius: $--switch-core-border-radius;
     box-sizing: border-box;
@@ -86,6 +90,7 @@
     .el-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
+      border: 1px solid $--color-primary;
       &::after {
         left: 100%;
         margin-left: -$--switch-button-size - 1px;
@@ -94,7 +99,20 @@
   }
 
   @include when(disabled) {
-    opacity: 0.6;
+      &.is-checked {
+        .el-switch__core {
+          color: #A3D3FF;
+          background-color: #A3D3FF;
+          border: 1px solid #A3D3FF;
+        }
+      }
+
+      .el-switch__core {
+        color: #E6E6E6;
+        background-color: #E6E6E6;
+        border: 1px solid #E6E6E6;
+      }
+    
   }
 
   @include m(wide) {
