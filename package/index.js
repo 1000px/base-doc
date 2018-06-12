@@ -34,6 +34,8 @@ import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
 import Tag from './tag';
+import TimePicker from './time-picker';
+import TimeSelect from './time-select';
 import Tooltip from './tooltip';
 
 const components = [
@@ -73,6 +75,8 @@ const components = [
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 ];
 const install = function(Vue) {
@@ -122,5 +126,7 @@ export default {
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 };
