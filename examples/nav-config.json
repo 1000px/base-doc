@@ -6,79 +6,86 @@
 		"id": "10001",
 		"pId": "0",
 		"desc": "主页"
-	}, {
+	},
+	{
 		"path": "/overview",
-        "type": "page",
-        "id": "10002",
-        "pId": "0",
-        "desc": "概览，引导用户使用脚手架与UI解决方案",
-        "items": [
-            {
-                "name": "introduce",
-				"path": "",
-                "type": "md",
-                "id": "10002001",
-                "pId": "10002",
-                "desc": "介绍"
-            }, {
-                "name": "install",
-                "path": "install",
-                "type": "md",
-                "id": "10002002",
-                "pId": "10002",
-                "desc": "安装"
-            }, {
-                "name": "quick-start",
-                "path": "quick-start",
-                "type": "md",
-                "id": "10002003",
-                "pId": "10002",
-                "desc": "快速开始"
-            }, {
-                "name": "log",
-                "path": "logs",
-                "type": "md",
-                "id": "10002004",
-                "pId": "10002",
-                "desc": "更新日志"
-            }
-        ]
-	}, {
-		"path": "/api",
-        "type": "page",
-        "id": "10003",
-        "pId": "0",
-        "desc": "文档详情",
-        "items": [
+		"type": "page",
+		"id": "10002",
+		"pId": "0",
+		"desc": "概览，引导用户使用脚手架与UI解决方案",
+		"items": [
 			{
-                "name": "default",
-                "path": "",
-                "type": "md",
-                "id": "10003001",
-                "pId": "10003",
-                "desc": "综述",
-                "category": "index",
-                "category-desc": "文档概要"
-            },
-            {
-                "name": "color",
-                "path": "color",
-                "type": "md",
-                "id": "10003002",
-                "pId": "10003",
-                "desc": "项目整体色系",
-                "category": "general",
-                "category-desc": "通用设置"
-            }, {
-                "name": "typography",
-                "path": "typography",
-                "type": "md",
-                "id": "10003003",
-                "pId": "10003",
-                "desc": "字体",
-                "category": "general",
-                "category-desc": "通用设置"
-            }, {
+				"name": "introduce",
+				"path": "",
+				"type": "md",
+				"id": "10002001",
+				"pId": "10002",
+				"desc": "介绍"
+			},
+			{
+				"name": "install",
+				"path": "install",
+				"type": "md",
+				"id": "10002002",
+				"pId": "10002",
+				"desc": "安装"
+			},
+			{
+				"name": "quick-start",
+				"path": "quick-start",
+				"type": "md",
+				"id": "10002003",
+				"pId": "10002",
+				"desc": "快速开始"
+			},
+			{
+				"name": "log",
+				"path": "logs",
+				"type": "md",
+				"id": "10002004",
+				"pId": "10002",
+				"desc": "更新日志"
+			}
+		]
+	},
+	{
+		"path": "/api",
+		"type": "page",
+		"id": "10003",
+		"pId": "0",
+		"desc": "文档详情",
+		"items": [
+			{
+				"name": "default",
+				"path": "",
+				"type": "md",
+				"id": "10003001",
+				"pId": "10003",
+				"desc": "综述",
+				"category": "index",
+				"category-desc": "文档概要"
+			},
+			{
+				"name": "color",
+				"path": "color",
+				"type": "md",
+				"id": "10003002",
+				"pId": "10003",
+				"desc": "项目整体色系",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
+				"name": "typography",
+				"path": "typography",
+				"type": "md",
+				"id": "10003003",
+				"pId": "10003",
+				"desc": "字体",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
 				"name": "button",
 				"path": "button",
 				"type": "md",
@@ -87,7 +94,8 @@
 				"desc": "按钮",
 				"category": "general",
 				"category-desc": "通用设置"
-			}, {
+			},
+			{
 				"name": "icon",
 				"path": "icon",
 				"type": "md",
@@ -96,7 +104,8 @@
 				"desc": "图标",
 				"category": "general",
 				"category-desc": "通用设置"
-			}, {
+			},
+			{
 				"name": "grid",
 				"path": "grid",
 				"type": "md",
@@ -105,7 +114,8 @@
 				"desc": "栅格布局",
 				"category": "layout",
 				"category-desc": "布局"
-			}, {
+			},
+			{
 				"name": "layout",
 				"path": "layout",
 				"type": "md",
@@ -114,7 +124,8 @@
 				"desc": "layout布局",
 				"category": "layout",
 				"category-desc": "布局"
-			}, {
+			},
+			{
 				"name": "affix",
 				"path": "affix",
 				"type": "md",
@@ -123,7 +134,8 @@
 				"desc": "固钉",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "breadcrumb",
 				"path": "breadcrumb",
 				"type": "md",
@@ -132,7 +144,8 @@
 				"desc": "面包屑",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "dropdown",
 				"path": "dropdown",
 				"type": "md",
@@ -141,7 +154,8 @@
 				"desc": "下拉菜单",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "menu",
 				"path": "menu",
 				"type": "md",
@@ -150,7 +164,8 @@
 				"desc": "菜单",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "pagination",
 				"path": "pagination",
 				"type": "md",
@@ -159,7 +174,8 @@
 				"desc": "分页",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "steps",
 				"path": "steps",
 				"type": "md",
@@ -168,7 +184,8 @@
 				"desc": "步骤条",
 				"category": "navigation",
 				"category-desc": "导航"
-			}, {
+			},
+			{
 				"name": "autocomplete",
 				"path": "autocomplete",
 				"type": "md",
@@ -177,7 +194,8 @@
 				"desc": "自动完成",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "checkbox",
 				"path": "checkbox",
 				"type": "md",
@@ -186,7 +204,8 @@
 				"desc": "多选框",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "cascader",
 				"path": "cascader",
 				"type": "md",
@@ -195,7 +214,8 @@
 				"desc": "级联选择",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "timepicker",
 				"path": "timepicker",
 				"type": "md",
@@ -204,7 +224,8 @@
 				"desc": "时间选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "datepicker",
 				"path": "datepicker",
 				"type": "md",
@@ -213,7 +234,8 @@
 				"desc": "日期选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "date-timepicker",
 				"path": "date-timepicker",
 				"type": "md",
@@ -222,7 +244,8 @@
 				"desc": "日期-时间选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "form",
 				"path": "form",
 				"type": "md",
@@ -231,7 +254,8 @@
 				"desc": "表单",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "number-input",
 				"path": "number-input",
 				"type": "md",
@@ -240,7 +264,8 @@
 				"desc": "数字输入框",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "input",
 				"path": "input",
 				"type": "md",
@@ -249,7 +274,8 @@
 				"desc": "输入框",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "mention",
 				"path": "mention",
 				"type": "md",
@@ -258,7 +284,8 @@
 				"desc": "提及",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "rate",
 				"path": "rate",
 				"type": "md",
@@ -267,7 +294,8 @@
 				"desc": "评分",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "radio",
 				"path": "radio",
 				"type": "md",
@@ -276,7 +304,8 @@
 				"desc": "单选框",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "switch",
 				"path": "switch",
 				"type": "md",
@@ -285,7 +314,8 @@
 				"desc": "开关",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "slider",
 				"path": "slider",
 				"type": "md",
@@ -294,7 +324,8 @@
 				"desc": "滑动输入条",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "select",
 				"path": "select",
 				"type": "md",
@@ -303,7 +334,8 @@
 				"desc": "选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "colorpicker",
 				"path": "colorpicker",
 				"type": "md",
@@ -312,7 +344,8 @@
 				"desc": "颜色选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "treeselect",
 				"path": "treeselect",
 				"type": "md",
@@ -321,7 +354,8 @@
 				"desc": "树形选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "transfer",
 				"path": "transfer",
 				"type": "md",
@@ -330,7 +364,8 @@
 				"desc": "穿梭框",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "upload",
 				"path": "upload",
 				"type": "md",
@@ -339,7 +374,8 @@
 				"desc": "上传",
 				"category": "data entry",
 				"category-desc": "数据入口"
-			}, {
+			},
+			{
 				"name": "avatar",
 				"path": "avatar",
 				"type": "md",
@@ -348,7 +384,8 @@
 				"desc": "头像",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "badge",
 				"path": "badge",
 				"type": "md",
@@ -357,7 +394,8 @@
 				"desc": "徽标数",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "collapse",
 				"path": "collapse",
 				"type": "md",
@@ -366,7 +404,8 @@
 				"desc": "折叠面板",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "carousel",
 				"path": "carousel",
 				"type": "md",
@@ -375,7 +414,8 @@
 				"desc": "走马灯",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "card",
 				"path": "card",
 				"type": "md",
@@ -384,7 +424,8 @@
 				"desc": "卡片",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "calendar",
 				"path": "calendar",
 				"type": "md",
@@ -393,7 +434,8 @@
 				"desc": "日历",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "list",
 				"path": "list",
 				"type": "md",
@@ -402,7 +444,8 @@
 				"desc": "列表",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "popover",
 				"path": "popover",
 				"type": "md",
@@ -411,7 +454,8 @@
 				"desc": "气泡卡片",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "tree",
 				"path": "tree",
 				"type": "md",
@@ -420,7 +464,8 @@
 				"desc": "树形控件",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "tooltip",
 				"path": "tooltip",
 				"type": "md",
@@ -429,7 +474,8 @@
 				"desc": "文字提示",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "timeline",
 				"path": "timeline",
 				"type": "md",
@@ -438,7 +484,8 @@
 				"desc": "时间轴",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "tag",
 				"path": "tag",
 				"type": "md",
@@ -447,7 +494,8 @@
 				"desc": "标签",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "tabs",
 				"path": "tabs",
 				"type": "md",
@@ -456,7 +504,8 @@
 				"desc": "标签页",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "table",
 				"path": "table",
 				"type": "md",
@@ -465,7 +514,8 @@
 				"desc": "表格",
 				"category": "data display",
 				"category-desc": "数据展示"
-			}, {
+			},
+			{
 				"name": "alert",
 				"path": "alert",
 				"type": "md",
@@ -474,7 +524,8 @@
 				"desc": "警告提示",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "modal",
 				"path": "modal",
 				"type": "md",
@@ -483,7 +534,8 @@
 				"desc": "对话框",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "message",
 				"path": "message",
 				"type": "md",
@@ -492,7 +544,8 @@
 				"desc": "全局提示",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "notification",
 				"path": "notification",
 				"type": "md",
@@ -501,7 +554,8 @@
 				"desc": "通知提示框",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "progress",
 				"path": "progress",
 				"type": "md",
@@ -510,7 +564,8 @@
 				"desc": "进度条",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "popconfirm",
 				"path": "popconfirm",
 				"type": "md",
@@ -519,7 +574,8 @@
 				"desc": "气泡确认框",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "spin",
 				"path": "spin",
 				"type": "md",
@@ -528,7 +584,8 @@
 				"desc": "加载中",
 				"category": "feedback",
 				"category-desc": "反馈"
-			}, {
+			},
+			{
 				"name": "circle",
 				"path": "circle",
 				"type": "md",
@@ -537,7 +594,8 @@
 				"desc": "进度环",
 				"category": "other",
 				"category-desc": "其它"
-			}, {
+			},
+			{
 				"name": "anchor",
 				"path": "anchor",
 				"type": "md",
@@ -546,7 +604,8 @@
 				"desc": "锚点",
 				"category": "other",
 				"category-desc": "其它"
-			}, {
+			},
+			{
 				"name": "backtop",
 				"path": "backtop",
 				"type": "md",
@@ -555,7 +614,8 @@
 				"desc": "回到顶部",
 				"category": "other",
 				"category-desc": "其它"
-			}, {
+			},
+			{
 				"name": "devider",
 				"path": "devider",
 				"type": "md",
@@ -564,7 +624,8 @@
 				"desc": "分割线",
 				"category": "other",
 				"category-desc": "其它"
-			}, {
+			},
+			{
 				"name": "localeprovider",
 				"path": "localeprovider",
 				"type": "md",
@@ -574,6 +635,31 @@
 				"category": "other",
 				"category-desc": "其它"
 			}
-        ]
-    }
+		]
+	},
+	{
+		"path": "/resource",
+		"type": "page",
+		"id": "10003",
+		"pId": "0",
+		"desc": "资源",
+		"items": [
+			{
+				"name": "developer",
+				"path": "",
+				"type": "md",
+				"id": "10003001",
+				"pId": "10003",
+				"desc": "开发资源"
+			},
+			{
+				"name": "designer",
+				"path": "designer",
+				"type": "md",
+				"id": "10003002",
+				"pId": "10003",
+				"desc": "设计资源"
+			}
+		]
+	}
 ]

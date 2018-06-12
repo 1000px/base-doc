@@ -28,14 +28,10 @@
 
 ### 基本用法
 
-:::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
+:::demo 绑定`v-model`到一个`Boolean`类型的变量
 
 ```html
-<el-switch
-  v-model="value2"
-  active-color="#13ce66"
-  inactive-color="#ff4949">
-</el-switch>
+<kc-switch  v-model="value2"></kc-switch>
 
 <script>
   export default {
@@ -50,24 +46,43 @@
 ```
 :::
 
+### 禁用状态
+
+:::demo 设置`disabled`属性，接受一个`Boolean`，设置`true`即可禁用。
+
+
+```html
+<kc-switch
+  v-model="value6"
+  disabled>
+</kc-switch>
+<kc-switch
+  v-model="value7"
+  disabled>
+</kc-switch>
+<script>
+  export default {
+    data() {
+      return {
+        value6: true,
+        value7: false
+      }
+    }
+  };
+</script>
+```
+:::
+
 ### 文字描述
 
 :::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
 ```html
-<el-switch
+<kc-switch
   v-model="value3"
   active-text="按月付费"
   inactive-text="按年付费">
-</el-switch>
-<el-switch
-  style="display: block"
-  v-model="value4"
-  active-color="#13ce66"
-  inactive-color="#ff4949"
-  active-text="按月付费"
-  inactive-text="按年付费">
-</el-switch>
+</kc-switch>
 
 <script>
   export default {
@@ -82,20 +97,20 @@
 ```
 :::
 
+
 ### 扩展的 value 类型
 
-:::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
+设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
 
+:::demo
 ```html
-<el-tooltip :content="'Switch value: ' + value5" placement="top">
-  <el-switch
+<kc-tooltip :content="'Switch value: ' + value5" placement="top">
+  <kc-switch
     v-model="value5"
-    active-color="#13ce66"
-    inactive-color="#ff4949"
     active-value="100"
     inactive-value="0">
-  </el-switch>
-</el-tooltip>
+  </kc-switch>
+</kc-tooltip>
 
 <script>
   export default {
@@ -110,32 +125,7 @@
 
 :::
 
-### 禁用状态
 
-:::demo 设置`disabled`属性，接受一个`Boolean`，设置`true`即可禁用。
-
-
-```html
-<el-switch
-  v-model="value6"
-  disabled>
-</el-switch>
-<el-switch
-  v-model="value7"
-  disabled>
-</el-switch>
-<script>
-  export default {
-    data() {
-      return {
-        value6: true,
-        value7: false
-      }
-    }
-  };
-</script>
-```
-:::
 
 
 ### Attributes

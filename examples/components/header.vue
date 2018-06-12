@@ -4,8 +4,8 @@
 			<h1><router-link to="/">KFront Base</router-link></h1>
 			<ul class="headerNav">
 				<!--<li><p><span>1.0 ∨</span></p></li>-->
-				<li><a>资源</a></li>
-				<li><router-link to="/api">组件 </router-link></li>
+				<li><router-link to="/resource">资源 </router-link></li>
+				<li><router-link to="/api">API </router-link></li>
 				<li><router-link to="/overview">指南</router-link></li>
 				<li><router-link to="/" exact>首页</router-link></li>
 			</ul>
