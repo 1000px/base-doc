@@ -17,6 +17,8 @@ import CollapseItem from './collapse-item';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
+import Form from './form';
+import FormItem from './form-item';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
@@ -53,6 +55,8 @@ const components = [
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
@@ -99,6 +103,8 @@ export default {
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Form,
+	FormItem,
 	Icon,
 	Input,
 	InputNumber,
