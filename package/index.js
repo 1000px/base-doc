@@ -1,3 +1,4 @@
+import Alert from './alert';
 import Autocomplete from './autocomplete';
 import Avatar from './avatar/index.js';
 import Badge from './badge';
@@ -33,6 +34,7 @@ import Tag from './tag';
 import Tooltip from './tooltip';
 
 const components = [
+	Alert,
 	Autocomplete,
 	Avatar,
 	Badge,
@@ -78,6 +80,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
+	Alert,
 	Autocomplete,
 	Avatar,
 	Badge,

@@ -2,12 +2,12 @@
 
 /* Transition
 -------------------------- */
-$--all-transition: all .3s cubic-bezier(.645,.045,.355,1) !default;
+$--all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
 $--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $--fade-linear-transition: opacity 200ms linear !default;
 $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
-$--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
-$--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
 
 /* Colors
 -------------------------- */
@@ -28,23 +28,29 @@ $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /
 $--color-success: #63C532 !default;
 $--color-warning: #FAAD14 !default;
 $--color-danger: #F36464 !default;
-$--color-info: #909399 !default;
+$--color-info: #4999FF !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
 $--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
 $--color-info-light: mix($--color-white, $--color-info, 80%) !default;
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-success-lighter: #F0F9EC !default;
+$--color-warning-lighter: #FFF8ED !default;
+$--color-danger-lighter: #FFF0F0 !default;
+$--color-info-lighter: #EDF9FF !default;
 
 $--color-text-primary: #8C9097 !default;
 $--color-text-regular: #575A5F !default;
 $--color-text-secondary: #909399 !default;
-$--color-text-placeholder:  #BEC1C9 !default;
+$--color-text-placeholder: #BEC1C9 !default;
 
+/* 新建
+--------------------------*/
+$--border-success-color: #D5EEC9;
+$--border-info-color: #CAE4FF;
+$--border-warning-color: #FFE4B0;
+$--border-error-color: #FFD8D8;
 /* Link
 -------------------------- */
 $--link-color: $--color-primary-light-2 !default;
@@ -58,7 +64,7 @@ $--background-color-base: #F0F2F5 !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-background-color-base:  #F5F7FA !default;
+$--border-background-color-base: #F5F7FA !default;
 $--border-color-base: #dcdfe6 !default;
 $--border-color-light: #D5D8DE !default;
 $--border-color-lighter: #DCDFE6 !default;
@@ -101,7 +107,7 @@ $--index-popper: 2000 !default;
 
 /* Disable base
 -------------------------- */
-$--disabled-fill-base:  #F0F2F5 !default;
+$--disabled-fill-base: #F0F2F5 !default;
 $--disabled-color-base: $--color-text-placeholder !default;
 $--disabled-border-base: #D5D8DE !default;
 $--disabled-background-color-base: #BEC1C9 !default;
@@ -158,8 +164,6 @@ $--checkbox-button-font-size: $--font-size-base !default;
 $--checkbox-button-checked-fill: $--color-primary !default;
 $--checkbox-button-checked-color: $--color-white !default;
 $--checkbox-button-checked-border-color: $--color-primary !default;
-
-
 
 /* Radio
 -------------------------- */
@@ -448,7 +452,6 @@ $--button-info-fill: $--color-info !default;
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
 
-
 /* cascader
 -------------------------- */
 $--cascader-height: 200px !default;
@@ -693,23 +696,23 @@ $--lg: 1200px !default;
 $--xl: 1920px !default;
 
 $--breakpoints: (
-  'xs' : (max-width: $--sm),
-  'sm' : (min-width: $--sm),
-  'md' : (min-width: $--md),
-  'lg' : (min-width: $--lg),
-  'xl' : (min-width: $--xl)
+	'xs' : (max-width: $--sm),
+	'sm' : (min-width: $--sm),
+	'md' : (min-width: $--md),
+	'lg' : (min-width: $--lg),
+	'xl' : (min-width: $--xl)
 );
 
 $--breakpoints-spec: (
-  'xs-only' : (max-width: $--sm - 1),
-  'sm-and-up' : (min-width: $--sm),
-  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md} - 1)",
-  'sm-and-down': (max-width: $--md - 1),
-  'md-and-up' : (min-width: $--md),
-  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg } - 1)",
-  'md-and-down': (max-width: $--lg - 1),
-  'lg-and-up' : (min-width: $--lg),
-  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl } - 1)",
-  'lg-and-down': (max-width: $--xl - 1),
-  'xl-only' : (min-width: $--xl),
+	'xs-only' : (max-width: $--sm - 1),
+	'sm-and-up' : (min-width: $--sm),
+	'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md} - 1)",
+	'sm-and-down': (max-width: $--md - 1),
+	'md-and-up' : (min-width: $--md),
+	'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg } - 1)",
+	'md-and-down': (max-width: $--lg - 1),
+	'lg-and-up' : (min-width: $--lg),
+	'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl } - 1)",
+	'lg-and-down': (max-width: $--xl - 1),
+	'xl-only' : (min-width: $--xl),
 );

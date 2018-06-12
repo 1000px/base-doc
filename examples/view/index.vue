@@ -5,6 +5,7 @@
 -->
 <template>
 	<div class="home">
+
 		<div class="banner">
 			<div class="banner-con">
 				<div class="banner-con-left">

@@ -57,7 +57,7 @@ export default {
 				display: block;
 				width: 100%;
 				height: 100%;
-				font-family: Helvetica-Bold;
+				font-family: $typography;
 				font-size: 20px;
 				color: #4468F0;
 				letter-spacing: 0.29px;
@@ -82,6 +82,7 @@ export default {
 					display: block;
 					width: 100%;
 					height: 100%;
+					font-size: 16px;
 					line-height: 80px;
 					color: #273B55;
 				}
@@ -105,12 +106,6 @@ export default {
 						border-radius: 100px;
 					}
 				}
-
-				/*span{
-					padding: 5px 15px;
-					border: 1px solid #eee;
-					font-size: 13px;
-				}*/
 			}
 		}
 
@@ -121,17 +116,37 @@ export default {
 		width: 1200px;
 		background-color: rgba(255, 255, 255, 0) ;
 		color: #fff;
-		transition: all .3s;
+		transition: width .3s;
 		.header-con{
 			width: 100%;
+		}
+		h1{
+			a{
+				color: #fff;
+				opacity: 0.9;
+			}
+		}
+		ul{
+			li{
+				a{
+					color: #fff;
+					opacity: 0.6;
+				}
+				a.router-link-active{
+					color: #fff;
+					opacity: 0.9;
+					&::after{
+						background: #fff;
+					}
+				}
+			}
 		}
 	}
 	.moduleStyle{
 		width: 100%;
-
 		background-color: rgba(255, 255, 255,1) ;
 		background-image: none;
-		transition: all .3s;
+		transition: width .3s;
 	}
 
 </style>
