@@ -95,7 +95,7 @@
 		},
 		watch: {
 			value(value) {
-				this.dispatch('ElFormItem', 'el.form.change', [this.value]);
+				this.dispatch('KcFormItem', 'el.form.change', [this.value]);
 			}
 		}
 	};

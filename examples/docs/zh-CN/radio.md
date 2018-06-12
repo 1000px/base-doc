@@ -4,7 +4,7 @@
       return {
         radio: '1',
         radio1: '选中且禁用',
-        radio2: '3',
+        radio2: 1,
         radio3: '1',
         radio4: '2',
       };
@@ -79,9 +79,9 @@
 ```html
 
   <kc-radio-group v-model="radio2">
-    <kc-radio label="1">备选项</kc-radio>
-    <kc-radio label="2">备选项</kc-radio>
-    <kc-radio label="3">备选项</kc-radio>
+    <kc-radio :label="1">备选项</kc-radio>
+    <kc-radio :label="2">备选项</kc-radio>
+    <kc-radio :label="3">备选项</kc-radio>
   </kc-radio-group>
 
 
@@ -89,7 +89,7 @@
   export default {
     data () {
       return {
-        radio2: '1'
+        radio2: 1
       };
     }
   }
