@@ -48,7 +48,7 @@
 </template>
 
 <script type="text/babel">
-  import Locale from '_/src/mixins/locale';
+  import Locale from '_src/mixins/locale';
   import { isDate, range, getDayCountOfMonth, nextDate } from './../util';
   import { hasClass } from '_src/utils/dom';
 
