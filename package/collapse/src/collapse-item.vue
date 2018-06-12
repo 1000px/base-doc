@@ -1,5 +1,5 @@
 <template>
-	<div class="el-collapse-item" :class="{'is-active': isActive}">
+	<div class="el-collapse-item" :class="{'is-active': isActive}" :style="customStyle">
 		<div
 			role="tab"
 			:aria-expanded="isActive"
@@ -14,11 +14,12 @@
 				@keyup.space.enter.stop="handleEnterClick"
 				:class="{
 				  'focusing': focusing,
-				  'is-active': isActive
+				  'is-active': isActive,
+				  'no-arrow': !showArrow
 				}"
 				@focus="handleFocus"
 				@blur="focusing = false">
-				<i class="el-collapse-item__arrow el-icon-arrow-right"
+				<i v-if="showArrow" class="el-collapse-item__arrow el-icon-arrow-right"
 				   :class="{'is-active': isActive}">
 				</i>
 				<slot name="title">{{title}}</slot>
@@ -73,6 +74,16 @@
 				type: [String, Number],
 				default() {
 					return this._uid;
+				}
+			},
+			showArrow: {
+				type: Boolean,
+				default: true
+			},
+			customStyle: {
+				type: Object,
+				default() {
+					return {}
 				}
 			}
 		},
