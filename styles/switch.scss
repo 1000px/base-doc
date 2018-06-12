@@ -17,7 +17,7 @@
   }
 
   .el-switch__core {
-    border: 1px solid #C0C0C0;
+    border: 1px solid $--switch-off-color;
   }
 
   @include e(label) {
@@ -101,16 +101,16 @@
   @include when(disabled) {
       &.is-checked {
         .el-switch__core {
-          color: #A3D3FF;
-          background-color: #A3D3FF;
-          border: 1px solid #A3D3FF;
+          color: $--switch-disabled--checked-color;
+          background-color: $--switch-disabled--checked-color;
+          border: 1px solid $--switch-disabled--checked-color;
         }
       }
 
       .el-switch__core {
-        color: #E6E6E6;
-        background-color: #E6E6E6;
-        border: 1px solid #E6E6E6;
+        color: $--switch-disabled-color;
+        background-color: $--switch-disabled-color;
+        border: 1px solid $--switch-disabled-color;
       }
     
   }
