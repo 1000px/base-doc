@@ -5,6 +5,19 @@
 -->
 <template>
 	<div class="home">
+		<div class="bg-fixed">
+			<div class="bg-banner">
+				<div class="bg-banner-masking01"></div>
+				<div class="bg-banner-masking02"></div>
+				<div class="bg-banner-img"><img src="../assets/images/pic-scene01.png"/></div>
+			</div>
+			<div class="bg-src">
+				<div class="bg-src-left">
+					<img src="../assets/images/pic-scene02.png"/>
+				</div>
+				<div class="bg-src-right"></div>
+			</div>
+		</div>
 		<div class="banner">
 			<div class="banner-con">
 				<div class="banner-con-left">
@@ -84,7 +97,7 @@
 					<li v-for="(item3,index) in station" :key="index"><a href="">{{item3.data}}</a></li>
 				</ul>
 				<ul>
-					<li>版权所有�-2018</li>
+					<li>版权所有@-2018</li>
 					<li>苏州科达科技股份有限公司</li>
 					<li>Web前端技术部出品</li>
 				</ul>
@@ -126,16 +139,81 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+	// 背景图
+	.bg-fixed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 0;
+		// background-image: linear-gradient(44deg, #53bdf5 13%, #4982f2 51%, #3a2fed 100%);
+		.bg-banner {
+			position: relative;
+			width: 100%;
+			height: 1554px;
+			margin-top: -80px;
+			background-image: linear-gradient(-44deg, #53bdf5 6%, #4982f2 51%, #3a2fed 100%);
+
+			.bg-banner-masking01 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: url("../assets/images/pic-waveline01.png") center bottom no-repeat;
+			}
+			.bg-banner-masking02 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: url("../assets/images/pic-waveline02.png") center bottom no-repeat;
+			}
+			.bg-banner-img img {
+				float: right;
+				margin-right: -80px;
+				padding-top: 240px;
+			}
+			.bg-banner-img {
+				width: 1200px;
+				height: 547px;
+				margin: 0 auto;
+			}
+		}
+		.bg-src {
+			position: relative;
+			width: 100%;
+			height: 1095px;
+			padding-top: 237px;
+
+			.bg-src-left {
+				float: left;
+				width: 726px;
+				height: 900px;
+				background: url("../assets/images/backg-content01.png");
+			}
+			.bg-src-left img {
+				float: right;
+				width: 668px;
+				height: 628px;
+				margin-right: -110px;
+				padding-top: 225px;
+			}
+			.bg-src-right {
+				float: right;
+				width: 112px;
+				height: 577px;
+				margin-top: 42px;
+				background: url("../assets/images/backg-content02.png");
+			}
+		}
+	}
+
 	.home{
 		position: relative;
-		top:-80px;
 		width: 100%;
 		min-width: 1200px;
 		font-family: $typography;
 		div.banner{
 			height: 1634px;
-			background: url("../assets/images/backg-banner02.png") top left no-repeat;
-			background-size: contain;
 			div.banner-con{
 				@include clearFix;
 				width: 1200px;
@@ -180,8 +258,6 @@ export default {
 					float: left;
 					width: 700px;
 					height: 440px;
-					background: url(../assets/images/pic-scene01.png) top left no-repeat;
-					background-size: 100%;
 
 				}
 				p.banner-intro{
@@ -201,8 +277,6 @@ export default {
 		}
 		div.home-con{
 			height: 1234px;
-			background: url("../assets/images/pic-content.png") top left no-repeat;
-			background-size: contain;
 			div.home-con-card{
 				.card{
 					width: 271px;
