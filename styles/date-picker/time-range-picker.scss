@@ -5,6 +5,7 @@
   overflow: visible;
 
   @include e(content) {
+    display: flex;
     position: relative;
     text-align: center;
     padding: 10px;

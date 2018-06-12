@@ -16,6 +16,7 @@ import Col from './col';
 import Collapse from './collapse';
 import CollapseItem from './collapse-item';
 import CollapseTransition from '_src/transitions/collapse-transition';
+import DatePicker from './date-picker';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
@@ -35,6 +36,8 @@ import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
 import Tag from './tag';
+import TimePicker from './time-picker';
+import TimeSelect from './time-select';
 import Tooltip from './tooltip';
 
 const components = [
@@ -56,6 +59,7 @@ const components = [
 	Collapse,
 	CollapseItem,
 	CollapseTransition,
+	DatePicker,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -75,6 +79,8 @@ const components = [
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 ];
 const install = function(Vue) {
@@ -106,6 +112,7 @@ export default {
 	Collapse,
 	CollapseItem,
 	CollapseTransition,
+	DatePicker,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -125,5 +132,7 @@ export default {
 	Option,
 	OptionGroup,
 	Tag,
+	TimePicker,
+	TimeSelect,
 	Tooltip
 };
