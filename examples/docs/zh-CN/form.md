@@ -371,11 +371,11 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
 ```html
-<!-- <kc-radio-group v-model="labelPosition" size="small">
+<kc-radio-group v-model="labelPosition" size="small">
   <kc-radio-button label="left">左对齐</kc-radio-button>
   <kc-radio-button label="right">右对齐</kc-radio-button>
   <kc-radio-button label="top">顶部对齐</kc-radio-button>
-</kc-radio-group> -->
+</kc-radio-group>
 <div style="margin: 20px;"></div>
 <kc-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
   <kc-form-item label="名称">
