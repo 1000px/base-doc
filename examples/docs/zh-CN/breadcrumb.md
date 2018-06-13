@@ -8,7 +8,7 @@
   }
 </script>
 <style>
-  .markcss a:link, 
+  .markcss a:link,
   .markcss a:visited {
     color: #575A5F !important;
   }

@@ -1,5 +1,3 @@
-### tooltip 文字提示
-
 <script>
   export default {
     data() {
@@ -10,10 +8,6 @@
   };
 </script>
 <style>
-  .docs-demo,
-  .docs-demo__triangle {
-    margin-top: 20px;
-  }
   .box .el-tooltip{
     margin-top: 15px;
   }

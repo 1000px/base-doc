@@ -97,6 +97,7 @@
 		font-size: 13px;
 		line-height: 19px;
 		overflow: auto;
+		overflow-x: inherit;
 		padding: 6px 10px;
 		border-radius: 3px;
 		>code {
@@ -135,7 +136,7 @@
 	}
 	table{
 		width: 100%;
-		margin: 0 auto;
+		margin: 20px auto;
 		border-collapse:collapse;
 		border:none;
 		th{

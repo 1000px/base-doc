@@ -80,13 +80,13 @@
 </template>
 
 <script type="text/babel">
-	import Popup from 'element-ui/src/utils/popup';
-	import Locale from 'element-ui/src/mixins/locale';
-	import ElInput from 'element-ui/packages/input';
-	import ElButton from 'element-ui/packages/button';
-	import {addClass, removeClass} from 'element-ui/src/utils/dom';
-	import {t} from 'element-ui/src/locale';
-	import Dialog from 'element-ui/src/utils/aria-modal';
+	import Popup from '_src/utils/popup';
+	import Locale from '_src/mixins/locale';
+	import KcInput from '../../input';
+	import KcButton from '../../button';
+	import {addClass, removeClass} from '_src/utils/dom';
+	import {t} from '_src/locale';
+	import Dialog from '_src/utils/aria-dialog';
 
 	let messageBox;
 	let typeMap = {
@@ -130,8 +130,8 @@
 		},
 
 		components: {
-			ElInput,
-			ElButton
+			KcInput,
+			KcButton
 		},
 
 		computed: {

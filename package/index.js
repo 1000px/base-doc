@@ -26,6 +26,10 @@ import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
 import Layout from './layout';
+import Modal from './modal';
+import Message from './message/index.js';
+import MessageBox from './message-box/index.js';
+import Notification from './notification';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -35,6 +39,7 @@ import Switch from './switch';
 import Scrollbar from './scrollbar';
 import Option from './option';
 import OptionGroup from './option-group';
+import Progress from './progress';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -69,6 +74,7 @@ const components = [
 	Input,
 	InputNumber,
 	Layout,
+	Modal,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -78,14 +84,21 @@ const components = [
 	Scrollbar,
 	Option,
 	OptionGroup,
+	Progress,
 	Tag,
 	TimePicker,
 	TimeSelect,
 	Tooltip
 ];
-const install = function(Vue) {
+const install = function (Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
+	Vue.prototype.$msgbox = MessageBox;
+	Vue.prototype.$alert = MessageBox.alert;
+	Vue.prototype.$confirm = MessageBox.confirm;
+	Vue.prototype.$prompt = MessageBox.prompt;
+	Vue.prototype.$notify = Notification;
+	Vue.prototype.$message = Message;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -122,6 +135,10 @@ export default {
 	Input,
 	InputNumber,
 	Layout,
+	Message,
+	MessageBox,
+	Modal,
+	Notification,
 	Radio,
 	RadioButton,
 	RadioGroup,
