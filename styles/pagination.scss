@@ -34,7 +34,7 @@
   }
 
   .el-select .el-input {
-    width: 100px;
+    width: 60px;
     margin: 0 5px;
 
     .el-input__inner {
@@ -176,10 +176,11 @@
     border-radius: $--pagination-border-radius;
 
     &.el-input {
-      width: 50px;
+      width: 60px;
     }
 
     &.el-input .el-input__inner {
+      width: 60px;
       height: $--pagination-button-height;
     }
 

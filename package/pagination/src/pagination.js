@@ -182,6 +182,7 @@ export default {
 			render(h) {
 				return (
           <span class="el-pagination__sizes">
+						每页
             <kc-select
               value={ this.$parent.internalPageSize }
               popperClass={ this.$parent.popperClass || '' }
@@ -191,11 +192,12 @@ export default {
                 this.pageSizes.map(item =>
                   <kc-option
                     value={ item }
-                    label={ item + this.t('el.pagination.pagesize') }>
+                    label={ item }>
                   </kc-option>
-                )
+								)
               }
             </kc-select>
+						条
           </span>
 				);
 			},
@@ -287,7 +289,7 @@ export default {
               nativeOnKeyup={ this.handleKeyup }
               onChange={ this.handleChange }
               onFocus={ this.handleFocus }
-              onBlur={ this.handleBlur }/>
+              onBlur={ this.handleBlur }/>&nbsp;
             { this.t('el.pagination.pageClassifier') }
           </span>
 				);
