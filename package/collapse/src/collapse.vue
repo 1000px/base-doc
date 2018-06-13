@@ -1,5 +1,5 @@
 <template>
-	<div :class="['el-collapse', !bordered ? 'border-less' : '']" role="tablist" aria-multiselectable="true">
+	<div :class="['el-collapse', bordered ? '' : 'border-less']" role="tablist" aria-multiselectable="true">
 		<slot></slot>
 	</div>
 </template>
