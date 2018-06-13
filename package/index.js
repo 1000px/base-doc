@@ -26,6 +26,9 @@ import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
 import Layout from './layout';
+import Menu from './menu';
+import MenuGroup from './menu-item-group';
+import MenuItem from './menu-item';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -33,6 +36,7 @@ import Row from './row';
 import Select from './select';
 import Switch from './switch';
 import Scrollbar from './scrollbar';
+import Submenu from './submenu';
 import Option from './option';
 import OptionGroup from './option-group';
 import Tag from './tag';
@@ -69,6 +73,9 @@ const components = [
 	Input,
 	InputNumber,
 	Layout,
+	Menu,
+	MenuItem,
+	MenuGroup,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -76,6 +83,7 @@ const components = [
 	Select,
 	Switch,
 	Scrollbar,
+	Submenu,
 	Option,
 	OptionGroup,
 	Tag,
@@ -122,6 +130,9 @@ export default {
 	Input,
 	InputNumber,
 	Layout,
+	Menu,
+	MenuItem,
+	MenuGroup,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -129,6 +140,7 @@ export default {
 	Select,
 	Switch,
 	Scrollbar,
+	Submenu,
 	Option,
 	OptionGroup,
 	Tag,
