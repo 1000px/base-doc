@@ -3,8 +3,8 @@
 @import "common/var";
 
 @mixin menu-item {
-  height: 56px;
-  line-height: 56px;
+  height: 42px;
+  line-height: 42px;
   font-size: 14px;
   color: $--menu-item-color;
   padding: 0 20px;
@@ -50,8 +50,8 @@
     border-bottom: solid 1px #e6e6e6;
     & > .el-menu-item {
       float: left;
-      height: 60px;
-      line-height: 60px;
+      height: 38px;
+      line-height: 38px;
       margin: 0;
       border-bottom: 2px solid transparent;
       color: $--color-text-secondary;
@@ -85,8 +85,8 @@
       }
 
       & .el-submenu__title {
-        height: 60px;
-        line-height: 60px;
+        height: 38px;
+        line-height: 38px;
         border-bottom: 2px solid transparent;
         color: $--color-text-secondary;
 
@@ -128,7 +128,7 @@
   }
   @include m(collapse) {
     width: 64px;
-
+    
     > .el-menu-item,
     > .el-submenu > .el-submenu__title {
       [class^="el-icon-"] {
@@ -228,8 +228,8 @@
     border: none;
   }
   & .el-menu-item {
-    height: 50px;
-    line-height: 50px;
+    height: 36px;
+    line-height: 36px;
     padding: 0 45px;
     min-width: 200px;
   }
@@ -276,7 +276,7 @@
     padding: 7px 0 7px 20px;
     line-height: normal;
     font-size: 12px;
-    color: $--color-text-secondary;
+    color: #888888;
   }
 }
 

@@ -1,5 +1,12 @@
 <style>
-  .demo-box.demo-menu {
+  .markcss ul, .markcss ol {
+    padding-left: 0 !important;
+  }
+  .markcss a:link, 
+  .markcss a:visited {
+    color: #8C9097 !important;
+  }
+  .demo-menu {
     .el-menu-demo {
       padding-left: 55px;
     }
@@ -77,10 +84,11 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
-  <kc-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></kc-menu-item>
+  <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
 </kc-menu>
 <div class="line"></div>
 <kc-menu
+  style="margin-top:30px;"
   :default-active="activeIndex2"
   class="el-menu-demo"
   mode="horizontal"
@@ -102,7 +110,7 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
-  <kc-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></kc-menu-item>
+  <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
 </kc-menu>
 
 <script>
