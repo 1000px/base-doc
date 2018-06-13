@@ -35,6 +35,7 @@ import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Select from './select';
+import Slider from './slider';
 import Switch from './switch';
 import Scrollbar from './scrollbar';
 import Submenu from './submenu';
@@ -83,6 +84,7 @@ const components = [
 	RadioGroup,
 	Row,
 	Select,
+	Slider,
 	Switch,
 	Scrollbar,
 	Submenu,
@@ -141,6 +143,7 @@ export default {
 	RadioGroup,
 	Row,
 	Select,
+	Slider,
 	Switch,
 	Scrollbar,
 	Submenu,
