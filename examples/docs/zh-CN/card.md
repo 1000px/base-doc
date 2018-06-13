@@ -10,10 +10,6 @@
 </script>
 
 <style scoped>
-  .text {
-    font-size: 14px;
-  }
-
   .time {
     font-size: 13px;
     color: #999;
@@ -25,7 +21,7 @@
   }
 
   .item {
-    margin-bottom: 18px;
+    margin-bottom: 8px;
   }
 
   .button {
@@ -43,7 +39,10 @@
   }
 
   .box-card {
-    width: 480px;
+    width: 300px;
+  }
+  .box-card1 {
+    width: auto;
   }
 </style>
 ## Card 卡片
@@ -59,7 +58,7 @@
 <kc-card class="box-card">
   <div slot="header" class="clearfix">
     <span>卡片名称</span>
-    <kc-button style="float: right; padding: 3px 0" type="text">操作按钮</kc-button>
+    <kc-button style="float: right; padding: 1px 0 0" type="text">操作按钮</kc-button>
   </div>
   <div v-for="o in 4" :key="o" class="text item">
     {{'列表内容 ' + o }}
@@ -67,12 +66,46 @@
 </kc-card>
 
 <style>
-  .text {
-    font-size: 14px;
+  .item {
+    margin-bottom: 8px;
   }
 
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 480px;
+  }
+</style>
+```
+:::
+
+### 无边框
+
+在有色背景上使用无边框卡片
+
+:::demo Card 可以通过设置`bordered`值为 false 来去除卡片的外边框。
+```html
+<div style="background-color: #ECECEC; padding: 30px;">
+<kc-card class="box-card" :bordered="false">
+  <div slot="header" class="clearfix">
+    <span>卡片名称</span>
+  </div>
+  <div v-for="o in 4" :key="o" class="text item">
+    {{'列表内容 ' + o }}
+  </div>
+</kc-card>
+
+</div>
+<style>
   .item {
-    margin-bottom: 18px;
+    margin-bottom: 8px;
   }
 
   .clearfix:before,
@@ -104,12 +137,8 @@
 </kc-card>
 
 <style>
-  .text {
-    font-size: 14px;
-  }
-
   .item {
-    padding: 18px 0;
+    // padding: 18px 0;
   }
 
   .box-card {
@@ -210,9 +239,63 @@ export default {
 ```
 :::
 
+### 卡片嵌套
+
+卡片内部可以放置卡片，展示多层级的结构的信息
+
+:::demo
+```html
+<kc-card class="box-card1">
+  <div slot="header" class="clearfix">
+    <span>卡片名称</span>
+  </div>
+  <h5>嵌套卡片</h5>
+  <kc-card class="box-card1" type="inner">
+    <div slot="header" class="clearfix">
+      <span>卡片名称</span>
+      <kc-button style="float: right; padding: 1px 0 0" type="text">操作按钮</kc-button>
+    </div>
+    <div v-for="o in 4" :key="o" class="text item">
+      {{'列表内容 ' + o }}
+    </div>
+  </kc-card>
+  <kc-card class="box-card1" type="inner">
+    <div slot="header" class="clearfix">
+      <span>卡片名称</span>
+      <kc-button style="float: right; padding: 1px 0 0" type="text">操作按钮</kc-button>
+    </div>
+    <div v-for="o in 4" :key="o" class="text item">
+      {{'列表内容 ' + o }}
+    </div>
+  </kc-card>
+</kc-card>
+
+<style>
+  .item {
+    margin-bottom: 8px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 480px;
+  }
+</style>
+```
+:::
+
 ### Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | header | 设置 header，也可以通过 `slot#header` 传入 DOM | string| — | — |
 | body-style | 设置 body 的样式| object| — | { padding: '20px' } |
 | shadow | 设置阴影显示时机 | string | always / hover / never | always |
+| bordered | 是否有边框 | boolean | — | true |
+| type | 卡片类型，嵌套卡片时可选用 | string | inner | — |

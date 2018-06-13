@@ -582,7 +582,10 @@ $--badge-size: 18px !default;
 --------------------------*/
 $--card-border-color: $--border-color-lighter !default;
 $--card-border-radius: 4px !default;
-$--card-padding: 20px !default;
+$--card-padding: 24px !default;
+$--card-header-color: #252525 !default;
+$--card-header-foot-size: 16px !default;
+$--card-body-color: #575A5F !default;
 
 /* Slider
 --------------------------*/
@@ -658,14 +661,14 @@ $--carousel-indicator-out-color: $--border-color-hover !default;
 /* Collapse
 --------------------------*/
 $--collapse-border-color: $--border-color-lighter !default;
-$--collapse-header-height: 48px !default;
-$--collapse-header-padding: 20px !default;
-$--collapse-header-fill: $--color-white !default;
-$--collapse-header-color: $--color-text-primary !default;
-$--collapse-header-size: 13px !default;
+$--collapse-header-height: 22px !default;
+$--collapse-header-padding: 12px 0 12px 40px !default;
+$--collapse-header-fill: #F9FAFC !default;
+$--collapse-header-color: #252525 !default;
+$--collapse-header-size: 14px !default;
 $--collapse-content-fill: $--color-white !default;
-$--collapse-content-size: 13px !default;
-$--collapse-content-color: $--color-text-primary !default;
+$--collapse-content-size: 14px !default;
+$--collapse-content-color: #575A5F !default;
 
 /* Transfer
 --------------------------*/

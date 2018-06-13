@@ -176,6 +176,20 @@
 		}
 	}
 }
+@mixin arrow($show-arrow) {
+	@at-root {
+		&.#{$show-arrow + $arrow} {
+			@content;
+		}
+	}
+}
+@mixin border($has-border) {
+	@at-root {
+		&.#{$border + $has-border} {
+			@content;
+		}
+	}
+}
 
 @mixin extend-rule($name) {
   @extend #{'%shared-'+$name};
