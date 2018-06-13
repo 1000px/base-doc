@@ -2,6 +2,7 @@
 
 import Pagination from '../package/pagination/index.js';
 import Dialog from '../package/dialog/index.js';
+import Alert from '../package/alert/index.js';
 import Autocomplete from '../package/autocomplete/index.js';
 import Dropdown from '../package/dropdown/index.js';
 import DropdownMenu from '../package/dropdown-menu/index.js';
@@ -40,7 +41,6 @@ import Tabs from '../package/tabs/index.js';
 import TabPane from '../package/tab-pane/index.js';
 import Tag from '../package/tag/index.js';
 import Tree from '../package/tree/index.js';
-import Alert from '../package/alert/index.js';
 import Notification from '../package/notification/index.js';
 import Slider from '../package/slider/index.js';
 import Loading from '../package/loading/index.js';

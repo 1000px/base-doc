@@ -29,54 +29,65 @@
 						<router-link to="/overview">开始使用 →</router-link>
 					</div>
 				</div>
-				<i class="banner01"></i>
 				<p class="banner-intro">一款视觉层面精美，代码层面高质量的 UI 库</p>
+				<div class="home-con-card">
+					<div class="card card-overview">
+						<i class="card-img"></i>
+						<h3>指南</h3>
+						<p>了解开发和设计指南，节约无谓的设计且保持系统一致性、规范性，全面提高产品体验和研发效率。</p>
+						<span>
+						<router-link to="/overview">了解详情 →</router-link>
+					</span>
+					</div>
+					<div class="card card-api">
+						<i class="card-img"></i>
+						<h3>API</h3>
+						<p>通过组件快速体验交互细节，实用前端框架封装的代码能够快速开发，同时保持项目的可维护性与可靠性。</p>
+						<span>
+						<router-link to="/api">了解详情 →</router-link>
+					</span>
+					</div>
+					<div class="card card-resources">
+						<i class="card-img"></i>
+						<h3>资源</h3>
+						<p>提供相关资源和模式，为具体的设计问题提供向导和一般解决方案，让设计者聚焦在最有价值的产品功能打磨上。</p>
+						<span>
+						<router-link to="/resource">了解详情 →</router-link>
+					</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="home-con">
-			<div class="home-con-card">
-				<div class="card card-overview">
-					<i class="card-img"></i>
-					<h3>指南</h3>
-					<p>了解开发和设计指南，节约无谓的设计且保持系统一致性、规范性，全面提高产品体验和研发效率。</p>
-					<span>
-						<router-link to="/overview">了解详情 →</router-link>
-					</span>
-				</div>
-				<div class="card card-api">
-					<i class="card-img"></i>
-					<h3>API</h3>
-					<p>通过组件快速体验交互细节，实用前端框架封装的代码能够快速开发，同时保持项目的可维护性与可靠性。</p>
-					<span>
-						<router-link to="/api">了解详情 →</router-link>
-					</span>
-				</div>
-				<div class="card card-resources">
-					<i class="card-img"></i>
-					<h3>资源</h3>
-					<p>提供相关资源和模式，为具体的设计问题提供向导和一般解决方案，让设计者聚焦在最有价值的产品功能打磨上。</p>
-					<span>
-						<router-link to="/overview">了解详情 →</router-link>
-					</span>
-				</div>
-			</div>
 			<div class="home-con-list">
 				<h4>工程化特征</h4>
 				<ul>
 					<li>
-						<h5>模块化</h5>
+						<h5>
+							模块化
+							<i class="con-list-icon1"></i>
+						</h5>
 						<p>模块化为多人协作提供可能</p>
 					</li>
 					<li>
-						<h5>组件化</h5>
+						<h5>
+							组件化
+							<i class="con-list-icon2"></i>
+						</h5>
 						<p>组件化是在设计层面上，对UI的拆分</p>
 					</li>
 					<li>
-						<h5>规范化</h5>
+						<h5>
+							规范化
+							<i class="con-list-icon3"></i>
+						</h5>
 						<p>项目初期规范化制定的好坏直接影响后期开发质量</p>
 					</li>
 					<li>
-						<h5>自动化</h5>
+						<h5>
+							自动化
+							<i class="con-list-icon4"></i>
+						</h5>
 						<p>任何简单机械的操作都应该让机器去完成</p>
 					</li>
 				</ul>
@@ -140,84 +151,86 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 	// 背景图
-	.bg-fixed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		width: 100%;
-		height: 0;
-		// background-image: linear-gradient(44deg, #53bdf5 13%, #4982f2 51%, #3a2fed 100%);
-		.bg-banner {
-			position: relative;
-			width: 100%;
-			height: 1554px;
-			margin-top: -80px;
-			background-image: linear-gradient(-44deg, #53bdf5 6%, #4982f2 51%, #3a2fed 100%);
 
-			.bg-banner-masking01 {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				background: url("../assets/images/pic-waveline01.png") center bottom no-repeat;
-			}
-			.bg-banner-masking02 {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				background: url("../assets/images/pic-waveline02.png") center bottom no-repeat;
-			}
-			.bg-banner-img img {
-				float: right;
-				margin-right: -80px;
-				padding-top: 240px;
-			}
-			.bg-banner-img {
-				width: 1200px;
-				height: 547px;
-				margin: 0 auto;
-			}
-		}
-		.bg-src {
-			position: relative;
-			width: 100%;
-			height: 1095px;
-			padding-top: 237px;
-
-			.bg-src-left {
-				float: left;
-				width: 726px;
-				height: 900px;
-				background: url("../assets/images/backg-content01.png");
-			}
-			.bg-src-left img {
-				float: right;
-				width: 668px;
-				height: 628px;
-				margin-right: -110px;
-				padding-top: 225px;
-			}
-			.bg-src-right {
-				float: right;
-				width: 112px;
-				height: 577px;
-				margin-top: 42px;
-				background: url("../assets/images/backg-content02.png");
-			}
-		}
-	}
 
 	.home{
 		position: relative;
 		width: 100%;
 		min-width: 1200px;
 		font-family: $typography;
+		.bg-fixed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 0;
+			// background-image: linear-gradient(44deg, #53bdf5 13%, #4982f2 51%, #3a2fed 100%);
+			.bg-banner {
+				position: relative;
+				width: 100%;
+				height: 1554px;
+				margin-top: -80px;
+				background-image: linear-gradient(-44deg, #53bdf5 6%, #4982f2 51%, #3a2fed 100%);
+
+				.bg-banner-masking01 {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: url("../assets/images/pic-waveline01.png") center bottom no-repeat;
+				}
+				.bg-banner-masking02 {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: url("../assets/images/pic-waveline02.png") center bottom no-repeat;
+				}
+				.bg-banner-img img {
+					float: right;
+					margin-right: -80px;
+					padding-top: 200px;
+				}
+				.bg-banner-img {
+					width: 1200px;
+					height: 547px;
+					margin: 0 auto;
+				}
+			}
+			.bg-src {
+				position: relative;
+				width: 100%;
+				height: 1095px;
+				padding-top: 237px;
+
+				.bg-src-left {
+					float: left;
+					width: 726px;
+					height: 900px;
+					background: url("../assets/images/backg-content01.png");
+				}
+				.bg-src-left img {
+					float: right;
+					width: 668px;
+					height: 628px;
+					margin-right: -110px;
+					padding-top: 225px;
+				}
+				.bg-src-right {
+					float: right;
+					width: 112px;
+					height: 577px;
+					margin-top: 42px;
+					background: url("../assets/images/backg-content02.png");
+				}
+			}
+		}
 		div.banner{
+			position: relative;
 			height: 1634px;
+			width: 1200px;
+			margin: 0 auto;
 			div.banner-con{
 				@include clearFix;
-				width: 1200px;
-				margin: 0 auto;
 				padding-top: 232px;
 				.banner-con-left{
 					width: 500px;
@@ -252,18 +265,10 @@ export default {
 						}
 					}
 				}
-				i.banner01{
-					position: relative;
-					top: -70px;
-					float: left;
-					width: 700px;
-					height: 440px;
-
-				}
 				p.banner-intro{
 					position: absolute;
-					top: 1057px;
-					left: 363px;
+					top: 977px;
+					left: 0;
 					width: 371px;
 					height: 112px;
 					opacity: 0.9;
@@ -273,97 +278,131 @@ export default {
 					letter-spacing: 1.12px;
 					line-height: 56px;
 				}
+				div.home-con-card{
+					.card{
+						position: absolute;
+						z-index: 99;
+						width: 271px;
+						height: 267px;
+						padding:140px 100px 85px 68px;
+						background: #FFFFFF;
+						box-shadow: 0 2px 30px 0 rgba(0,0,0,0.06);
+						border-radius: 8px;
+						i{
+							width: 50px;
+							height: 50px;
+							display: block;
+							margin-bottom: 34px;
+						}
+						h3{
+							margin-bottom: 18px;
+							font-size: 24px;
+							color: #1F1F20;
+							font-weight: normal;
+							letter-spacing: 0.96px;
+							font-family: $typography;
+						}
+						p{
+							margin-bottom: 18px;
+							font-size: 14px;
+							color: #626875;
+							letter-spacing: 0.56px;
+							line-height: 28px;
+						}
+						span{
+							a{
+								font-family: $typography;
+								font-size: 14px;
+								color: #29CC8B;
+								letter-spacing: 0.56px;
+								line-height: 28px;
+							}
+						}
+
+					}
+					.card-overview{
+						top: 895px;
+						right: 0;
+						i{
+							background: url("../assets/images/icon-compass.png") center 100% no-repeat;
+							background-size: 100%;
+						}
+					}
+					.card-api{
+						top: 1250px;
+						right: 499px;
+						i{
+							background: url("../assets/images/icon-kit.png") center 100% no-repeat;
+							background-size: 100%;
+						}
+					}
+					.card-resources{
+						top: 1435px;
+						right: 0;
+						i{
+							background: url("../assets/images/icon-resource.png") center no-repeat;
+							background-size: 100%;
+						}
+					}
+				}
 			}
 		}
 		div.home-con{
 			height: 1234px;
-			div.home-con-card{
-				.card{
-					width: 271px;
-					height: 267px;
-					padding:140px 100px 85px 68px;
-					background: #FFFFFF;
-					box-shadow: 0 2px 30px 0 rgba(0,0,0,0.06);
-					border-radius: 8px;
-					i{
-						width: 50px;
-						height: 50px;
-						display: block;
-						margin-bottom: 34px;
-						border: 1px solid #ccc;
-						border-radius: 100%;
-					}
-					h3{
-						margin-bottom: 18px;
-						font-size: 24px;
-						color: #1F1F20;
-						font-weight: normal;
-						letter-spacing: 0.96px;
-						font-family: $typography;
-					}
-					p{
-						margin-bottom: 18px;
-						font-size: 14px;
-						color: #626875;
-						letter-spacing: 0.56px;
-						line-height: 28px;
-					}
-					span{
-						a{
-							font-family: $typography;
-							font-size: 14px;
-							color: #29CC8B;
-							letter-spacing: 0.56px;
-							line-height: 28px;
-						}
-					}
-
-				}
-				.card-overview{
-					position: absolute;
-					top: 975px;
-					left: 1124px;
-				}
-				.card-api{
-					position: absolute;
-					top: 1330px;
-					left: 625px;
-				}
-				.card-resources{
-					position: absolute;
-					top: 1515px;
-					left: 1124px;
-				}
-			}
+			width: 1200px;
+			margin: 0 auto;
+			position: relative;
 			div.home-con-list{
 				position: absolute;
-				top: 2219px;
-				left: 976px;
+				top: 544px;
+				right: 0px;
 				h4{
 					width: 146px;
 					height: 40px;
-					margin-bottom: 77px;
+					margin:0 0 80px 92px;
 					font-size: 28px;
-					font-weight: normal;
+					font-weight: 500;
 					color: #1F1F20;
 					letter-spacing: 1.12px;
 				}
 				ul{
+					width: 680px;
 					@include clearFix;
 					li{
 						float: left;
-						margin:0 148px 74px 0;
+						margin:0 0 76px 92px;
+						width: 246px;
 						h5{
-							width: 75px;
 							height: 33px;
 							margin-bottom: 9px;
 							font-size: 24px;
 							font-weight: normal;
 							color: #1F1F20;
 							letter-spacing: 0.96px;
+							i{
+								float: left;
+								width: 26px;
+								height: 26px;
+								margin-right: 10px;
+							}
+							i.con-list-icon1{
+								background: url("../assets/images/icon-Modularization.png") center 100% no-repeat;
+								background-size: 100%;
+							}
+							i.con-list-icon2{
+								background: url("../assets/images/icon-Component-based.png") center 100% no-repeat;
+								background-size: 100%;
+							}
+							i.con-list-icon3{
+								background: url("../assets/images/icon-Normalization.png") center 100% no-repeat;
+								background-size: 100%;
+							}
+							i.con-list-icon4{
+								background: url("../assets/images/icon-automation.png") center 100% no-repeat;
+								background-size: 100%;
+							}
 						}
 						p{
-							width: 246px;
 							height: 28px;
 							font-size: 14px;
 							color: #626875;
@@ -376,7 +415,7 @@ export default {
 
 		}
 		div.home-footer{
-			padding: 30px 0 40px;
+			padding: 40px 0;
 			@include clearFix;
 			background: #0A1C4C;
 			div.home-footer-con{
@@ -400,6 +439,7 @@ export default {
 							letter-spacing: 0.56px;
 						}
 						&:first-child{
+							margin-bottom: 5px;
 							opacity: 0.6;
 							font-size: 16px;
 							color: #FFFFFF;
