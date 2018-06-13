@@ -125,7 +125,7 @@
 				}
 				h4{
 					height: 37px;
-					padding-left: 15px;
+					padding-left: 24px;
 					a{
 						font-family: $typography;
 						font-size: 14px;
@@ -133,6 +133,9 @@
 						&:hover{
 							color: #4999FF;
 						}
+					}
+					.router-link-active {
+						color: #4999FF;
 					}
 				}
 			}
