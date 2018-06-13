@@ -29,6 +29,7 @@ import Layout from './layout';
 import Menu from './menu';
 import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
+import Pagination from './pagination';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -76,6 +77,7 @@ const components = [
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Pagination,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -133,6 +135,7 @@ export default {
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Pagination,
 	Radio,
 	RadioButton,
 	RadioGroup,
