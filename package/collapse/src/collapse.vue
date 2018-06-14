@@ -1,5 +1,5 @@
 <template>
-	<div class="el-collapse" role="tablist" aria-multiselectable="true">
+	<div :class="['el-collapse', bordered ? '' : 'border-less']" role="tablist" aria-multiselectable="true">
 		<slot></slot>
 	</div>
 </template>
@@ -16,12 +16,18 @@
 				default() {
 					return [];
 				}
+			},
+			bordered: {
+				type: Boolean,
+				default() {
+					return true;
+				}
 			}
 		},
 
 		data() {
 			return {
-				activeNames: [].concat(this.value)
+				activeNames: this.accordion && !this.value.length ? ['1'] : [].concat(this.value)
 			};
 		},
 

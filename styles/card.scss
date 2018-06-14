@@ -2,31 +2,45 @@
 @import "common/var";
 
 @include b(card) {
-  border-radius: $--card-border-radius;
-  border: 1px solid $--card-border-color;
-  background-color: $--color-white;
-  overflow: hidden;
-  color: $--color-text-primary;
-  transition: 0.3s;
+	border: 1px solid $--card-border-color;
+	background-color: $--color-white;
+	overflow: hidden;
+	color: $--color-text-primary;
+	transition: 0.3s;
+	@include border(less) {
+		border: 0;
+	}
 
-  @include when(always-shadow) {
-    box-shadow: $--box-shadow-light;
-  }
+	@include when(always-shadow) {
+		box-shadow: $--box-shadow-light;
+	}
 
-  @include when(hover-shadow) {
-    &:hover,
-    &:focus {
-      box-shadow: $--box-shadow-light;
-    }
-  }
+	@include when(hover-shadow) {
+		&:hover,
+		&:focus {
+			box-shadow: $--box-shadow-light;
+		}
+	}
 
-  @include e(header) {
-    padding: #{$--card-padding - 2 $--card-padding};
-    border-bottom: 1px solid $--card-border-color;
-    box-sizing: border-box;
-  }
+	@include e(header) {
+		padding: #{$--card-padding - 7 $--card-padding};
+		border-bottom: 1px solid $--card-border-color;
+		box-sizing: border-box;
+		color: $--card-header-color;
+		font-size: $--card-header-foot-size;
+	}
 
-  @include e(body) {
-    padding: $--card-padding;
-  }
+	@include e(body) {
+		padding: $--card-padding;
+		color: $--card-body-color;
+	}
+	&.type-inner {
+		margin-top: 16px;
+		&:first-child {
+			margin-top: 0;
+		}
+		.el-card__header {
+			background: #fafafa;
+		}
+	}
 }

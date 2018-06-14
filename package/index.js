@@ -30,6 +30,10 @@ import Modal from './modal';
 import Message from './message/index.js';
 import MessageBox from './message-box/index.js';
 import Notification from './notification';
+import Menu from './menu';
+import MenuGroup from './menu-item-group';
+import MenuItem from './menu-item';
+import Pagination from './pagination';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -37,6 +41,7 @@ import Row from './row';
 import Select from './select';
 import Switch from './switch';
 import Scrollbar from './scrollbar';
+import Submenu from './submenu';
 import Option from './option';
 import OptionGroup from './option-group';
 import Progress from './progress';
@@ -75,6 +80,10 @@ const components = [
 	InputNumber,
 	Layout,
 	Modal,
+	Menu,
+	MenuItem,
+	MenuGroup,
+	Pagination,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -82,6 +91,7 @@ const components = [
 	Select,
 	Switch,
 	Scrollbar,
+	Submenu,
 	Option,
 	OptionGroup,
 	Progress,
@@ -139,6 +149,10 @@ export default {
 	MessageBox,
 	Modal,
 	Notification,
+	Menu,
+	MenuItem,
+	MenuGroup,
+	Pagination,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -146,8 +160,10 @@ export default {
 	Select,
 	Switch,
 	Scrollbar,
+	Submenu,
 	Option,
 	OptionGroup,
+	Progress,
 	Tag,
 	TimePicker,
 	TimeSelect,

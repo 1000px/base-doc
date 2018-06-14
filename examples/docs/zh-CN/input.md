@@ -114,10 +114,7 @@
 </script>
 
 <style>
-  .docs-demo,
-  .docs-demo__triangle {
-    margin-top: 20px;
-  }
+
   .demo-base .el-input,
   .demo-input-size .el-input {
     margin-top: 15px;

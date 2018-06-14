@@ -2,6 +2,7 @@
   export default {
     data() {
       return {
+        tags1: ['tag1', 'tag2'],
         tags: [
           { name: '标签一', type: '' },
           { name: '标签二', type: 'success' },
@@ -15,6 +16,9 @@
       };
     },
     methods: {
+    	closeTag1(tag) {
+    		this.tags1.splice(this.tags1.indexOf(tag), 1)
+    	},
       handleClose(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
       },
@@ -63,42 +67,28 @@
 
 ### 基础用法
 
-:::demo 由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。
-
-```html
-<kc-tag>标签一</kc-tag>
-<kc-tag type="success">标签二</kc-tag>
-<kc-tag type="info">标签三</kc-tag>
-<kc-tag type="warning">标签四</kc-tag>
-<kc-tag type="danger">标签五</kc-tag>
-```
-:::
-
-### 可移除标签
-
 :::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
 
 ```html
+<kc-tag>标签一</kc-tag>
+<kc-tag>标签二</kc-tag>
 <kc-tag
-  v-for="tag in tags"
-  :key="tag.name"
-  closable
-  :type="tag.type">
-  {{tag.name}}
-</kc-tag>
-
+ 	v-for="tag in tags1"
+ 	:key="tag"
+ 	closable
+ 	@close="closeTag1(tag)">
+ 	{{ tag }}</kc-tag>
 <script>
   export default {
-    data() {
-      return {
-        tags: [
-          { name: '标签一', type: '' },
-          { name: '标签二', type: 'success' },
-          { name: '标签三', type: 'info' },
-          { name: '标签四', type: 'warning' },
-          { name: '标签五', type: 'danger' }
-        ]
-      };
+  	data() {
+  		return {
+  			tags1: ['tag1', 'tag2']
+  		}
+  	},
+    methods: {
+    	closeTag1(tag) {
+    		this.tags1.splice(this.tags1.indexOf(tag), 1)
+    	}
     }
   }
 </script>
@@ -121,7 +111,6 @@
 </kc-tag>
 <kc-input
   class="input-new-tag"
-  v-if="inputVisible"
   v-model="inputValue"
   ref="saveTagInput"
   size="small"
@@ -129,7 +118,7 @@
   @blur="handleInputConfirm"
 >
 </kc-input>
-<kc-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</kc-button>
+<kc-button class="button-new-tag" size="small" @click="showInput">+ New Tag</kc-button>
 
 <style>
   .el-tag + .el-tag {
@@ -184,6 +173,37 @@
 ```
 :::
 
+
+### 可移除标签
+
+:::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
+
+```html
+<kc-tag
+  v-for="tag in tags"
+  :key="tag.name"
+  closable
+  :type="tag.type">
+  {{tag.name}}
+</kc-tag>
+
+<script>
+  export default {
+    data() {
+      return {
+        tags: [
+          { name: '标签一', type: '' },
+          { name: '标签二', type: 'success' },
+          { name: '标签三', type: 'info' },
+          { name: '标签四', type: 'warning' },
+          { name: '标签五', type: 'danger' }
+        ]
+      };
+    }
+  }
+</script>
+```
+:::
 ### 不同尺寸
 
 Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。

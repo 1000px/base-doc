@@ -283,7 +283,7 @@ $--msgbox-danger-color: $--color-danger !default;
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
-$--message-background-color: #edf2fc !default;
+$--message-background-color: #fff !default;
 $--message-padding: 15px 15px 15px 20px !default;
 $--message-content-color: $--color-text-regular !default;
 $--message-close-color: $--color-text-placeholder !default;
@@ -499,7 +499,7 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 -------------------------- */
 $--pagination-font-size: 13px !default;
 $--pagination-fill: $--color-white !default;
-$--pagination-color: $--color-text-primary !default;
+$--pagination-color: #575A5F !default;
 $--pagination-border-radius: 3px !default;
 $--pagination-button-color: $--color-text-primary !default;
 $--pagination-button-width: 35.5px !default;
@@ -531,10 +531,10 @@ $--tooltip-padding: 10px !default;
 
 /* Tag
 -------------------------- */
-$--tag-padding: 0 10px !default;
-$--tag-fill: rgba($--color-primary, 0.10) !default;
-$--tag-color: $--color-primary !default;
-$--tag-border: rgba($--color-primary, 0.20) !default;
+$--tag-padding: 0 7px !default;
+$--tag-fill: #F9FAFC !default;
+$--tag-color: #575A5F !default;
+$--tag-border: #DCDFE6 !default;
 $--tag-font-size: 12px !default;
 $--tag-border-radius: 4px !default;
 
@@ -582,7 +582,10 @@ $--badge-size: 18px !default;
 --------------------------*/
 $--card-border-color: $--border-color-lighter !default;
 $--card-border-radius: 4px !default;
-$--card-padding: 20px !default;
+$--card-padding: 24px !default;
+$--card-header-color: #252525 !default;
+$--card-header-foot-size: 16px !default;
+$--card-body-color: #575A5F !default;
 
 /* Slider
 --------------------------*/
@@ -607,9 +610,9 @@ $--steps-padding: 20px !default;
 
 /* Menu
 --------------------------*/
-$--menu-item-color: $--color-text-primary !default;
+$--menu-item-color: $--color-text-regular !default;
 $--menu-item-fill: $--color-white !default;
-$--menu-item-hover-fill: $--color-primary-light-9 !default;
+$--menu-item-hover-fill: #E6F7FF !default;
 
 /* Rate
 --------------------------*/
@@ -658,14 +661,14 @@ $--carousel-indicator-out-color: $--border-color-hover !default;
 /* Collapse
 --------------------------*/
 $--collapse-border-color: $--border-color-lighter !default;
-$--collapse-header-height: 48px !default;
-$--collapse-header-padding: 20px !default;
-$--collapse-header-fill: $--color-white !default;
-$--collapse-header-color: $--color-text-primary !default;
-$--collapse-header-size: 13px !default;
+$--collapse-header-height: 22px !default;
+$--collapse-header-padding: 12px 0 12px 40px !default;
+$--collapse-header-fill: #F9FAFC !default;
+$--collapse-header-color: #252525 !default;
+$--collapse-header-size: 14px !default;
 $--collapse-content-fill: $--color-white !default;
-$--collapse-content-size: 13px !default;
-$--collapse-content-color: $--color-text-primary !default;
+$--collapse-content-size: 14px !default;
+$--collapse-content-color: #575A5F !default;
 
 /* Transfer
 --------------------------*/
