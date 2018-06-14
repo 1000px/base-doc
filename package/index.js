@@ -54,6 +54,7 @@ import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
 import Tooltip from './tooltip';
+import Transfer from './transfer';
 import Tree from './tree';
 
 const components = [
@@ -110,6 +111,7 @@ const components = [
 	TimePicker,
 	TimeSelect,
 	Tooltip,
+	Transfer,
 	Tree
 ];
 const install = function (Vue) {
@@ -186,5 +188,6 @@ export default {
 	TimePicker,
 	TimeSelect,
 	Tooltip,
+	Transfer,
 	Tree
 };
