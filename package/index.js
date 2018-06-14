@@ -17,6 +17,7 @@ import Col from './col';
 import Collapse from './collapse';
 import CollapseItem from './collapse-item';
 import CollapseTransition from '_src/transitions/collapse-transition';
+import ColorPicker from './color-picker';
 import DatePicker from './date-picker';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
@@ -69,6 +70,7 @@ const components = [
 	Collapse,
 	CollapseItem,
 	CollapseTransition,
+	ColorPicker,
 	DatePicker,
 	Dropdown,
 	DropdownItem,
@@ -131,6 +133,7 @@ export default {
 	Collapse,
 	CollapseItem,
 	CollapseTransition,
+	ColorPicker,
 	DatePicker,
 	Dropdown,
 	DropdownItem,
