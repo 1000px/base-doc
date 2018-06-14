@@ -23,11 +23,11 @@
 </script>
 
 <style>
-  .demo-box.demo-slider .source {
+  .demo-slider .source {
     padding: 0;
   }
 
-  .demo-box.demo-slider .block {
+  .demo-slider .block {
     padding: 30px 24px;
     overflow: hidden;
     border-bottom: solid 1px #EFF2F6;
@@ -36,16 +36,19 @@
     }
   }
 
-  .demo-box.demo-slider .demonstration {
+  .demo-slider .demonstration {
     font-size: 14px;
     color: #8492a6;
     line-height: 44px;
   }
 
-  .demo-box.demo-slider .demonstration + .el-slider {
+  .demo-slider .demonstration + .el-slider {
     float: right;
     width: 70%;
     margin-right: 20px;
+  }
+  .el-slider__input {
+    margin-top: -13px !important;
   }
 </style>
 
@@ -59,28 +62,26 @@
 
 :::demo 通过设置绑定值自定义滑块的初始值
 ```html
-<template>
   <div class="block">
     <span class="demonstration">默认</span>
-    <el-slider v-model="value1"></el-slider>
+    <kc-slider v-model="value1"></kc-slider>
   </div>
   <div class="block">
     <span class="demonstration">自定义初始值</span>
-    <el-slider v-model="value2"></el-slider>
+    <kc-slider v-model="value2"></kc-slider>
   </div>
   <div class="block">
     <span class="demonstration">隐藏 Tooltip</span>
-    <el-slider v-model="value3" :show-tooltip="false"></el-slider>
+    <kc-slider v-model="value3" :show-tooltip="false"></kc-slider>
   </div>
   <div class="block">
     <span class="demonstration">格式化 Tooltip</span>
-    <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
+    <kc-slider v-model="value4" :format-tooltip="formatTooltip"></kc-slider>
   </div>
   <div class="block">
     <span class="demonstration">禁用</span>
-    <el-slider v-model="value5" disabled></el-slider>
+    <kc-slider v-model="value5" disabled></kc-slider>
   </div>
-</template>
 
 <script>
   export default {
@@ -109,23 +110,21 @@
 
 :::demo 改变`step`的值可以改变步长，通过设置`show-step`属性可以显示间断点
 ```html
-<template>
   <div class="block">
     <span class="demonstration">不显示间断点</span>
-    <el-slider
+    <kc-slider
       v-model="value6"
       :step="10">
-    </el-slider>
+    </kc-slider>
   </div>
   <div class="block">
     <span class="demonstration">显示间断点</span>
-    <el-slider
+    <kc-slider
       v-model="value7"
       :step="10"
       show-stops>
-    </el-slider>
+    </kc-slider>
   </div>
-</template>
 
 <script>
   export default {
@@ -146,14 +145,12 @@
 
 :::demo 设置`show-input`属性会在右侧显示一个输入框
 ```html
-<template>
   <div class="block">
-    <el-slider
+    <kc-slider
       v-model="value8"
       show-input>
-    </el-slider>
+    </kc-slider>
   </div>
-</template>
 
 <script>
   export default {
@@ -173,16 +170,14 @@
 
 :::demo 设置`range`即可开启范围选择，此时绑定值是一个数组，其元素分别为最小边界值和最大边界值
 ```html
-<template>
   <div class="block">
-    <el-slider
+    <kc-slider
       v-model="value9"
       range
       show-stops
       :max="10">
-    </el-slider>
+    </kc-slider>
   </div>
-</template>
 
 <script>
   export default {
@@ -200,15 +195,13 @@
 
 :::demo 设置`vertical`可使 Slider 变成竖向模式，此时必须设置高度`height`属性
 ```html
-<template>
   <div class="block">
-    <el-slider
+    <kc-slider
       v-model="value10"
       vertical
       height="200px">
-    </el-slider>
+    </kc-slider>
   </div>
-</template>
 
 <script>
   export default {
