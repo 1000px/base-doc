@@ -32,6 +32,7 @@ import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
 import Pagination from './pagination';
 import Radio from './radio';
+import Rate from './rate';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
@@ -84,6 +85,7 @@ const components = [
 	Radio,
 	RadioButton,
 	RadioGroup,
+	Rate,
 	Row,
 	Select,
 	Slider,
@@ -144,6 +146,7 @@ export default {
 	Radio,
 	RadioButton,
 	RadioGroup,
+	Rate,
 	Row,
 	Select,
 	Slider,
