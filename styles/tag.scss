@@ -5,14 +5,15 @@
   background-color: $--tag-fill;
   display: inline-block;
   padding: $--tag-padding;
-  height: 24px;
-  line-height: 24px;
+  height: 32px;
+  line-height: 30px;
   font-size: $--tag-font-size;
   color: $--tag-color;
   border-radius: $--tag-border-radius;
   box-sizing: border-box;
   border: 1px solid $--tag-border;
   white-space: nowrap;
+	cursor: pointer;
 
   .el-icon-close {
     border-radius: 50%;
@@ -38,6 +39,10 @@
     }
   }
 
+	@include when(selected) {
+		border-color: transparent;
+		background-color: transparent;
+	}
   @include m(info) {
     background-color: $--tag-info-fill;
     border-color: $--tag-info-border;

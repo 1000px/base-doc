@@ -5,9 +5,11 @@
 		:class="[
         type ? 'el-tag--' + type : '',
         tagSize && `el-tag--${tagSize}`,
-        {'is-hit': hit}
+        {'is-hit': hit},
+        {'is-selected': selectedStatus}
       ]"
-		:style="{backgroundColor: color}">
+		:style="customColorStyle"
+		@click="changeSelectState()">
       <slot></slot>
       <i class="el-tag__close el-icon-close"
 		 v-if="closable"
@@ -16,6 +18,7 @@
 	</transition>
 </template>
 <script>
+	import { hexToRgb, colorNameToRgb } from '../../../src/utils/util.js';
 	export default {
 		name: 'KcTag',
 		props: {
@@ -25,16 +28,52 @@
 			hit: Boolean,
 			disableTransitions: Boolean,
 			color: String,
-			size: String
+			size: String,
+			selected: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data() {
+			return {
+				selectedStatus: this.selected
+			}
 		},
 		methods: {
 			handleClose(event) {
 				this.$emit('close', event);
+			},
+			changeSelectState() {
+				this.selectedStatus = !this.selectedStatus;
+				this.$emit('click', this.selectedStatus);
 			}
 		},
 		computed: {
 			tagSize() {
 				return this.size || (this.$ELEMENT || {}).size;
+			},
+			customColorStyle() {
+				let mainColor
+				if (this.color) {
+					if (this.color.indexOf('#') > -1) {
+						mainColor = hexToRgb(this.color).replace('(', 'a(').replace(')', ', .1)');
+					} else {
+						mainColor = colorNameToRgb(this.color).replace('(', 'a(').replace(')', ', .1)');
+					}
+				} else {
+					mainColor =  this.color;
+				}
+				if (this.selectedStatus) {
+					return {
+						color: this.color
+					};
+				} else {
+					return {
+						color: this.color,
+						backgroundColor: mainColor,
+						borderColor: mainColor ? mainColor.replace('.1)', '.2)') : ''
+					};
+				}
 			}
 		}
 	};
