@@ -7,9 +7,9 @@ import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Card from './card';
-import Cascader from './cascader';
 import Carousel from './carousel';
 import CarouselItem from './carousel-item';
+import Cascader from './cascader';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import CheckboxButton from './checkbox-button';
@@ -30,23 +30,24 @@ import Layout from './layout';
 import Menu from './menu';
 import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
+import Option from './option';
+import OptionGroup from './option-group';
 import Pagination from './pagination';
 import Radio from './radio';
-import Rate from './rate';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
+import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
 import Switch from './switch';
-import Scrollbar from './scrollbar';
 import Submenu from './submenu';
-import Option from './option';
-import OptionGroup from './option-group';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
 import Tooltip from './tooltip';
+import Tree from './tree';
 
 const components = [
 	Alert,
@@ -57,10 +58,10 @@ const components = [
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
-	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
+	Cascader,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
@@ -81,23 +82,24 @@ const components = [
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Option,
+	OptionGroup,
 	Pagination,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Rate,
 	Row,
+	Scrollbar,
 	Select,
 	Slider,
 	Switch,
-	Scrollbar,
 	Submenu,
-	Option,
-	OptionGroup,
 	Tag,
 	TimePicker,
 	TimeSelect,
-	Tooltip
+	Tooltip,
+	Tree
 ];
 const install = function(Vue) {
 	if (install.installed) return;
@@ -118,10 +120,10 @@ export default {
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
-	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
+	Cascader,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
@@ -142,6 +144,8 @@ export default {
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Option,
+	OptionGroup,
 	Pagination,
 	Radio,
 	RadioButton,
@@ -153,10 +157,9 @@ export default {
 	Switch,
 	Scrollbar,
 	Submenu,
-	Option,
-	OptionGroup,
 	Tag,
 	TimePicker,
 	TimeSelect,
-	Tooltip
+	Tooltip,
+	Tree
 };
