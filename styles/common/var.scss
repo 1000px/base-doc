@@ -564,7 +564,8 @@ $--tag-danger-color: $--color-danger !default;
 -------------------------- */
 $--tree-node-hover-color: $--background-color-base !default;
 $--tree-text-color: $--color-text-regular !default;
-$--tree-expand-icon-color: $--color-text-placeholder !default;
+// $--tree-expand-icon-color: $--color-text-placeholder !default;
+$--tree-expand-icon-color: #595959 !default;
 
 /* Dropdown
 -------------------------- */
