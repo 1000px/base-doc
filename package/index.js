@@ -38,6 +38,8 @@ import MenuItem from './menu-item';
 import Option from './option';
 import OptionGroup from './option-group';
 import Pagination from './pagination';
+import Popover from './popover';
+import Progress from './progress';
 import Radio from './radio';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
@@ -48,8 +50,6 @@ import Select from './select';
 import Slider from './slider';
 import Switch from './switch';
 import Submenu from './submenu';
-import Popover from './popover';
-import Progress from './progress';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -94,6 +94,8 @@ const components = [
 	Option,
 	OptionGroup,
 	Pagination,
+	Popover,
+	Progress,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -104,8 +106,6 @@ const components = [
 	Slider,
 	Switch,
 	Submenu,
-	Popover,
-	Progress,
 	Tag,
 	TimePicker,
 	TimeSelect,
@@ -167,10 +167,11 @@ export default {
 	Menu,
 	MenuItem,
 	MenuGroup,
-	Popover,
 	Option,
 	OptionGroup,
 	Pagination,
+	Popover,
+	Progress,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -181,7 +182,6 @@ export default {
 	Switch,
 	Scrollbar,
 	Submenu,
-	Progress,
 	Tag,
 	TimePicker,
 	TimeSelect,
