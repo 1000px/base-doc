@@ -7,6 +7,7 @@ import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Card from './card';
+import Cascader from './cascader';
 import Carousel from './carousel';
 import CarouselItem from './carousel-item';
 import Checkbox from './checkbox';
@@ -31,6 +32,7 @@ import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
 import Pagination from './pagination';
 import Radio from './radio';
+import Rate from './rate';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
 import Row from './row';
@@ -55,6 +57,7 @@ const components = [
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
+	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
@@ -82,6 +85,7 @@ const components = [
 	Radio,
 	RadioButton,
 	RadioGroup,
+	Rate,
 	Row,
 	Select,
 	Slider,
@@ -114,6 +118,7 @@ export default {
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
+	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
@@ -141,6 +146,7 @@ export default {
 	Radio,
 	RadioButton,
 	RadioGroup,
+	Rate,
 	Row,
 	Select,
 	Slider,

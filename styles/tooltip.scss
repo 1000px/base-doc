@@ -44,7 +44,7 @@
       &::after {
         bottom: 1px;
         margin-left: -5px;
-        border-top-color: $--tooltip-fill;
+        border-top-color: $--tooltip-dark-background-color;
         border-bottom-width: 0;
       }
     }
@@ -62,7 +62,7 @@
         top: 1px;
         margin-left: -5px;
         border-top-width: 0;
-        border-bottom-color: $--tooltip-fill;
+        border-bottom-color: $--tooltip-dark-background-color;
       }
     }
 
@@ -78,7 +78,7 @@
       &::after {
         bottom: -5px;
         left: 1px;
-        border-right-color: $--tooltip-fill;
+        border-right-color: $--tooltip-dark-background-color;
         border-left-width: 0;
       }
     }
@@ -97,13 +97,13 @@
         bottom: -5px;
         margin-left: -5px;
         border-right-width: 0;
-        border-left-color: $--tooltip-fill;
+        border-left-color: $--tooltip-dark-background-color;
       }
     }
 
     @include when(dark) {
-      background: $--tooltip-fill;
-      color: $--tooltip-color;
+      background: $--tooltip-dark-background-color;
+      color: $--tooltip-dark-color;
     }
 
     @include when(light) {

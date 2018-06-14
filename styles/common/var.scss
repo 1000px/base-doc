@@ -227,7 +227,7 @@ $--select-input-focus-background: $--color-primary !default;
 $--select-input-font-size: 14px !default;
 
 $--select-option-color: $--color-text-regular !default;
-$--select-option-disabled-color: $--color-text-placeholder !default;
+$--select-option-disabled-color: #D2D6DC !default;
 $--select-option-disabled-background: $--color-white !default;
 $--select-option-height: 36px !default;
 $--select-option-hover-background: #E6F7FF !default;
@@ -524,10 +524,12 @@ $--popover-title-color: $--color-text-primary !default;
 -------------------------- */
 $--tooltip-fill: $--color-text-primary !default;
 $--tooltip-color: $--color-white !default;
-$--tooltip-font-size: 12px !default;
+$--tooltip-font-size: 14px !default;
 $--tooltip-border-color: $--color-text-primary !default;
 $--tooltip-arrow-size: 6px !default;
 $--tooltip-padding: 10px !default;
+$--tooltip-dark-background-color: #404040 !default;
+$--tooltip-dark-color: #fff !default;
 
 /* Tag
 -------------------------- */
@@ -590,15 +592,15 @@ $--card-body-color: #575A5F !default;
 /* Slider
 --------------------------*/
 $--slider-main-background-color: $--color-primary !default;
-$--slider-runway-background-color: $--border-color-light !default;
+$--slider-runway-background-color: #F5F5F5 !default;
 $--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
 $--slider-stop-background-color: $--color-white !default;
-$--slider-disable-color: $--color-text-placeholder !default;
+$--slider-disable-color: #B8B8B8 !default;
 
 $--slider-margin: 16px 0 !default;
 $--slider-border-radius: 3px !default;
-$--slider-height: 6px !default;
-$--slider-button-size: 16px !default;
+$--slider-height: 4px !default;
+$--slider-button-size: 10px !default;
 $--slider-button-wrapper-size: 36px !default;
 $--slider-button-wrapper-offset: -15px !default;
 
@@ -620,7 +622,7 @@ $--rate-height: 20px !default;
 $--rate-font-size: $--font-size-base !default;
 $--rate-icon-size: 18px !default;
 $--rate-icon-margin: 6px !default;
-$--rate-icon-color: $--color-text-placeholder !default;
+$--rate-icon-color: #FAAD14 !default;
 
 /* DatePicker
 --------------------------*/

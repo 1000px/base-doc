@@ -120,6 +120,7 @@
   @include e(button) {
     width: $--slider-button-size;
     height: $--slider-button-size;
+    margin-top: -2px;
     border: solid 2px $--slider-main-background-color;
     background-color: $--color-white;
     border-radius: 50%;
@@ -167,6 +168,9 @@
       top: auto;
       left: $--slider-button-wrapper-offset;
       transform: translateY(50%);
+      .el-slider__button {
+        margin-left: -2px;
+      }
     }
     .el-slider__stop {
       transform: translateY(50%);
