@@ -566,16 +566,6 @@
 				"category-desc": "反馈"
 			},
 			{
-				"name": "popconfirm",
-				"path": "popconfirm",
-				"type": "md",
-				"id": "10003052",
-				"pId": "10003",
-				"desc": "气泡确认框",
-				"category": "feedback",
-				"category-desc": "反馈"
-			},
-			{
 				"name": "spin",
 				"path": "spin",
 				"type": "md",

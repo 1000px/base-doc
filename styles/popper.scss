@@ -41,6 +41,7 @@
     }
   }
 
+
   &[x-placement^="bottom"] {
     margin-top: #{$--popover-arrow-size + 6};
   }
@@ -98,4 +99,5 @@
       border-left-color: $--popover-fill;
     }
   }
+
 }

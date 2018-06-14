@@ -44,6 +44,7 @@ import Scrollbar from './scrollbar';
 import Submenu from './submenu';
 import Option from './option';
 import OptionGroup from './option-group';
+import Popover from './popover';
 import Progress from './progress';
 import Tag from './tag';
 import TimePicker from './time-picker';
@@ -94,6 +95,7 @@ const components = [
 	Submenu,
 	Option,
 	OptionGroup,
+	Popover,
 	Progress,
 	Tag,
 	TimePicker,
@@ -103,6 +105,7 @@ const components = [
 const install = function (Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
+
 	Vue.prototype.$msgbox = MessageBox;
 	Vue.prototype.$alert = MessageBox.alert;
 	Vue.prototype.$confirm = MessageBox.confirm;
@@ -152,6 +155,7 @@ export default {
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Popover,
 	Pagination,
 	Radio,
 	RadioButton,

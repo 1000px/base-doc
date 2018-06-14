@@ -72,7 +72,7 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .box {
     width: 400px;
 

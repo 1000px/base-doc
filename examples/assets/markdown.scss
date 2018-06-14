@@ -23,6 +23,9 @@
 	h1, h2, h3, h4, h5, h6 {
 		@include hCss;
 	}
+	h3{
+		padding: 15px;
+	}
 	a{
 		color: #b58900;
 		text-decoration: none;
