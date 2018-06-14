@@ -7,9 +7,9 @@ import BreadcrumbItem from './breadcrumb-item';
 import Button from './button';
 import ButtonGroup from './button-group';
 import Card from './card';
-import Cascader from './cascader';
 import Carousel from './carousel';
 import CarouselItem from './carousel-item';
+import Cascader from './cascader';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import CheckboxButton from './checkbox-button';
@@ -28,22 +28,28 @@ import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
 import Layout from './layout';
+import Modal from './modal';
+import Message from './message/index.js';
+import MessageBox from './message-box/index.js';
+import Notification from './notification';
 import Menu from './menu';
 import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
+import Option from './option';
+import OptionGroup from './option-group';
 import Pagination from './pagination';
+import Popover from './popover';
+import Progress from './progress';
 import Radio from './radio';
-import Rate from './rate';
 import RadioButton from './radio-button';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
+import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
 import Switch from './switch';
-import Scrollbar from './scrollbar';
 import Submenu from './submenu';
-import Option from './option';
-import OptionGroup from './option-group';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -59,10 +65,10 @@ const components = [
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
-	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
+	Cascader,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
@@ -81,31 +87,41 @@ const components = [
 	Input,
 	InputNumber,
 	Layout,
+	Modal,
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Option,
+	OptionGroup,
 	Pagination,
+	Popover,
+	Progress,
 	Radio,
 	RadioButton,
 	RadioGroup,
 	Rate,
 	Row,
+	Scrollbar,
 	Select,
 	Slider,
 	Switch,
-	Scrollbar,
 	Submenu,
-	Option,
-	OptionGroup,
 	Tag,
 	TimePicker,
 	TimeSelect,
 	Tooltip,
 	Tree
 ];
-const install = function(Vue) {
+const install = function (Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
+
+	Vue.prototype.$msgbox = MessageBox;
+	Vue.prototype.$alert = MessageBox.alert;
+	Vue.prototype.$confirm = MessageBox.confirm;
+	Vue.prototype.$prompt = MessageBox.prompt;
+	Vue.prototype.$notify = Notification;
+	Vue.prototype.$message = Message;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -122,10 +138,10 @@ export default {
 	BreadcrumbItem,
 	Button,
 	ButtonGroup,
-	Cascader,
 	Card,
 	Carousel,
 	CarouselItem,
+	Cascader,
 	Checkbox,
 	CheckboxButton,
 	CheckboxGroup,
@@ -144,10 +160,18 @@ export default {
 	Input,
 	InputNumber,
 	Layout,
+	Message,
+	MessageBox,
+	Modal,
+	Notification,
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Option,
+	OptionGroup,
 	Pagination,
+	Popover,
+	Progress,
 	Radio,
 	RadioButton,
 	RadioGroup,
@@ -158,8 +182,6 @@ export default {
 	Switch,
 	Scrollbar,
 	Submenu,
-	Option,
-	OptionGroup,
 	Tag,
 	TimePicker,
 	TimeSelect,

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import merge from '_src/utils/merge';
-import PopupManager from '_src/utils/popup/popup-manager';
+import PopupManager from './popup-manager';
 import getScrollBarWidth from '../scrollbar-width';
 import {getStyle, addClass, removeClass, hasClass} from '../dom';
 

@@ -18,7 +18,7 @@
 	</transition>
 </template>
 <script>
-	import { hexToRgb, colorNameToRgb } from '../../../src/utils/util.js';
+	import { hexToRgb, colorNameToRgb } from '_src/utils/util.js';
 	export default {
 		name: 'KcTag',
 		props: {

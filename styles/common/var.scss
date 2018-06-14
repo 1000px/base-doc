@@ -51,6 +51,7 @@ $--border-success-color: #D5EEC9;
 $--border-info-color: #CAE4FF;
 $--border-warning-color: #FFE4B0;
 $--border-error-color: #FFD8D8;
+$--color-header: #252525;
 /* Link
 -------------------------- */
 $--link-color: $--color-primary-light-2 !default;
@@ -231,8 +232,8 @@ $--select-option-disabled-color: #D2D6DC !default;
 $--select-option-disabled-background: $--color-white !default;
 $--select-option-height: 36px !default;
 $--select-option-hover-background: #E6F7FF !default;
-$--select-option-hover-color: #252525 !default;
-$--select-option-selected: #252525 !default;
+$--select-option-hover-color: $--color-header !default;
+$--select-option-selected: $--color-header !default;
 $--select-option-selected-hover: $--background-color-base !default;
 
 $--select-group-color: $--color-info !default;
@@ -283,7 +284,7 @@ $--msgbox-danger-color: $--color-danger !default;
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
-$--message-background-color: #edf2fc !default;
+$--message-background-color: #fff !default;
 $--message-padding: 15px 15px 15px 20px !default;
 $--message-content-color: $--color-text-regular !default;
 $--message-close-color: $--color-text-placeholder !default;
@@ -308,7 +309,7 @@ $--notification-group-margin: 13px !default;
 $--notification-font-size: $--font-size-base !default;
 $--notification-color: $--color-text-regular !default;
 $--notification-title-font-size: 16px !default;
-$--notification-title-color: $--color-text-primary !default;
+$--notification-title-color: #303133 !default;
 
 $--notification-close-color: $--color-text-secondary !default;
 $--notification-close-hover-color: $--color-text-regular !default;
@@ -499,7 +500,7 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 -------------------------- */
 $--pagination-font-size: 13px !default;
 $--pagination-fill: $--color-white !default;
-$--pagination-color: #575A5F !default;
+$--pagination-color: $--color-text-regular !default;
 $--pagination-border-radius: 3px !default;
 $--pagination-button-color: $--color-text-primary !default;
 $--pagination-button-width: 35.5px !default;
@@ -517,8 +518,8 @@ $--popover-border-color: $--border-color-lighter !default;
 $--popover-arrow-size: 6px !default;
 $--popover-padding: 12px !default;
 $--popover-padding-large: 18px 20px !default;
-$--popover-title-font-size: 16px !default;
-$--popover-title-color: $--color-text-primary !default;
+$--popover-title-font-size: 14px !default;
+$--popover-title-color: $--color-header !default;
 
 /* Tooltip
 -------------------------- */
@@ -535,7 +536,7 @@ $--tooltip-dark-color: #fff !default;
 -------------------------- */
 $--tag-padding: 0 10px !default;
 $--tag-fill: #F9FAFC !default;
-$--tag-color: #575A5F !default;
+$--tag-color: $--color-text-regular !default;
 $--tag-border: #DCDFE6 !default;
 $--tag-font-size: 12px !default;
 $--tag-border-radius: 4px !default;
@@ -586,9 +587,9 @@ $--badge-size: 18px !default;
 $--card-border-color: $--border-color-lighter !default;
 $--card-border-radius: 4px !default;
 $--card-padding: 24px !default;
-$--card-header-color: #252525 !default;
+$--card-header-color: $--color-header !default;
 $--card-header-foot-size: 16px !default;
-$--card-body-color: #575A5F !default;
+$--card-body-color: $--color-text-regular !default;
 
 /* Slider
 --------------------------*/
@@ -667,11 +668,11 @@ $--collapse-border-color: $--border-color-lighter !default;
 $--collapse-header-height: 22px !default;
 $--collapse-header-padding: 12px 0 12px 40px !default;
 $--collapse-header-fill: #F9FAFC !default;
-$--collapse-header-color: #252525 !default;
+$--collapse-header-color: $--color-header !default;
 $--collapse-header-size: 14px !default;
 $--collapse-content-fill: $--color-white !default;
 $--collapse-content-size: 14px !default;
-$--collapse-content-color: #575A5F !default;
+$--collapse-content-color: $--color-text-regular !default;
 
 /* Transfer
 --------------------------*/

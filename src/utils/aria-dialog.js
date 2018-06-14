@@ -4,26 +4,26 @@ import Utils from './aria-utils';
  * @constructor
  * @desc Dialog object providing modal focus management.
  *
- * Assumptions: The element serving as the dialog container is present in the
- * DOM and hidden. The dialog container has role='dialog'.
+ * Assumptions: The element serving as the modal container is present in the
+ * DOM and hidden. The modal container has role='modal'.
  *
  * @param dialogId
- *          The ID of the element serving as the dialog container.
+ *          The ID of the element serving as the modal container.
  * @param focusAfterClosed
  *          Either the DOM node or the ID of the DOM node to focus when the
- *          dialog closes.
+ *          modal closes.
  * @param focusFirst
  *          Optional parameter containing either the DOM node or the ID of the
- *          DOM node to focus when the dialog opens. If not specified, the
- *          first focusable element in the dialog will receive focus.
+ *          DOM node to focus when the modal opens. If not specified, the
+ *          first focusable element in the modal will receive focus.
  */
 var aria = aria || {};
 var tabEvent;
 
 aria.Dialog = function (dialog, focusAfterClosed, focusFirst) {
 	this.dialogNode = dialog;
-	if (this.dialogNode === null || this.dialogNode.getAttribute('role') !== 'dialog') {
-		throw new Error('Dialog() requires a DOM element with ARIA role of dialog.')
+	if (this.dialogNode === null || this.dialogNode.getAttribute('role') !== 'modal') {
+		throw new Error('Dialog() requires a DOM element with ARIA role of modal.')
 	}
 
 	if (typeof focusAfterClosed === 'string') {

@@ -28,7 +28,6 @@ export default {
 				ret.marginLeft = `-${this.gutter / 2}px`;
 				ret.marginRight = ret.marginLeft;
 			}
-
 			return ret;
 		}
 	},

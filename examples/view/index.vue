@@ -5,6 +5,7 @@
 -->
 <template>
 	<div class="home">
+		<!--整体背景-->
 		<div class="bg-fixed">
 			<div class="bg-banner">
 				<div class="bg-banner-masking01"></div>
@@ -18,6 +19,7 @@
 				<div class="bg-src-right"></div>
 			</div>
 		</div>
+		<!--banner+card-->
 		<div class="banner">
 			<div class="banner-con">
 				<div class="banner-con-left">
@@ -58,6 +60,7 @@
 				</div>
 			</div>
 		</div>
+		<!--下半部列表-->
 		<div class="home-con">
 			<div class="home-con-list">
 				<h4>工程化特征</h4>
@@ -93,6 +96,7 @@
 				</ul>
 			</div>
 		</div>
+		<!--footer-->
 		<div class="home-footer">
 			<div class="home-footer-con">
 				<ul>
@@ -150,14 +154,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-	// 背景图
-
-
 	.home{
 		position: relative;
 		width: 100%;
 		min-width: 1200px;
 		font-family: $typography;
+		// 背景图
 		.bg-fixed {
 			position: absolute;
 			top: 0;
@@ -356,6 +358,7 @@ export default {
 				position: absolute;
 				top: 544px;
 				right: 0px;
+				background-color: #fff;
 				h4{
 					width: 146px;
 					height: 40px;
@@ -452,6 +455,5 @@ export default {
 				}
 			}
 		}
-
 	}
 </style>
