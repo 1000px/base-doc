@@ -2,7 +2,8 @@
   export default {
     data() {
       return {
-        tags1: ['tag1', 'tag2'],
+        tags1: ['tag11', 'tag12'],
+        tags2: ['tag21', 'tag22'],
         tags: [
           { name: '标签一', type: '' },
           { name: '标签二', type: 'success' },
@@ -16,11 +17,14 @@
       };
     },
     methods: {
-    	closeTag1(tag) {
+      handleClose(tag, index) {
+      	if (index === 1) {
     		this.tags1.splice(this.tags1.indexOf(tag), 1)
-    	},
-      handleClose(tag) {
-        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      	} else if (index === 2) {
+    		this.tags2.splice(this.tags2.indexOf(tag), 1)
+      	} else {
+        	this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+        }
       },
 
       showInput() {
@@ -37,6 +41,10 @@
         }
         this.inputVisible = false;
         this.inputValue = '';
+      },
+      
+      handleClick(selected) {
+      	console.log(selected, '111')
       }
     }
   }
@@ -67,7 +75,9 @@
 
 ### 基础用法
 
-:::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
+设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
+
+:::demo 
 
 ```html
 <kc-tag>标签一</kc-tag>
@@ -75,19 +85,33 @@
 <kc-tag
  	v-for="tag in tags1"
  	:key="tag"
+ 	:type="tag"
  	closable
- 	@close="closeTag1(tag)">
+ 	@close="handleClose(tag, 1)">
+ 	{{ tag }}</kc-tag>
+<kc-tag
+ 	v-for="tag in tags2"
+ 	:key="tag"
+ 	:type="tag"
+ 	closable
+ 	:disable-transitions="true"
+ 	@close="handleClose(tag, 2)">
  	{{ tag }}</kc-tag>
 <script>
   export default {
   	data() {
   		return {
-  			tags1: ['tag1', 'tag2']
+  			tags1: ['tag11', 'tag12'],
+  			tags2: ['tag21', 'tag22']
   		}
   	},
     methods: {
-    	closeTag1(tag) {
-    		this.tags1.splice(this.tags1.indexOf(tag), 1)
+    	handleClose(tag, index) {
+    		if (index === 1) {
+				this.tags1.splice(this.tags1.indexOf(tag), 1)
+			} else if (index === 2) {
+				this.tags2.splice(this.tags2.indexOf(tag), 1)
+			}
     	}
     }
   }
@@ -111,6 +135,7 @@
 </kc-tag>
 <kc-input
   class="input-new-tag"
+  v-if="inputVisible"
   v-model="inputValue"
   ref="saveTagInput"
   size="small"
@@ -118,7 +143,7 @@
   @blur="handleInputConfirm"
 >
 </kc-input>
-<kc-button class="button-new-tag" size="small" @click="showInput">+ New Tag</kc-button>
+<kc-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</kc-button>
 
 <style>
   .el-tag + .el-tag {
@@ -154,7 +179,7 @@
 
       showInput() {
         this.inputVisible = true;
-        this.$nextTick(_ => {
+        this.$nextTick(() => {
           this.$refs.saveTagInput.$refs.input.focus();
         });
       },
@@ -173,37 +198,32 @@
 ```
 :::
 
+### 多彩标签
 
-### 可移除标签
+由type属性来选择tag的类型，也可以通过color属性来自定义背景色。
 
-:::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
-
+:::demo
 ```html
-<kc-tag
-  v-for="tag in tags"
-  :key="tag.name"
-  closable
-  :type="tag.type">
-  {{tag.name}}
-</kc-tag>
-
-<script>
-  export default {
-    data() {
-      return {
-        tags: [
-          { name: '标签一', type: '' },
-          { name: '标签二', type: 'success' },
-          { name: '标签三', type: 'info' },
-          { name: '标签四', type: 'warning' },
-          { name: '标签五', type: 'danger' }
-        ]
-      };
-    }
-  }
-</script>
+<kc-tag>标签一</kc-tag>
+<kc-tag type="success">标签二</kc-tag>
+<kc-tag type="info">标签三</kc-tag>
+<kc-tag type="warning">标签四</kc-tag>
+<kc-tag type="danger">标签五</kc-tag>
+<br><br>
+<kc-tag color="red">red</kc-tag>
+<kc-tag color="orange">orange</kc-tag>
+<kc-tag color="gold">gold</kc-tag>
+<kc-tag color="green">green</kc-tag>
+<kc-tag color="blue">blue</kc-tag>
+<kc-tag color="black">black</kc-tag>
+<br><br>
+<kc-tag color="#f50">#f50</kc-tag>
+<kc-tag color="#2db7f5">#2db7f5</kc-tag>
+<kc-tag color="#87d068">#87d068</kc-tag>
+<kc-tag color="#108ee9">#108ee9</kc-tag>
 ```
 :::
+
 ### 不同尺寸
 
 Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
@@ -218,6 +238,54 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 ```
 :::
 
+### 可选择
+
+可以通过`click`事件，实现 Tag 组件的选中状态，并返回当前的选中状态值`selected`。
+
+:::demo
+
+```html
+<kc-tag selected @click="handleClick">标签1</kc-tag>
+<kc-tag type="success" @click="handleClick">标签2</kc-tag>
+<kc-tag color="red" @click="handleClick">标签3</kc-tag>
+
+<script >
+export default {
+	methods: {
+		handleClick(selected) {
+			console.log(selected)
+		}
+	}
+}
+</script>
+```
+:::
+
+### 热门标签
+
+选中感兴趣的话题。
+
+:::demo
+
+```html
+<h6 style="display: inline">catogories: </h6>
+<kc-tag selected @click="handleClick">Movie</kc-tag>
+<kc-tag selected @click="handleClick">Books</kc-tag>
+<kc-tag selected @click="handleClick">Music</kc-tag>
+<kc-tag selected @click="handleClick">Sports</kc-tag>
+
+<script >
+export default {
+	methods: {
+		handleClick(selected) {
+			console.log(selected)
+		}
+	}
+}
+</script>
+```
+:::
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
@@ -225,12 +293,14 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 | closable | 是否可关闭 | boolean | — | false |
 | disable-transitions | 是否禁用渐变动画 | boolean | — | false |
 | hit | 是否有边框描边 | boolean | — | false |
-| color | 背景色 | string | — | — |
+| color | 背景色，支持 colorName，rgb，hex 三种颜色类型，不带透明度的颜色 | string | — | — |
 | size | 尺寸 | string | medium / small / mini | — |
+| selected | 是否选中 | boolean | — | false |
 
 
 ### Events
 | 事件名称 | 说明 | 回调参数 |
 |---------- |-------- |---------- |
 | close | 关闭 Tag 时触发的事件 | — |
+| click | 点击 Tag 时触发的事件 | 标签的选中状态值 selected |
 
