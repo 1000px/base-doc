@@ -11,7 +11,7 @@
 					<span>{{_navLeft[key]['desc']}}</span>
 					<i></i>
 					<ul>
-						<li v-for="nav in _navLeft[key]['list']">
+						<li v-for="nav in _navLeft[key]['list']" :style="nav.desc==='气泡卡片' ? {textDecoration: 'line-through'} : {}">
 							<router-link :to="{name: nav.name}" exact>{{nav.desc}}</router-link>
 						</li>
 					</ul>
