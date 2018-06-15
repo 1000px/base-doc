@@ -19,6 +19,19 @@
 
 ### 基础用法
 
+鼠标滑入时显示文字提示
+
+:::demo
+
+```html
+<kc-tooltip effect="dark" content="提示文字" placement="top-start">
+  <span>鼠标滑入将会显示文字提示</span>
+</kc-tooltip>
+```
+:::
+
+### 展示位置
+
 在这里我们提供 9 种不同方向的展示方式，可以通过以下完整示例来理解，选择你要的效果。
 
 :::demo 使用`content`属性来决定`hover`时的提示信息。由`placement`属性决定展示效果：`placement`属性值为：`方向-对齐位置`；四个方向：`top`、`left`、`right`、`bottom`；三种对齐位置：`start`, `end`，默认为空。如`placement="left-end"`，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐。
@@ -130,9 +143,13 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 
 :::demo 用具名 slot 分发`content`，替代`tooltip`中的`content`属性。
 ```html
+<kc-tooltip placement="top" arrow-point-place="start">
+  <div slot="content">多行信息<br/>第二行信息</div>
+  <kc-button>Top center111</kc-button>
+  <kc-button>Top center</kc-button>
+</kc-tooltip>
 <kc-tooltip placement="top">
   <div slot="content">多行信息<br/>第二行信息</div>
-  <kc-button>Top center</kc-button>
 </kc-tooltip>
 ```
 :::
