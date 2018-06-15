@@ -1,5 +1,16 @@
+### Upload 上传
+
+...开发中
+
 <style>
-  .upload-tip {
+  .markcss ul, .markcss ol {
+    padding-left: 0 !important;
+  }
+  .markcss a {
+    color: #000;
+    text-decoration: none;
+}
+  .kc-upload__tip {
     color: #8492a6;
     font-size: 12px;
     margin-top: 7px;
@@ -114,8 +125,8 @@
   }
 </script>
 
-### Upload 上传
 
+<!-- 
 通过点击或者拖拽上传文件
 
 ### 点击上传
@@ -132,7 +143,7 @@
   :limit="3"
   :on-exceed="handleExceed"
   :file-list="fileList">
-  <kc-button size="small" type="primary">点击上传</kc-button>
+  <kc-button size="small" type="dafault" style="width:113px;height:36px;"><i class="icon el-icon-upload2" style="font-size:14px;font-weight:700;color:#575A5F;margin-right:5px;"></i>点击上传</kc-button>
   <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
@@ -428,4 +439,4 @@
 | 方法名      | 说明          | 参数 |
 |---------- |-------------- | -- |
 | clearFiles | 清空已上传的文件列表（该方法不支持在 before-upload 中调用） | — |
-| abort | 取消上传请求 | （ file: fileList 中的 file 对象 ） |
+| abort | 取消上传请求 | （ file: fileList 中的 file 对象 ） | -->
