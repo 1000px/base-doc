@@ -397,7 +397,6 @@
 	 * @returns {Object} An object containing the offsets which will be applied to the popper
 	 */
 	Popper.prototype._getOffsets = function (popper, reference, placement, arrowPointPlace) {
-		console.log(popper, reference, placement)
 		placement = placement.split('-')[0];
 		var popperOffsets = {};
 
