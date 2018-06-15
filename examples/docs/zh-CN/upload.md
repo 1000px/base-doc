@@ -1,5 +1,12 @@
 <style>
-  .upload-tip {
+  .markcss ul, .markcss ol {
+    padding-left: 0 !important;
+  }
+  .markcss a {
+    color: #000;
+    text-decoration: none;
+}
+  .kc-upload__tip {
     color: #8492a6;
     font-size: 12px;
     margin-top: 7px;
@@ -132,7 +139,7 @@
   :limit="3"
   :on-exceed="handleExceed"
   :file-list="fileList">
-  <kc-button size="small" type="primary">点击上传</kc-button>
+  <kc-button size="small" type="dafault" style="width:113px;height:36px;"><i class="icon el-icon-upload2" style="font-size:14px;font-weight:700;color:#575A5F;margin-right:5px;"></i>点击上传</kc-button>
   <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
