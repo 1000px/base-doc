@@ -5,8 +5,8 @@
 				v-model="allChecked"
 				@change="handleAllCheckedChange"
 				:indeterminate="isIndeterminate">
-				{{ title }}
 				<span>{{ checkedSummary }}</span>
+				<label>{{ title }}</label>
 			</kc-checkbox>
 		</p>
 
@@ -19,7 +19,7 @@
 				@mouseenter.native="inputHover = true"
 				@mouseleave.native="inputHover = false"
 				v-if="filterable">
-				<i slot="prefix"
+				<i slot="suffix"
 				   :class="['el-input__icon', 'el-icon-' + inputIcon]"
 				   @click="clearQuery"
 				></i>
