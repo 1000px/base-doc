@@ -109,7 +109,7 @@
 				</ul>
 				<ul>
 					<li>帮助中心</li>
-					<li v-for="(item3,index) in station" :key="index"><a href="">{{item3.data}}</a></li>
+					<li v-for="(item3,index) in help" :key="index"><a href="">{{item3.data}}</a></li>
 				</ul>
 				<ul>
 					<li>版权所有@-2018</li>

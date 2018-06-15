@@ -19,6 +19,7 @@ import CollapseItem from './collapse-item';
 import CollapseTransition from '_src/transitions/collapse-transition';
 import ColorPicker from './color-picker';
 import DatePicker from './date-picker';
+import Dialog from './dialog';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
@@ -48,6 +49,7 @@ import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
+import Spin from './spin';
 import Step from './step';
 import Steps from './steps';
 import Switch from './switch';
@@ -84,6 +86,7 @@ const components = [
 	CollapseTransition,
 	ColorPicker,
 	DatePicker,
+	Dialog,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -110,6 +113,7 @@ const components = [
 	Scrollbar,
 	Select,
 	Slider,
+	Spin,
 	Step,
 	Steps,
 	Switch,
@@ -163,6 +167,7 @@ export default {
 	CollapseTransition,
 	ColorPicker,
 	DatePicker,
+	Dialog,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
@@ -195,6 +200,7 @@ export default {
 	Steps,
 	Switch,
 	Scrollbar,
+	Spin,
 	Submenu,
 	Tabs,
 	TabPane,

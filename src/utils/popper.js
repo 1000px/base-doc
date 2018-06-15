@@ -146,7 +146,7 @@
 	 * @param {Boolean} [options.removeOnDestroy=false]
 	 *      Set to true if you want to automatically remove the popper when you call the `destroy` method.
 	 */
-	function Popper(reference, popper, options) {
+	function Popper (reference, popper, options) {
 		this._reference = reference.jquery ? reference[0] : reference;
 		this.state = {};
 
@@ -191,7 +191,6 @@
 		this._setupEventListeners();
 		return this;
 	}
-
 
 	//
 	// Methods
@@ -343,7 +342,7 @@
 		 * @param {HTMLElement} target
 		 * @param {Array} classes
 		 */
-		function addClassNames(element, classNames) {
+		function addClassNames (element, classNames) {
 			classNames.forEach(function (className) {
 				element.classList.add(className);
 			});
@@ -358,7 +357,7 @@
 		 * @example
 		 * addAttributes(element, [ 'data-info:foobar' ]);
 		 */
-		function addAttributes(element, attributes) {
+		function addAttributes (element, attributes) {
 			attributes.forEach(function (attribute) {
 				element.setAttribute(attribute.split(':')[0], attribute.split(':')[1] || '');
 			});
@@ -445,7 +444,6 @@
 		};
 	};
 
-
 	/**
 	 * Setup needed event listeners used to update the popper position
 	 * @method
@@ -519,10 +517,10 @@
 			// Thanks the fucking native API, `document.body.scrollTop` & `document.documentElement.scrollTop`
 			var getScrollTopValue = function (element) {
 				return element == document.body ? Math.max(document.documentElement.scrollTop, document.body.scrollTop) : element.scrollTop;
-			}
+			};
 			var getScrollLeftValue = function (element) {
 				return element == document.body ? Math.max(document.documentElement.scrollLeft, document.body.scrollLeft) : element.scrollLeft;
-			}
+			};
 
 			// if the popper is fixed we don't have to substract scrolling from the boundaries
 			var scrollTop = data.offsets.popper.position === 'fixed' ? 0 : getScrollTopValue(scrollParent);
@@ -552,7 +550,6 @@
 		boundaries.bottom = boundaries.bottom - padding;
 		return boundaries;
 	};
-
 
 	/**
 	 * Loop trough the list of modifiers and run them in order, each of them will then edit the data object
@@ -692,7 +689,6 @@
 
 		return data;
 	};
-
 
 	/**
 	 * Modifier used to make sure the popper does not overflows from it's boundaries
@@ -855,14 +851,11 @@
 
 		if (data.placement.indexOf('left') !== -1) {
 			popper.top -= offset;
-		}
-		else if (data.placement.indexOf('right') !== -1) {
+		} else if (data.placement.indexOf('right') !== -1) {
 			popper.top += offset;
-		}
-		else if (data.placement.indexOf('top') !== -1) {
+		} else if (data.placement.indexOf('top') !== -1) {
 			popper.left -= offset;
-		}
-		else if (data.placement.indexOf('bottom') !== -1) {
+		} else if (data.placement.indexOf('bottom') !== -1) {
 			popper.left += offset;
 		}
 		return data;
@@ -944,7 +937,6 @@
 		return data;
 	};
 
-
 	//
 	// Helpers
 	//
@@ -956,7 +948,7 @@
 	 * @argument {Element} element
 	 * @returns {Object} object containing width and height properties
 	 */
-	function getOuterSizes(element) {
+	function getOuterSizes (element) {
 		// NOTE: 1 DOM access here
 		var _display = element.style.display, _visibility = element.style.visibility;
 		element.style.display = 'block';
@@ -982,7 +974,7 @@
 	 * @argument {String} placement
 	 * @returns {String} flipped placement
 	 */
-	function getOppositePlacement(placement) {
+	function getOppositePlacement (placement) {
 		var hash = {left: 'right', right: 'left', bottom: 'top', top: 'bottom'};
 		return placement.replace(/left|right|bottom|top/g, function (matched) {
 			return hash[matched];
@@ -996,7 +988,7 @@
 	 * @argument {Object} popperOffsets
 	 * @returns {Object} ClientRect like output
 	 */
-	function getPopperClientRect(popperOffsets) {
+	function getPopperClientRect (popperOffsets) {
 		var offsets = Object.assign({}, popperOffsets);
 		offsets.right = offsets.left + offsets.width;
 		offsets.bottom = offsets.top + offsets.height;
@@ -1011,7 +1003,7 @@
 	 * @argument keyToFind
 	 * @returns index or null
 	 */
-	function getArrayKeyIndex(arr, keyToFind) {
+	function getArrayKeyIndex (arr, keyToFind) {
 		var i = 0, key;
 		for (key in arr) {
 			if (arr[key] === keyToFind) {
@@ -1029,7 +1021,7 @@
 	 * @argument {Eement} element
 	 * @argument {String} property
 	 */
-	function getStyleComputedProperty(element, property) {
+	function getStyleComputedProperty (element, property) {
 		// NOTE: 1 DOM access here
 		var css = root.getComputedStyle(element, null);
 		return css[property];
@@ -1042,7 +1034,7 @@
 	 * @argument {Element} element
 	 * @returns {Element} offset parent
 	 */
-	function getOffsetParent(element) {
+	function getOffsetParent (element) {
 		// NOTE: 1 DOM access here
 		var offsetParent = element.offsetParent;
 		return offsetParent === root.document.body || !offsetParent ? root.document.documentElement : offsetParent;
@@ -1055,7 +1047,7 @@
 	 * @argument {Element} element
 	 * @returns {Element} offset parent
 	 */
-	function getScrollParent(element) {
+	function getScrollParent (element) {
 		var parent = element.parentNode;
 
 		if (!parent) {
@@ -1094,7 +1086,7 @@
 	 * @argument {Element} customContainer
 	 * @returns {Boolean} answer to "isFixed?"
 	 */
-	function isFixed(element) {
+	function isFixed (element) {
 		if (element === root.document.body) {
 			return false;
 		}
@@ -1111,8 +1103,8 @@
 	 * @argument {Element} element - Element to apply the style to
 	 * @argument {Object} styles_tmp - Object with a list of properties and values which will be applied to the element
 	 */
-	function setStyle(element, styles) {
-		function is_numeric(n) {
+	function setStyle (element, styles) {
+		function is_numeric (n) {
 			return (n !== '' && !isNaN(parseFloat(n)) && isFinite(n));
 		}
 
@@ -1133,7 +1125,7 @@
 	 * @argument {*} functionToCheck - variable to check
 	 * @returns {Boolean} answer to: is a function?
 	 */
-	function isFunction(functionToCheck) {
+	function isFunction (functionToCheck) {
 		var getType = {};
 		return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
 	}
@@ -1145,7 +1137,7 @@
 	 * @param {Element} element
 	 * @return {Object} position - Coordinates of the element and its `scrollTop`
 	 */
-	function getOffsetRect(element) {
+	function getOffsetRect (element) {
 		var elementRect = {
 			width: element.offsetWidth,
 			height: element.offsetHeight,
@@ -1167,11 +1159,11 @@
 	 * @param {HTMLElement} element
 	 * @return {Object} client rect
 	 */
-	function getBoundingClientRect(element) {
+	function getBoundingClientRect (element) {
 		var rect = element.getBoundingClientRect();
 
 		// whether the IE version is lower than 11
-		var isIE = navigator.userAgent.indexOf("MSIE") != -1;
+		var isIE = navigator.userAgent.indexOf('MSIE') != -1;
 
 		// fix ie document bounding top always 0 bug
 		var rectTop = isIE && element.tagName === 'HTML'
@@ -1196,7 +1188,7 @@
 	 * @param {HTMLElement} parent
 	 * @return {Object} rect
 	 */
-	function getOffsetRectRelativeToCustomParent(element, parent, fixed) {
+	function getOffsetRectRelativeToCustomParent (element, parent, fixed) {
 		var elementRect = getBoundingClientRect(element);
 		var parentRect = getBoundingClientRect(parent);
 
@@ -1226,7 +1218,7 @@
 	 * @argument {String} property (camelCase)
 	 * @returns {String} prefixed property (camelCase)
 	 */
-	function getSupportedPropertyName(property) {
+	function getSupportedPropertyName (property) {
 		var prefixes = ['', 'ms', 'webkit', 'moz', 'o'];
 
 		for (var i = 0; i < prefixes.length; i++) {

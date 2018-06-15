@@ -71,15 +71,6 @@
 				val ? this.$emit('show') : this.$emit('hide');
 			}
 		},
-		directives: {
-			vLeft: {
-				// 指令的定义
-				inserted: function (el) {
-					Popper.update('left', '25%');
-				}
-			}
-		},
-
 		mounted () {
 			let reference = this.referenceElm = this.reference || this.$refs.reference;
 			const popper = this.popper || this.$refs.popper;
