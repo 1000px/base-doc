@@ -52,6 +52,8 @@ import Step from './step';
 import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
+import Tabs from './tabs';
+import TabPane from './tab-pane'
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -112,6 +114,8 @@ const components = [
 	Steps,
 	Switch,
 	Submenu,
+	Tabs,
+	TabPane,
 	Tag,
 	TimePicker,
 	TimeSelect,
@@ -192,6 +196,8 @@ export default {
 	Switch,
 	Scrollbar,
 	Submenu,
+	Tabs,
+	TabPane,
 	Tag,
 	TimePicker,
 	TimeSelect,
