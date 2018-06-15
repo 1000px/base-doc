@@ -1,8 +1,8 @@
-import Tree from './src/tree.vue';
+import KcTree from './src/tree.vue';
 
 /* istanbul ignore next */
-Tree.install = function(Vue) {
-	Vue.component(Tree.name, Tree);
+KcTree.install = function(Vue) {
+	Vue.component(KcTree.name, KcTree);
 };
 
-export default Tree;
+export default KcTree;

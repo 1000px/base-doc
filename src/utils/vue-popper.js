@@ -25,6 +25,7 @@ export default {
 			type: String,
 			default: 'bottom'
 		},
+		arrowPointPlace: String,
 		boundariesPadding: {
 			type: Number,
 			default: 5
@@ -107,6 +108,7 @@ export default {
 			options.placement = this.currentPlacement;
 			options.offset = this.offset;
 			options.arrowOffset = this.arrowOffset;
+			options.arrowPointPlace = this.arrowPointPlace;
 			// this.popperJS = new PopperJS(reference, popper, options);//此处报错被注释
 			let Popper = PopperJS.Popper
 			this.popperJS = new Popper(reference, popper, options);

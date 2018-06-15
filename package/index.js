@@ -49,13 +49,17 @@ import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
 import Spin from './spin';
+import Step from './step';
+import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
 import Tooltip from './tooltip';
+import Transfer from './transfer';
 import Tree from './tree';
+import Upload from './upload';
 
 const components = [
 	Alert,
@@ -106,13 +110,17 @@ const components = [
 	Select,
 	Slider,
 	Spin,
+	Step,
+	Steps,
 	Switch,
 	Submenu,
 	Tag,
 	TimePicker,
 	TimeSelect,
 	Tooltip,
-	Tree
+	Transfer,
+	Tree,
+	Upload
 ];
 const install = function (Vue) {
 	if (install.installed) return;
@@ -181,6 +189,8 @@ export default {
 	Row,
 	Select,
 	Slider,
+	Step,
+	Steps,
 	Switch,
 	Scrollbar,
 	Spin,
@@ -189,5 +199,7 @@ export default {
 	TimePicker,
 	TimeSelect,
 	Tooltip,
-	Tree
+	Transfer,
+	Tree,
+	Upload
 };

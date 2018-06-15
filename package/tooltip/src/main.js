@@ -1,7 +1,7 @@
 import Popper from '_src/utils/vue-popper';
 import debounce from 'throttle-debounce/debounce';
 import {addClass, removeClass, on, off} from '_src/utils/dom';
-import {getFirstComponentChild} from '_src/utils/vdom';
+import {getComponentChildrenCount, getFirstComponentChild} from '_src/utils/vdom';
 import {generateId} from '_src/utils/util';
 import Vue from 'vue';
 
@@ -80,33 +80,18 @@ export default {
 		if (this.popperVM) {
 			this.popperVM.node = (
 				<transition
-					name={this.transition
-					}
-					onAfterLeave={this.doDestroy
-					}>
+					name={this.transition}
+					onAfterLeave={this.doDestroy}>
 					<div
-						onMouseleave = {() => {
-							this.setExpectedState(false);
-							this.debounceClose();
-						}
-						}
-						onMouseenter = {() => {
-							this.setExpectedState(true);
-						}
-						}
+						onMouseleave = {() => {this.setExpectedState(false); this.debounceClose();}}
+						onMouseenter = {() => {this.setExpectedState(true);}}
 						ref="popper"
 						role="tooltip"
-						id={this.tooltipId
-						}
-						aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'
-						}
-						v-show={
-							!this.disabled && this.showPopper
-						}
+						id={this.tooltipId}
+						aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
+						v-show={!this.disabled && this.showPopper}
 						class={['el-tooltip__popper', 'is-' + this.effect, this.popperClass]}>
-						{
-							this.$slots.content || this.content
-						}
+						{ this.$slots.content || this.content }
 					</div>
 				</transition>
 			);
@@ -114,7 +99,15 @@ export default {
 
 		if (!this.$slots.default || !this.$slots.default.length) return this.$slots.default;
 
-		const vnode = getFirstComponentChild(this.$slots.default);
+		let vnode = ''
+		let count = getComponentChildrenCount(this.$slots.default);
+		if (count > 1) {
+			vnode = (
+				<span>{this.$slots.default}</span>
+			)
+		} else {
+			vnode = getFirstComponentChild(this.$slots.default);
+		}
 
 		if (!vnode) return vnode;
 

@@ -218,26 +218,39 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
 </style>
 ```
 :::
-
+### 边缘对齐
 :::demo
 ```html
 <kc-popover
-  placement="top-start"
+  placement="top"
   title="Title"
-  width="200"
-  trigger="click"
+  width="100"
+  trigger="hover"
   popper-class="popleft"
-  content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-  <kc-button slot="reference">鼠标划入</kc-button>
+  arrow-point-place="start"
+  content="这是一段内容,这是一段内容">
+   <kc-button slot="reference">popover弹框在目标元素之前</kc-button>
+   
+</kc-popover>
+
+<kc-popover
+  placement="top"
+  title="Title"
+  width="100"
+  trigger="hover"
+  popper-class="popleft"
+ 
+  content="这是一段内容,这是一段内容">
+  <kc-button slot="reference">popover弹框在目标元素中间</kc-button>
 </kc-popover>
 <kc-popover
-  placement="top-start"
+  placement="top"
   title="Title"
-  width="200"
-  trigger="click"
-  offset=-30
-  content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-  <kc-button slot="reference">鼠标划入</kc-button>
+  width="100"
+  trigger="hover"
+  arrow-point-place="end"
+  content="这是一段内容,这是一段内容">
+  <kc-button slot="reference">popover弹框在目标元素之后</kc-button>
 </kc-popover>
 <style lang="scss">
 
@@ -291,6 +304,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
 |  popper-options        | [popper.js](https://popper.js.org/documentation.html) 的参数 | Object            | 参考 [popper.js](https://popper.js.org/documentation.html) 文档 | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | popper-class | 为 popper 添加类名 | String | — | — |
 | open-delay | 触发方式为 hover 时的显示延迟，单位为毫秒 | Number | — | — |
+| arrow-point-place | Tooltip 出现的位置为 top 或 bottom 时，Tooltip 是否在目标元素的开头或者末尾，默认在中间 | string | start/end | — |
 
 ### Slot
 | 参数 | 说明 |
