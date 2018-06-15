@@ -48,6 +48,8 @@ import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
+import Step from './step';
+import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
 import Tag from './tag';
@@ -56,6 +58,7 @@ import TimeSelect from './time-select';
 import Tooltip from './tooltip';
 import Transfer from './transfer';
 import Tree from './tree';
+import Upload from './upload';
 
 const components = [
 	Alert,
@@ -105,6 +108,8 @@ const components = [
 	Scrollbar,
 	Select,
 	Slider,
+	Step,
+	Steps,
 	Switch,
 	Submenu,
 	Tag,
@@ -112,7 +117,8 @@ const components = [
 	TimeSelect,
 	Tooltip,
 	Transfer,
-	Tree
+	Tree,
+	Upload
 ];
 const install = function (Vue) {
 	if (install.installed) return;
@@ -181,6 +187,8 @@ export default {
 	Row,
 	Select,
 	Slider,
+	Step,
+	Steps,
 	Switch,
 	Scrollbar,
 	Submenu,
@@ -189,5 +197,6 @@ export default {
 	TimeSelect,
 	Tooltip,
 	Transfer,
-	Tree
+	Tree,
+	Upload
 };

@@ -17,24 +17,33 @@
 
   @include e(button) {
     display: block;
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
     margin: 0 auto;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 4px;
     color: $--color-white;
     background-color: $--color-primary;
     font-size: 0;
+
+    span {
+      position: relative;
+      top: -10px;
+      left: -2px;
+    }
 
     @include when(with-texts) {
       border-radius: $--border-radius-base;
     }
 
     @include when(disabled) {
-      border: $--border-base;
-      background-color: $--background-color-base;
-      color: $--color-text-placeholder;
+      border: solid 1px  #D9D9D9;
+      background-color: #F5F5F5;
+      color: #C0C0C0;
 
       &:hover {
-        border: $--border-base;
+        border: solid 1px  #D9D9D9;
         background-color: $--background-color-base;
         color: $--color-text-placeholder;
       }
@@ -133,14 +142,14 @@
     width: auto;
 
     .el-input__inner {
-      height: $--transfer-filter-height;
+      height: 32px;
       width: 100%;
       font-size: 12px;
       display: inline-block;
       box-sizing: border-box;
-      border-radius: #{$--transfer-filter-height / 2};
-      padding-right: 10px;
-      padding-left: 30px;
+      border-radius: 4px;
+      // padding-right: 10px;
+      // padding-left: 30px;
     }
 
     .el-input__icon {
