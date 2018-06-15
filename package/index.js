@@ -48,6 +48,8 @@ import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
+import Step from './step';
+import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
 import Tag from './tag';
@@ -106,6 +108,8 @@ const components = [
 	Scrollbar,
 	Select,
 	Slider,
+	Step,
+	Steps,
 	Switch,
 	Submenu,
 	Tag,
@@ -183,6 +187,8 @@ export default {
 	Row,
 	Select,
 	Slider,
+	Step,
+	Steps,
 	Switch,
 	Scrollbar,
 	Submenu,
