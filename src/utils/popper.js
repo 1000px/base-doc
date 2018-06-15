@@ -228,9 +228,10 @@
 		// and refer to _originalPlacement to know the original value
 		data.placement = this._options.placement;
 		data._originalPlacement = this._options.placement;
+		data.arrowPointPlace = this._options.arrowPointPlace;
 
 		// compute the popper and reference offsets and put them inside data.offsets
-		data.offsets = this._getOffsets(this._popper, this._reference, data.placement);
+		data.offsets = this._getOffsets(this._popper, this._reference, data.placement, data.arrowPointPlace);
 
 		// get boundaries
 		data.boundaries = this._getBoundaries(data, this._options.boundariesPadding, this._options.boundariesElement);
@@ -395,7 +396,7 @@
 	 * @param {Element} reference - the reference element (the popper will be relative to this)
 	 * @returns {Object} An object containing the offsets which will be applied to the popper
 	 */
-	Popper.prototype._getOffsets = function (popper, reference, placement) {
+	Popper.prototype._getOffsets = function (popper, reference, placement, arrowPointPlace) {
 		placement = placement.split('-')[0];
 		var popperOffsets = {};
 
@@ -425,7 +426,8 @@
 				popperOffsets.left = referenceOffsets.right;
 			}
 		} else {
-			popperOffsets.left = referenceOffsets.left + referenceOffsets.width / 2 - popperRect.width / 2;
+			let rewidth = arrowPointPlace === 'start' ? 0 : (arrowPointPlace === 'end' ? referenceOffsets.width : referenceOffsets.width / 2);
+			popperOffsets.left = referenceOffsets.left + rewidth - popperRect.width / 2;
 			if (placement === 'top') {
 				popperOffsets.top = referenceOffsets.top - popperRect.height;
 			} else {
@@ -830,7 +832,8 @@
 				if (variation) {
 					data.placement += '-' + variation;
 				}
-				data.offsets.popper = this._getOffsets(this._popper, this._reference, data.placement).popper;
+				data.arrowPointPlace = this._options.arrowPointPlace;
+				data.offsets.popper = this._getOffsets(this._popper, this._reference, data.placement, data.arrowPointPlace).popper;
 
 				data = this.runModifiers(data, this._options.modifiers, this._flip);
 			}

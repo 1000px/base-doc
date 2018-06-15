@@ -19,6 +19,19 @@
 
 ### 基础用法
 
+鼠标滑入时显示文字提示
+
+:::demo
+
+```html
+<kc-tooltip effect="dark" content="提示文字" placement="top-start">
+  <span>鼠标滑入将会显示文字提示</span>
+</kc-tooltip>
+```
+:::
+
+### 展示位置
+
 在这里我们提供 9 种不同方向的展示方式，可以通过以下完整示例来理解，选择你要的效果。
 
 :::demo 使用`content`属性来决定`hover`时的提示信息。由`placement`属性决定展示效果：`placement`属性值为：`方向-对齐位置`；四个方向：`top`、`left`、`right`、`bottom`；三种对齐位置：`start`, `end`，默认为空。如`placement="left-end"`，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐。
@@ -130,9 +143,35 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 
 :::demo 用具名 slot 分发`content`，替代`tooltip`中的`content`属性。
 ```html
-<kc-tooltip placement="top">
+<kc-tooltip placement="top" arrow-point-place="start">
   <div slot="content">多行信息<br/>第二行信息</div>
   <kc-button>Top center</kc-button>
+</kc-tooltip>
+```
+:::
+
+### 箭头指向
+
+展示方式为 top 或 bottom 时，设置文本内容在目标元素的位置(开头/末尾/中间)
+
+:::demo 通过属性 arrow-point-place 设置，可选值 start(开头位置)/end(末尾位置)，默认值为空(中间位置)。
+```html
+<kc-tooltip placement="top" arrow-point-place="start">
+  <div slot="content">我在目标元素的开始位置</div>
+  <kc-button>start</kc-button>
+  <kc-button>i'm in the start</kc-button>
+</kc-tooltip>
+<br><br>
+<kc-tooltip placement="top">
+  <div slot="content">我在目标元素的中间位置</div>
+  <kc-button>center</kc-button>
+  <kc-button>i'm in the center</kc-button>
+</kc-tooltip>
+<br><br>
+<kc-tooltip placement="top" arrow-point-place="end">
+  <div slot="content">我在目标元素的末尾位置</div>
+  <kc-button>end</kc-button>
+  <kc-button>i' in the end</kc-button>
 </kc-tooltip>
 ```
 :::
@@ -178,4 +217,5 @@ tooltip 内不支持 disabled form 元素，参考[MDN](https://developer.mozill
 | popper-class | 为 Tooltip 的 popper 添加类名 | String | — | — |
 | enterable | 鼠标是否可进入到 tooltip 中 | Boolean | — | true |
 | hide-after | Tooltip 出现后自动隐藏延时，单位毫秒，为 0 则不会自动隐藏 | number | — | 0 |
+| arrow-point-place | Tooltip 出现的位置为 top 或 bottom 时，Tooltip 是否在目标元素的开头或者末尾，默认在中间 | string | start/end | — |
 

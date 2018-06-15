@@ -7,3 +7,8 @@ export function isVNode(node) {
 export function getFirstComponentChild(children) {
 	return children && children.filter(c => c && c.tag)[0];
 };
+
+export function getComponentChildrenCount(children) {
+	let tagChildren = children && children.filter(c => c && c.tag);
+	return tagChildren.length
+};
