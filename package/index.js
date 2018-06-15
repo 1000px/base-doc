@@ -56,6 +56,7 @@ import TimeSelect from './time-select';
 import Tooltip from './tooltip';
 import Transfer from './transfer';
 import Tree from './tree';
+import Upload from './upload';
 
 const components = [
 	Alert,
@@ -112,7 +113,8 @@ const components = [
 	TimeSelect,
 	Tooltip,
 	Transfer,
-	Tree
+	Tree,
+	Upload
 ];
 const install = function (Vue) {
 	if (install.installed) return;
@@ -189,5 +191,6 @@ export default {
 	TimeSelect,
 	Tooltip,
 	Transfer,
-	Tree
+	Tree,
+	Upload
 };
