@@ -138,13 +138,13 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
 ```html
 <div class="box">
   <div class="top">
-    <kc-popover class="item" placement="top-start" content="Top Left 提示文字" title="Title" width="200" trigger="hover">
+    <kc-popover class="item" placement="top-end" content="Top Left 提示文字" title="Title" width="200" trigger="hover">
       <kc-button  slot="reference">上左</kc-button>
     </kc-popover>
     <kc-popover class="item"  content="Top Center 提示文字" title="Title" placement="top" width="200" trigger="hover">
       <kc-button  slot="reference">上中</kc-button>
     </kc-popover>
-    <kc-popover class="item"  content="Top Right 提示文字" title="Title" placement="top-end" width="200" trigger="hover">
+    <kc-popover class="item"  content="Top Right 提示文字" title="Title" placement="top-start" width="200" trigger="hover">
       <kc-button  slot="reference">上右</kc-button>
     </kc-popover>
   </div>
@@ -172,13 +172,13 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     </kc-popover>
   </div>
   <div class="bottom">
-    <kc-popover class="item"  content="Bottom Left 提示文字" title="Title" placement="bottom-start" width="200" trigger="hover">
+    <kc-popover class="item"  content="Bottom Left 提示文字" title="Title" placement="bottom-end" width="200" trigger="hover">
       <kc-button  slot="reference">下左</kc-button>
     </kc-popover>
     <kc-popover class="item"  content="Bottom Center 提示文字" title="Title" placement="bottom" width="200" trigger="hover">
       <kc-button  slot="reference">下中</kc-button>
     </kc-popover>
-    <kc-popover class="item"  content="Bottom Right 提示文字" title="Title" placement="bottom-end" width="200" trigger="hover">
+    <kc-popover class="item"  content="Bottom Right 提示文字" title="Title" placement="bottom-start" width="200" trigger="hover">
       <kc-button  slot="reference">下右</kc-button>
     </kc-popover>
   </div>
@@ -215,6 +215,32 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
       padding: 8px 10px;
     }
   }
+</style>
+```
+:::
+
+:::demo
+```html
+<kc-popover
+  placement="top-start"
+  title="Title"
+  width="200"
+  trigger="click"
+  popper-class="popleft"
+  content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+  <kc-button slot="reference">鼠标划入</kc-button>
+</kc-popover>
+<kc-popover
+  placement="top-start"
+  title="Title"
+  width="200"
+  trigger="click"
+  offset=-30
+  content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+  <kc-button slot="reference">鼠标划入</kc-button>
+</kc-popover>
+<style lang="scss">
+
 </style>
 ```
 :::

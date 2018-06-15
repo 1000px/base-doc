@@ -13,10 +13,7 @@
 </script>
 
 <style>
-  .docs-demo,
-  .docs-demo__triangle {
-    margin-top: 20px;
-  }
+ 
 </style>
 
 ## Radio 单选框

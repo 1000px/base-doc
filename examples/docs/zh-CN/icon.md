@@ -10,10 +10,10 @@
   }
 </script>
 <style lang="scss">
-  .demo-block div > i {
+.demo-icon i {
     color: #606266;
-    margin: 0 20px;
     font-size: 1.5em;
+    margin:0 10px;
     vertical-align: middle;
   }
 
@@ -29,6 +29,7 @@
     border-radius: 4px;
   }
   .icon-list li {
+  list-style:none;
     float: left;
     width: 16.66%;
     text-align: center;

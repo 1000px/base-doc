@@ -48,6 +48,7 @@ import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
+import Spin from './spin';
 import Switch from './switch';
 import Submenu from './submenu';
 import Tag from './tag';
@@ -104,6 +105,7 @@ const components = [
 	Scrollbar,
 	Select,
 	Slider,
+	Spin,
 	Switch,
 	Submenu,
 	Tag,
@@ -181,6 +183,7 @@ export default {
 	Slider,
 	Switch,
 	Scrollbar,
+	Spin,
 	Submenu,
 	Tag,
 	TimePicker,

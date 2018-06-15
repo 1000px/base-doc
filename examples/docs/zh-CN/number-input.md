@@ -23,10 +23,7 @@
   };
 </script>
 <style>
-  .docs-demo,
-  .docs-demo__triangle {
-    margin-top: 20px;
-  }
+  
   .demo-box.demo-input-number {
     .el-input-number + .el-input-number {
       margin-left: 10px;
