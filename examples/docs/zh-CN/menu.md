@@ -1,9 +1,9 @@
 <style lang='scss' scoped>
   .el-menu-demo {
     .el-menu-item, 
+    .el-menu-item-group,
     .el-submenu {
       list-style: none;
-      /* padding-left: 0; */
       a:link {
         color: #8C9097;
       }
