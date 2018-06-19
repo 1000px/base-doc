@@ -1,38 +1,15 @@
-<style>
-  .markcss ul, .markcss ol {
-    padding-left: 0 !important;
-  }
-  .markcss a:link, 
-  .markcss a:visited {
-    color: #8C9097 !important;
-  }
-  .demo-menu {
-    .el-menu-demo {
-      padding-left: 55px;
-    }
-    .el-menu-vertical-demo:not(.el-menu--collapse) {
-      width: 240px;
-      min-height: 400px;
-    }
-    .line {
-      height: 1px;
-      background-color: #e0e6ed;
-      margin: 35px -24px;
-    }
-    h5 {
-      font-size: 14px;
-      color: #8492a6;
-      margin-top: 10px;
-    }
-    .tac {
-      text-align: center;
-
-      .el-menu-vertical-demo {
-        display: inline-block;
-        text-align: left;
+<style lang='scss' scoped>
+  .el-menu-demo {
+    .el-menu-item, 
+    .el-submenu {
+      list-style: none;
+      /* padding-left: 0; */
+      a:link {
+        color: #8C9097;
       }
     }
   }
+  
 </style>
 
 <script>
@@ -62,57 +39,56 @@
 
 为网站提供导航功能的菜单。
 
-### 顶栏
+### 水平导航
 
-适用广泛的基础用法。
+水平的顶部导航菜单。
 
 :::demo 导航菜单默认为垂直模式，通过`mode`属性可以使导航菜单变更为水平模式。另外，在菜单中通过`submenu`组件可以生成二级菜单。Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 ```html
-<kc-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <kc-menu-item index="1">处理中心</kc-menu-item>
-  <kc-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <kc-menu-item index="2-1">选项1</kc-menu-item>
-    <kc-menu-item index="2-2">选项2</kc-menu-item>
-    <kc-menu-item index="2-3">选项3</kc-menu-item>
-    <kc-submenu index="2-4">
-      <template slot="title">选项4</template>
-      <kc-menu-item index="2-4-1">选项1</kc-menu-item>
-      <kc-menu-item index="2-4-2">选项2</kc-menu-item>
-      <kc-menu-item index="2-4-3">选项3</kc-menu-item>
+  <kc-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <kc-menu-item index="1">处理中心</kc-menu-item>
+    <kc-submenu index="2">
+      <template slot="title">我的工作台</template>
+      <kc-menu-item index="2-1">选项1</kc-menu-item>
+      <kc-menu-item index="2-2">选项2</kc-menu-item>
+      <kc-menu-item index="2-3">选项3</kc-menu-item>
+      <kc-submenu index="2-4">
+        <template slot="title">选项4</template>
+        <kc-menu-item index="2-4-1">选项1</kc-menu-item>
+        <kc-menu-item index="2-4-2">选项2</kc-menu-item>
+        <kc-menu-item index="2-4-3">选项3</kc-menu-item>
+      </kc-submenu>
     </kc-submenu>
-  </kc-submenu>
-  <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
-  <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
-</kc-menu>
-<div class="line"></div>
-<kc-menu
-  style="margin-top:30px;"
-  :default-active="activeIndex2"
-  class="el-menu-demo"
-  mode="horizontal"
-  @select="handleSelect"
-  background-color="#545c64"
-  text-color="#fff"
-  active-text-color="#ffd04b">
-  <kc-menu-item index="1">处理中心</kc-menu-item>
-  <kc-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <kc-menu-item index="2-1">选项1</kc-menu-item>
-    <kc-menu-item index="2-2">选项2</kc-menu-item>
-    <kc-menu-item index="2-3">选项3</kc-menu-item>
-    <kc-submenu index="2-4">
-      <template slot="title">选项4</template>
-      <kc-menu-item index="2-4-1">选项1</kc-menu-item>
-      <kc-menu-item index="2-4-2">选项2</kc-menu-item>
-      <kc-menu-item index="2-4-3">选项3</kc-menu-item>
+    <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
+    <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
+  </kc-menu>
+  <!-- <div class="line"></div> -->
+  <!-- <kc-menu
+    style="margin-top:30px;"
+    :default-active="activeIndex2"
+    class="el-menu-demo"
+    mode="horizontal"
+    @select="handleSelect"
+    background-color="#545c64"
+    text-color="#fff"
+    active-text-color="#ffd04b">
+    <kc-menu-item index="1">处理中心</kc-menu-item>
+    <kc-submenu index="2">
+      <template slot="title">我的工作台</template>
+      <kc-menu-item index="2-1">选项1</kc-menu-item>
+      <kc-menu-item index="2-2">选项2</kc-menu-item>
+      <kc-menu-item index="2-3">选项3</kc-menu-item>
+      <kc-submenu index="2-4">
+        <template slot="title">选项4</template>
+        <kc-menu-item index="2-4-1">选项1</kc-menu-item>
+        <kc-menu-item index="2-4-2">选项2</kc-menu-item>
+        <kc-menu-item index="2-4-3">选项3</kc-menu-item>
+      </kc-submenu>
     </kc-submenu>
-  </kc-submenu>
-  <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
-  <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
-</kc-menu>
-
+    <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
+    <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
+  </kc-menu> -->
 <script>
   export default {
     data() {
@@ -142,7 +118,7 @@
     <h5>默认颜色</h5>
     <kc-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="el-menu-demo"
       @open="handleOpen"
       @close="handleClose">
       <kc-submenu index="1">
@@ -181,7 +157,7 @@
     <h5>自定义颜色</h5>
     <kc-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="el-menu-demo"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
@@ -244,7 +220,7 @@
   <kc-radio-button :label="false">展开</kc-radio-button>
   <kc-radio-button :label="true">收起</kc-radio-button>
 </kc-radio-group>
-<kc-menu default-active="1-4-1" class="kc-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+<kc-menu default-active="1-4-1" class="el-menu-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <kc-submenu index="1">
     <template slot="title">
       <i class="el-icon-location"></i>
