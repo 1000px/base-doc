@@ -26,6 +26,7 @@
   &:hover,
   &:focus {
     outline: none;
+    color: $--color-primary;
     background-color: $--menu-item-hover-fill;
   }
 
@@ -52,6 +53,10 @@
     & .is-active {
       color: $--color-primary;
       background-color: $--menu-item-hover-fill;
+      & > a:link {
+        color: $--color-primary !important;
+        text-decoration-line: none;
+      }
     }
 
     & > .el-menu-item {
@@ -61,6 +66,10 @@
       margin: 0;
       border-bottom: 2px solid transparent;
       color:  #575A5F;
+      
+      & > a {
+        color:  #575A5F;
+      }
 
       & > a:hover, a:focus {
         color: $--color-primary !important;
@@ -94,7 +103,7 @@
         height: 38px;
         line-height: 38px;
         border-bottom: 2px solid transparent;
-        color: $--color-text-secondary;
+        color: $--menu-item-color;
 
         &:hover {
           color: $--color-primary;
@@ -137,7 +146,7 @@
     
   }
   @include m(collapse) {
-    width: 64px;
+    max-width: 243px;
     
     > .el-menu-item,
     > .el-submenu > .el-submenu__title {
@@ -147,14 +156,7 @@
         width: 24px;
         text-align: center;
       }
-      .el-submenu__icon-arrow {
-        display: none;
-      }
       span {
-        height: 0;
-        width: 0;
-        overflow: hidden;
-        visibility: hidden;
         display: inline-block;
       }
     }
@@ -295,10 +297,10 @@
     padding: 0;
   }
   @include e(title) {
-    padding: 7px 0 7px 20px;
+    padding: 7px 0 7px 0px;
     line-height: normal;
-    font-size: 12px;
-    color: #888888;
+    font-size: 14px;
+    color: #8C9097;
   }
 }
 
@@ -306,3 +308,25 @@
   transition: .2s;
   opacity: 0;
 }
+
+.el-menu {
+  .el-submenu {
+    .el-submenu {
+      height: 36px;
+      line-height: 36px;
+      .el-submenu__title {
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+
+.el-menu--popup {
+  .el-menu-item,
+  .el-submenu__title {
+    height: 36px;
+    line-height: 36px;
+  }
+}
+

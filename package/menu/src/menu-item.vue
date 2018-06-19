@@ -13,7 +13,10 @@
 		@blur="onMouseLeave"
 		@mouseleave="onMouseLeave"
 	>
-		<kc-tooltip
+		<slot></slot>
+		<slot name="title"></slot>
+
+		<!-- <kc-tooltip
 			v-if="parentMenu.$options.componentName === 'KcMenu' && rootMenu.collapse && $slots.title"
 			effect="dark"
 			placement="right">
@@ -23,12 +26,14 @@
 			<div
 				style="position: absolute;left: 0;top: 0;height: 100%;width: 100%;display: inline-block;box-sizing: border-box;padding: 0 20px;">
 				<slot></slot>
+				<slot name="title"></slot>
 			</div>
 		</kc-tooltip>
 		<template v-else>
 			<slot></slot>
 			<slot name="title"></slot>
-		</template>
+		</template> -->
+
 	</li>
 </template>
 <script>
