@@ -1,13 +1,19 @@
 <style lang='scss' scoped>
   .el-menu-demo {
+
     .el-menu-item, 
     .el-menu-item-group,
     .el-submenu {
       list-style: none;
       a:link {
-        color: #8C9097;
+        color: #575A5F;
       }
     }
+
+    .el-menu-demo.el-menu--collapse.el-menu{
+      padding-left: 0 !important;
+    }
+
   }
   
 </style>
@@ -18,7 +24,8 @@
       return {
         activeIndex: '1',
         activeIndex2: '1',
-        isCollapse: true
+        isCollapse: true,
+        menuModel: true
       };
     },
     methods: {
@@ -63,32 +70,7 @@
     <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
     <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
   </kc-menu>
-  <!-- <div class="line"></div> -->
-  <!-- <kc-menu
-    style="margin-top:30px;"
-    :default-active="activeIndex2"
-    class="el-menu-demo"
-    mode="horizontal"
-    @select="handleSelect"
-    background-color="#545c64"
-    text-color="#fff"
-    active-text-color="#ffd04b">
-    <kc-menu-item index="1">处理中心</kc-menu-item>
-    <kc-submenu index="2">
-      <template slot="title">我的工作台</template>
-      <kc-menu-item index="2-1">选项1</kc-menu-item>
-      <kc-menu-item index="2-2">选项2</kc-menu-item>
-      <kc-menu-item index="2-3">选项3</kc-menu-item>
-      <kc-submenu index="2-4">
-        <template slot="title">选项4</template>
-        <kc-menu-item index="2-4-1">选项1</kc-menu-item>
-        <kc-menu-item index="2-4-2">选项2</kc-menu-item>
-        <kc-menu-item index="2-4-3">选项3</kc-menu-item>
-      </kc-submenu>
-    </kc-submenu>
-    <kc-menu-item index="3" disabled>消息中心</kc-menu-item>
-    <kc-menu-item index="4"><a href="javascript:(0);" target="_blank">订单管理</a></kc-menu-item>
-  </kc-menu> -->
+  
 <script>
   export default {
     data() {
@@ -107,95 +89,48 @@
 ```
 :::
 
-### 侧栏
+### 内嵌菜单
 
-垂直菜单，可内嵌子菜单。
+垂直菜单，子菜单内嵌在菜单区域。
 
 :::demo 通过`el-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
 ```html
-<kc-row class="tac">
-  <kc-col :span="12">
-    <h5>默认颜色</h5>
-    <kc-menu
-      default-active="2"
-      class="el-menu-demo"
-      @open="handleOpen"
-      @close="handleClose">
-      <kc-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-        <kc-menu-item-group>
-          <template slot="title">分组一</template>
-          <kc-menu-item index="1-1">选项1</kc-menu-item>
-          <kc-menu-item index="1-2">选项2</kc-menu-item>
-        </kc-menu-item-group>
-        <kc-menu-item-group title="分组2">
-          <kc-menu-item index="1-3">选项3</kc-menu-item>
-        </kc-menu-item-group>
-        <kc-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <kc-menu-item index="1-4-1">选项1</kc-menu-item>
-        </kc-submenu>
-      </kc-submenu>
-      <kc-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </kc-menu-item>
-      <kc-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </kc-menu-item>
-      <kc-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </kc-menu-item>
-    </kc-menu>
-  </kc-col>
-  <kc-col :span="12">
-    <h5>自定义颜色</h5>
-    <kc-menu
-      default-active="2"
-      class="el-menu-demo"
-      @open="handleOpen"
-      @close="handleClose"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b">
-      <kc-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-        <kc-menu-item-group>
-          <template slot="title">分组一</template>
-          <kc-menu-item index="1-1">选项1</kc-menu-item>
-          <kc-menu-item index="1-2">选项2</kc-menu-item>
-        </kc-menu-item-group>
-        <kc-menu-item-group title="分组2">
-          <kc-menu-item index="1-3">选项3</kc-menu-item>
-        </kc-menu-item-group>
-        <kc-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <kc-menu-item index="1-4-1">选项1</kc-menu-item>
-        </kc-submenu>
-      </kc-submenu>
-      <kc-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </kc-menu-item>
-      <kc-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </kc-menu-item>
-      <kc-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </kc-menu-item>
-    </kc-menu>
-  </kc-col>
-</kc-row>
+<kc-menu
+  default-active="2"
+  class="el-menu-demo"
+  @open="handleOpen"
+  @close="handleClose">
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span>导航一</span>
+    </template>
+    <kc-menu-item-group>
+      <template slot="title">分组一</template>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-submenu index="1-4">
+      <template slot="title">选项4</template>
+      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+    </kc-submenu>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-menu-item index="4">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航四</span>
+  </kc-menu-item>
+</kc-menu>
 
 <script>
   export default {
@@ -212,14 +147,64 @@
 ```
 :::
 
-### 折叠
+### 只展开当前父级菜单
+
+设置unique-opened属性值为true，即可实现只展开当前父级菜单。
+:::demo
+```html
+ <kc-menu
+  default-active="2"
+  class="el-menu-demo"
+  :unique-opened="true"
+  @open="handleOpen"
+  @close="handleClose">
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span>导航一</span>
+    </template>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+      <kc-submenu index="1-4">
+        <template slot="title">选项3</template>
+        <kc-menu-item index="1-3-1">选项1</kc-menu-item>
+        <kc-menu-item index="1-3-2">选项2</kc-menu-item>
+        <kc-menu-item index="1-3-3">选项3</kc-menu-item>
+      </kc-submenu>
+      <kc-menu-item index="1-4">选项4</kc-menu-item>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-submenu index="4">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span>导航四</span>
+    </template>
+    <kc-menu-item-group>
+      <template slot="title">分组一</template>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+  </kc-submenu>
+</kc-menu>
+```
+:::
+
+### 垂直菜单
+
+子菜单是弹出形式。
 
 :::demo
 ```html
-<kc-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <kc-radio-button :label="false">展开</kc-radio-button>
-  <kc-radio-button :label="true">收起</kc-radio-button>
-</kc-radio-group>
 <kc-menu default-active="1-4-1" class="el-menu-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <kc-submenu index="1">
     <template slot="title">
@@ -237,6 +222,9 @@
     <kc-submenu index="1-4">
       <span slot="title">选项4</span>
       <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-4-2">选项2</kc-menu-item>
+      <kc-menu-item index="1-4-3">选项3</kc-menu-item>
+      <kc-menu-item index="1-4-4">选项4</kc-menu-item>
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="2">
@@ -279,6 +267,163 @@
 </script>
 ```
 :::
+
+### 主题
+
+默认主题light，可通过修改background-color、text-color、active-text-color实现自定义主题。
+
+:::demo
+```html
+<h5>自定义主题</h5>
+<kc-menu 
+  default-active="1-4-1" 
+  background-color="#1A1C20"
+  text-color="#8C9097"
+  active-text-color="#fff"
+  class="el-menu-demo">
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span slot="title">导航一</span>
+    </template>
+    <kc-menu-item-group>
+      <span slot="title">分组一</span>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-submenu index="1-4">
+      <span slot="title">选项4</span>
+      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-4-2">选项2</kc-menu-item>
+      <kc-menu-item index="1-4-3">选项3</kc-menu-item>
+      <kc-menu-item index="1-4-4">选项4</kc-menu-item>
+    </kc-submenu>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-menu-item index="4">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航四</span>
+  </kc-menu-item>
+</kc-menu>
+
+<style>
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      return {
+        isCollapse: true
+      };
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 切换菜单类型
+
+展示动态切换模式。
+
+:::demo
+```html
+<kc-switch
+  v-model="menuModel"
+  active-text="垂直弹出菜单"
+  inactive-text="垂直内嵌菜单">
+</kc-switch>
+<kc-menu 
+  default-active="1-4-1" 
+  background-color="#1A1C20"
+  text-color="#8C9097"
+  active-text-color="#fff"
+  class="el-menu-demo"
+  :collapse="menuModel"
+  >
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span slot="title">导航一</span>
+    </template>
+    <kc-menu-item-group>
+      <span slot="title">分组一</span>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-submenu index="1-4">
+      <span slot="title">选项4</span>
+      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-4-2">选项2</kc-menu-item>
+      <kc-menu-item index="1-4-3">选项3</kc-menu-item>
+      <kc-menu-item index="1-4-4">选项4</kc-menu-item>
+    </kc-submenu>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-menu-item index="4">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航四</span>
+  </kc-menu-item>
+</kc-menu>
+
+<style>
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      return {
+        isCollapse: true
+      };
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+```
+:::
+
 
 ### Menu Attribute
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
