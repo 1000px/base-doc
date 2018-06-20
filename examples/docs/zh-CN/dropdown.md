@@ -1,45 +1,36 @@
-<style>
-  .demo-box {
-    .el-dropdown {
-      vertical-align: top;
+<style lang='scss' scoped>
 
-      & + .el-dropdown {
-        margin-left: 15px;
+  .el-menu-demo {
+
+    .el-menu-item, 
+    .el-menu-item-group,
+    .el-submenu {
+      list-style: none;
+      a:link {
+        color: #575A5F;
       }
     }
-    .el-dropdown-link {
-      cursor: pointer;
-      color: #409EFF;
+
+    .el-menu-demo.el-menu--collapse.el-menu{
+      padding-left: 0 !important;
     }
-    .el-icon-arrow-down {
-      font-size: 12px;
-    }
+
   }
 
-  .block-col-2 {
-    margin: -24px;
-
-    .el-col {
-      padding: 30px 0;
-      text-align: center;
-      border-right: 1px solid #eff2f6;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
+ .el-dropdown {
+  .el-menu-demo.el-menu--collapse.el-menu {
+    padding-left: 0 !important;
   }
-
- .demo-dropdown .demonstration {
-   display: block;
-   color: #8492a6;
-   font-size: 14px;
-   margin-bottom: 20px;
  }
 </style>
 
 <script>
   export default {
+     data() {
+      return {
+        isCollapse: true
+      };
+    },
     methods: {
       handleClick() {
         alert('button click');
@@ -326,6 +317,18 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 ```
 :::
 
+
+### 多级菜单
+
+传入的菜单里有多个层级。
+
+:::demo
+
+```html
+
+```
+
+:::
 
 ### Dropdown Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
