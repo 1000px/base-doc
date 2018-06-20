@@ -24,7 +24,8 @@
       return {
         activeIndex: '1',
         activeIndex2: '1',
-        isCollapse: true
+        isCollapse: true,
+        menuModel: true
       };
     },
     methods: {
@@ -266,6 +267,163 @@
 </script>
 ```
 :::
+
+### 主题
+
+默认主题light，可通过修改background-color、text-color、active-text-color实现自定义主题。
+
+:::demo
+```html
+<h5>自定义主题</h5>
+<kc-menu 
+  default-active="1-4-1" 
+  background-color="#1A1C20"
+  text-color="#8C9097"
+  active-text-color="#fff"
+  class="el-menu-demo">
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span slot="title">导航一</span>
+    </template>
+    <kc-menu-item-group>
+      <span slot="title">分组一</span>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-submenu index="1-4">
+      <span slot="title">选项4</span>
+      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-4-2">选项2</kc-menu-item>
+      <kc-menu-item index="1-4-3">选项3</kc-menu-item>
+      <kc-menu-item index="1-4-4">选项4</kc-menu-item>
+    </kc-submenu>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-menu-item index="4">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航四</span>
+  </kc-menu-item>
+</kc-menu>
+
+<style>
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      return {
+        isCollapse: true
+      };
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 切换菜单类型
+
+展示动态切换模式。
+
+:::demo
+```html
+<kc-switch
+  v-model="menuModel"
+  active-text="垂直弹出菜单"
+  inactive-text="垂直内嵌菜单">
+</kc-switch>
+<kc-menu 
+  default-active="1-4-1" 
+  background-color="#1A1C20"
+  text-color="#8C9097"
+  active-text-color="#fff"
+  class="el-menu-demo"
+  :collapse="menuModel"
+  >
+  <kc-submenu index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span slot="title">导航一</span>
+    </template>
+    <kc-menu-item-group>
+      <span slot="title">分组一</span>
+      <kc-menu-item index="1-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-2">选项2</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-menu-item-group title="分组2">
+      <kc-menu-item index="1-3">选项3</kc-menu-item>
+    </kc-menu-item-group>
+    <kc-submenu index="1-4">
+      <span slot="title">选项4</span>
+      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
+      <kc-menu-item index="1-4-2">选项2</kc-menu-item>
+      <kc-menu-item index="1-4-3">选项3</kc-menu-item>
+      <kc-menu-item index="1-4-4">选项4</kc-menu-item>
+    </kc-submenu>
+  </kc-submenu>
+  <kc-menu-item index="2">
+    <i class="el-icon-menu"></i>
+    <span slot="title">导航二</span>
+  </kc-menu-item>
+  <kc-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
+    <span slot="title">导航三</span>
+  </kc-menu-item>
+  <kc-menu-item index="4">
+    <i class="el-icon-setting"></i>
+    <span slot="title">导航四</span>
+  </kc-menu-item>
+</kc-menu>
+
+<style>
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      return {
+        isCollapse: true
+      };
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+```
+:::
+
 
 ### Menu Attribute
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |

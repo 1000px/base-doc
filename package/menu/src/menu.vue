@@ -87,7 +87,7 @@
 							},
 
 							leave(el) {
-								addClass(el, 'horizontal-collapse-transition');
+								// addClass(el, 'horizontal-collapse-transition');
 								el.style.width = el.dataset.scrollWidth + 'px';
 							}
 						}
