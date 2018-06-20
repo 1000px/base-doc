@@ -162,18 +162,15 @@
       <i class="el-icon-location"></i>
       <span>导航一</span>
     </template>
-    <kc-menu-item-group>
-      <template slot="title">分组一</template>
       <kc-menu-item index="1-1">选项1</kc-menu-item>
       <kc-menu-item index="1-2">选项2</kc-menu-item>
-    </kc-menu-item-group>
-    <kc-menu-item-group title="分组2">
-      <kc-menu-item index="1-3">选项3</kc-menu-item>
-    </kc-menu-item-group>
-    <kc-submenu index="1-4">
-      <template slot="title">选项4</template>
-      <kc-menu-item index="1-4-1">选项1</kc-menu-item>
-    </kc-submenu>
+      <kc-submenu index="1-4">
+        <template slot="title">选项3</template>
+        <kc-menu-item index="1-3-1">选项1</kc-menu-item>
+        <kc-menu-item index="1-3-2">选项2</kc-menu-item>
+        <kc-menu-item index="1-3-3">选项3</kc-menu-item>
+      </kc-submenu>
+      <kc-menu-item index="1-4">选项4</kc-menu-item>
   </kc-submenu>
   <kc-menu-item index="2">
     <i class="el-icon-menu"></i>
