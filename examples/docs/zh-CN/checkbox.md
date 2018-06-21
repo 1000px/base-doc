@@ -14,6 +14,8 @@
         checked6: true,
         checked7: true,
         checked8: false,
+        checked9: true,
+        checked10: false,
         isValid: '可用',
         checkAll: false,
         cities: cityOptions,
@@ -146,6 +148,39 @@
         checked4: false,
         checked7: true,
         checked8: false
+      };
+    }
+  }
+</script>
+```
+:::
+
+### 带有图片和描述的复选框
+
+:::demo
+```html
+  <h5>垂直布局</h5>
+  <kc-checkbox v-model="checked9" 
+    :has-img="true"
+    title="复选框"
+    description="带有图片和描述的复选框"
+    src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+  </kc-checkbox>
+
+   <h5>水平布局</h5>
+  <kc-checkbox v-model="checked10" 
+    :has-img="true"
+    :inline="true"
+    title="复选框"
+    description="带有图片和描述的复选框"
+    src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+  </kc-checkbox>
+<script>
+  export default {
+    data () {
+      return {
+        checked9: true,
+        checked10: false
       };
     }
   }

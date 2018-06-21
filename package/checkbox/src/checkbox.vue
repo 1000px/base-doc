@@ -1,5 +1,71 @@
 <template>
+	<div v-if="hasImg===true" :class="[
+		'el-img-checkbox', 
+		isChecked ? 'is-checked' : '',
+		inline ? 'el-img-checkbox-inline':'el-img-checkbox-block']">
+		<div class="el-img-checkbox-item">
+			<label
+			class="el-checkbox"
+			:class="[
+				border && checkboxSize ? 'el-checkbox--' + checkboxSize : '',
+				{ 'is-disabled': isDisabled },
+				{ 'is-bordered': border },
+				{ 'is-checked': isChecked }
+			]"
+			role="checkbox"
+			:aria-checked="indeterminate ? 'mixed': isChecked"
+			:aria-disabled="isDisabled"
+			:id="id"
+		>
+			<span class="el-checkbox__input"
+				:class="{
+					'is-disabled': isDisabled,
+					'is-checked': isChecked,
+					'is-indeterminate': indeterminate,
+					'is-focus': focus
+				}"
+				aria-checked="mixed"
+			>
+				<span class="el-checkbox__inner"></span>
+				<input
+					v-if="trueLabel || falseLabel"
+					class="el-checkbox__original"
+					type="checkbox"
+					aria-hidden="true"
+					:name="name"
+					:disabled="isDisabled"
+					:true-value="trueLabel"
+					:false-value="falseLabel"
+					v-model="model"
+					@change="handleChange"
+					@focus="focus = true"
+					@blur="focus = false">
+				<input
+					v-else
+					class="el-checkbox__original"
+					type="checkbox"
+					aria-hidden="true"
+					:disabled="isDisabled"
+					:value="label"
+					:name="name"
+					v-model="model"
+					@change="handleChange"
+					@focus="focus = true"
+					@blur="focus = false">
+			</span>
+		</label>
+		</div>
+		<div class="el-img-checkbox-item">
+			<img :src="src" class="checkbox-img">
+		</div>
+		<div class="el-img-checkbox-item">
+			<div v-if="title" class="el-img-checkbox-item-title">{{title}}</div>
+			<div v-if="description" class="el-img-checkbox-item-desc">{{description}}</div>
+		</div>
+  </div>
+
 	<label
+		v-else
 		class="el-checkbox"
 		:class="[
 			border && checkboxSize ? 'el-checkbox--' + checkboxSize : '',
@@ -166,7 +232,13 @@
 			id: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
 			controls: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
 			border: Boolean,
-			size: String
+			size: String,
+			hasImg: Boolean,
+			vModel: Boolean,
+			src: String,
+			title: String,
+			description: String,
+			inline: Boolean
 		},
 
 		methods: {
