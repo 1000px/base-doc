@@ -81,6 +81,7 @@
     &:not(.is-disabled):hover, &:focus {
       background-color: $--dropdown-menuItem-hover-fill;
       color: $--dropdown-menuItem-hover-color;
+      font-weight: 700;
     }
 
     @include m(divided) {
@@ -166,3 +167,4 @@
     }
   }
 }
+
