@@ -21,13 +21,13 @@
 			}
 		},
 
-		provide() {
+		provide () {
 			return {
 				rootTabs: this
 			};
 		},
 
-		data() {
+		data () {
 			return {
 				currentName: this.value || this.activeName,
 				panes: []
@@ -35,13 +35,13 @@
 		},
 
 		watch: {
-			activeName(value) {
+			activeName (value) {
 				this.setCurrentName(value);
 			},
-			value(value) {
+			value (value) {
 				this.setCurrentName(value);
 			},
-			currentName(value) {
+			currentName (value) {
 				if (this.$refs.nav) {
 					this.$nextTick(_ => {
 						this.$refs.nav.scrollToActiveTab();
@@ -51,32 +51,32 @@
 		},
 
 		methods: {
-			handleTabClick(tab, tabName, event) {
+			handleTabClick (tab, tabName, event) {
 				if (tab.disabled) return;
 				this.setCurrentName(tabName);
 				this.$emit('tab-click', tab, event);
 			},
-			handleTabRemove(pane, ev) {
+			handleTabRemove (pane, ev) {
 				if (pane.disabled) return;
 				ev.stopPropagation();
 				this.$emit('edit', pane.name, 'remove');
 				this.$emit('tab-remove', pane.name);
 			},
-			handleTabAdd() {
+			handleTabAdd () {
 				this.$emit('edit', null, 'add');
 				this.$emit('tab-add');
 			},
-			setCurrentName(value) {
+			setCurrentName (value) {
 				this.currentName = value;
 				this.$emit('input', value);
 			},
-			addPanes(item) {
+			addPanes (item) {
 				const index = this.$slots.default.filter(item => {
 					return item.elm.nodeType === 1 && /\bel-tab-pane\b/.test(item.elm.className);
 				}).indexOf(item.$vnode);
 				this.panes.splice(index, 0, item);
 			},
-			removePanes(item) {
+			removePanes (item) {
 				const panes = this.panes;
 				const index = panes.indexOf(item);
 				if (index > -1) {
@@ -84,7 +84,7 @@
 				}
 			}
 		},
-		render(h) {
+		render (h) {
 			let {
 				type,
 				handleTabClick,
@@ -98,28 +98,13 @@
 			} = this;
 
 			const newButton = editable || addable
-				? (
-				< span
-				class = "el-tabs__new-tab"
-			on - click = {handleTabAdd}
-			tabindex = "0"
-			on - keydown = {(ev)
-		=>
-			{
-				if (ev.keyCode === 13) {
-					handleTabAdd();
+				? (<span class="el-tabs__new-tab" on-click={handleTabAdd} tabindex="0" on-keydown={(ev) => {
+					if (ev.keyCode === 13) {
+						handleTabAdd();
+					}
 				}
-			}
-		}
-		>
-		<
-			i
-		class
-			= "el-icon-plus" > < /i>
-				< /span>
-		)
-		:
-			null;
+				}>
+		<i class="el-icon-plus"></i></span>) : null;
 
 			const navData = {
 				props: {
@@ -132,62 +117,32 @@
 				},
 				ref: 'nav'
 			};
-			const header = (
-				< div
-		class
-			= {['el-tabs__header', `is-${tabPosition}`
-		]
-		}>
-			{
-				newButton
-			}
-		<
-			tab - nav
-			{ ...
-				navData
-			}
-		><
-			/tab-nav>
-			< /div>
-		)
-			;
-			const panels = (
-				< div
-		class
-			= "el-tabs__content" >
-				{this.$slots.default
-		}
-		<
-			/div>
-		)
-			;
-
+			const header = (<div class={['el-tabs__header', `is-${tabPosition}`]}>
+				{
+					newButton
+				}
+				<tab-nav {...navData}></tab-nav>
+			</div>);
+			const panels = (<div class="el-tabs__content">{this.$slots.default}</div>);
 			return (
-				< div
-		class
-			= {
-			{
-				'el-tabs'
-			:
-				true,
-					'el-tabs--card'
-			:
-				type === 'card',
-					[`el-tabs--${tabPosition}`]
-			:
-				true,
-					'el-tabs--border-card'
-			:
-				type === 'border-card'
-			}
-		}>
-			{
-				tabPosition !== 'bottom' ? [header, panels] : [panels, header]
-			}
-		<
-			/div>
-		)
-			;
+				<div
+					class
+						={
+						{
+							'el-tabs':
+								true,
+							'el-tabs--card':
+							type === 'card',
+							[`el-tabs--${tabPosition}`]:
+								true,
+							'el-tabs--border-card':
+							type === 'border-card'
+						}
+					}>
+					{
+						tabPosition !== 'bottom' ? [header, panels] : [panels, header]
+					}
+					</div>);
 		},
 		created() {
 			if (!this.currentName) {

@@ -1,5 +1,5 @@
 <template>
-	<div :class="wrapClasses">
+	<div class="layoutC" :class="wrapClasses">
 		<slot></slot>
 	</div>
 </template>

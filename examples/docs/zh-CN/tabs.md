@@ -3,6 +3,7 @@
     data() {
       return {
         activeName: 'second',
+         activeName1: 'first',
         activeName2: 'first',
         editableTabsValue: '2',
         editableTabsValue2: '2',
@@ -89,7 +90,9 @@
     }
   }
 </script>
+<style type=scss>
 
+</style>
 ## Tabs 标签页
 
 分隔内容上有关联但属于不同类别的数据集合。
@@ -114,6 +117,38 @@
     data() {
       return {
         activeName: 'second'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+```
+:::
+
+### 禁用某一项
+
+可禁用标签页中某一项。
+
+:::demo Tabs 组件提供了选项卡功能，默认选中第一个标签页，你也可以通过 `value` 属性来指定当前选中的标签页。
+
+```html
+
+  <kc-tabs v-model="activeName1" @tab-click="handleClick">
+    <kc-tab-pane label="用户管理" name="first">用户管理</kc-tab-pane>
+    <kc-tab-pane label="配置管理" name="second" disabled >配置管理</kc-tab-pane>
+    <kc-tab-pane label="角色管理" name="third" disabled >角色管理</kc-tab-pane>
+    <kc-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</kc-tab-pane>
+  </kc-tabs>
+
+<script>
+  export default {
+    data() {
+      return {
+        activeName1: 'first'
       };
     },
     methods: {
@@ -181,7 +216,7 @@
 
 ```html
 
-  <kc-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
+  <kc-radio-group v-model="tabPosition" text-color="#4999FF" fill="#E6F1FC" style="margin-bottom: 30px; "plain>
     <kc-radio-button label="top">top</kc-radio-button>
     <kc-radio-button label="right">right</kc-radio-button>
     <kc-radio-button label="bottom">bottom</kc-radio-button>

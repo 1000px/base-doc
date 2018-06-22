@@ -1,5 +1,6 @@
 <template>
 	<div
+		class="layoutC"
 		:class="wrapClasses"
 		:style="wrapStyles">
         <span v-show="showZeroTrigger" @click="toggleCollapse" :class="zeroWidthTriggerClasses">
@@ -17,8 +18,8 @@
 	</div>
 </template>
 <script>
-	import { on, off } from '../../../src/utils/dom';
-	import { oneOf, dimensionMap, setMatchMedia } from '../../../src/utils/util';
+	import { on, off } from '_src/utils/dom';
+	import { oneOf, dimensionMap, setMatchMedia } from '_src/utils/util';
 
 	const prefixCls = 'ivu-layout-sider';
 	setMatchMedia();
@@ -85,7 +86,7 @@
 			triggerClasses () {
 				return [
 					`${prefixCls}-trigger`,
-					this.value ? `${prefixCls}-trigger-collapsed` : '',
+					this.value ? `${prefixCls}-trigger-collapsed` : ''
 				];
 			},
 			childClasses () {
@@ -101,14 +102,14 @@
 				return [
 					'ivu-icon',
 					`ivu-icon-chevron-${this.reverseArrow ? 'right' : 'left'}`,
-					`${prefixCls}-trigger-icon`,
+					`${prefixCls}-trigger-icon`
 				];
 			},
 			siderWidth () {
 				return this.collapsible ? (this.value ? (this.mediaMatched ? 0 : parseInt(this.collapsedWidth)) : parseInt(this.width)) : this.width;
 			},
 			showZeroTrigger () {
-				return this.collapsible ? (this.mediaMatched && !this.hideTrigger || (parseInt(this.collapsedWidth) === 0) && this.value && !this.hideTrigger) : false;
+				return this.collapsible ? ((this.mediaMatched && !this.hideTrigger) || ((parseInt(this.collapsedWidth) === 0) && this.value && !this.hideTrigger)) : false;
 			},
 			showBottomTrigger () {
 				return this.collapsible ? !this.mediaMatched && !this.hideTrigger : false;

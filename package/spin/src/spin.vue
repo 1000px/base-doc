@@ -13,11 +13,10 @@
 <script>
 	import { oneOf } from '_src/utils/util';
 	import ScrollbarMixins from './mixins-scrollbar';
-//	import '../../../styles/spin.less';
 	const prefixCls = 'ivu-spin';
 
 	export default {
-		name: 'Spin',
+		name: 'KcSpin',
 		mixins: [ScrollbarMixins],
 		props: {
 			size: {

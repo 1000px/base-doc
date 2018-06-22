@@ -1,5 +1,5 @@
 <template>
-	<div :class="wrapClasses">
+	<div class="layoutCon" :class="wrapClasses">
 		<slot></slot>
 	</div>
 </template>
@@ -14,3 +14,10 @@
 		}
 	};
 </script>
+<style lang="scss">
+.layoutCon{
+	background: #0f8de9;
+	min-height: 120px;
+	line-height: 120px;
+}
+</style>
