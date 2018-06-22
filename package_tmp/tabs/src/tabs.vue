@@ -105,7 +105,6 @@
 				}
 				}>
 		<i class="el-icon-plus"></i></span>) : null;
-
 			const navData = {
 				props: {
 					currentName,

@@ -20,6 +20,7 @@ let addComponent = (routers) => {
 		if(route.children && route.children.length) {
 			route.children.forEach((child) => {
 				child.component = r => require.ensure([], () => {
+					window.console.log(child.name);
 					r(require(`../docs/zh-CN/${child.name}.md`));
 				});
 			});
