@@ -200,6 +200,11 @@
 | name | 原生 name 属性 | string    |      —         |     —    |
 | checked  | 当前是否勾选    | boolean   |  — | false   |
 | indeterminate  | 设置 indeterminate 状态，只负责样式控制    | boolean   |  — | false   |
+| has-img  | 是否是带有图文组合的复选框    | boolean   |  — | false   |
+| inline  | 是否是带有图文组合的水平布局复选框（只有has-img的值为true的时候才生效）    | boolean   |  — | false   |
+| title  | 带有图文组合的复选框的标题    | string   |  — |  —  |
+| description  | 带有图文组合的复选框的描述    | string   |  — |  —  |
+| src  | 带有图文组合的复选框的图片路径    | string   |  — |  —  |
 
 ### Checkbox Events
 | 事件名称      | 说明    | 回调参数      |
