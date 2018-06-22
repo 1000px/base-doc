@@ -1,5 +1,67 @@
 <template>
+	<div v-if="isConfigOption"
+		class="el-autocomplete"
+    v-clickoutside="close"
+    aria-haspopup="listbox"
+    role="combobox"
+    :aria-expanded="suggestionVisible"
+    :aria-owns="id"
+	>
+		<kc-input
+			ref="input"
+			v-bind="$props"
+			@compositionstart.native="handleComposition"
+			@compositionupdate.native="handleComposition"
+			@compositionend.native="handleComposition"
+			@input="handleInputChange"
+			@focus="handleInputFocus"
+			@blur="handleBlur"
+			@keydown.up.native.prevent="highlight(highlightedIndex - 1)"
+			@keydown.down.native.prevent="highlight(highlightedIndex + 1)"
+			@keydown.enter.native="handleKeyEnter"
+			@keydown.native.tab="close"
+			:label="label"
+		>
+      <template slot="prepend" v-if="$slots.prepend">
+        <slot name="prepend"></slot>
+      </template>
+      <template slot="append" v-if="$slots.append">
+        <slot name="append"></slot>
+      </template>
+      <template slot="prefix" v-if="$slots.prefix">
+        <slot name="prefix"></slot>
+      </template>
+      <template slot="suffix" v-if="$slots.suffix">
+        <slot name="suffix"></slot>
+      </template>
+    </kc-input>
+		{{feedbacks.length > 0}}
+		<el-autocomplete-suggestions
+			v-if="feedbacks.length > 0"
+      visible-arrow
+      :class="[popperClass ? popperClass : '']"
+      :popper-options="popperOptions"
+      ref="suggestions"
+      :placement="placement"
+      :id="id">
+      <li
+        v-for="(item, index) in feedbacks"
+        :key="index"
+        :class="{'highlighted': highlightedIndex === index}"
+        @click="select(item)"
+        :id="`${id}-item-${index}`"
+        role="option"
+        :aria-selected="highlightedIndex === index"
+      >
+        <slot :item="item">
+          {{ item }}
+        </slot>
+      </li>
+    </el-autocomplete-suggestions>
+	</div>
+
   <div
+		v-else
     class="el-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
@@ -86,6 +148,8 @@
 				default: 'value'
 			},
 			popperClass: String,
+			itemSuffix: Array,
+			isConfigOption: Boolean,
 			popperOptions: Object,
 			placeholder: String,
 			disabled: Boolean,
@@ -122,6 +186,7 @@
 				activated: false,
 				isOnComposition: false,
 				suggestions: [],
+				feedbacks: [],
 				loading: false,
 				highlightedIndex: -1
 			};
@@ -177,7 +242,27 @@
 				}
 				this.debouncedGetData(value);
 			},
+			handleInputChange(value) {
+				if (value.length === 0) {
+					this.feedbacks = [];
+				} else {
+					let ret = []
+					this.itemSuffix.map(item => {
+						let option = value +	'@' + item;
+						ret.push(option);
+					});
+					this.feedbacks = ret;
+				}
+				console.log(this.feedbacks)
+			},
 			handleFocus(event) {
+				this.activated = true;
+				this.$emit('focus', event);
+				if (this.triggerOnFocus) {
+					this.debouncedGetData(this.value);
+				}
+			},
+			handleInputFocus(event) {
 				this.activated = true;
 				this.$emit('focus', event);
 				if (this.triggerOnFocus) {
@@ -237,6 +322,13 @@
 			}
 		},
 		mounted() {
+			if (this.isConfigOption) {
+				let ret = []
+				if (this.itemSuffix.length > 0) {
+					ret = this.itemSuffix;
+				}
+				this.feedbacks = ret;
+			}
 			this.debouncedGetData = debounce(this.debounce, (val) => {
 				this.getData(val);
 			});
