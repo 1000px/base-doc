@@ -101,25 +101,18 @@
 				? (
 				< span
 				class = "el-tabs__new-tab"
-			on - click = {handleTabAdd}
-			tabindex = "0"
-			on - keydown = {(ev)
-		=>
-			{
-				if (ev.keyCode === 13) {
-					handleTabAdd();
+				on-click = {handleTabAdd}
+				tabindex = "0"
+				on-keydown = {(ev) => {
+					if (ev.keyCode === 13) {
+						handleTabAdd();
+					}
 				}
-			}
-		}
-		>
-		<
-			i
-		class
-			= "el-icon-plus" > < /i>
-				< /span>
-		)
-		:
-			null;
+				}>
+					<i class = "el-icon-plus"> </i>
+				</span>
+				)
+				: null;
 
 			const navData = {
 				props: {
@@ -142,13 +135,12 @@
 				newButton
 			}
 		<
-			tab - nav
+			tab-nav
 			{ ...
 				navData
 			}
-		><
-			/tab-nav>
-			< /div>
+		></tab-nav>
+			</div>
 		)
 			;
 			const panels = (
@@ -157,8 +149,7 @@
 			= "el-tabs__content" >
 				{this.$slots.default
 		}
-		<
-			/div>
+		</div>
 		)
 			;
 
