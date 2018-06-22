@@ -133,7 +133,7 @@
   }
 </style>
 
-### Select 选择器
+## Select 选择器
 
 当选项过多时，使用下拉菜单展示并选择内容。
 
@@ -147,7 +147,9 @@
       v-for="item in options"
       :key="item.value"
       :label="item.label"
-      :value="item.value">
+      :value="item.value"
+      
+      >
     </kc-option>
   </kc-select>
 

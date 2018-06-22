@@ -25,6 +25,7 @@ import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
 import Footer from './footer';
+import DropdownMultiple from './dropdown-multiple';
 import Form from './form';
 import FormItem from './form-item';
 import Header from './header';
@@ -98,6 +99,7 @@ const components = [
 	DropdownItem,
 	DropdownMemu,
 	Footer,
+	DropdownMultiple,
 	Form,
 	FormItem,
 	Header,
@@ -187,6 +189,7 @@ export default {
 	DropdownItem,
 	DropdownMemu,
 	Footer,
+	DropdownMultiple,
 	Form,
 	Header,
 	FormItem,

@@ -319,7 +319,9 @@
 						on-mouseleave = {this.handleTitleMouseleave}
 						style={[paddingStyle, titleStyle,{backgroundColor}]}>
 						{$slots.title}
+						<span style="margin-left:10px;">
 						<i class={['el-submenu__icon-arrow', submenuTitleIcon]}></i>
+						</span>
 					</div>
 					{this.isMenuPopup ? popupMenu : inlineMenu}
 				</li>

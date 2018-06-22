@@ -14,6 +14,8 @@
         checked6: true,
         checked7: true,
         checked8: false,
+        checked9: true,
+        checked10: false,
         isValid: '可用',
         checkAll: false,
         cities: cityOptions,
@@ -153,6 +155,39 @@
 ```
 :::
 
+### 带有图片和描述的复选框
+
+:::demo
+```html
+  <h5>垂直布局</h5>
+  <kc-checkbox v-model="checked9" 
+    :has-img="true"
+    title="复选框"
+    description="带有图片和描述的复选框"
+    src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+  </kc-checkbox>
+
+   <h5>水平布局</h5>
+  <kc-checkbox v-model="checked10" 
+    :has-img="true"
+    :inline="true"
+    title="复选框"
+    description="带有图片和描述的复选框"
+    src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+  </kc-checkbox>
+<script>
+  export default {
+    data () {
+      return {
+        checked9: true,
+        checked10: false
+      };
+    }
+  }
+</script>
+```
+:::
+
 ### Checkbox Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
@@ -165,6 +200,11 @@
 | name | 原生 name 属性 | string    |      —         |     —    |
 | checked  | 当前是否勾选    | boolean   |  — | false   |
 | indeterminate  | 设置 indeterminate 状态，只负责样式控制    | boolean   |  — | false   |
+| has-img  | 是否是带有图文组合的复选框    | boolean   |  — | false   |
+| inline  | 是否是带有图文组合的水平布局复选框（只有has-img的值为true的时候才生效）    | boolean   |  — | false   |
+| title  | 带有图文组合的复选框的标题（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
+| description  | 带有图文组合的复选框的描述（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
+| src  | 带有图文组合的复选框的图片路径（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
 
 ### Checkbox Events
 | 事件名称      | 说明    | 回调参数      |

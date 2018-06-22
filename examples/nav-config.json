@@ -71,7 +71,7 @@
 				"type": "md",
 				"id": "10003002",
 				"pId": "10003",
-				"desc": "项目整体色系",
+				"desc": "color 项目整体色系",
 				"category": "general",
 				"category-desc": "通用设置"
 			},
@@ -81,7 +81,7 @@
 				"type": "md",
 				"id": "10003003",
 				"pId": "10003",
-				"desc": "字体",
+				"desc": "typography 字体",
 				"category": "general",
 				"category-desc": "通用设置"
 			},
@@ -91,7 +91,7 @@
 				"type": "md",
 				"id": "10003004",
 				"pId": "10003",
-				"desc": "按钮",
+				"desc": "button 按钮",
 				"category": "general",
 				"category-desc": "通用设置"
 			},
@@ -101,7 +101,7 @@
 				"type": "md",
 				"id": "10003005",
 				"pId": "10003",
-				"desc": "图标",
+				"desc": "icon 图标",
 				"category": "general",
 				"category-desc": "通用设置"
 			},
@@ -111,7 +111,7 @@
 				"type": "md",
 				"id": "10003006",
 				"pId": "10003",
-				"desc": "栅格布局",
+				"desc": "grid 栅格布局",
 				"category": "layout",
 				"category-desc": "布局"
 			},
@@ -121,7 +121,7 @@
 				"type": "md",
 				"id": "10003007",
 				"pId": "10003",
-				"desc": "layout布局",
+				"desc": "layout 布局",
 				"category": "layout",
 				"category-desc": "布局"
 			},
@@ -131,7 +131,7 @@
 				"type": "md",
 				"id": "10003008",
 				"pId": "10003",
-				"desc": "固钉",
+				"desc": "affix 固钉",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -141,7 +141,7 @@
 				"type": "md",
 				"id": "10003009",
 				"pId": "10003",
-				"desc": "面包屑",
+				"desc": "breadcrumb 面包屑",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -151,7 +151,7 @@
 				"type": "md",
 				"id": "10003010",
 				"pId": "10003",
-				"desc": "下拉菜单",
+				"desc": "dropdown 下拉菜单",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -161,7 +161,7 @@
 				"type": "md",
 				"id": "10003011",
 				"pId": "10003",
-				"desc": "菜单",
+				"desc": "menu 菜单",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -171,7 +171,7 @@
 				"type": "md",
 				"id": "10003012",
 				"pId": "10003",
-				"desc": "分页",
+				"desc": "pagination 分页",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -181,7 +181,7 @@
 				"type": "md",
 				"id": "10003013",
 				"pId": "10003",
-				"desc": "步骤条",
+				"desc": "steps 步骤条",
 				"category": "navigation",
 				"category-desc": "导航"
 			},
@@ -191,7 +191,7 @@
 				"type": "md",
 				"id": "10003014",
 				"pId": "10003",
-				"desc": "自动完成",
+				"desc": "autocomplete 自动完成",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -201,7 +201,7 @@
 				"type": "md",
 				"id": "10003015",
 				"pId": "10003",
-				"desc": "多选框",
+				"desc": "checkbox 多选框",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -211,7 +211,7 @@
 				"type": "md",
 				"id": "10003016",
 				"pId": "10003",
-				"desc": "级联选择",
+				"desc": "cascader 级联选择",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -221,7 +221,7 @@
 				"type": "md",
 				"id": "10003017",
 				"pId": "10003",
-				"desc": "时间选择器",
+				"desc": "timepicker 时间选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -231,7 +231,7 @@
 				"type": "md",
 				"id": "10003018",
 				"pId": "10003",
-				"desc": "日期选择器",
+				"desc": "datepicker 日期选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -241,7 +241,7 @@
 				"type": "md",
 				"id": "10003019",
 				"pId": "10003",
-				"desc": "日期-时间选择器",
+				"desc": "date-timepicker 日期-时间选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -251,7 +251,7 @@
 				"type": "md",
 				"id": "10003020",
 				"pId": "10003",
-				"desc": "表单",
+				"desc": "form 表单",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -261,7 +261,7 @@
 				"type": "md",
 				"id": "10003021",
 				"pId": "10003",
-				"desc": "数字输入框",
+				"desc": "number-input 数字输入框",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -271,7 +271,7 @@
 				"type": "md",
 				"id": "10003022",
 				"pId": "10003",
-				"desc": "输入框",
+				"desc": "input 输入框",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -281,7 +281,7 @@
 				"type": "md",
 				"id": "10003023",
 				"pId": "10003",
-				"desc": "提及",
+				"desc": "mention 提及",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -291,7 +291,7 @@
 				"type": "md",
 				"id": "10003024",
 				"pId": "10003",
-				"desc": "评分",
+				"desc": "rate 评分",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -301,7 +301,7 @@
 				"type": "md",
 				"id": "10003025",
 				"pId": "10003",
-				"desc": "单选框",
+				"desc": "radio 单选框",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -311,7 +311,7 @@
 				"type": "md",
 				"id": "10003026",
 				"pId": "10003",
-				"desc": "开关",
+				"desc": "switch 开关",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -321,7 +321,7 @@
 				"type": "md",
 				"id": "10003027",
 				"pId": "10003",
-				"desc": "滑动输入条",
+				"desc": "slider 滑动输入条",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -331,7 +331,7 @@
 				"type": "md",
 				"id": "10003028",
 				"pId": "10003",
-				"desc": "选择器",
+				"desc": "select 选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -341,7 +341,7 @@
 				"type": "md",
 				"id": "10003029",
 				"pId": "10003",
-				"desc": "颜色选择器",
+				"desc": "colorpicker 颜色选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -351,7 +351,7 @@
 				"type": "md",
 				"id": "10003030",
 				"pId": "10003",
-				"desc": "树形选择器",
+				"desc": "treeselect 树形选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -361,7 +361,7 @@
 				"type": "md",
 				"id": "10003031",
 				"pId": "10003",
-				"desc": "穿梭框",
+				"desc": "transfer 穿梭框",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -371,7 +371,7 @@
 				"type": "md",
 				"id": "10003032",
 				"pId": "10003",
-				"desc": "上传",
+				"desc": "upload上传",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -381,7 +381,7 @@
 				"type": "md",
 				"id": "10003033",
 				"pId": "10003",
-				"desc": "头像",
+				"desc": "avatar 头像",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -391,7 +391,7 @@
 				"type": "md",
 				"id": "10003034",
 				"pId": "10003",
-				"desc": "徽标数",
+				"desc": "badge 徽标数",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -401,7 +401,7 @@
 				"type": "md",
 				"id": "10003035",
 				"pId": "10003",
-				"desc": "折叠面板",
+				"desc": "collapse 折叠面板",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -411,7 +411,7 @@
 				"type": "md",
 				"id": "10003036",
 				"pId": "10003",
-				"desc": "走马灯",
+				"desc": "carousel 走马灯",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -421,7 +421,7 @@
 				"type": "md",
 				"id": "10003037",
 				"pId": "10003",
-				"desc": "卡片",
+				"desc": "card 卡片",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -431,7 +431,7 @@
 				"type": "md",
 				"id": "10003038",
 				"pId": "10003",
-				"desc": "日历",
+				"desc": "calendar 日历",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -441,7 +441,7 @@
 				"type": "md",
 				"id": "10003039",
 				"pId": "10003",
-				"desc": "列表",
+				"desc": "list 列表",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -451,7 +451,7 @@
 				"type": "md",
 				"id": "10003040",
 				"pId": "10003",
-				"desc": "气泡卡片",
+				"desc": "popover 气泡卡片",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -461,7 +461,7 @@
 				"type": "md",
 				"id": "10003041",
 				"pId": "10003",
-				"desc": "树形控件",
+				"desc": "tree 树形控件",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -471,7 +471,7 @@
 				"type": "md",
 				"id": "10003042",
 				"pId": "10003",
-				"desc": "文字提示",
+				"desc": "tooltip 文字提示",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -481,7 +481,7 @@
 				"type": "md",
 				"id": "10003043",
 				"pId": "10003",
-				"desc": "时间轴",
+				"desc": "timeline 时间轴",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -491,7 +491,7 @@
 				"type": "md",
 				"id": "10003044",
 				"pId": "10003",
-				"desc": "标签",
+				"desc": "tag 标签",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -501,7 +501,7 @@
 				"type": "md",
 				"id": "10003045",
 				"pId": "10003",
-				"desc": "标签页",
+				"desc": "tabs 标签页",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -511,7 +511,7 @@
 				"type": "md",
 				"id": "10003046",
 				"pId": "10003",
-				"desc": "表格",
+				"desc": "table 表格",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -521,7 +521,7 @@
 				"type": "md",
 				"id": "10003047",
 				"pId": "10003",
-				"desc": "警告提示",
+				"desc": "alert 警告提示",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -531,7 +531,7 @@
 				"type": "md",
 				"id": "10003048",
 				"pId": "10003",
-				"desc": "对话框",
+				"desc": "modal 对话框",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -541,7 +541,7 @@
 				"type": "md",
 				"id": "10003049",
 				"pId": "10003",
-				"desc": "全局提示",
+				"desc": "message 全局提示",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -551,7 +551,7 @@
 				"type": "md",
 				"id": "10003050",
 				"pId": "10003",
-				"desc": "通知提示框",
+				"desc": "notification 通知提示框",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -561,7 +561,7 @@
 				"type": "md",
 				"id": "10003051",
 				"pId": "10003",
-				"desc": "进度条",
+				"desc": "progress 进度条",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -571,7 +571,7 @@
 				"type": "md",
 				"id": "10003053",
 				"pId": "10003",
-				"desc": "加载中",
+				"desc": "spin 加载中",
 				"category": "feedback",
 				"category-desc": "反馈"
 			},
@@ -581,7 +581,7 @@
 				"type": "md",
 				"id": "10003054",
 				"pId": "10003",
-				"desc": "锚点",
+				"desc": "anchor 锚点",
 				"category": "other",
 				"category-desc": "其它"
 			},
@@ -591,7 +591,7 @@
 				"type": "md",
 				"id": "10003055",
 				"pId": "10003",
-				"desc": "回到顶部",
+				"desc": "backtop 回到顶部",
 				"category": "other",
 				"category-desc": "其它"
 			},
@@ -601,7 +601,7 @@
 				"type": "md",
 				"id": "10003056",
 				"pId": "10003",
-				"desc": "分割线",
+				"desc": "devider 分割线",
 				"category": "other",
 				"category-desc": "其它"
 			},
@@ -611,7 +611,7 @@
 				"type": "md",
 				"id": "10003057",
 				"pId": "10003",
-				"desc": "国际化",
+				"desc": "localeprovider 国际化",
 				"category": "other",
 				"category-desc": "其它"
 			}

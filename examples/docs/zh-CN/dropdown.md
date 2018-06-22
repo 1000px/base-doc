@@ -1,45 +1,28 @@
-<style>
-  .demo-box {
-    .el-dropdown {
-      vertical-align: top;
+<style lang='scss' scoped>
 
-      & + .el-dropdown {
-        margin-left: 15px;
+  .el-menu-demo {
+
+    .el-menu-item, 
+    .el-menu-item-group,
+    .el-submenu {
+      list-style: none;
+      a:link {
+        color: #575A5F;
       }
     }
-    .el-dropdown-link {
-      cursor: pointer;
-      color: #409EFF;
-    }
-    .el-icon-arrow-down {
-      font-size: 12px;
-    }
+
   }
-
-  .block-col-2 {
-    margin: -24px;
-
-    .el-col {
-      padding: 30px 0;
-      text-align: center;
-      border-right: 1px solid #eff2f6;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
-  }
-
- .demo-dropdown .demonstration {
-   display: block;
-   color: #8492a6;
-   font-size: 14px;
-   margin-bottom: 20px;
- }
+ 
 </style>
 
 <script>
   export default {
+     data() {
+      return {
+        isCollapse: true,
+        activeIndex: 1
+      };
+    },
     methods: {
       handleClick() {
         alert('button click');
@@ -326,6 +309,31 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 ```
 :::
 
+
+<!-- ### 多级菜单
+
+传入的菜单里有多个层级。
+
+:::demo
+
+```html
+<kc-dropdown-multiple>
+  <kc-menu default-active="1" :collapse="isCollapse" solt="dropdownMultiple">
+			<kc-submenu index="1">
+				<template slot="title">
+					<span slot="title">一级下拉菜单1</span>
+				</template>
+				<kc-menu-item index="2-1">二级下拉菜单1</kc-menu-item>
+			</kc-submenu>
+			<kc-menu-item index="3">
+				<span slot="title">一级下拉菜单3</span>
+			</kc-menu-item>
+		</kc-menu>
+</kc-dropdown-multiple>
+
+``` -->
+
+:::
 
 ### Dropdown Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |

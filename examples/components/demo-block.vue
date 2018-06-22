@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" type="text/scss" scoped>
 	.source{
 		border: 1px solid #E0EBF3;
 		padding: 24px;

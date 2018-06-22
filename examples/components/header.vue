@@ -1,7 +1,7 @@
 <template>
 	<div class="header" :class="{indexStyle: indexStyle, moduleStyle: moduleStyle}">
 		<div class="header-con">
-			<h1><router-link to="/">KFront Base</router-link></h1>
+			<h1><router-link to="/">KFront Base UI</router-link></h1>
 			<ul class="headerNav">
 				<!--<li><p><span>1.0 ∨</span></p></li>-->
 				<li><router-link to="/resource">资源 </router-link></li>
@@ -40,9 +40,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss" type="text/scss" scoped>
 	.header {
-		height: 80px;
+		height: 72px;
 		margin: 0 auto;
 		.header-con{
 			@include clearFix;
@@ -51,7 +51,8 @@ export default {
 		}
 		h1 {
 			float: left;
-			height: 80px;
+			/*height: 80px;*/
+			height: 100%;
 			opacity: 0.91;
 			a{
 				display: block;
@@ -61,17 +62,17 @@ export default {
 				font-size: 20px;
 				color: #4468F0;
 				letter-spacing: 0.29px;
-				line-height: 80px;
+				line-height: 72px;
 			}
 		}
 		ul {
 			float: right;
-
 			li {
 				position: relative;
 				float: right;
-				height: 80px;
-				padding: 0 22px;
+				height: 100%;
+				/*height: 80px;*/
+				/*padding: 0 22px;*/
 				cursor: pointer;
 				opacity: 0.9;
 				// font-family: $typography;
@@ -80,10 +81,9 @@ export default {
 				letter-spacing: 0;
 				a{
 					display: block;
-					width: 100%;
-					height: 100%;
+					padding:0 38px;
 					font-size: 16px;
-					line-height: 80px;
+					line-height: 72px;
 					color: #273B55;
 				}
 				.router-link-active{

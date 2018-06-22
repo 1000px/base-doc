@@ -269,12 +269,11 @@
 					</kc-button>
 				</kc-button-group>
 				);
-
+				
 				return (
-					<div class="el-dropdown"
-						v-clickoutside = {hide}>
-					{triggerElm}
-					{this.$slots.dropdown}
+					<div class="el-dropdown" v-clickoutside = {hide}>
+								{triggerElm}
+								{this.$slots.dropdown}
 					</div>
 				);
 				}

@@ -106,22 +106,23 @@
 			@after-leave="doDestroy">
 			<kc-select-menu
 				ref="popper"
+				visible-arrow=false
 				:append-to-body="popperAppendToBody"
 				v-show="visible && emptyText !== false">
-				<el-scrollbar
+				<kc-scrollbar
 					tag="ul"
 					wrap-class="el-select-dropdown__wrap"
 					view-class="el-select-dropdown__list"
 					ref="scrollbar"
 					:class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
 					v-show="options.length > 0 && !loading">
-					<el-option
+					<kc-option
 						:value="query"
 						created
 						v-if="showNewOption">
-					</el-option>
+					</kc-option>
 					<slot></slot>
-				</el-scrollbar>
+				</kc-scrollbar>
 				<p
 					class="el-select-dropdown__empty"
 					v-if="emptyText &&

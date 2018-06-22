@@ -4,7 +4,7 @@
       padding-left: 0 !important;
     }
 </style>
-### Pagination 分页
+## Pagination 分页
 
 当数据量过多时，使用分页分解数据。
 

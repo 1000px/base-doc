@@ -4,7 +4,7 @@
 			<template v-if="!$slots.title">{{title}}</template>
 			<slot v-else name="title"></slot>
 		</div>
-		<ul>
+		<ul style="padding-left:0;">
 			<slot></slot>
 		</ul>
 	</li>
@@ -28,7 +28,7 @@
 		},
 		computed: {
 			levelPadding() {
-				let padding = 20;
+				let padding = 0;
 				let parent = this.$parent;
 				if (this.rootMenu.collapse) return 20;
 				while (parent && parent.$options.componentName !== 'KcMenu') {
