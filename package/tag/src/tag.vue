@@ -37,7 +37,7 @@
 		data() {
 			return {
 				selectedStatus: this.selected
-			}
+			};
 		},
 		methods: {
 			handleClose(event) {
@@ -53,7 +53,7 @@
 				return this.size || (this.$ELEMENT || {}).size;
 			},
 			customColorStyle() {
-				let mainColor
+				let mainColor;
 				if (this.color) {
 					if (this.color.indexOf('#') > -1) {
 						mainColor = hexToRgb(this.color).replace('(', 'a(').replace(')', ', .1)');
@@ -61,7 +61,7 @@
 						mainColor = colorNameToRgb(this.color).replace('(', 'a(').replace(')', ', .1)');
 					}
 				} else {
-					mainColor =  this.color;
+					mainColor = this.color;
 				}
 				if (this.selectedStatus) {
 					return {
