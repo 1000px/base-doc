@@ -1,5 +1,62 @@
 <template>
+	<div v-if="hasImg===true" :class="[
+		'el-img-radio', 
+		model === label ? 'is-checked' : '',
+		inline ? 'el-img-radio-inline':'el-img-radio-block']">
+			<div class="el-img-radio-item">
+				<label
+					class="el-radio"
+					:class="[
+						border && radioSize ? 'el-radio--' + radioSize : '',
+						{ 'is-disabled': isDisabled },
+						{ 'is-focus': focus },
+						{ 'is-bordered': border },
+						{ 'is-checked': model === label }
+					]"
+					role="radio"
+					:aria-checked="model === label"
+					:aria-disabled="isDisabled"
+					:tabindex="tabIndex"
+					@keydown.space.stop.prevent="model = label"
+				>
+					<span class="el-radio__input"
+						:class="{
+							'is-disabled': isDisabled,
+							'is-checked': model === label
+						}"
+				>
+						<span class="el-radio__inner"></span>
+						<input
+						class="el-radio__original"
+						:value="label"
+						type="radio"
+						aria-hidden="true"
+						v-model="model"
+						@focus="focus = true"
+						@blur="focus = false"
+						@change="handleChange"
+						:name="name"
+						:disabled="isDisabled"
+						tabindex="-1"
+					>
+					</span>
+					<span class="el-radio__label">
+						<slot></slot>
+						<template v-if="!$slots.default">{{label}}</template>
+					</span>
+				</label>
+			</div>
+			<div class="el-img-radio-item">
+				<img :src="src" class="radio-img">
+			</div>
+			<div class="el-img-radio-item">
+				<div v-if="title" class="el-img-radio-item-title">{{title}}</div>
+				<div v-if="description" class="el-img-radio-item-desc">{{description}}</div>
+			</div>
+	</div>
+
 	<label
+		v-else
 		class="el-radio"
 		:class="[
       border && radioSize ? 'el-radio--' + radioSize : '',
@@ -67,7 +124,12 @@
 			disabled: Boolean,
 			name: String,
 			border: Boolean,
-			size: String
+			size: String,
+			hasImg: Boolean,
+			src: String,
+			title: String,
+			description: String,
+			inline: Boolean
 		},
 
 		data() {
