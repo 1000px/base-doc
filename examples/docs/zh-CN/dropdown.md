@@ -11,24 +11,16 @@
       }
     }
 
-    .el-menu-demo.el-menu--collapse.el-menu{
-      padding-left: 0 !important;
-    }
-
   }
-
- .el-dropdown {
-  .el-menu-demo.el-menu--collapse.el-menu {
-    padding-left: 0 !important;
-  }
- }
+ 
 </style>
 
 <script>
   export default {
      data() {
       return {
-        isCollapse: true
+        isCollapse: true,
+        activeIndex: 1
       };
     },
     methods: {
@@ -318,15 +310,28 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 :::
 
 
-### 多级菜单
+<!-- ### 多级菜单
 
 传入的菜单里有多个层级。
 
 :::demo
 
 ```html
+<kc-dropdown-multiple>
+  <kc-menu default-active="1" :collapse="isCollapse" solt="dropdownMultiple">
+			<kc-submenu index="1">
+				<template slot="title">
+					<span slot="title">一级下拉菜单1</span>
+				</template>
+				<kc-menu-item index="2-1">二级下拉菜单1</kc-menu-item>
+			</kc-submenu>
+			<kc-menu-item index="3">
+				<span slot="title">一级下拉菜单3</span>
+			</kc-menu-item>
+		</kc-menu>
+</kc-dropdown-multiple>
 
-```
+``` -->
 
 :::
 

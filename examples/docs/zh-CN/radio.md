@@ -7,13 +7,18 @@
         radio2: 1,
         radio3: '1',
         radio4: '2',
+        radio5: '1',
+        radio6: '2',
       };
     }
   };
 </script>
 
 <style>
- 
+ .demo-radio .el-img-radio {
+    margin-top: 5px;
+    margin-bottom: 5px;
+ }
 </style>
 
 ## Radio 单选框
@@ -122,6 +127,63 @@
 ```
 :::
 
+### 带有图片和描述的复选框
+
+:::demo
+```html
+  <h5>垂直布局</h5>
+  <div class="demo-radio">
+    <kc-radio 
+      v-model="radio5" 
+      label="1"
+      :has-img="true"
+      title="复选框"
+      description="带有图片和描述的复选框"
+      src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+    </kc-radio>
+    <kc-radio 
+      v-model="radio5" 
+      label="2"
+      :has-img="true"
+      title="复选框"
+      description="带有图片和描述的复选框"
+      src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+    </kc-radio>
+  </div>
+
+   <h5>水平布局</h5>
+   <div class="demo-radio">
+    <kc-radio v-model="radio6" 
+      label="1"
+      :has-img="true"
+      :inline="true"
+      title="复选框"
+      description="带有图片和描述的复选框"
+      src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+    </kc-radio>
+    <kc-radio v-model="radio6" 
+      label="2"
+      :has-img="true"
+      :inline="true"
+      title="复选框"
+      description="带有图片和描述的复选框"
+      src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg">
+    </kc-radio>
+  </div>
+  
+<script>
+  export default {
+    data () {
+      return {
+        radio5: '1',
+        radio6: '2'
+      };
+    }
+  }
+</script>
+```
+:::
+
 ### Radio Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
@@ -130,6 +192,11 @@
 | border  | 是否显示边框  | boolean   | — | false   |
 | size  | Radio 的尺寸，仅在 border 为真时有效  | string  | medium / small / mini | — |
 | name | 原生 name 属性 | string    |      —         |     —    |
+| has-img  | 是否是带有图文组合的单选框    | boolean   |  — | false   |
+| inline  | 是否是带有图文组合的水平布局单选框（只有has-img的值为true的时候才生效）    | boolean   |  — | false   |
+| title  | 带有图文组合的单选框的标题（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
+| description  | 带有图文组合的单选框的描述（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
+| src  | 带有图文组合的单选框的图片路径（只有has-img的值为true的时候才生效）    | string   |  — |  —  |
 
 ### Radio Events
 | 事件名称 | 说明 | 回调参数 |

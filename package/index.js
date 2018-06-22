@@ -23,6 +23,7 @@ import Dialog from './dialog';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
+import DropdownMultiple from './dropdown-multiple';
 import Form from './form';
 import FormItem from './form-item';
 import Icon from './icon';
@@ -90,6 +91,7 @@ const components = [
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	DropdownMultiple,
 	Form,
 	FormItem,
 	Icon,
@@ -171,6 +173,7 @@ export default {
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	DropdownMultiple,
 	Form,
 	FormItem,
 	Icon,
