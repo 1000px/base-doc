@@ -54,6 +54,14 @@
 				return _navMap;
 			}
 		},
+		methods: {
+			toTop: function () {
+				this.$el.nextElementSibling.querySelector('.scrollBox').scrollTo(0, 0);
+			}
+		},
+		watch: {
+			'$route': 'toTop'
+		},
 		mounted () {
 //			console.log(this._navLeft);
 		}
