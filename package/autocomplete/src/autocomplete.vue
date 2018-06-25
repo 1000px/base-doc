@@ -15,7 +15,7 @@
 			@compositionend.native="handleComposition"
 			@input="handleInputChange"
 			@focus="handleInputFocus"
-			@blur="handleBlur"
+			@blur="handleInputBlur"
 			@keydown.up.native.prevent="highlight(highlightedIndex - 1)"
 			@keydown.down.native.prevent="highlight(highlightedIndex + 1)"
 			@keydown.enter.native="handleKeyEnter"
@@ -35,7 +35,6 @@
         <slot name="suffix"></slot>
       </template>
     </kc-input>
-		{{feedbacks.length > 0}}
 		<el-autocomplete-suggestions
 			v-if="feedbacks.length > 0"
       visible-arrow
@@ -98,6 +97,49 @@
       </template>
     </kc-input>
     <el-autocomplete-suggestions
+			v-if="queryModel"
+      visible-arrow
+      class="el-autocomplete-suggestion-query-model"
+			style="width:auto;"
+			ref="suggestions"
+      placement="bottom-end"
+      :id="id">
+			<div
+				class="query-model-group"
+				v-for="(item, index) in dataSource"
+        :key="index"
+			>
+        <div class="query-model-title-outer">
+					<span class="query-model-title">{{item.title}}</span>
+					<span>
+						<a
+							style="float: right"	
+							:href="searchUrl" 
+							target="_blank"
+							class="query-model-search-url"
+						>
+							{{searchUrlText}}
+						</a>
+					</span>
+				</div>
+				<div>
+					<li
+						v-for="(item, index) in item.children"
+						:key="index"
+						:class="{'highlighted': highlightedIndex === index}"
+						@click="select(item)"
+						:id="`${id}-item-${index}`"
+						role="option"
+						:aria-selected="highlightedIndex === index"
+					>
+						<span>{{item.title}}</span>
+						<span style="float:right;">{{item.count}} 人关注</span>
+					</li>
+				</div>
+			</div>
+    </el-autocomplete-suggestions>
+    <el-autocomplete-suggestions
+			v-else
       visible-arrow
       :class="[popperClass ? popperClass : '']"
       :popper-options="popperOptions"
@@ -148,11 +190,15 @@
 				default: 'value'
 			},
 			popperClass: String,
+			searchUrl: String,
+			dataSource: Array,
+			searchUrlText: String,
 			itemSuffix: Array,
 			isConfigOption: Boolean,
 			popperOptions: Object,
 			placeholder: String,
 			disabled: Boolean,
+			queryModel: Boolean,
 			name: String,
 			size: String,
 			value: String,
@@ -203,7 +249,11 @@
 		},
 		watch: {
 			suggestionVisible(val) {
-				this.broadcast('ElAutocompleteSuggestions', 'visible', [val, this.$refs.input.$refs.input.offsetWidth]);
+				if (this.isConfigOption) {
+					this.handleShowSuggestion(false);
+					return;
+				}
+				this.handleShowSuggestion(val);
 			}
 		},
 		methods: {
@@ -216,13 +266,22 @@
 				};
 			},
 			getData(queryString) {
+				if (this.queryModel) {
+					this.loading = false;
+					this.suggestions = this.dataSource;
+					return;
+				}
 				this.loading = true;
 				this.fetchSuggestions(queryString, (suggestions) => {
 					this.loading = false;
-					if (Array.isArray(suggestions)) {
-						this.suggestions = suggestions;
+					if (this.isConfigOption) {
+						this.suggestions = this.feedbacks;
 					} else {
-						console.error('autocomplete suggestions must be an array');
+						if (Array.isArray(suggestions)) {
+							this.suggestions = suggestions;
+						} else {
+							console.error('autocomplete suggestions must be an array');
+						}
 					}
 				});
 			},
@@ -244,18 +303,29 @@
 			},
 			handleInputChange(value) {
 				if (value.length === 0) {
-					this.feedbacks = [];
+					this.handleShowSuggestion(false);
 				} else {
+					if (this.handleCheckEmail(value) > 0) {
+						this.handleShowSuggestion(false);
+						return;
+					}
 					let ret = []
 					this.itemSuffix.map(item => {
 						let option = value +	'@' + item;
 						ret.push(option);
 					});
 					this.feedbacks = ret;
+					this.handleShowSuggestion(true);
 				}
-				console.log(this.feedbacks)
+			},
+			handleCheckEmail (val) {
+				return val.indexOf('@')
 			},
 			handleFocus(event) {
+				if (this.queryModel) {
+					this.handleShowSuggestion(true);
+					return;
+				}
 				this.activated = true;
 				this.$emit('focus', event);
 				if (this.triggerOnFocus) {
@@ -265,15 +335,22 @@
 			handleInputFocus(event) {
 				this.activated = true;
 				this.$emit('focus', event);
-				if (this.triggerOnFocus) {
-					this.debouncedGetData(this.value);
+				let val = event.target.value;
+				if (val.length > 0) {
+					this.handleShowSuggestion(true);
 				}
 			},
 			handleBlur(event) {
 				this.$emit('blur', event);
 			},
+			handleInputBlur(event) {
+				this.$emit('blur', event);
+			},
 			close(e) {
 				this.activated = false;
+				if(this.isConfigOption || this.queryModel) {
+					this.handleShowSuggestion(false);
+				}
 			},
 			handleKeyEnter(e) {
 				if (this.suggestionVisible && this.highlightedIndex >= 0 && this.highlightedIndex < this.suggestions.length) {
@@ -288,12 +365,28 @@
 				}
 			},
 			select(item) {
-				this.$emit('input', item[this.valueKey]);
-				this.$emit('select', item);
-				this.$nextTick(_ => {
-					this.suggestions = [];
-					this.highlightedIndex = -1;
-				});
+				if (this.queryModel) {
+					this.$refs.input.$refs.input.value = item.title;
+					this.$nextTick(_ => {
+					this.handleShowSuggestion(false);
+						this.highlightedIndex = -1;
+					});
+					return;
+				}
+				if (this.isConfigOption) {
+					this.$refs.input.$refs.input.value = item;
+					this.$nextTick(_ => {
+						this.handleShowSuggestion(false);
+						this.highlightedIndex = -1;
+					});
+				} else {
+					this.$emit('input', item[this.valueKey]);
+					this.$emit('select', item);
+					this.$nextTick(_ => {
+						this.suggestions = [];
+						this.highlightedIndex = -1;
+					});
+				}
 			},
 			highlight(index) {
 				if (!this.suggestionVisible || this.loading) { return; }
@@ -319,6 +412,9 @@
 				}
 				this.highlightedIndex = index;
 				this.$el.querySelector('.el-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
+			},
+			handleShowSuggestion (isShow) {
+				this.broadcast('ElAutocompleteSuggestions', 'visible', [isShow, this.$refs.input.$refs.input.offsetWidth]);
 			}
 		},
 		mounted() {
@@ -346,3 +442,4 @@
 		}
 	};
 </script>
+

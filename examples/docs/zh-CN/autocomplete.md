@@ -6,7 +6,35 @@
         state1: '',
         state2: '',
         state3: '',
-        dataSuffix: ['163.com', 'qq.com']
+        state4: '',
+        dataSuffix: ['163.com', 'qq.com'],
+        dataSource: [
+          {
+            title: '话题',
+            children: [{
+              title: 'AntDesign',
+              count: 10000,
+            }, {
+              title: 'AntDesign UI',
+              count: 10600,
+            }],
+          }, {
+            title: '问题',
+            children: [{
+              title: 'AntDesign UI 有多好',
+              count: 60100,
+            }, {
+              title: 'AntDesign 是啥',
+              count: 30010,
+            }],
+          }, {
+            title: '文章',
+            children: [{
+              title: 'AntDesign 是一个设计语言',
+              count: 100000,
+            }],
+          }
+        ]
       }
     },
      methods: {
@@ -23,8 +51,8 @@
       },
       loadAll() {
         return [
-          { "value": "三全鲜食（北新泾店）", "address": "长宁区新渔路144号" },
-          { "value": "Hot honey 首尔炸鸡（仙霞路）", "address": "上海市长宁区淞虹路661号" },
+          { "value": "abc", "address": "长宁区新渔路144号" },
+          { "value": "ABC", "address": "上海市长宁区淞虹路661号" },
           { "value": "新旺角茶餐厅", "address": "上海市普陀区真北路988号创邑金沙谷6号楼113" },
           { "value": "泷千家(天山西路店)", "address": "天山西路438号" },
           { "value": "胖仙女纸杯蛋糕（上海凌空店）", "address": "上海市长宁区金钟路968号1幢18号楼一层商铺18-101" },
@@ -146,8 +174,8 @@
       },
       loadAll() {
         return [
-          { "value": "三全鲜食（北新泾店）", "address": "长宁区新渔路144号" },
-          { "value": "Hot honey 首尔炸鸡（仙霞路）", "address": "上海市长宁区淞虹路661号" },
+          { "value": "abc", "address": "长宁区新渔路144号" },
+          { "value": "ABC", "address": "上海市长宁区淞虹路661号" },
           { "value": "新旺角茶餐厅", "address": "上海市普陀区真北路988号创邑金沙谷6号楼113" },
           { "value": "泷千家(天山西路店)", "address": "天山西路438号" },
           { "value": "胖仙女纸杯蛋糕（上海凌空店）", "address": "上海市长宁区金钟路968号1幢18号楼一层商铺18-101" },
@@ -214,17 +242,82 @@
 
 :::demo
 ```html
-<div class="sub-title">激活即列出输入建议</div>
+<div class="sub-title">请输入邮箱</div>
 <kc-autocomplete
   class="inline-input"
   v-model="state3"
   :item-suffix="dataSuffix"
   :is-config-option="true"
-  :fetch-suggestions="querySearch"
   placeholder="请输入内容"
-  @select="handleSelect"
 >
 </kc-autocomplete>
+
+<script>
+  export default {
+    data() {
+      return {
+        dataSuffix: ['163.com', 'qq.com'],
+        state3: ''
+      };
+    },
+}
+</script>
+```
+:::
+
+
+### 查询模式-确定类目
+
+:::demo
+```html
+<div class="sub-title">示例</div>
+<kc-autocomplete
+  class="inline-input"
+  v-model="state4"
+  :query-model="true"
+  :data-source="dataSource"
+  search-url="http://www.baidu.com"
+  search-url-text="更多"
+  placeholder="请输入内容"
+>
+</kc-autocomplete>
+
+<script>
+  export default {
+    data() {
+      return {
+        state4: '',
+        dataSource: [
+          {
+            title: '话题',
+            children: [{
+              title: 'AntDesign',
+              count: 10000,
+            }, {
+              title: 'AntDesign UI',
+              count: 10600,
+            }],
+          }, {
+            title: '问题',
+            children: [{
+              title: 'AntDesign UI 有多好',
+              count: 60100,
+            }, {
+              title: 'AntDesign 是啥',
+              count: 30010,
+            }],
+          }, {
+            title: '文章',
+            children: [{
+              title: 'AntDesign 是一个设计语言',
+              count: 100000,
+            }],
+          }
+        ]
+      };
+    },
+}
+</script>
 ```
 :::
 

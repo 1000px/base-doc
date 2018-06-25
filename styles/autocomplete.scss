@@ -82,3 +82,36 @@
 .el-autocomplete-suggestion__wrap.el-scrollbar__wrap {
   margin-bottom: 0 !important;
 }
+.el-autocomplete-suggestion-query-model {
+  // left: 385px !important;
+
+  .query-model-group {
+    margin-top: 10px;
+    border-bottom: solid 1px #E4E7ED;
+
+    .query-model-title-outer {
+      margin-bottom: 10px;
+
+      .query-model-title {
+        margin-left: 14px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #252525;
+        letter-spacing: 0;
+        line-height: 14px;
+      }
+    }
+  
+    .query-model-search-url {
+      margin-right: 14px;
+      font-size: 14px;
+      color: $--color-primary;
+      letter-spacing: 0;
+      line-height: 14px;
+    }
+  }
+
+  .query-model-group:last-of-type {
+    border-bottom: none;
+  }
+}
