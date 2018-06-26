@@ -16,7 +16,7 @@
 }
 
 .markcss{
-	p, blockquote, ul, ol, dl, table, pre {
+	p, blockquote, ul, ol, dl, pre {
 		line-height: 32px;
 		margin:10px 0;
 	}
@@ -24,10 +24,7 @@
 		@include hCss;
 	}
 	h3{
-		padding: 15px;
-	}
-	li{
-		list-style: disc;
+		padding: 15px 0;
 	}
 	a{
 		color: #b58900;
@@ -140,9 +137,10 @@
 		border-bottom: 1px solid #C8D9E5;
 		padding: 0;
 	}
-	table{
+	table.table{
 		width: 100%;
 		margin: 20px auto;
+		line-height: 32px;
 		border-collapse:collapse;
 		border:none;
 		th{
@@ -184,4 +182,19 @@
 	.icon-list{
 		@include clearFix;
 	}
+	//.source{
+	//	table{
+	//		margin: 0;
+	//		border: none;
+	//		line-height: normal;
+    //
+	//		tr{
+	//			background-color: #fff;
+	//			border:inherit;
+	//			&:nth-child(2n) {
+	//				background-color: #fff;
+	//			}
+	//		}
+	//	}
+	//}
 }

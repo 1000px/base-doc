@@ -321,6 +321,62 @@
 ```
 :::
 
+
+### 查询模式-不确定类目
+
+:::demo
+```html
+<div class="sub-title">示例</div>
+<kc-autocomplete
+  class="inline-input"
+  v-model="state4"
+  :query-model="true"
+  :data-source="dataSource"
+  search-url="http://www.baidu.com"
+  search-url-text="更多"
+  placeholder="请输入内容"
+>
+</kc-autocomplete>
+
+<script>
+  export default {
+    data() {
+      return {
+        state4: '',
+        dataSource: [
+          {
+            title: '话题',
+            children: [{
+              title: 'AntDesign',
+              count: 10000,
+            }, {
+              title: 'AntDesign UI',
+              count: 10600,
+            }],
+          }, {
+            title: '问题',
+            children: [{
+              title: 'AntDesign UI 有多好',
+              count: 60100,
+            }, {
+              title: 'AntDesign 是啥',
+              count: 30010,
+            }],
+          }, {
+            title: '文章',
+            children: [{
+              title: 'AntDesign 是一个设计语言',
+              count: 100000,
+            }],
+          }
+        ]
+      };
+    },
+}
+</script>
+```
+:::
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |

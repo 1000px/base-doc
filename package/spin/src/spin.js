@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Spin from './spin.vue';
+import KcSpin from './spin.vue';
 
-Spin.newInstance = properties => {
+KcSpin.newInstance = properties => {
 	const _props = properties || {};
 
 	const Instance = new Vue({
@@ -9,14 +9,14 @@ Spin.newInstance = properties => {
 		render (h) {
 			let vnode = '';
 			if (this.render) {
-				vnode = h(Spin, {
+				vnode = h(KcSpin, {
 					props: {
 						fix: true,
 						fullscreen: true
 					}
 				}, [this.render(h)]);
 			} else {
-				vnode = h(Spin, {
+				vnode = h(KcSpin, {
 					props: {
 						size: 'large',
 						fix: true,
@@ -32,24 +32,24 @@ Spin.newInstance = properties => {
 
 	const component = Instance.$mount();
 	document.body.appendChild(component.$el);
-	const spin = Instance.$children[0];
+	const Spin = Instance.$children[0];
 
 	return {
 		show () {
-			spin.visible = true;
+			Spin.visible = true;
 		},
 		remove (cb) {
-			spin.visible = false;
+			Spin.visible = false;
 			setTimeout(function () {
-				spin.$parent.$destroy();
+				Spin.$parent.$destroy();
 				if (document.getElementsByClassName('ivu-spin-fullscreen')[0] !== undefined) {
 					document.body.removeChild(document.getElementsByClassName('ivu-spin-fullscreen')[0]);
 				}
 				cb();
 			}, 500);
 		},
-		component: spin
+		component: KcSpin
 	};
 };
 
-export default Spin;
+export default KcSpin;

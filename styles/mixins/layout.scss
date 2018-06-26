@@ -1,0 +1,72 @@
+//@import "../common/var";
+$css-prefix: ivu-;
+$row-prefix-cls: #{$css-prefix}row;
+$col-prefix-cls: #{$css-prefix}col;
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	position: relative;
+	margin-left: ($gutter / -2);
+	margin-right: ($gutter / -2);
+	height: auto;
+	@include clearFix;
+}
+
+
+@mixin col($index, $list) {
+	$item: ".#{$col-prefix-cls}-span#{$class}-#{$index}";
+	@include col(2, $item);
+	@if($index > $grid-columns){
+		#{$list} {
+			float: left;
+			flex: 0 0 auto;
+		}
+	}@else if($index <= $grid-columns) {
+		$item: ".#{$col-prefix-cls}-span#{$class}-#{$index}";
+		@include col(($index + 1), #{$list}, #{$item});
+	}
+}
+
+@mixin float-grid-columns($class) {
+
+	@include col($index, $list);
+// kickstart it
+}
+
+
+@mixin loop-grid-columns($index, $class) {
+	@if ($index > 0) {
+		.#{$col-prefix-cls}-span#{$class}-#{$index} {
+			display: block;
+			width: percentage(($index / $grid-columns));
+		}
+		.#{$col-prefix-cls}#{$class}-push-#{$index} {
+			left: percentage(($index / $grid-columns));
+		}
+		.#{$col-prefix-cls}#{$class}-pull-#{$index} {
+			right: percentage(($index / $grid-columns));
+		}
+		.#{$col-prefix-cls}#{$class}-offset-#{$index} {
+			margin-left: percentage(($index / $grid-columns));
+		}
+		.#{$col-prefix-cls}#{$class}-order-#{$index} {
+			order: $index;
+		}
+		@include loop-grid-columns(($index - 1), $class);
+	}@else if($index = 0){
+		.#{$col-prefix-cls}-span#{$class}-#{$index} {
+			display: none;
+		}
+		.#{$col-prefix-cls}#{$class}-push-#{$index} {
+			left: auto;
+		}
+		.#{$col-prefix-cls}#{$class}-pull-#{$index} {
+			right: auto;
+		}
+	}
+}
+
+
+@mixin make-grid($class: #{''}) {
+	@include float-grid-columns($class);
+	@include loop-grid-columns($grid-columns, $class);
+}

@@ -10,5 +10,5 @@ export function getFirstComponentChild(children) {
 
 export function getComponentChildrenCount(children) {
 	let tagChildren = children && children.filter(c => c && c.tag);
-	return tagChildren.length
+	return tagChildren.length;
 };

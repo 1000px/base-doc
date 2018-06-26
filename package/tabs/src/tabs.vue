@@ -9,7 +9,10 @@
 		},
 
 		props: {
-			type: String,
+			type: {
+				type: String,
+				default: 'normal'
+			},
 			activeName: String,
 			closable: Boolean,
 			addable: Boolean,
@@ -130,7 +133,8 @@
 			const panels = (<div class="el-tabs__content">{this.$slots.default}</div>);
 
 			return (
-				<div class={{'el-tabs': true, 'el-tabs--card': type === 'card', [`el-tabs--${tabPosition}`]: true, 'el-tabs--border-card': type === 'border-card'}}>
+				<div class={{'el-tabs': true, 'el-tabs--normal': type == 'normal', 'el-tabs--card': type === 'card', [`el-tabs--${tabPosition}`]: true, 'el-tabs--border-card': type === 'border-card'}}>
+
 					{tabPosition !== 'bottom' ? [header, panels] : [panels, header]}
 				</div>
 			);

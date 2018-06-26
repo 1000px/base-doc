@@ -14,7 +14,7 @@
 
 		componentName: 'KcForm',
 
-		provide() {
+		provide () {
 			return {
 				elForm: this
 			};
@@ -44,19 +44,19 @@
 			}
 		},
 		watch: {
-			rules() {
+			rules () {
 				if (this.validateOnRuleChange) {
 					this.validate(() => {
 					});
 				}
 			}
 		},
-		data() {
+		data () {
 			return {
 				fields: []
 			};
 		},
-		created() {
+		created () {
 			this.$on('el.form.addField', (field) => {
 				if (field) {
 					this.fields.push(field);
@@ -70,7 +70,7 @@
 			});
 		},
 		methods: {
-			resetFields() {
+			resetFields () {
 				if (!this.model) {
 					process.env.NODE_ENV !== 'production' &&
 					console.warn('[Element Warn][Form]model is required for resetFields to work.');
@@ -80,12 +80,12 @@
 					field.resetField();
 				});
 			},
-			clearValidate() {
+			clearValidate () {
 				this.fields.forEach(field => {
 					field.clearValidate();
 				});
 			},
-			validate(callback) {
+			validate (callback) {
 				if (!this.model) {
 					console.warn('[Element Warn][Form]model is required for validate to work!');
 					return;
@@ -124,7 +124,7 @@
 					return promise;
 				}
 			},
-			validateField(prop, cb) {
+			validateField (prop, cb) {
 				let field = this.fields.filter(field => field.prop === prop)[0];
 				if (!field) {
 					throw new Error('must call validateField with valid prop string!');

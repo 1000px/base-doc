@@ -203,7 +203,7 @@ export default {
 				const before = this.beforeRemove(file, this.uploadFiles);
 				if (before && before.then) {
 					before.then(() => {
-						console.log(1111)
+						console.log(1111);
 						doRemove();
 					}, noop);
 				} else if (before !== false) {

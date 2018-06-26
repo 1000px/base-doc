@@ -39,7 +39,7 @@
         if (inputValue) {
           this.dynamicTags.push(inputValue);
         }
-        this.inputVisible = false;
+      	this.inputVisible = false;
         this.inputValue = '';
       },
       
@@ -60,11 +60,6 @@
       height: 32px;
       line-height: 30px;
       padding: 0 *;
-    }
-    .input-new-tag {
-      width: 90px;
-      margin-left: 10px;
-      vertical-align: bottom;
     }
   }
 </style>
@@ -134,7 +129,7 @@
   {{tag}}
 </kc-tag>
 <kc-input
-  class="input-new-tag"
+  style="width: 90px"
   v-if="inputVisible"
   v-model="inputValue"
   ref="saveTagInput"
@@ -155,11 +150,6 @@
     line-height: 30px;
     padding-top: 0;
     padding-bottom: 0;
-  }
-  .input-new-tag {
-    width: 90px;
-    margin-left: 10px;
-    vertical-align: bottom;
   }
 </style>
 

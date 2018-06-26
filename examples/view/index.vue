@@ -35,7 +35,10 @@
 				<div class="home-con-card">
 					<div class="card card-overview">
 						<i class="card-img"></i>
-						<h3>指南</h3>
+						<h3>
+							指南
+							<span>GUIDE</span>
+						</h3>
 						<p>了解开发和设计指南，节约无谓的设计且保持系统一致性、规范性，全面提高产品体验和研发效率。</p>
 						<span>
 						<router-link to="/overview">了解详情 →</router-link>
@@ -43,7 +46,10 @@
 					</div>
 					<div class="card card-api">
 						<i class="card-img"></i>
-						<h3>API</h3>
+						<h3>
+							API
+							<span>UI KIT</span>
+						</h3>
 						<p>通过组件快速体验交互细节，实用前端框架封装的代码能够快速开发，同时保持项目的可维护性与可靠性。</p>
 						<span>
 						<router-link to="/api">了解详情 →</router-link>
@@ -51,7 +57,10 @@
 					</div>
 					<div class="card card-resources">
 						<i class="card-img"></i>
-						<h3>资源</h3>
+						<h3>
+							资源
+							<span>RESOURCE</span>
+						</h3>
 						<p>提供相关资源和模式，为具体的设计问题提供向导和一般解决方案，让设计者聚焦在最有价值的产品功能打磨上。</p>
 						<span>
 						<router-link to="/resource">了解详情 →</router-link>
@@ -101,15 +110,15 @@
 			<div class="home-footer-con">
 				<ul>
 					<li>资源链接</li>
-					<li v-for="(item1,index) in rosourceLink" :key="index"><a href="">{{item1.data}}</a></li>
+					<li v-for="(item1,index) in rosourceLink" :key="index"><a :href="item1.url" target="_blank">{{item1.data}}</a></li>
 				</ul>
 				<ul>
 					<li>相关站点</li>
-					<li v-for="(item2,index) in station" :key="index"><a href="">{{item2.data}}</a></li>
+					<li v-for="(item2,index) in station" :key="index"><a :href="item2.url" target="_blank">{{item2.data}}</a></li>
 				</ul>
 				<ul>
 					<li>帮助中心</li>
-					<li v-for="(item3,index) in help" :key="index"><a href="">{{item3.data}}</a></li>
+					<li v-for="(item3,index) in help" :key="index"><a :href="item3.url" target="_blank">{{item3.data}}</a></li>
 				</ul>
 				<ul>
 					<li>版权所有@-2018</li>
@@ -127,25 +136,25 @@ export default {
 	data () {
 		return {
 			rosourceLink: [
-				{data: 'Vue2.×', url: '#'},
-				{data: 'ElementUI', url: '#'},
-				{data: 'webpack', url: '#'},
-				{data: 'Sass', url: '#'},
-				{data: 'React', url: '#'},
-				{data: 'iView', url: '#'}
+				{data: 'Vue2.×', url: 'https://cn.vuejs.org/v2/guide/'},
+				{data: 'ElementUI', url: 'http://element.eleme.io/#/zh-CN'},
+				{data: 'webpack', url: 'https://www.webpackjs.com/'},
+				{data: 'Sass', url: 'http://sass.bootcss.com/docs/guide/'},
+				{data: 'React', url: 'http://sass.bootcss.com/docs/guide/'},
+				{data: 'iView', url: 'http://sass.bootcss.com/docs/guide/'}
 			],
 			station: [
-				{data: '地图', url: '#'},
-				{data: '3D地图', url: '#'},
-				{data: 'Android地图', url: '#'},
-				{data: '流媒体', url: '#'},
-				{data: '视信通', url: '#'},
-				{data: '自动化测试', url: '#'}
+				{data: '地图', url: 'http://10.255.228.247:8083/public/app/pages/kmap.html'},
+				{data: '3D地图', url: 'http://10.255.228.247:8088/kmap3D/'},
+				{data: 'Android地图', url: 'http://10.255.228.247:8083/public/app/pages/map-android.html'},
+				{data: '流媒体', url: 'http://10.255.228.247:8083/public/app/pages/kmedia.html'},
+				{data: '视信通', url: 'http://10.255.228.247:8083/public/app/pages/kcommunication.html'},
+				{data: '自动化测试', url: 'http://10.255.228.247:8080/index.html'}
 			],
 			help: [
-				{data: '更新日志', url: '#'},
-				{data: '反馈建议', url: '#'},
-				{data: '浏览器下载', url: '#'}
+				{data: '更新日志', url: '/#/overview/logs'},
+				{data: '反馈建议', url: 'http://10.255.228.247:8083/public/app/pages/keda-advice/keda-advice.html'},
+				{data: '浏览器下载', url: 'http://10.255.228.247:8083/public/app/pages/kbrowser.html'}
 			]
 		};
 	}
@@ -153,13 +162,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss" type="text/scss" scoped>
 	.home{
 		position: relative;
 		width: 100%;
 		min-width: 1200px;
 		font-family: $typography;
-		// 背景图
+		 /*背景图*/
 		.bg-fixed {
 			position: absolute;
 			top: 0;
@@ -242,6 +251,7 @@ export default {
 						font-size: 64px;
 						font-weight: 400;
 						color: #FFFFFF;
+						opacity: 0.91;
 						letter-spacing: 0.91px;
 						line-height: 40px;
 					}
@@ -250,6 +260,7 @@ export default {
 						margin-bottom: 51px;
 						font-size: 20px;
 						color: #FFFFFF;
+						opacity: 0.9;
 						letter-spacing: 0.8px;
 						line-height: 40px;
 					}
@@ -274,6 +285,7 @@ export default {
 					width: 371px;
 					height: 112px;
 					opacity: 0.9;
+					font-weight: bold;
 					font-family: $typography;
 					font-size: 28px;
 					color: #1F1F20;
@@ -303,6 +315,13 @@ export default {
 							font-weight: normal;
 							letter-spacing: 0.96px;
 							font-family: $typography;
+							span{
+								display: inline-block;
+
+								font-size: 12px;
+								color: #C8CEE3;
+								letter-spacing: 0.48px;
+							}
 						}
 						p{
 							margin-bottom: 18px;

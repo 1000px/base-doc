@@ -18,14 +18,17 @@ import Collapse from './collapse';
 import CollapseItem from './collapse-item';
 import CollapseTransition from '_src/transitions/collapse-transition';
 import ColorPicker from './color-picker';
+import Content from './content';
 import DatePicker from './date-picker';
 import Dialog from './dialog';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
+import Footer from './footer';
 import DropdownMultiple from './dropdown-multiple';
 import Form from './form';
 import FormItem from './form-item';
+import Header from './header';
 import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
@@ -50,13 +53,16 @@ import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
 import Slider from './slider';
+import Sider from './sider';
 import Spin from './spin';
 import Step from './step';
 import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
 import Tabs from './tabs';
-import TabPane from './tab-pane'
+import Table from './table';
+import TableColumn from './table-column';
+import TabPane from './tab-pane';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -86,18 +92,22 @@ const components = [
 	CollapseItem,
 	CollapseTransition,
 	ColorPicker,
+	Content,
 	DatePicker,
 	Dialog,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Footer,
 	DropdownMultiple,
 	Form,
 	FormItem,
+	Header,
 	Icon,
 	Input,
 	InputNumber,
 	Layout,
+	Sider,
 	Modal,
 	Menu,
 	MenuItem,
@@ -120,6 +130,8 @@ const components = [
 	Steps,
 	Switch,
 	Submenu,
+	Table,
+	TableColumn,
 	Tabs,
 	TabPane,
 	Tag,
@@ -130,6 +142,7 @@ const components = [
 	Tree,
 	Upload
 ];
+
 const install = function (Vue) {
 	if (install.installed) return;
 	components.map(component => Vue.component(component.name, component));
@@ -140,6 +153,7 @@ const install = function (Vue) {
 	Vue.prototype.$prompt = MessageBox.prompt;
 	Vue.prototype.$notify = Notification;
 	Vue.prototype.$message = Message;
+	Vue.prototype.$Spin = Spin;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -168,18 +182,22 @@ export default {
 	CollapseItem,
 	CollapseTransition,
 	ColorPicker,
+	Content,
 	DatePicker,
 	Dialog,
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
+	Footer,
 	DropdownMultiple,
 	Form,
+	Header,
 	FormItem,
 	Icon,
 	Input,
 	InputNumber,
 	Layout,
+	Sider,
 	Message,
 	MessageBox,
 	Modal,
@@ -205,6 +223,8 @@ export default {
 	Scrollbar,
 	Spin,
 	Submenu,
+	Table,
+	TableColumn,
 	Tabs,
 	TabPane,
 	Tag,

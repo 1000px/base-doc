@@ -17,7 +17,7 @@
 					</ul>
 				</h3>
 				<h4 v-else>
-					<router-link :to="{name: key}" exact>{{_navLeft[key]['desc']}}</router-link>
+					<span><router-link :to="{name: key}" exact>{{_navLeft[key]['desc']}}</router-link></span>
 				</h4>
 
 			</li>
@@ -54,6 +54,14 @@
 				return _navMap;
 			}
 		},
+		methods: {
+			toTop: function () {
+				this.$el.nextElementSibling.querySelector('.scrollBox').scrollTo(0, 0);
+			}
+		},
+		watch: {
+			'$route': 'toTop'
+		},
 		mounted () {
 //			console.log(this._navLeft);
 		}
@@ -61,14 +69,15 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss" type="text/scss" scoped>
 
 	.left-nav {
 		position: relative;
 		overflow: hidden;
 		width: 250px;
 		/*height: 100%;*/
-		height: calc(100vh - 234px);
+		height: calc(100vh - 252px);
+		padding-top: 18px;
 		float: left;
 		/*position: absolute;*/
 		/*top: 0;*/
@@ -110,23 +119,25 @@
 									position: absolute;
 									bottom: 0;
 									left: 0;
-									width: 4px;
+									width: 6px;
 									height: 100%;
 									display: inline-block;
 									content: "";
-									// transform: rotate(-90deg);
 									background: #6781F2;
 									box-shadow: 3px 0 8px 0 rgba(103, 129, 242, 0.41);
-									border-radius: 100px;
+									border-radius:0 100px 100px 0;
 								}
 							}
 						}
 					}
 				}
 				h4{
+					position: relative;
 					height: 37px;
-					padding-left: 24px;
+					line-height: 37px;
 					a{
+						display: block;
+						padding-left: 24px;
 						font-family: $typography;
 						font-size: 14px;
 						color: #273B55;
@@ -135,7 +146,23 @@
 						}
 					}
 					.router-link-active {
-						color: #4999FF;
+						opacity: 0.9;
+						font-family: $typography;
+						font-size: $medium;
+						color: #5572F1;
+						background: #F6F9FF;
+						&::after {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 6px;
+							height: 100%;
+							display: inline-block;
+							content: "";
+							background: #6781F2;
+							box-shadow: 3px 0 8px 0 rgba(103, 129, 242, 0.41);
+							border-radius:0 100px 100px 0;
+						}
 					}
 				}
 			}
