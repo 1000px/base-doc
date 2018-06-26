@@ -7,37 +7,61 @@
         state2: '',
         state3: '',
         state4: '',
+        state5: '',
         dataSuffix: ['163.com', 'qq.com'],
         dataSource: [
           {
             title: '话题',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '更多',
             children: [{
               title: 'AntDesign',
-              count: 10000,
+              description: 10000,
             }, {
               title: 'AntDesign UI',
-              count: 10600,
+              description: 10600,
             }],
           }, {
             title: '问题',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '更多',
             children: [{
               title: 'AntDesign UI 有多好',
-              count: 60100,
+              description: 60100,
             }, {
               title: 'AntDesign 是啥',
-              count: 30010,
+              description: 30010,
             }],
           }, {
             title: '文章',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '详情',
             children: [{
               title: 'AntDesign 是一个设计语言',
-              count: 100000,
+              description: 100000,
             }],
+          }
+        ],
+        dataSource1: [
+          {
+            index: '11111212121212',
+            result: '100条结果'
+          },
+          {
+            index: '8888',
+            result: '100条结果'
+          },
+          {
+            index: '09888',
+            result: '100条结果'
           }
         ]
       }
     },
      methods: {
+      queryLike (queryString, cb) {
+        cb(this.dataSource1)
+      },
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
@@ -276,8 +300,6 @@
   v-model="state4"
   :query-model="true"
   :data-source="dataSource"
-  search-url="http://www.baidu.com"
-  search-url-text="更多"
   placeholder="请输入内容"
 >
 </kc-autocomplete>
@@ -288,29 +310,35 @@
       return {
         state4: '',
         dataSource: [
-          {
+           {
             title: '话题',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '更多',
             children: [{
               title: 'AntDesign',
-              count: 10000,
+              description: 10000,
             }, {
               title: 'AntDesign UI',
-              count: 10600,
+              description: 10600,
             }],
           }, {
             title: '问题',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '更多',
             children: [{
               title: 'AntDesign UI 有多好',
-              count: 60100,
+              description: 60100,
             }, {
               title: 'AntDesign 是啥',
-              count: 30010,
+              description: 30010,
             }],
           }, {
             title: '文章',
+            searchUrl: 'http://www.baidu.com',
+            searchUrlText: '详情',
             children: [{
               title: 'AntDesign 是一个设计语言',
-              count: 100000,
+              description: 100000,
             }],
           }
         ]
@@ -321,61 +349,6 @@
 ```
 :::
 
-
-### 查询模式-不确定类目
-
-:::demo
-```html
-<div class="sub-title">示例</div>
-<kc-autocomplete
-  class="inline-input"
-  v-model="state4"
-  :query-model="true"
-  :data-source="dataSource"
-  search-url="http://www.baidu.com"
-  search-url-text="更多"
-  placeholder="请输入内容"
->
-</kc-autocomplete>
-
-<script>
-  export default {
-    data() {
-      return {
-        state4: '',
-        dataSource: [
-          {
-            title: '话题',
-            children: [{
-              title: 'AntDesign',
-              count: 10000,
-            }, {
-              title: 'AntDesign UI',
-              count: 10600,
-            }],
-          }, {
-            title: '问题',
-            children: [{
-              title: 'AntDesign UI 有多好',
-              count: 60100,
-            }, {
-              title: 'AntDesign 是啥',
-              count: 30010,
-            }],
-          }, {
-            title: '文章',
-            children: [{
-              title: 'AntDesign 是一个设计语言',
-              count: 100000,
-            }],
-          }
-        ]
-      };
-    },
-}
-</script>
-```
-:::
 
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -384,9 +357,13 @@
 | type | 主题 | string | success/warning/info/error | info |
 | fetch-suggestions | 返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它 | Function(queryString, callback) | — | — |
 | trigger-on-focus | 是否在输入框 focus 时显示建议列表 | boolean | — | true |
+| item-suffix | 列表项添加后缀 | Array | — | — |
+| is-config-option | 是否添加列表项后缀 | Boolean | true/false | false |
+| query-model | 是否是查询模式的确定类目 | Boolean | true/false | false |
+| data-source | 查询模式的确定类目中的数据源 | Array | — | — |
 
 
 ### Events
 | 事件名称 | 说明 | 回调参数 |
 |---------- |-------- |---------- |
-| close | 关闭alert时触发的事件 | — |
+| select | 选中列表项的事件 | item |

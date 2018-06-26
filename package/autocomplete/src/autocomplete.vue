@@ -104,6 +104,7 @@
 			ref="suggestions"
       placement="bottom-end"
       :id="id">
+
 			<div
 				class="query-model-group"
 				v-for="(item, index) in dataSource"
@@ -114,11 +115,11 @@
 					<span>
 						<a
 							style="float: right"	
-							:href="searchUrl" 
+							:href="item.searchUrl" 
 							target="_blank"
 							class="query-model-search-url"
 						>
-							{{searchUrlText}}
+							{{item.searchUrlText}}
 						</a>
 					</span>
 				</div>
@@ -133,10 +134,21 @@
 						:aria-selected="highlightedIndex === index"
 					>
 						<span>{{item.title}}</span>
-						<span style="float:right;">{{item.count}} 人关注</span>
+						<span style="float:right;">{{item.description}}</span>
 					</li>
 				</div>
-			</div>
+			</div>	
+
+				<!-- <li
+					v-else
+					class="query-model-single"
+					v-for="(item) in queryList"
+					:key="item.index"
+				>
+					<span>{{item.index}}</span>
+					<span style="float:right;">{{item.result}}</span>
+				</li> -->
+
     </el-autocomplete-suggestions>
     <el-autocomplete-suggestions
 			v-else
@@ -146,6 +158,7 @@
       ref="suggestions"
       :placement="placement"
       :id="id">
+
       <li
         v-for="(item, index) in suggestions"
         :key="index"
@@ -194,11 +207,13 @@
 			dataSource: Array,
 			searchUrlText: String,
 			itemSuffix: Array,
+			queryList: Array,
 			isConfigOption: Boolean,
 			popperOptions: Object,
 			placeholder: String,
 			disabled: Boolean,
 			queryModel: Boolean,
+			queryModelLike: Boolean,
 			name: String,
 			size: String,
 			value: String,
@@ -272,6 +287,7 @@
 					return;
 				}
 				this.loading = true;
+
 				this.fetchSuggestions(queryString, (suggestions) => {
 					this.loading = false;
 					if (this.isConfigOption) {
@@ -309,9 +325,13 @@
 						this.handleShowSuggestion(false);
 						return;
 					}
-					let ret = []
+					let ret = [];
 					this.itemSuffix.map(item => {
-						let option = value +	'@' + item;
+						let temp = item.indexOf('.com') > 0 ? '@' : '';
+						if(item.indexOf('@') > 0) {
+							temp = ''
+						}
+						let option = value +	temp + item;
 						ret.push(option);
 					});
 					this.feedbacks = ret;
@@ -367,8 +387,9 @@
 			select(item) {
 				if (this.queryModel) {
 					this.$refs.input.$refs.input.value = item.title;
+				
 					this.$nextTick(_ => {
-					this.handleShowSuggestion(false);
+						this.handleShowSuggestion(false);
 						this.highlightedIndex = -1;
 					});
 					return;
