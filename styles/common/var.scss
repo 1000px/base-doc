@@ -137,7 +137,7 @@ $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
 $--checkbox-disabled-checked-input-fill: $--color-text-placeholder !default;
 $--checkbox-disabled-checked-input-border-color: $--color-text-placeholder !default;
-$--checkbox-disabled-checked-icon-color: #fff !default;
+$--checkbox-disabled-checked-icon-color: $--color-white !default;
 
 $--checkbox-checked-text-color: $--color-primary !default;
 $--checkbox-checked-input-border-color: $--color-primary !default;
@@ -185,7 +185,7 @@ $--radio-disabled-icon-color: $--disabled-fill-base !default;
 
 $--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-checked-input-fill: $--disabled-background-color-base !default;
-$--radio-disabled-checked-icon-color: #fff !default;
+$--radio-disabled-checked-icon-color: $--color-white !default;
 
 $--radio-checked-text-color: $--color-primary !default;
 $--radio-checked-input-border-color: $--color-primary !default;
@@ -284,7 +284,7 @@ $--msgbox-danger-color: $--color-danger !default;
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
-$--message-background-color: #fff !default;
+$--message-background-color: $--color-white !default;
 $--message-padding: 15px 15px 15px 20px !default;
 $--message-content-color: $--color-text-regular !default;
 $--message-close-color: $--color-text-placeholder !default;
@@ -530,7 +530,7 @@ $--tooltip-border-color: $--color-text-primary !default;
 $--tooltip-arrow-size: 6px !default;
 $--tooltip-padding: 10px !default;
 $--tooltip-dark-background-color: #404040 !default;
-$--tooltip-dark-color: #fff !default;
+$--tooltip-dark-color: $--color-white !default;
 
 /* Tag
 -------------------------- */
@@ -638,7 +638,7 @@ $--datepicker-inrange-color: $--border-color-extra-light !default;
 $--datepicker-inrange-hover-color: $--border-color-extra-light !default;
 $--datepicker-active-color: $--color-primary !default;
 $--datepicker-text-hover-color: $--color-primary !default;
-$--datepicker-cell-hover-color: #fff !default;
+$--datepicker-cell-hover-color: $--color-white !default;
 
 /* Loading
 --------------------------*/
@@ -680,7 +680,7 @@ $--transfer-border-color: $--border-color-lighter !default;
 $--transfer-border-radius: $--border-radius-base !default;
 $--transfer-panel-width: 200px !default;
 $--transfer-panel-header-height: 36px !default;
-$--transfer-panel-header-background: #fff !default;
+$--transfer-panel-header-background: $--color-white !default;
 $--transfer-panel-footer-height: 40px !default;
 $--transfer-panel-body-height: 246px !default;
 $--transfer-item-height: 30px !default;
@@ -740,7 +740,7 @@ $layout-footer-padding       : 24px 50px;
 $layout-footer-background    : $layout-body-background;
 $layout-sider-background     : $layout-header-background;
 $layout-trigger-height       : 48px;
-$layout-trigger-color        : #fff;
+$layout-trigger-color        : $--color-white;
 $layout-zero-trigger-width   : 36px;
 $layout-zero-trigger-height  : 42px;
 $border-radius-base     : 6px;

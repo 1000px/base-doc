@@ -66,6 +66,8 @@ import TabPane from './tab-pane';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
+import Timeline from './timeline';
+import TimelineItem from './timeline-item';
 import Tooltip from './tooltip';
 import Transfer from './transfer';
 import Tree from './tree';
@@ -135,6 +137,8 @@ const components = [
 	Tabs,
 	TabPane,
 	Tag,
+	Timeline,
+	TimelineItem,
 	TimePicker,
 	TimeSelect,
 	Tooltip,
@@ -228,6 +232,8 @@ export default {
 	Tabs,
 	TabPane,
 	Tag,
+	Timeline,
+	TimelineItem,
 	TimePicker,
 	TimeSelect,
 	Tooltip,
