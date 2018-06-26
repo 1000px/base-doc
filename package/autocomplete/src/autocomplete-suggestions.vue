@@ -2,7 +2,7 @@
 	<transition name="el-zoom-in-top" @after-leave="doDestroy">
 		<div
 			v-show="showPopper"
-			class="el-autocomplete-suggestion el-popper"
+			class="el-autocomplete-suggestion"
 			:class="{ 'is-loading': parent.loading }"
 			:style="{ width: dropdownWidth }"
 			role="region"
@@ -13,8 +13,8 @@
 				view-class="el-autocomplete-suggestion__list"
 			>
 			<li v-if="parent.loading"><i class="el-icon-loading"></i></li>
-				<slot v-else>
-				</slot>
+			<slot v-else>
+			</slot>
 			</el-scrollbar>
 		</div>
 	</transition>
@@ -33,7 +33,7 @@
 		data() {
 			return {
 				parent: this.$parent,
-				dropdownWidth: ''
+				dropdownWidth: '',
 			};
 		},
 
@@ -50,7 +50,7 @@
 
 		methods: {
 			select(item) {
-				this.dispatch('ElAutocomplete', 'item-click', item);
+				this.dispatch('KcAutocomplete', 'item-click', item);
 			}
 		},
 
