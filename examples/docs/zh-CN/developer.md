@@ -61,7 +61,6 @@
 				margin: 0;
 				padding: 0;
 				font-size: 14px;
-				height: 20px;
 				line-height: 20px;
 				color: #273B55;
 				a{
