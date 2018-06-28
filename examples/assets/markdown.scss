@@ -16,15 +16,19 @@
 }
 
 .markcss{
-	p, blockquote, ul, ol, dl, pre {
+	blockquote, ul, ol, dl, pre {
 		line-height: 32px;
-		margin:10px 0;
+		margin:15px 0;
 	}
 	h1, h2, h3, h4, h5, h6 {
 		@include hCss;
 	}
+	h2{
+		font-size: 22px;
+	}
 	h3{
-		padding: 15px 0;
+		font-size: 16px;
+		padding: 10px 0;
 	}
 	a{
 		color: #b58900;
@@ -168,6 +172,7 @@
 		max-width: 100%
 	}
 	p{
+		margin: 10px 0;
 		font-size: 14px;
 	}
 	#outline-list{

@@ -95,7 +95,7 @@
 						padding: 10px 0;
 						li {
 							position: relative;
-							padding-left: -24px;
+							/*padding-left: -24px;*/
 							height: 37px;
 							line-height: 37px;
 							> a {
@@ -166,16 +166,16 @@
 					}
 				}
 			}
-			&::after {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 0px;
-				height: 100%;
-				display: inline-block;
-				content: "";
-				border-right: 1px solid #E0EBF3;
-			}
+			/*&::after {*/
+				/*position: absolute;*/
+				/*top: 0;*/
+				/*right: 0;*/
+				/*width: 0px;*/
+				/*height: 100%;*/
+				/*display: inline-block;*/
+				/*content: "";*/
+				/*border-right: 1px solid #E0EBF3;*/
+			/*}*/
 		}
 	}
 </style>
