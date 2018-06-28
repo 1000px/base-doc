@@ -385,7 +385,7 @@
   @include e(panel) {
     position: absolute;
     z-index: 10;
-    padding: 6px;
+    margin: 6px;
     box-sizing: content-box;
     background-color: $--color-white;
     border: 1px solid $--border-color-lighter;
