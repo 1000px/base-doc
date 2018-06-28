@@ -71,7 +71,6 @@
 		</div>
 		<!--下半部列表-->
 		<div class="home-con">
-			<div class="aaa"></div>
 			<div class="home-con-list">
 				<h4>工程化特征</h4>
 				<ul>
