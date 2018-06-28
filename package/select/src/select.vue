@@ -106,7 +106,7 @@
 			@after-leave="doDestroy">
 			<kc-select-menu
 				ref="popper"
-				visible-arrow=false
+				:visible-arrow="false"
 				:append-to-body="popperAppendToBody"
 				v-show="visible && emptyText !== false">
 				<kc-scrollbar
