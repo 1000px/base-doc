@@ -63,7 +63,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   .demo-date-timepicker .source {
     padding: 0;
     display: flex;
@@ -91,9 +91,9 @@
 
 在同一个选择器里选择日期和时间
 
-:::tip
-DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其他选项可以参照 DatePicker 和 TimePicker。
-:::
+
+> DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其他选项可以参照 DatePicker 和 TimePicker。
+
 
 ###  日期和时间点
 

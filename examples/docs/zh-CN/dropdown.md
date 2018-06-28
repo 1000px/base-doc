@@ -331,9 +331,9 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 		</kc-menu>
 </kc-dropdown-multiple>
 
-``` -->
+``` 
 
-:::
+:::-->
 
 ### Dropdown Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
