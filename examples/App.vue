@@ -24,5 +24,6 @@ export default {
 <style lang="scss">
 #app {
 	font-family: $typography;
+	overflow-x: hidden;
 }
 </style>
