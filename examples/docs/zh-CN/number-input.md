@@ -1,4 +1,5 @@
 ## number input 数字输入框
+-------------------
 
 <script>
   export default {

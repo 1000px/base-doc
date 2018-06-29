@@ -4,22 +4,20 @@
 	author: malixiang
 -->
 <template>
-	<div class="view-box">
+	<kc-scrollbar class="view-box">
 		<div class="api view-content">
 			<k-nav :left-nav="splitNav"></k-nav>
 			<div class="right-content markcss" ref="markCon">
-				<div class="scrollBox">
-					<router-view/>
-				</div>
+				<router-view/>
 			</div>
 		</div>
-	</div>
+	</kc-scrollbar>
 </template>
 
 <script>
 import kNav from '@/components/nav';
 import navLists from '@/nav-config.json';
-import KcScrollbar from '../../../package/scrollbar/src/main';
+// import KcScrollbar from '../../../package/scrollbar/src/main';
 
 
 export default {
@@ -39,7 +37,6 @@ export default {
 		}
 	},
 	components: {
-		KcScrollbar,
 		kNav
 	}
 };

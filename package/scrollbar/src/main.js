@@ -55,6 +55,7 @@ export default {
 				style = gutterStyle;
 			}
 		}
+
 		const view = h(this.tag, {
 			class: ['el-scrollbar__view', this.viewClass],
 			style: this.viewStyle,
@@ -69,6 +70,7 @@ export default {
 				{[view]}
 			</div>
 		);
+
 		let nodes;
 
 		if (!this.native) {

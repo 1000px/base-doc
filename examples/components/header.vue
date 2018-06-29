@@ -43,11 +43,10 @@ export default {
 <style lang="scss" type="text/scss" scoped>
 	.header {
 		height: 72px;
-		margin: 0 auto;
 		.header-con{
 			@include clearFix;
-			margin:0 auto;
-			width: 90%;
+
+			/*width: 90%;*/
 		}
 		h1 {
 			float: left;
@@ -114,6 +113,7 @@ export default {
 		position: relative;
 		z-index: 99;
 		width: 1200px;
+		margin: 0 auto;
 		background-color: rgba(255, 255, 255, 0) ;
 		color: #fff;
 		transition: width .3s;
@@ -143,10 +143,18 @@ export default {
 		}
 	}
 	.moduleStyle{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 99;
 		width: 100%;
+		transition: width .3s;
+		box-shadow: 0 11px 14px 0 rgba(68,73,94,0.06);
 		background-color: rgba(255, 255, 255,1) ;
 		background-image: none;
-		transition: width .3s;
+		.header-con{
+			padding: 0 95px 0 130px;
+		}
 	}
 
 </style>
