@@ -1,3 +1,11 @@
+<style lang="scss">
+	.demo-avatar{
+		margin-bottom:10px;
+		>.ivu-avatar{
+			margin-right: 16px;
+		}
+	}
+	</style>
 ## avatar 头像
 
 ### 基础用法:
@@ -24,10 +32,10 @@
 	<div class="demo-avatar">
 		<kc-avatar icon="info"></kc-avatar>
 		<kc-avatar>U</kc-avatar>
-		<kc-avatar>USER</kc-avatar>
+		<kc-avatar>USE</kc-avatar>
 		<kc-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"></kc-avatar>
 		<kc-avatar style="color: #f56a00;background-color: #fde3cf">U</kc-avatar>
-		<kc-avatar style="background-color: #87d068" icon="person"></kc-avatar>
+		<kc-avatar style="background-color: #87d068" icon="success"></kc-avatar>
 	</div>
 ```
 :::
@@ -39,7 +47,7 @@
 		<kc-badge :value="1">
 			<kc-avatar shape="square" icon="info"></kc-avatar>
 		</kc-badge>
-		<kc-badge is-dot>
+		<kc-badge is-dot :show-zero="true">
 			<kc-avatar shape="square" icon="error"></kc-avatar>
 		</kc-badge>
 	</div>

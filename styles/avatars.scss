@@ -71,27 +71,58 @@
 		border-left: 0;
 	}
 }
-@-webkit-keyframes ani-spin-bounce {
-	0% {
-		-webkit-transform: scale(0);
-		transform: scale(0)
+.ivu-avatar {
+	display: inline-block;
+	//margin-right: 16px;
+	text-align: center;
+	background: #ccc;
+	color: #fff;
+	white-space: nowrap;
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 16px;
+	& > * {
+		line-height: 32px;
 	}
-	100% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		opacity: 0
+	&.ivu-avatar-icon {
+		font-size: 18px;
+	}
+	& > img {
+		width: 100%;
+		height: 100%;
 	}
 }
-
-@keyframes ani-spin-bounce {
-	0% {
-		-webkit-transform: scale(0);
-		transform: scale(0)
+.ivu-avatar-image {
+	background: 0 0;
+}
+.ivu-avatar-large {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	& > * {
+		line-height: 40px;
 	}
-	100% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		opacity: 0
+	&.ivu-avatar-icon {
+		font-size: 24px;
 	}
 }
-
+.ivu-avatar-small {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 12px;
+	& > * {
+		line-height: 24px;
+	}
+	&.ivu-avatar-icon {
+		font-size: 14px;
+	}
+}
+.ivu-avatar-square {
+	border-radius: 4px;
+}
