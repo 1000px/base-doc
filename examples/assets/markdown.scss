@@ -24,12 +24,15 @@
 		@include hCss;
 	}
 	h2{
-		font-size: 22px;
+		font-size: 24px;
+		color: #273B55;
 	}
 	h3{
-		font-size: 16px;
+		font-size: 18px;
+		color: #273B55;
 		padding: 10px 0;
 	}
+
 	a{
 		color: #b58900;
 		text-decoration: none;
@@ -133,7 +136,7 @@
 	}
 	hr{
 		clear: both;
-		margin: 15px 0;
+		margin: 7px 0 18px;
 		height: 0px;
 		overflow: hidden;
 		border: none;

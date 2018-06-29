@@ -6,19 +6,22 @@
 <template>
 	<div class="home">
 		<!--整体背景-->
-		<div class="bg-fixed">
-			<div class="bg-banner">
-				<div class="bg-banner-masking01"></div>
-				<div class="bg-banner-masking02"></div>
-				<div class="bg-banner-img"><img src="../assets/images/pic-scene01.png"/></div>
-			</div>
-			<div class="bg-src">
-				<div class="bg-src-left">
-					<img src="../assets/images/pic-scene02.png"/>
+		<div class="bg-fixed-box">
+			<div class="bg-fixed">
+				<div class="bg-banner">
+					<div class="bg-banner-masking01"></div>
+					<div class="bg-banner-masking02"></div>
+					<div class="bg-banner-img"><img src="../assets/images/pic-scene01.png"/></div>
 				</div>
-				<div class="bg-src-right"></div>
+				<div class="bg-src">
+					<div class="bg-src-left">
+						<img src="../assets/images/pic-scene02.png"/>
+					</div>
+					<div class="bg-src-right"></div>
+				</div>
 			</div>
 		</div>
+
 		<!--banner+card-->
 		<div class="banner">
 			<div class="banner-con">
@@ -71,7 +74,6 @@
 		</div>
 		<!--下半部列表-->
 		<div class="home-con">
-			<div class="aaa"></div>
 			<div class="home-con-list">
 				<h4>工程化特征</h4>
 				<ul>
@@ -169,20 +171,26 @@ export default {
 		width: 100%;
 		min-width: 1200px;
 		font-family: $typography;
-		 /*背景图*/
-		.bg-fixed {
+		.bg-fixed-box {
+			width: 0;
+			height: 0;
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: 50%;
 			z-index: -1;
-			width: 100%;
+		}
+
+		 /*背景图*/
+		.bg-fixed {
+			width: 1920px;
+			margin-left: -960px;
 			height: 0;
 			// background-image: linear-gradient(44deg, #53bdf5 13%, #4982f2 51%, #3a2fed 100%);
 			.bg-banner {
 				position: relative;
 				width: 100%;
 				height: 1554px;
-				margin-top: -80px;
+				margin-top: -72px;
 				background-image: linear-gradient(-44deg, #53bdf5 6%, #4982f2 51%, #3a2fed 100%);
 
 				.bg-banner-masking01 {
