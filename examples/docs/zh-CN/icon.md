@@ -21,11 +21,11 @@
     margin: 0 20px;
   }
 
-  .page-component .content > ul.icon-list {
+  .markcss section > ul.icon-list {
     overflow: hidden;
     list-style: none;
     padding: 0;
-    border: solid 1px #eaeefb;
+    border: 1px solid #eaeefb;
     border-radius: 4px;
   }
   .icon-list li {

@@ -104,7 +104,7 @@
 ```html
 
 <kc-timeline>
-	<kc-timeline-item color="red">
+	<kc-timeline-item color="green">
 		<kc-icon name="time" slot="dot" class="timeline-icon"></kc-icon>
 		<span>发布里程碑版本</span>
 	</kc-timeline-item>
@@ -114,7 +114,7 @@
 </kc-timeline>
 <style>
 .timeline-icon{
-font-size: 20px;
+font-size: 18px;
 }
 </style>
 
