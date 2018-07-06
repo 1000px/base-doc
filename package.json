@@ -15,8 +15,9 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "build": "node build/build.js & cnpm run build:style",
+    "clean": "gulp --gulpfile build/build.clean.js",
     "build:utils": "npm run build:file &&  webpack --config build/webpack.build.utils.js",
-    "dist": "npm run build:file && npm run build:utils && webpack --config build/webpack.component.js && npm run build:style"
+    "dist": "npm run clean && npm run build:file && npm run build:utils && webpack --config build/webpack.component.js && npm run build:style"
   },
   "dependencies": {
     "async-validator": "^1.8.2",
