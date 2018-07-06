@@ -62,10 +62,8 @@
   "./utils/aria-dialog.js": "./src/utils/aria-dialog.js",
   "./utils/aria-utils.js": "./src/utils/aria-utils.js",
   "./utils/clickoutside.js": "./src/utils/clickoutside.js",
-  "./utils/date.js": "./src/utils/date.js",
   "./utils/dom.js": "./src/utils/dom.js",
   "./utils/merge.js": "./src/utils/merge.js",
-  "./utils/popper.js": "./src/utils/popper.js",
   "./utils/resize-event.js": "./src/utils/resize-event.js",
   "./utils/scrollbar-width.js": "./src/utils/scrollbar-width.js",
   "./utils/scroll-into-view.js": "./src/utils/scroll-into-view.js",
@@ -73,5 +71,7 @@
   "./utils/sync.js": "./src/utils/sync.js",
   "./utils/util.js": "./src/utils/util.js",
   "./utils/vdom.js": "./src/utils/vdom.js",
-  "./utils/vue-popper.js": "./src/utils/vue-popper.js"
+  "./utils/vue-popper.js": "./src/utils/vue-popper.js",
+  "./utils/date.js": "./src/utils/date.js",
+  "./utils/popper.js": "./src/utils/popper.js"
 }
