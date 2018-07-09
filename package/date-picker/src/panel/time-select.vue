@@ -1,25 +1,25 @@
 <template>
-	<transition name="el-zoom-in-top" @before-enter="handleMenuEnter" @after-leave="$emit('dodestroy')">
+	<transition name="kc-zoom-in-top" @before-enter="handleMenuEnter" @after-leave="$emit('dodestroy')">
 		<div
 			ref="popper"
 			v-show="visible"
 			:style="{ width: width + 'px' }"
 			:class="popperClass"
-			class="el-picker-panel time-select el-popper">
-			<el-scrollbar noresize wrap-class="el-picker-panel__content">
+			class="kc-picker-panel time-select kc-popper">
+			<kc-scrollbar noresize wrap-class="kc-picker-panel__content">
 				<div class="time-select-item"
 					 v-for="item in items"
 					 :class="{ selected: value === item.value, disabled: item.disabled, default: item.value === defaultValue }"
 					 :disabled="item.disabled"
 					 @click="handleClick(item)">{{ item.value }}
 				</div>
-			</el-scrollbar>
+			</kc-scrollbar>
 		</div>
 	</transition>
 </template>
 
 <script type="text/babel">
-	import ElScrollbar from './../../../scrollbar';
+	import KcScrollbar from './../../../scrollbar';
 	import scrollIntoView from '_src/utils/scroll-into-view';
 
 	const parseTime = function (time) {
@@ -74,7 +74,7 @@
 	};
 
 	export default {
-		components: {ElScrollbar},
+		components: {KcScrollbar},
 
 		watch: {
 			value(val) {
@@ -95,7 +95,7 @@
 			},
 
 			scrollToOption(selector = '.selected') {
-				const menu = this.$refs.popper.querySelector('.el-picker-panel__content');
+				const menu = this.$refs.popper.querySelector('.kc-picker-panel__content');
 				scrollIntoView(menu, menu.querySelector(selector));
 			},
 

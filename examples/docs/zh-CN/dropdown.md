@@ -1,10 +1,10 @@
 <style lang='scss' scoped>
 
-  .el-menu-demo {
+  .kc-menu-demo {
 
-    .el-menu-item, 
-    .el-menu-item-group,
-    .el-submenu {
+    .kc-menu-item, 
+    .kc-menu-item-group,
+    .kc-submenu {
       list-style: none;
       a:link {
         color: #575A5F;
@@ -46,8 +46,8 @@
 
 ```html
 <kc-dropdown>
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>
+  <span class="kc-dropdown-link">
+    下拉菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
   </span>
   <kc-dropdown-menu slot="dropdown">
     <kc-dropdown-item>黄金糕</kc-dropdown-item>
@@ -60,11 +60,11 @@
 ```
 
 <style>
-  .el-dropdown-link {
+  .kc-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .kc-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -80,7 +80,7 @@
 ```html
 <kc-dropdown>
   <kc-button type="primary">
-    更多菜单<i class="el-icon-arrow-down el-icon-right"></i>
+    更多菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
   </kc-button>
   <kc-dropdown-menu slot="dropdown">
     <kc-dropdown-item>黄金糕</kc-dropdown-item>
@@ -103,13 +103,13 @@
 </kc-dropdown>
 
 <style>
-  .el-dropdown {
+  .kc-dropdown {
     vertical-align: top;
   }
-  .el-dropdown + .el-dropdown {
+  .kc-dropdown + .kc-dropdown {
     margin-left: 15px;
   }
-  .el-icon-arrow-down {
+  .kc-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -137,8 +137,8 @@
   <kc-col :span="12">
     <span class="demonstration">hover 激活</span>
     <kc-dropdown>
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>
+      <span class="kc-dropdown-link">
+        下拉菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
       </span>
       <kc-dropdown-menu slot="dropdown">
         <kc-dropdown-item>黄金糕</kc-dropdown-item>
@@ -152,8 +152,8 @@
   <kc-col :span="12">
     <span class="demonstration">click 激活</span>
     <kc-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>
+      <span class="kc-dropdown-link">
+        下拉菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
       </span>
       <kc-dropdown-menu slot="dropdown">
         <kc-dropdown-item>黄金糕</kc-dropdown-item>
@@ -168,11 +168,11 @@
 ```
 
 <style>
-  .el-dropdown-link {
+  .kc-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .kc-icon-arrow-down {
     font-size: 12px;
   }
   .demonstration {
@@ -192,8 +192,8 @@
 :::demo 下拉菜单默认在点击菜单项后会被隐藏，将`hide-on-click`属性默认为`false`可以关闭此功能。
 ```html
 <kc-dropdown :hide-on-click="false">
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>
+  <span class="kc-dropdown-link">
+    下拉菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
   </span>
   <kc-dropdown-menu slot="dropdown">
     <kc-dropdown-item>黄金糕</kc-dropdown-item>
@@ -202,14 +202,14 @@
     <kc-dropdown-item disabled>双皮奶</kc-dropdown-item>
     <kc-dropdown-item divided>蚵仔煎</kc-dropdown-item>
   </kc-dropdown-menu>
-</el-dropdown>
+</kc-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .kc-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .kc-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -223,8 +223,8 @@
 :::demo
 ```html
 <kc-dropdown @command="handleCommand">
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>
+  <span class="kc-dropdown-link">
+    下拉菜单<i class="kc-icon-arrow-down kc-icon-right"></i>
   </span>
   <kc-dropdown-menu slot="dropdown">
     <kc-dropdown-item command="a">黄金糕</kc-dropdown-item>
@@ -236,11 +236,11 @@
 </kc-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .kc-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .kc-icon-arrow-down {
     font-size: 12px;
   }
 </style>

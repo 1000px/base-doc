@@ -91,7 +91,7 @@
 				this.$emit('visible-change', val);
 			},
 			focusing(val) {
-				const selfDefine = this.$el.querySelector('.el-dropdown-selfdefine');
+				const selfDefine = this.$el.querySelector('.kc-dropdown-selfdefine');
 				if (selfDefine) { // 自定义
 					if (val) {
 						selfDefine.className += ' focusing';
@@ -196,7 +196,7 @@
 				if (!this.splitButton) { // 自定义
 					this.triggerElm.setAttribute('role', 'button');
 					this.triggerElm.setAttribute('tabindex', '0');
-					this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' el-dropdown-selfdefine'); // 控制
+					this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' kc-dropdown-selfdefine'); // 控制
 				}
 			},
 			initEvent() {
@@ -264,14 +264,14 @@
 						type = {type}
 						size = {dropdownSize}
 						class
-						= "el-dropdown__caret-button" >
-						<i class="el-dropdown__icon el-icon-arrow-down"></i>
+						= "kc-dropdown__caret-button" >
+						<i class="kc-dropdown__icon kc-icon-arrow-down"></i>
 					</kc-button>
 				</kc-button-group>
 				);
-				
+
 				return (
-					<div class="el-dropdown" v-clickoutside = {hide}>
+					<div class="kc-dropdown" v-clickoutside = {hide}>
 								{triggerElm}
 								{this.$slots.dropdown}
 					</div>
