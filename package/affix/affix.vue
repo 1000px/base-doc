@@ -8,7 +8,7 @@
 </template>
 <script>
     import { on, off } from '_src/utils/dom';
-    const prefixCls = 'ivu-affix';
+    const prefixCls = 'kc-affix';
     function getScroll(target, top) {
         const prop = top ? 'pageYOffset' : 'pageXOffset';
         const method = top ? 'scrollTop' : 'scrollLeft';

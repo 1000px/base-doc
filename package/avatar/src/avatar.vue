@@ -9,7 +9,7 @@
 	import Icon from '../../icon';
 	import { oneOf } from '../../../src/utils/util.js';
 
-	const prefixCls = 'ivu-avatar';
+	const prefixCls = 'kc-avatar';
 
 	export default {
 		name: 'KcAvatar',

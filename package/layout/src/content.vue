@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-	const prefixCls = 'ivu-layout';
+	const prefixCls = 'kc-layout';
 	export default {
 		name: 'KcContent',
 		computed: {
