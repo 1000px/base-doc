@@ -1,15 +1,15 @@
 <template>
 	<div :class="[
-    type === 'textarea' ? 'el-textarea' : 'el-input',
-    inputSize ? 'el-input--' + inputSize : '',
-		search === true ? 'el-input-group__search' : '',
+    type === 'textarea' ? 'kc-textarea' : 'kc-input',
+    inputSize ? 'kc-input--' + inputSize : '',
+		search === true ? 'kc-input-group__search' : '',
     {
       'is-disabled': inputDisabled,
-      'el-input-group': $slots.prepend || $slots.append,
-      'el-input-group--append': $slots.append,
-      'el-input-group--prepend': $slots.prepend,
-      'el-input--prefix': $slots.prefix || prefixIcon,
-      'el-input--suffix': $slots.suffix || suffixIcon || clearable,
+      'kc-input-group': $slots.prepend || $slots.append,
+      'kc-input-group--append': $slots.append,
+      'kc-input-group--prepend': $slots.prepend,
+      'kc-input--prefix': $slots.prefix || prefixIcon,
+      'kc-input--suffix': $slots.suffix || suffixIcon || clearable,
     }
     ]"
 		 @mouseenter="hovering = true"
@@ -17,13 +17,13 @@
 	>
 		<template v-if="type !== 'textarea'">
 			<!-- 前置元素 -->
-			<div class="el-input-group__prepend" v-if="$slots.prepend">
+			<div class="kc-input-group__prepend" v-if="$slots.prepend">
 				<slot name="prepend"></slot>
 			</div>
 			<input
 				:tabindex="tabindex"
 				v-if="type !== 'textarea'"
-				class="el-input__inner"
+				class="kc-input__inner"
 				v-bind="$attrs"
 				:type="type"
 				:disabled="inputDisabled"
@@ -41,45 +41,45 @@
 				:search="search"
 			>
 			<!-- 前置内容 -->
-			<span class="el-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
+			<span class="kc-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
         <slot name="prefix"></slot>
-        <i class="el-input__icon"
+        <i class="kc-input__icon"
 		   v-if="prefixIcon"
 		   :class="prefixIcon">
         </i>
       </span>
 			<!-- 后置内容 -->
 			<span
-				class="el-input__suffix"
+				class="kc-input__suffix"
 				v-if="$slots.suffix || suffixIcon || showClear || validateState && needStatusIcon"
 				:style="suffixOffset">
-        <span class="el-input__suffix-inner">
+        <span class="kc-input__suffix-inner">
           <template v-if="!showClear">
             <slot name="suffix"></slot>
-            <i class="el-input__icon"
+            <i class="kc-input__icon"
 			   v-if="suffixIcon"
 			   :class="suffixIcon">
             </i>
           </template>
           <i v-else
-			 class="el-input__icon el-icon-circle-close el-input__clear"
+			 class="kc-input__icon kc-icon-circle-close kc-input__clear"
 			 @click="clear"
 		  ></i>
         </span>
-        <i class="el-input__icon"
+        <i class="kc-input__icon"
 		   v-if="validateState"
-		   :class="['el-input__validateIcon', validateIcon]">
+		   :class="['kc-input__validateIcon', validateIcon]">
         </i>
       </span>
 			<!-- 后置元素 -->
-			<div class="el-input-group__append"  v-if="$slots.append">
+			<div class="kc-input-group__append"  v-if="$slots.append">
 				<slot name="append"></slot>
 			</div>
 		</template>
 		<textarea
 			v-else
 			:tabindex="tabindex"
-			class="el-textarea__inner"
+			class="kc-textarea__inner"
 			:value="currentValue"
 			@compositionstart="handleComposition"
 			@compositionupdate="handleComposition"
@@ -181,9 +181,9 @@
 			},
 			validateIcon() {
 				return {
-					validating: 'el-icon-loading',
-					success: 'el-icon-circle-check',
-					error: 'el-icon-circle-close'
+					validating: 'kc-icon-loading',
+					success: 'kc-icon-circle-check',
+					error: 'kc-icon-circle-close'
 				}[this.validateState];
 			},
 			textareaStyle() {
@@ -298,7 +298,7 @@
 				const pendant = pendantMap[place];
 
 				if (this.$slots[pendant]) {
-					return {transform: `translateX(${place === 'suf' ? '-' : ''}${this.$el.querySelector(`.el-input-group__${pendant}`).offsetWidth}px)`};
+					return {transform: `translateX(${place === 'suf' ? '-' : ''}${this.$el.querySelector(`.kc-input-group__${pendant}`).offsetWidth}px)`};
 				}
 			},
 			clear() {
