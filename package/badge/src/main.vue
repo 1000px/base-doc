@@ -1,11 +1,11 @@
 <template>
-	<div class="el-badge">
+	<div class="kc-badge">
 		<slot></slot>
-		<transition name="el-zoom-in-center">
+		<transition name="kc-zoom-in-center">
 			<sup
 				v-show="!hidden && (content || showZero)"
 				v-text="isDot ? '' : content"
-				class="el-badge__content"
+				class="kc-badge__content"
 				:class="[{ 'is-fixed': $slots.default, 'is-dot': isDot }, status ? 'status-'+status : '']">
 			</sup>
 		</transition>

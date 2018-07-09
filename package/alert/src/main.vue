@@ -1,18 +1,18 @@
 <template>
-	<transition name="el-alert-fade">
+	<transition name="kc-alert-fade">
 		<div
-			class="el-alert"
+			class="kc-alert"
 			:class="[typeClass, center ? 'is-center' : '']"
 			v-show="visible"
 			role="alert"
 		>
-			<i class="el-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
-			<div class="el-alert__content">
-				<span class="el-alert__title" :class="[ isBoldTitle ]" v-if="title">{{ title }}</span>
+			<i class="kc-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
+			<div class="kc-alert__content">
+				<span class="kc-alert__title" :class="[ isBoldTitle ]" v-if="title">{{ title }}</span>
 				<slot>
-					<p class="el-alert__description" v-if="description">{{ description }}</p>
+					<p class="kc-alert__description" v-if="description">{{ description }}</p>
 				</slot>
-				<i class="el-alert__closebtn" :class="{ 'is-customed': closeText !== '', 'el-icon-close': closeText === '' }" v-show="closable" @click="close()">{{closeText}}</i>
+				<i class="kc-alert__closebtn" :class="{ 'is-customed': closeText !== '', 'kc-icon-close': closeText === '' }" v-show="closable" @click="close()">{{closeText}}</i>
 			</div>
 		</div>
 	</transition>
@@ -20,9 +20,9 @@
 
 <script type="text/babel">
 	const TYPE_CLASSES_MAP = {
-		'success': 'el-icon-success',
-		'warning': 'el-icon-warning',
-		'error': 'el-icon-error'
+		'success': 'kc-icon-success',
+		'warning': 'kc-icon-warning',
+		'error': 'kc-icon-error'
 	};
 	export default {
 		name: 'KcAlert',
@@ -68,11 +68,11 @@
 
 		computed: {
 			typeClass() {
-				return `el-alert--${this.type}`;
+				return `kc-alert--${this.type}`;
 			},
 
 			iconClass() {
-				return TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
+				return TYPE_CLASSES_MAP[this.type] || 'kc-icon-info';
 			},
 
 			isBigIcon() {

@@ -1,7 +1,4 @@
 <style>
-  .demo-badge.demo-box .el-dropdown {
-    vertical-align: middle;
-  }
 .avatar-bg {
 	width: 40px;
 	height: 40px;
