@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="el-tree"
+		class="kc-tree"
 		:class="{
-      'el-tree--highlight-current': highlightCurrent,
+      'kc-tree--highlight-current': highlightCurrent,
       'is-dragging': !!dragState.draggingNode,
       'is-drop-not-allow': !dragState.allowDrop,
       'is-drop-inner': dragState.dropType === 'inner'
@@ -18,12 +18,12 @@
 			:render-content="renderContent"
 			@node-expand="handleNodeExpand">
 		</kc-tree-node>
-		<div class="el-tree__empty-block" v-if="!root.childNodes || root.childNodes.length === 0">
-			<span class="el-tree__empty-text">{{ emptyText }}</span>
+		<div class="kc-tree__empty-block" v-if="!root.childNodes || root.childNodes.length === 0">
+			<span class="kc-tree__empty-text">{{ emptyText }}</span>
 		</div>
 		<div
 			v-show="dragState.showDropIndicator"
-			class="el-tree__drop-indicator"
+			class="kc-tree__drop-indicator"
 			ref="dropIndicator">
 		</div>
 	</div>
@@ -287,7 +287,7 @@
 
 			handelKeydown(ev) {
 				const currentItem = ev.target;
-				if (currentItem.className.indexOf('el-tree-node') === -1) return;
+				if (currentItem.className.indexOf('kc-tree-node') === -1) return;
 				ev.preventDefault();
 				const keyCode = ev.keyCode;
 				this.treeItems = this.$el.querySelectorAll('.is-focusable[role=treeitem]');
@@ -396,7 +396,7 @@
 					dropNext = false;
 				}
 
-				const targetPosition = dropNode.$el.querySelector('.el-tree-node__expand-icon').getBoundingClientRect();
+				const targetPosition = dropNode.$el.querySelector('.kc-tree-node__expand-icon').getBoundingClientRect();
 				const treePosition = this.$el.getBoundingClientRect();
 
 				let dropType;
