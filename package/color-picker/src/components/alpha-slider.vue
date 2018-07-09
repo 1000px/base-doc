@@ -1,13 +1,13 @@
 <template>
-	<div class="el-color-alpha-slider" :class="{ 'is-vertical': vertical }">
-		<div class="el-color-alpha-slider__bar"
+	<div class="kc-color-alpha-slider" :class="{ 'is-vertical': vertical }">
+		<div class="kc-color-alpha-slider__bar"
 			 @click="handleClick"
 			 ref="bar"
 			 :style="{
            background: background
          }">
 		</div>
-		<div class="el-color-alpha-slider__thumb"
+		<div class="kc-color-alpha-slider__thumb"
 			 ref="thumb"
 			 :style="{
            left: thumbLeft + 'px',
