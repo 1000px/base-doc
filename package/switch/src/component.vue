@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-switch"
+		class="kc-switch"
 		:class="{ 'is-disabled': switchDisabled, 'is-checked': checked }"
 		role="switch"
 		:aria-checked="checked"
@@ -8,7 +8,7 @@
 		@click="switchValue"
 	>
 		<input
-			class="el-switch__input"
+			class="kc-switch__input"
 			type="checkbox"
 			@change="handleChange"
 			ref="input"
@@ -20,15 +20,15 @@
 			@keydown.enter="switchValue"
 		>
 		<span
-			:class="['el-switch__label', 'el-switch__label--left', !checked ? 'is-active' : '']"
+			:class="['kc-switch__label', 'kc-switch__label--left', !checked ? 'is-active' : '']"
 			v-if="inactiveIconClass || inactiveText">
       <i :class="[inactiveIconClass]" v-if="inactiveIconClass"></i>
       <span v-if="!inactiveIconClass && inactiveText" :aria-hidden="checked">{{ inactiveText }}</span>
     </span>
-		<span class="el-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
+		<span class="kc-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
     </span>
 		<span
-			:class="['el-switch__label', 'el-switch__label--right', checked ? 'is-active' : '']"
+			:class="['kc-switch__label', 'kc-switch__label--right', checked ? 'is-active' : '']"
 			v-if="activeIconClass || activeText">
       <i :class="[activeIconClass]" v-if="activeIconClass"></i>
       <span v-if="!activeIconClass && activeText" :aria-hidden="!checked">{{ activeText }}</span>

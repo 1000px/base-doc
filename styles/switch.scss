@@ -10,13 +10,13 @@
   height: $--switch-height;
   vertical-align: middle;
   @include when(disabled) {
-    & .el-switch__core,
-    & .el-switch__label {
+    & .kc-switch__core,
+    & .kc-switch__label {
       cursor: not-allowed;
     }
   }
 
-  .el-switch__core {
+  .kc-switch__core {
     border: 1px solid $--switch-off-color;
   }
 
@@ -53,7 +53,7 @@
     height: 0;
     opacity: 0;
     margin: 0;
-    &:focus ~ .el-switch__core {
+    &:focus ~ .kc-switch__core {
       outline: 1px solid $--color-primary;
     }
   }
@@ -87,7 +87,7 @@
   }
 
   @include when(checked) {
-    .el-switch__core {
+    .kc-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
       border: 1px solid $--color-primary;
@@ -100,14 +100,14 @@
 
   @include when(disabled) {
       &.is-checked {
-        .el-switch__core {
+        .kc-switch__core {
           color: $--switch-disabled--checked-color;
           background-color: $--switch-disabled--checked-color;
           border: 1px solid $--switch-disabled--checked-color;
         }
       }
 
-      .el-switch__core {
+      .kc-switch__core {
         color: $--switch-disabled-color;
         background-color: $--switch-disabled-color;
         border: 1px solid $--switch-disabled-color;
@@ -116,13 +116,13 @@
   }
 
   @include m(wide) {
-    .el-switch__label {
-      &.el-switch__label--left {
+    .kc-switch__label {
+      &.kc-switch__label--left {
         span {
           left: 10px;
         }
       }
-      &.el-switch__label--right {
+      &.kc-switch__label--right {
         span {
           right: 10px;
         }
