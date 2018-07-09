@@ -32,7 +32,7 @@ export default {
 		},
 		transition: {
 			type: String,
-			default: 'el-fade-in-linear'
+			default: 'kc-fade-in-linear'
 		},
 		popperOptions: {
 			default() {
@@ -60,7 +60,7 @@ export default {
 	},
 	computed: {
 		tooltipId() {
-			return `el-tooltip-${generateId()}`;
+			return `kc-tooltip-${generateId()}`;
 		}
 	},
 	beforeCreate() {
@@ -90,7 +90,7 @@ export default {
 						id={this.tooltipId}
 						aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
 						v-show={!this.disabled && this.showPopper}
-						class={['el-tooltip__popper', 'is-' + this.effect, this.popperClass]}>
+						class={['kc-tooltip__popper', 'is-' + this.effect, this.popperClass]}>
 						{ this.$slots.content || this.content }
 					</div>
 				</transition>
@@ -112,7 +112,7 @@ export default {
 		if (!vnode) return vnode;
 
 		const data = vnode.data = vnode.data || {};
-		data.staticClass = this.concatClass(data.staticClass, 'el-tooltip');
+		data.staticClass = this.concatClass(data.staticClass, 'kc-tooltip');
 
 		return vnode;
 	},
