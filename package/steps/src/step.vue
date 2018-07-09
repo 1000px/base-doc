@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-step"
+		class="kc-step"
 		:style="style"
 		:class="[
       !isSimple && `is-${$parent.direction}`,
@@ -10,42 +10,42 @@
      ]">
 		<!-- icon & line -->
 		<div
-			class="el-step__head"
+			class="kc-step__head"
 			:class="`is-${currentStatus}`">
 			<div
-				class="el-step__line"
+				class="kc-step__line"
 				:style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
 			>
-				<i class="el-step__line-inner" :style="lineStyle"></i>
+				<i class="kc-step__line-inner" :style="lineStyle"></i>
 			</div>
 
-			<div class="el-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
+			<div class="kc-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
 				<slot
 					v-if="currentStatus !== 'success' && currentStatus !== 'error'"
 					name="icon">
-					<i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
-					<div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
+					<i v-if="icon" class="kc-step__icon-inner" :class="[icon]"></i>
+					<div class="kc-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
 				</slot>
 				<i
 					v-else
-					:class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
-					class="el-step__icon-inner is-status"
+					:class="['kc-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
+					class="kc-step__icon-inner is-status"
 				>
 				</i>
 			</div>
 		</div>
 		<!-- title & description -->
-		<div class="el-step__main">
+		<div class="kc-step__main">
 			<div
-				class="el-step__title"
+				class="kc-step__title"
 				ref="title"
 				:class="['is-' + currentStatus]">
 				<slot name="title">{{ title }}</slot>
 			</div>
-			<div v-if="isSimple" class="el-step__arrow"></div>
+			<div v-if="isSimple" class="kc-step__arrow"></div>
 			<div
 				v-else
-				class="el-step__description"
+				class="kc-step__description"
 				:class="['is-' + currentStatus]">
 				<slot name="description">{{ description }}</slot>
 			</div>

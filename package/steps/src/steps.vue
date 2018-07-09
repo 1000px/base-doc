@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="el-steps"
+		class="kc-steps"
 		:class="[
-       !simple && 'el-steps--' + direction,
-       simple && 'el-steps--simple'
+       !simple && 'kc-steps--' + direction,
+       simple && 'kc-steps--simple'
      ]">
 		<slot></slot>
 	</div>
