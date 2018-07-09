@@ -82,13 +82,13 @@
 
 <style lang="scss">
   .demo-box.demo-popover {
-    .el-popover + .el-popover {
+    .kc-popover + .kc-popover {
       margin-left: 10px;
     }
-    .el-input {
+    .kc-input {
       width: 360px;
     }
-    .el-button {
+    .kc-button {
       margin-left: 10px;
       margin-bottom:10px;
     }
@@ -211,8 +211,8 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
       margin: 4px;
     }
 
-    .left .el-popover__popper,
-    .right .el-popover__popper {
+    .left .kc-popover__popper,
+    .right .kc-popover__popper {
       padding: 8px 10px;
     }
   }

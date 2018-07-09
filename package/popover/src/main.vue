@@ -5,8 +5,8 @@
 		@after-enter="handleAfterEnter"
 		@after-leave="handleAfterLeave">
       <div
-		  class="el-popover el-popper"
-		  :class="[popperClass, content && 'el-popover--plain']"
+		  class="kc-popover kc-popper"
+		  :class="[popperClass, content && 'kc-popover--plain']"
 		  ref="popper"
 		  v-show="!disabled && showPopper"
 		  :style="{ width: width + 'px' }"
@@ -14,7 +14,7 @@
 		  :id="tooltipId"
 		  :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
 	  >
-        <div class="el-popover__title" v-if="title" v-text="title"></div>
+        <div class="kc-popover__title" v-if="title" v-text="title"></div>
         <slot>{{ content }}</slot>
       </div>
     </transition>
@@ -63,7 +63,7 @@
 
 		computed: {
 			tooltipId () {
-				return `el-popover-${generateId()}`;
+				return `kc-popover-${generateId()}`;
 			}
 		},
 		watch: {
@@ -80,7 +80,7 @@
 			}
 			// 可访问性
 			if (reference) {
-				addClass(reference, 'el-popover__reference');
+				addClass(reference, 'kc-popover__reference');
 				reference.setAttribute('aria-describedby', this.tooltipId);
 				reference.setAttribute('tabindex', 0); // tab序列
 				popper.setAttribute('tabindex', 0);
