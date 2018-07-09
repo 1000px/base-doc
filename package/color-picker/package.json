@@ -1,15 +1,15 @@
 {
-  "name": "element-color-picker",
+  "name": "kc-color-picker",
   "version": "0.0.0",
   "description": "A color-picker component for Vue.js.",
   "keywords": [
-    "element",
+    "kedacom",
     "vue",
     "component"
   ],
   "main": "./lib/index.js",
-  "repository": "https://github.com/ElemeFE/element/tree/master/packages/color-picker",
-  "author": "elemefe",
+  "repository": "https://github.com/1000px/base-doc/tree/dev/package/color-picker",
+  "author": "kc",
   "license": "MIT",
   "dependencies": {}
 }

@@ -1,16 +1,16 @@
 <template>
-	<transition name="el-zoom-in-top" @after-leave="doDestroy">
+	<transition name="kc-zoom-in-top" @after-leave="doDestroy">
 		<div
-			class="el-color-dropdown"
+			class="kc-color-dropdown"
 			v-show="showPopper">
-			<div class="el-color-dropdown__main-wrapper">
+			<div class="kc-color-dropdown__main-wrapper">
 				<hue-slider ref="hue" :color="color" vertical style="float: right;"></hue-slider>
 				<sv-panel ref="sl" :color="color"></sv-panel>
 			</div>
 			<alpha-slider v-if="showAlpha" ref="alpha" :color="color"></alpha-slider>
 			<predefine v-if="predefine" :color="color" :colors="predefine"></predefine>
-			<div class="el-color-dropdown__btns">
-        <span class="el-color-dropdown__value">
+			<div class="kc-color-dropdown__btns">
+        <span class="kc-color-dropdown__value">
           <kc-input
 			  v-model="customInput"
 			  @keyup.native.enter="handleConfirm"
@@ -21,14 +21,14 @@
 				<kc-button
 					size="mini"
 					type="text"
-					class="el-color-dropdown__link-btn"
+					class="kc-color-dropdown__link-btn"
 					@click="$emit('clear')">
 					{{ t('el.colorpicker.clear') }}
 				</kc-button>
 				<kc-button
 					plain
 					size="mini"
-					class="el-color-dropdown__btn"
+					class="kc-color-dropdown__btn"
 					@click="confirmValue">
 					{{ t('el.colorpicker.confirm') }}
 				</kc-button>
@@ -44,8 +44,8 @@
 	import Predefine from './predefine';
 	import Popper from '_src/utils/vue-popper';
 	import Locale from '_src/mixins/locale';
-	import ElInput from './../../../input';
-	import ElButton from './../../../button';
+	import KcInput from './../../../input';
+	import KcButton from './../../../button';
 
 	export default {
 		name: 'kc-color-picker-dropdown',
@@ -56,8 +56,8 @@
 			SvPanel,
 			HueSlider,
 			AlphaSlider,
-			ElInput,
-			ElButton,
+			KcInput,
+			KcButton,
 			Predefine
 		},
 
