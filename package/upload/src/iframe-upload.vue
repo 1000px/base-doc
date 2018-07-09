@@ -128,8 +128,8 @@
 				frameName,
 				disabled
 			} = this;
-			const oClass = {'el-upload': true};
-			oClass[`el-upload--${listType}`] = true;
+			const oClass = {'kc-upload': true};
+			oClass[`kc-upload--${listType}`] = true;
 
 			return (
 				< div
@@ -152,7 +152,7 @@
 						enctype="multipart/form-data"
 						method="POST">
 						<input
-							class="el-upload__input"
+							class="kc-upload__input"
 							type="file"
 							ref="input"
 							name="file"

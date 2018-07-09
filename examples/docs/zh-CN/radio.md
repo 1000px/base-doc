@@ -15,7 +15,7 @@
 </script>
 
 <style>
- .demo-radio .el-img-radio {
+ .demo-radio .kc-img-radio {
     margin-top: 5px;
     margin-bottom: 5px;
  }
