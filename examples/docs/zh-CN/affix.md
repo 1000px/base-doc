@@ -1,5 +1,5 @@
 <style>
-  .demo-el-affix{
+  .demo-kc-affix{
     display: inline-block;
     color: #fff;
     padding: 10px 30px;
@@ -16,7 +16,7 @@
 :::demo
 ```html
 <kc-affix>
-  <span class="demo-el-affix">固定在最顶部</span>
+  <span class="demo-kc-affix">固定在最顶部</span>
 </kc-affix>
 ```
 :::
@@ -26,7 +26,7 @@
 :::demo
 ```html
 <kc-affix :offset-top="100">
-  <span class="demo-el-affix">固定在距离顶部 100px 的位置</span>
+  <span class="demo-kc-affix">固定在距离顶部 100px 的位置</span>
 </kc-affix>
 ```
 :::
@@ -36,7 +36,7 @@
 :::demo
 ```html
 <kc-affix :offset-bottom="50">
-  <span class="demo-el-affix">固定在距离底部 50px 的位置</span>
+  <span class="demo-kc-affix">固定在距离底部 50px 的位置</span>
 </kc-affix>
 ```
 :::

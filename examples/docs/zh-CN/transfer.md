@@ -4,7 +4,7 @@
       margin-left: 15px;
       padding: 6px 5px;
     }
-    .el-transfer__buttons {
+    .kc-transfer__buttons {
       button:nth-of-type (2) {
         margin-left: 0px !important;
       }
