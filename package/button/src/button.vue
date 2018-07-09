@@ -1,13 +1,13 @@
 <template>
 	<button
-		class="el-button"
+		class="kc-button"
 		@click="handleClick"
 		:disabled="buttonDisabled || loading"
 		:autofocus="autofocus"
 		:type="nativeType"
 		:class="[
-			type ? 'el-button--' + type : '',
-			buttonSize ? 'el-button--' + buttonSize : '',
+			type ? 'kc-button--' + type : '',
+			buttonSize ? 'kc-button--' + buttonSize : '',
 			{
 				'is-disabled': buttonDisabled,
 				'is-loading': loading,
@@ -17,7 +17,7 @@
 			}
 		]"
 	>
-		<i class="el-icon-loading" v-if="loading"></i>
+		<i class="kc-icon-loading" v-if="loading"></i>
 		<i :class="icon" v-if="icon && !loading"></i>
 		<span v-if="$slots.default"><slot></slot></span>
 	</button>
