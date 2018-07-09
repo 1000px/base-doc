@@ -474,15 +474,15 @@ $--switch-label-color: $--color-text-regular !default;
 $--switch-disabled-color : #E6E6E6 !default;
 $--switch-disabled--checked-color : #A3D3FF !default;
 
-/* Dialog
+/* Modal
 -------------------------- */
-$--dialog-background-color: $--color-primary-light-4 !default;
-$--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
-$--dialog-close-hover-color: $--color-primary !default;
-$--dialog-title-font-size: $--font-size-large !default;
-$--dialog-font-size: 14px !default;
-$--dialog-line-height: $--font-line-height-primary !default;
-$--dialog-padding-primary: 20px !default;
+$--modal-background-color: $--color-primary-light-4 !default;
+$--modal-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
+$--modal-close-hover-color: $--color-primary !default;
+$--modal-title-font-size: $--font-size-large !default;
+$--modal-font-size: 14px !default;
+$--modal-line-height: $--font-line-height-primary !default;
+$--modal-padding-primary: 20px !default;
 
 /* Table
 -------------------------- */
