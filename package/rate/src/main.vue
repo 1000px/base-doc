@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-rate"
+		class="kc-rate"
 		@keydown="handleKey"
 		role="slider"
 		:aria-valuenow="currentValue"
@@ -10,24 +10,24 @@
 		tabindex="0">
     <span
 		v-for="item in max"
-		class="el-rate__item"
+		class="kc-rate__item"
 		@mousemove="setCurrentValue(item, $event)"
 		@mouseleave="resetCurrentValue"
 		@click="selectValue(item)"
 		:style="{ cursor: rateDisabled ? 'auto' : 'pointer' }">
       <i
 		  :class="[classes[item - 1], { 'hover': hoverIndex === item }]"
-		  class="el-rate__icon"
+		  class="kc-rate__icon"
 		  :style="getIconStyle(item)">
         <i
 			v-if="showDecimalIcon(item)"
 			:class="decimalIconClass"
 			:style="decimalStyle"
-			class="el-rate__decimal">
+			class="kc-rate__decimal">
         </i>
       </i>
     </span>
-		<span v-if="showText || showScore" class="el-rate__text" :style="{ color: textColor }">{{ text }}</span>
+		<span v-if="showText || showScore" class="kc-rate__text" :style="{ color: textColor }">{{ text }}</span>
 	</div>
 </template>
 
@@ -89,16 +89,16 @@
 			iconClasses: {
 				type: Array,
 				default() {
-					return ['el-icon-star-on', 'el-icon-star-on', 'el-icon-star-on'];
+					return ['kc-icon-star-on', 'kc-icon-star-on', 'kc-icon-star-on'];
 				}
 			},
 			voidIconClass: {
 				type: String,
-				default: 'el-icon-star-off'
+				default: 'kc-icon-star-off'
 			},
 			disabledVoidIconClass: {
 				type: String,
-				default: 'el-icon-star-on'
+				default: 'kc-icon-star-on'
 			},
 			disabled: {
 				type: Boolean,
@@ -315,10 +315,10 @@
 				/* istanbul ignore if */
 				if (this.allowHalf) {
 					let target = event.target;
-					if (hasClass(target, 'el-rate__item')) {
-						target = target.querySelector('.el-rate__icon');
+					if (hasClass(target, 'kc-rate__item')) {
+						target = target.querySelector('.kc-rate__icon');
 					}
-					if (hasClass(target, 'el-rate__decimal')) {
+					if (hasClass(target, 'kc-rate__decimal')) {
 						target = target.parentNode;
 					}
 					this.pointerAtLeftHalf = event.offsetX * 2 <= target.clientWidth;
