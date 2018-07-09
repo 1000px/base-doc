@@ -1,15 +1,15 @@
 {
-  "name": "element-carousel",
+  "name": "kc-carousel",
   "version": "2.0.0",
   "description": "A carousel component for Vue.js.",
   "main": "lib/index.js",
   "keywords": [
-    "element",
+    "kedacom",
     "vue",
     "component"
   ],
-  "repository": "https://github.com/ElemeFE/element/tree/master/packages/carousel",
-  "author": "elemefe",
+  "repository": "https://github.com/1000px/base-doc/tree/dev/package/carousel",
+  "author": "kc",
   "license": "MIT",
   "dependencies": {
     "throttle-debounce": "^1.0.1"

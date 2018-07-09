@@ -1,10 +1,10 @@
 <template>
 	<div
 	v-show="ready"
-	class="el-carousel__item"
+	class="kc-carousel__item"
 	:class="{
 		'is-active': active,
-		'el-carousel__item--card': $parent.type === 'card',
+		'kc-carousel__item--card': $parent.type === 'card',
 		'is-in-stage': inStage,
 		'is-hover': hover,
 		'is-animating': animating
@@ -18,7 +18,7 @@
 		<div
 			v-if="$parent.type === 'card'"
 			v-show="!active"
-			class="el-carousel__mask">
+			class="kc-carousel__mask">
 		</div>
 		<slot></slot>
 	</div>
