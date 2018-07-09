@@ -25,15 +25,15 @@
     &.disabled {
       cursor: default;
 
-      .el-slider__bar {
+      .kc-slider__bar {
         background-color: $--slider-disable-color;
       }
 
-      .el-slider__button {
+      .kc-slider__button {
         border-color: $--slider-disable-color;
       }
 
-      .el-slider__button-wrapper {
+      .kc-slider__button-wrapper {
         &:hover,
         &.hover {
           cursor: not-allowed;
@@ -44,7 +44,7 @@
         }
       }
 
-      .el-slider__button {
+      .kc-slider__button {
         &:hover,
         &.hover,
         &.dragging {
@@ -68,15 +68,15 @@
     margin-top: 3px;
     width: 130px;
 
-    &.el-input-number--mini {
+    &.kc-input-number--mini {
       margin-top: 5px;
     }
 
-    &.el-input-number--medium {
+    &.kc-input-number--medium {
       margin-top: 0;
     }
 
-    &.el-input-number--large {
+    &.kc-input-number--large {
       margin-top: -2px;
     }
   }
@@ -102,7 +102,7 @@
     line-height: normal;
     @include utils-vertical-center;
 
-    .el-tooltip {
+    .kc-tooltip {
       vertical-align: middle;
       display: inline-block;
     }
@@ -154,43 +154,43 @@
 
   @include when(vertical) {
     position: relative;
-    .el-slider__runway {
+    .kc-slider__runway {
       width: $--slider-height;
       height: 100%;
       margin: 0 16px;
     }
-    .el-slider__bar {
+    .kc-slider__bar {
       width: $--slider-height;
       height: auto;
       border-radius: 0 0 3px 3px;
     }
-    .el-slider__button-wrapper {
+    .kc-slider__button-wrapper {
       top: auto;
       left: $--slider-button-wrapper-offset;
       transform: translateY(50%);
-      .el-slider__button {
+      .kc-slider__button {
         margin-left: -2px;
       }
     }
-    .el-slider__stop {
+    .kc-slider__stop {
       transform: translateY(50%);
     }
-    &.el-slider--with-input {
+    &.kc-slider--with-input {
       padding-bottom: #{$--input-medium-height + 22px};
-      .el-slider__input {
+      .kc-slider__input {
         overflow: visible;
         float: none;
         position: absolute;
         bottom: 22px;
         width: 36px;
         margin-top: 15px;
-        .el-input__inner {
+        .kc-input__inner {
           text-align: center;
           padding-left: 5px;
           padding-right: 5px;
         }
-        .el-input-number__decrease,
-        .el-input-number__increase
+        .kc-input-number__decrease,
+        .kc-input-number__increase
         {
           top: $--input-small-height;
           margin-top: -1px;
@@ -199,29 +199,29 @@
           box-sizing: border-box;
           transition: $--border-transition-base;
         }
-        .el-input-number__decrease {
+        .kc-input-number__decrease {
           width: 18px;
           right: 18px;
           border-bottom-left-radius: $--input-border-radius;
         }
-        .el-input-number__increase {
+        .kc-input-number__increase {
           width: 19px;
           border-bottom-right-radius: $--input-border-radius;
-          & ~ .el-input .el-input__inner {
+          & ~ .kc-input .kc-input__inner {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
           }
         }
         &:hover {
-          .el-input-number__decrease,
-          .el-input-number__increase
+          .kc-input-number__decrease,
+          .kc-input-number__increase
           {
             border-color: $--input-hover-border;
           }
         }
         &:active {
-          .el-input-number__decrease,
-          .el-input-number__increase
+          .kc-input-number__decrease,
+          .kc-input-number__increase
           {
             border-color: $--input-focus-border;
           }

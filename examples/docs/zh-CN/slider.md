@@ -42,12 +42,12 @@
     line-height: 44px;
   }
 
-  .demo-slider .demonstration + .el-slider {
+  .demo-slider .demonstration + .kc-slider {
     float: right;
     width: 70%;
     margin-right: 20px;
   }
-  .el-slider__input {
+  .kc-slider__input {
     margin-top: -13px !important;
   }
 </style>

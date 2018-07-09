@@ -1,12 +1,12 @@
 <template>
 	<div
-		class="el-progress"
+		class="kc-progress"
 		:class="[
-      'el-progress--' + type,
+      'kc-progress--' + type,
       status ? 'is-' + status : '',
       {
-        'el-progress--without-text': !showText,
-        'el-progress--text-inside': textInside,
+        'kc-progress--without-text': !showText,
+        'kc-progress--text-inside': textInside,
       }
     ]"
 		role="progressbar"
@@ -14,23 +14,23 @@
 		aria-valuemin="0"
 		aria-valuemax="100"
 	>
-		<div class="el-progress-bar" v-if="type === 'line'">
-			<div class="el-progress-bar__outer" :style="{height: strokeWidth + 'px'}">
-				<div class="el-progress-bar__inner" :style="barStyle">
-					<div class="el-progress-bar__innerText" v-if="showText && textInside">{{percentage}}%</div>
+		<div class="kc-progress-bar" v-if="type === 'line'">
+			<div class="kc-progress-bar__outer" :style="{height: strokeWidth + 'px'}">
+				<div class="kc-progress-bar__inner" :style="barStyle">
+					<div class="kc-progress-bar__innerText" v-if="showText && textInside">{{percentage}}%</div>
 				</div>
 			</div>
 		</div>
-		<div class="el-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
+		<div class="kc-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
 			<svg viewBox="0 0 100 100">
-				<path class="el-progress-circle__track" :d="trackPath" stroke="#e5e9f2"
+				<path class="kc-progress-circle__track" :d="trackPath" stroke="#e5e9f2"
 					  :stroke-width="relativeStrokeWidth" fill="none"></path>
-				<path class="el-progress-circle__path" :d="trackPath" stroke-linecap="round" :stroke="stroke"
+				<path class="kc-progress-circle__path" :d="trackPath" stroke-linecap="round" :stroke="stroke"
 					  :stroke-width="relativeStrokeWidth" fill="none" :style="circlePathStyle"></path>
 			</svg>
 		</div>
 		<div
-			class="el-progress__text"
+			class="kc-progress__text"
 			v-if="showText && !textInside"
 			:style="{fontSize: progressTextSize + 'px'}"
 		>
@@ -125,9 +125,9 @@
 			},
 			iconClass() {
 				if (this.type === 'line') {
-					return this.status === 'success' ? 'el-icon-circle-check' : 'el-icon-circle-close';
+					return this.status === 'success' ? 'kc-icon-circle-check' : 'kc-icon-circle-close';
 				} else {
-					return this.status === 'success' ? 'el-icon-check' : 'el-icon-close';
+					return this.status === 'success' ? 'kc-icon-check' : 'kc-icon-close';
 				}
 			},
 			progressTextSize() {

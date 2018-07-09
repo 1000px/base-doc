@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-slider__button-wrapper"
+		class="kc-slider__button-wrapper"
 		@mouseenter="handleMouseEnter"
 		@mouseleave="handleMouseLeave"
 		@mousedown="onButtonDown"
@@ -22,7 +22,7 @@
 			:popper-class="tooltipClass"
 			:disabled="!showTooltip">
 			<span slot="content">{{ formatValue }}</span>
-			<div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
+			<div class="kc-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
 		</kc-tooltip>
 	</div>
 </template>

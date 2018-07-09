@@ -160,9 +160,9 @@
 | colors | icon 的颜色数组，共有 3 个元素，为 3 个分段所对应的颜色 | array | — | ['#F7BA2A', '#F7BA2A', '#F7BA2A'] |
 | void-color | 未选中 icon 的颜色 | string | — | #C6D1DE |
 | disabled-void-color | 只读时未选中 icon 的颜色 | string | — | #EFF2F7 |
-| icon-classes | icon 的类名数组，共有 3 个元素，为 3 个分段所对应的类名 | array | — | ['el-icon-star-on', 'el-icon-star-on','el-icon-star-on'] |
-| void-icon-class | 未选中 icon 的类名 | string | — | el-icon-star-off |
-| disabled-void-icon-class | 只读时未选中 icon 的类名 | string | — | el-icon-star-on |
+| icon-classes | icon 的类名数组，共有 3 个元素，为 3 个分段所对应的类名 | array | — | ['kc-icon-star-on', 'kc-icon-star-on','kc-icon-star-on'] |
+| void-icon-class | 未选中 icon 的类名 | string | — | kc-icon-star-off |
+| disabled-void-icon-class | 只读时未选中 icon 的类名 | string | — | kc-icon-star-on |
 | show-text | 是否显示辅助文字，若为真，则会从 texts 数组中选取当前分数对应的文字内容 | boolean | — | false |
 | show-score | 是否显示当前分数，show-score 和 show-text 不能同时为真 | boolean | — | false |
 | text-color | 辅助文字的颜色 | string | — | #1F2D3D |
