@@ -37,7 +37,7 @@
   }
 
   @include when(disabled) {
-    .el-textarea__inner {
+    .kc-textarea__inner {
       background-color: $--input-disabled-fill;
       border-color: $--input-disabled-border;
       color: $--input-disabled-color;
@@ -57,7 +57,7 @@
   width: 100%;
   @include scroll-bar;
 
-  & .el-input__clear {
+  & .kc-input__clear {
     color: $--input-icon-color;
     font-size: $--input-font-size;
     line-height: 16px;
@@ -146,14 +146,14 @@
   }
 
   @include when(active) {
-    .el-input__inner {
+    .kc-input__inner {
       outline: none;
       border-color: $--input-focus-border;
     }
   }
 
   @include when(disabled) {
-    .el-input__inner {
+    .kc-input__inner {
       background-color: $--input-disabled-fill;
       border-color: $--input-disabled-border;
       color: $--input-disabled-color;
@@ -164,19 +164,19 @@
       }
     }
 
-    .el-input__icon {
+    .kc-input__icon {
       cursor: not-allowed;
     }
   }
 
   @include m(suffix) {
-    .el-input__inner {
+    .kc-input__inner {
       padding-right: 30px;
     }
   }
 
   @include m(prefix) {
-    .el-input__inner {
+    .kc-input__inner {
       padding-left: 30px;
     }
   }
@@ -189,7 +189,7 @@
       line-height: $--input-medium-height;
     }
 
-    .el-input__icon {
+    .kc-input__icon {
       line-height: $--input-medium-height;
     }
   }
@@ -202,7 +202,7 @@
       border-radius: 3px;
     }
 
-    .el-input__icon {
+    .kc-input__icon {
       line-height: $--input-small-height;
     }
   }
@@ -215,7 +215,7 @@
       border-radius: 3px;
     }
 
-    .el-input__icon {
+    .kc-input__icon {
       line-height: $--input-mini-height;
     }
   }
@@ -227,7 +227,7 @@
   width: 100%;
   border-collapse: separate;
 
-  > .el-input__inner {
+  > .kc-input__inner {
     vertical-align: middle;
     display: table-cell;
   }
@@ -248,15 +248,15 @@
       outline: none;
     }
 
-    .el-select,
-    .el-button {
+    .kc-select,
+    .kc-button {
       display: inline-block;
       margin: -10px -20px;
     }
 
-    button.el-button,
-    div.el-select .el-input__inner,
-    div.el-select:hover .el-input__inner {
+    button.kc-button,
+    div.kc-select .kc-input__inner,
+    div.kc-select:hover .kc-input__inner {
       border-color: transparent;
       background-color: transparent;
       color: inherit;
@@ -264,8 +264,8 @@
       border-bottom: 0;
     }
 
-    .el-button,
-    .el-input {
+    .kc-button,
+    .kc-input {
       font-size: inherit;
     }
   }
@@ -283,21 +283,21 @@
   }
 
   @include m(prepend) {
-    .el-input__inner {
+    .kc-input__inner {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    .el-select .el-input.is-focus .el-input__inner {
+    .kc-select .kc-input.is-focus .kc-input__inner {
       border-color: transparent;
     }
   }
 
   @include m(append) {
-    .el-input__inner {
+    .kc-input__inner {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    .el-select .el-input.is-focus .el-input__inner {
+    .kc-select .kc-input.is-focus .kc-input__inner {
       border-color: transparent;
     }
   }
@@ -305,25 +305,25 @@
 }
 
 /** disalbe default clear on IE */
-.el-input__inner::-ms-clear {
+.kc-input__inner::-ms-clear {
   display: none;
   width: 0;
   height: 0;
 }
 
-.el-input-group__append {
-  .el-button--primary {
+.kc-input-group__append {
+  .kc-button--primary {
     background-color: $--color-primary !important;
     color: $--color-white !important;
   }
-  .el-button--default {
+  .kc-button--default {
     background-color: $--color-white !important;
     // color: #606266 !important;
   }
 }
 
-.el-input-group__search {
-  .el-input__inner {
+.kc-input-group__search {
+  .kc-input__inner {
     border-right: none;
   }
   :focus{
