@@ -1,16 +1,16 @@
 <style lang='scss' scoped>
-  .el-menu-demo {
+  .kc-menu-demo {
 
-    .el-menu-item, 
-    .el-menu-item-group,
-    .el-submenu {
+    .kc-menu-item, 
+    .kc-menu-item-group,
+    .kc-submenu {
       list-style: none;
       a:link {
         color: #575A5F;
       }
     }
 
-    .el-menu-demo.el-menu--collapse.el-menu{
+    .kc-menu-demo.kc-menu--collapse.kc-menu{
       padding-left: 0 !important;
     }
 
@@ -54,7 +54,7 @@
 :::demo 导航菜单默认为垂直模式，通过`mode`属性可以使导航菜单变更为水平模式。另外，在菜单中通过`submenu`组件可以生成二级菜单。Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 ```html
-  <kc-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <kc-menu :default-active="activeIndex" class="kc-menu-demo" mode="horizontal" @select="handleSelect">
     <kc-menu-item index="1">处理中心</kc-menu-item>
     <kc-submenu index="2">
       <template slot="title">我的工作台</template>
@@ -94,16 +94,16 @@
 
 垂直菜单，子菜单内嵌在菜单区域。
 
-:::demo 通过`el-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
+:::demo 通过`kc-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
 ```html
 <kc-menu
   default-active="2"
-  class="el-menu-demo"
+  class="kc-menu-demo"
   @open="handleOpen"
   @close="handleClose">
   <kc-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span>导航一</span>
     </template>
     <kc-menu-item-group>
@@ -120,15 +120,15 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="kc-icon-menu"></i>
     <span slot="title">导航二</span>
   </kc-menu-item>
   <kc-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="kc-icon-document"></i>
     <span slot="title">导航三</span>
   </kc-menu-item>
   <kc-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="kc-icon-setting"></i>
     <span slot="title">导航四</span>
   </kc-menu-item>
 </kc-menu>
@@ -155,13 +155,13 @@
 ```html
  <kc-menu
   default-active="2"
-  class="el-menu-demo"
+  class="kc-menu-demo"
   :unique-opened="true"
   @open="handleOpen"
   @close="handleClose">
   <kc-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span>导航一</span>
     </template>
       <kc-menu-item index="1-1">选项1</kc-menu-item>
@@ -175,16 +175,16 @@
       <kc-menu-item index="1-4">选项4</kc-menu-item>
   </kc-submenu>
   <kc-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="kc-icon-menu"></i>
     <span slot="title">导航二</span>
   </kc-menu-item>
   <kc-menu-item index="3">
-    <i class="el-icon-setting"></i>
+    <i class="kc-icon-setting"></i>
     <span slot="title">导航三</span>
   </kc-menu-item>
   <kc-submenu index="4">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span>导航四</span>
     </template>
     <kc-menu-item-group>
@@ -206,10 +206,10 @@
 
 :::demo
 ```html
-<kc-menu default-active="1-4-1" class="el-menu-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+<kc-menu default-active="1-4-1" class="kc-menu-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <kc-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span slot="title">导航一</span>
     </template>
     <kc-menu-item-group>
@@ -229,21 +229,21 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="kc-icon-menu"></i>
     <span slot="title">导航二</span>
   </kc-menu-item>
   <kc-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="kc-icon-document"></i>
     <span slot="title">导航三</span>
   </kc-menu-item>
   <kc-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="kc-icon-setting"></i>
     <span slot="title">导航四</span>
   </kc-menu-item>
 </kc-menu>
 
 <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  .kc-menu-vertical-demo:not(.kc-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }
@@ -281,10 +281,10 @@
   background-color="#1A1C20"
   text-color="#8C9097"
   active-text-color="#fff"
-  class="el-menu-demo">
+  class="kc-menu-demo">
   <kc-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span slot="title">导航一</span>
     </template>
     <kc-menu-item-group>
@@ -304,21 +304,21 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="kc-icon-menu"></i>
     <span slot="title">导航二</span>
   </kc-menu-item>
   <kc-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="kc-icon-document"></i>
     <span slot="title">导航三</span>
   </kc-menu-item>
   <kc-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="kc-icon-setting"></i>
     <span slot="title">导航四</span>
   </kc-menu-item>
 </kc-menu>
 
 <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  .kc-menu-vertical-demo:not(.kc-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }
@@ -360,12 +360,12 @@
   background-color="#1A1C20"
   text-color="#8C9097"
   active-text-color="#fff"
-  class="el-menu-demo"
+  class="kc-menu-demo"
   :collapse="menuModel"
   >
   <kc-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="kc-icon-location"></i>
       <span slot="title">导航一</span>
     </template>
     <kc-menu-item-group>
@@ -385,21 +385,21 @@
     </kc-submenu>
   </kc-submenu>
   <kc-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="kc-icon-menu"></i>
     <span slot="title">导航二</span>
   </kc-menu-item>
   <kc-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="kc-icon-document"></i>
     <span slot="title">导航三</span>
   </kc-menu-item>
   <kc-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="kc-icon-setting"></i>
     <span slot="title">导航四</span>
   </kc-menu-item>
 </kc-menu>
 
 <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  .kc-menu-vertical-demo:not(.kc-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }

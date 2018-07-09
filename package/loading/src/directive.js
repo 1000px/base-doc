@@ -49,8 +49,8 @@ loadingDirective.install = Vue => {
 				const target = binding.modifiers.fullscreen || binding.modifiers.body
           ? document.body
           : el;
-				removeClass(target, 'el-loading-parent--relative');
-				removeClass(target, 'el-loading-parent--hidden');
+				removeClass(target, 'kc-loading-parent--relative');
+				removeClass(target, 'kc-loading-parent--hidden');
 				el.instance.hiding = false;
 			}, 300, true);
 			el.instance.visible = false;
@@ -64,10 +64,10 @@ loadingDirective.install = Vue => {
 			});
 
 			if (el.originalPosition !== 'absolute' && el.originalPosition !== 'fixed') {
-				addClass(parent, 'el-loading-parent--relative');
+				addClass(parent, 'kc-loading-parent--relative');
 			}
 			if (binding.modifiers.fullscreen && binding.modifiers.lock) {
-				addClass(parent, 'el-loading-parent--hidden');
+				addClass(parent, 'kc-loading-parent--hidden');
 			}
 			el.domVisible = true;
 

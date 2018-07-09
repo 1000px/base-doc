@@ -1,5 +1,5 @@
 <template>
-	<li class="el-menu-item"
+	<li class="kc-menu-item"
 		role="menuitem"
 		tabindex="-1"
 		:style="[paddingStyle, itemStyle, { backgroundColor }]"

@@ -1,57 +1,57 @@
 <template>
 	<transition name="msgbox-fade">
 		<div
-			class="el-message-box__wrapper"
+			class="kc-message-box__wrapper"
 			tabindex="-1"
 			v-show="visible"
 			@click.self="handleWrapperClick"
 			role="dialog"
 			aria-modal="true"
 			:aria-label="title || 'modal'">
-			<div class="el-message-box" :class="[customClass, center && 'el-message-box--center']">
-				<div class="el-message-box__header" v-if="title !== null">
-					<div class="el-message-box__title">
+			<div class="kc-message-box" :class="[customClass, center && 'kc-message-box--center']">
+				<div class="kc-message-box__header" v-if="title !== null">
+					<div class="kc-message-box__title">
 						<div
-							:class="['el-message-box__status', typeClass]"
+							:class="['kc-message-box__status', typeClass]"
 							v-if="typeClass && center">
 						</div>
 						<span>{{ title }}</span>
 					</div>
 					<button
 						type="button"
-						class="el-message-box__headerbtn"
+						class="kc-message-box__headerbtn"
 						aria-label="Close"
 						v-if="showClose"
 						@click="handleAction('cancel')"
 						@keydown.enter="handleAction('cancel')">
-						<i class="el-message-box__close el-icon-close"></i>
+						<i class="kc-message-box__close kc-icon-close"></i>
 					</button>
 				</div>
-				<div class="el-message-box__content">
+				<div class="kc-message-box__content">
 					<div
-						:class="['el-message-box__status', typeClass]"
+						:class="['kc-message-box__status', typeClass]"
 						v-if="typeClass && !center && message !== ''">
 					</div>
-					<div class="el-message-box__message" v-if="message !== ''">
+					<div class="kc-message-box__message" v-if="message !== ''">
 						<slot>
 							<p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
 							<p v-else v-html="message"></p>
 						</slot>
 					</div>
-					<div class="el-message-box__input" v-show="showInput">
+					<div class="kc-message-box__input" v-show="showInput">
 						<kc-input
 							v-model="inputValue"
 							:type="inputType"
 							@keydown.enter.native="handleInputEnter"
 							:placeholder="inputPlaceholder"
 							ref="input"></kc-input>
-						<div class="el-message-box__errormsg"
+						<div class="kc-message-box__errormsg"
 							 :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage
 							}}
 						</div>
 					</div>
 				</div>
-				<div class="el-message-box__btns">
+				<div class="kc-message-box__btns">
 					<kc-button
 						:loading="cancelButtonLoading"
 						:class="[ cancelButtonClasses ]"
@@ -136,11 +136,11 @@
 
 		computed: {
 			typeClass() {
-				return this.type && typeMap[this.type] ? `el-icon-${typeMap[this.type]}` : '';
+				return this.type && typeMap[this.type] ? `kc-icon-${typeMap[this.type]}` : '';
 			},
 
 			confirmButtonClasses() {
-				return `el-button--primary ${this.confirmButtonClass}`;
+				return `kc-button--primary ${this.confirmButtonClass}`;
 			},
 			cancelButtonClasses() {
 				return `${this.cancelButtonClass}`;
@@ -226,8 +226,8 @@
 				return true;
 			},
 			getFirstFocus() {
-				const btn = this.$el.querySelector('.el-message-box__btns .el-button');
-				const title = this.$el.querySelector('.el-message-box__btns .el-message-box__title');
+				const btn = this.$el.querySelector('.kc-message-box__btns .kc-button');
+				const title = this.$el.querySelector('.kc-message-box__btns .kc-message-box__title');
 				return btn || title;
 			},
 			getInputElement() {

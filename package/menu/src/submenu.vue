@@ -1,5 +1,5 @@
 <script>
-	import ElCollapseTransition from '_src/transitions/collapse-transition';
+	import KcCollapseTransition from '_src/transitions/collapse-transition';
 	import menuMixin from './menu-mixin';
 	import Emitter from '_src/mixins/emitter';
 	import Popper from '_src/utils/vue-popper';
@@ -27,7 +27,7 @@
 
 		mixins: [menuMixin, Emitter, poperMixins],
 
-		components: {ElCollapseTransition},
+		components: {KcCollapseTransition},
 
 		props: {
 			index: {
@@ -76,7 +76,7 @@
 					: this.popperAppendToBody;
 			},
 			menuTransitionName() {
-				return this.rootMenu.collapse ? 'el-zoom-in-left' : 'el-zoom-in-top';
+				return this.rootMenu.collapse ? 'kc-zoom-in-left' : 'kc-zoom-in-top';
 			},
 			opened() {
 				return this.rootMenu.openedMenus.indexOf(this.index) > -1;
@@ -270,13 +270,13 @@
 					<div
 						ref="menu"
 						v-show={opened}
-						class= {[`el-menu--${mode}`, popperClass]}
+						class= {[`kc-menu--${mode}`, popperClass]}
 						on-mouseenter={this.handleMouseenter}
 						on-mouseleave={this.handleMouseleave}
 						on-focus={this.handleMouseenter}>
 							<ul
 								role="menu"
-								class={['el-menu el-menu--popup', `el-menu--popup-${currentPlacement}`]}
+								class={['kc-menu kc-menu--popup', `kc-menu--popup-${currentPlacement}`]}
 								style={{backgroundColor: rootMenu.backgroundColor || ''}}>
 								{$slots.default}
 							</ul>
@@ -285,34 +285,34 @@
 			);
 
 			const inlineMenu = (
-				<el-collapse-transition >
+				<kc-collapse-transition >
 					<ul
 						role="menu"
-						class="el-menu el-menu--inline"
+						class="kc-menu kc-menu--inline"
 						v-show={opened}
 						style={{backgroundColor: rootMenu.backgroundColor || ''}}>
 						{$slots.default}
 					</ul>
-				</el-collapse-transition>
+				</kc-collapse-transition>
 			);
 
 			const submenuTitleIcon = (
 				rootMenu.mode === 'horizontal' && isFirstLevel ||
 				rootMenu.mode === 'vertical' && !rootMenu.collapse
-			) ? 'el-icon-arrow-down' : 'el-icon-arrow-right';
+			) ? 'kc-icon-arrow-down' : 'kc-icon-arrow-right';
 
 			return (
 				<li
-					class={{'el-submenu' : true, 'is-active' : active, 'is-opened' : opened, 'is-disabled' : disabled}}
+					class={{'kc-submenu' : true, 'is-active' : active, 'is-opened' : opened, 'is-disabled' : disabled}}
 					role="menuitem"
 					aria-haspopup="true"
 					aria-expanded={opened}
-					on-mouseenter={this.handleMouseenter}	
+					on-mouseenter={this.handleMouseenter}
 					on-mouseleave={this.handleMouseleave}
 					on-focus={this.handleMouseenter}
 				>
 					<div
-						class="el-submenu__title"
+						class="kc-submenu__title"
 						ref="submenu-title"
 						on-click = {this.handleClick}
 						on-mouseenter={this.handleTitleMouseenter}
@@ -320,7 +320,7 @@
 						style={[paddingStyle, titleStyle,{backgroundColor}]}>
 						{$slots.title}
 						<span style="margin-left:10px;">
-						<i class={['el-submenu__icon-arrow', submenuTitleIcon]}></i>
+						<i class={['kc-submenu__icon-arrow', submenuTitleIcon]}></i>
 						</span>
 					</div>
 					{this.isMenuPopup ? popupMenu : inlineMenu}
