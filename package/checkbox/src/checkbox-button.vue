@@ -1,8 +1,8 @@
 <template>
 	<label
-		class="el-checkbox-button"
+		class="kc-checkbox-button"
 		:class="[
-		size ? 'el-checkbox-button--' + size : '',
+		size ? 'kc-checkbox-button--' + size : '',
 		{ 'is-disabled': isDisabled },
 		{ 'is-checked': isChecked },
 		{ 'is-focus': focus },
@@ -13,7 +13,7 @@
 	>
 		<input
 			v-if="trueLabel || falseLabel"
-			class="el-checkbox-button__original"
+			class="kc-checkbox-button__original"
 			type="checkbox"
 			:name="name"
 			:disabled="isDisabled"
@@ -25,7 +25,7 @@
 			@blur="focus = false">
 		<input
 			v-else
-			class="el-checkbox-button__original"
+			class="kc-checkbox-button__original"
 			type="checkbox"
 			:name="name"
 			:disabled="isDisabled"
@@ -35,7 +35,7 @@
 			@focus="focus = true"
 			@blur="focus = false">
 
-		<span class="el-checkbox-button__inner"
+		<span class="kc-checkbox-button__inner"
 			  v-if="$slots.default || label"
 			  :style="isChecked ? activeStyle : null">
 		<slot>{{label}}</slot>
