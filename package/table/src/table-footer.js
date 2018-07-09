@@ -1,7 +1,7 @@
 import LayoutObserver from './layout-observer';
 
 export default {
-	name: 'ElTableFooter',
+	name: 'KcTableFooter',
 
 	mixins: [LayoutObserver],
 
@@ -39,7 +39,7 @@ export default {
 
 		return (
       <table
-        class="el-table__footer"
+        class="kc-table__footer"
         cellspacing="0"
         cellpadding="0"
         border="0">
