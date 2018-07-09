@@ -249,12 +249,12 @@
 
 <style>
   .demo-cascader {
-    .el-cascader {
+    .kc-cascader {
       width: 222px;
     }
   }
   .demo-cascader-size {
-    .el-cascader {
+    .kc-cascader {
       vertical-align: top;
       margin-right: 15px;
     }
