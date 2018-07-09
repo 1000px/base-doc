@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-tab-pane"
+		class="kc-tab-pane"
 		v-show="active"
 		role="tabpanel"
 		:aria-hidden="!active"

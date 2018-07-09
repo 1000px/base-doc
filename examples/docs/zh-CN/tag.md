@@ -52,7 +52,7 @@
 
 <style>
   .demo-box.demo-tag {
-    .el-tag + .el-tag {
+    .kc-tag + .kc-tag {
       margin-left: 10px;
     }
     .button-new-tag {
@@ -142,7 +142,7 @@
 <kc-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</kc-button>
 
 <style>
-  .el-tag + .el-tag {
+  .kc-tag + .kc-tag {
     margin-left: 10px;
   }
   .button-new-tag {
