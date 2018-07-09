@@ -21,23 +21,23 @@
     box-sizing: border-box;
   }
 
-  .el-input__inner {
+  .kc-input__inner {
     text-align: center;
     -moz-appearance: textfield;
     line-height: normal;
   }
 
   // pagesize 的下拉 icon
-  .el-input__suffix {
+  .kc-input__suffix {
     right: 0;
     transform: scale(.8);
   }
 
-  .el-select .el-input {
+  .kc-select .kc-input {
     width: 60px;
     margin: 0 5px;
 
-    .el-input__inner {
+    .kc-input__inner {
       padding-right: 25px;
       border-radius: $--pagination-border-radius;
       height: $--pagination-button-height;
@@ -73,7 +73,7 @@
     margin: 0;
     color: $--pagination-button-color;
 
-    .el-icon {
+    .kc-icon {
       display: block;
       font-size: 12px;
       font-weight: bold;
@@ -88,7 +88,7 @@
     padding-left: 12px;    
   }
 
-  .el-pager li.disabled {
+  .kc-pager li.disabled {
     color: $--color-text-placeholder;
     cursor: not-allowed;
   }
@@ -96,10 +96,10 @@
   @include m(small) {
     .btn-prev,
     .btn-next,
-    .el-pager li,
-    .el-pager li.btn-quicknext,
-    .el-pager li.btn-quickprev,
-    .el-pager li:last-child {
+    .kc-pager li,
+    .kc-pager li.btn-quicknext,
+    .kc-pager li.btn-quickprev,
+    .kc-pager li:last-child {
       border-color: transparent;
       font-size: 12px;
       line-height: 22px;
@@ -124,7 +124,7 @@
 
     @include e(editor) {
       height: 22px;
-      &.el-input .el-input__inner {
+      &.kc-input .kc-input__inner {
         height: 22px;
       }
     }
@@ -135,7 +135,7 @@
     font-weight: normal;
     color: $--color-text-regular;
 
-    .el-input .el-input__inner {
+    .kc-input .kc-input__inner {
       font-size: $--pagination-font-size;
       padding-left: 8px;
 
@@ -156,7 +156,7 @@
     font-weight: normal;
     color: $--color-text-regular;
 
-    .el-input__inner {
+    .kc-input__inner {
       padding: 0 3px;
     }
   }
@@ -175,17 +175,17 @@
     box-sizing: border-box;
     border-radius: $--pagination-border-radius;
 
-    &.el-input {
+    &.kc-input {
       width: 60px;
     }
 
-    &.el-input .el-input__inner {
+    &.kc-input .kc-input__inner {
       width: 60px;
       height: $--pagination-button-height;
     }
 
-    .el-input__inner::-webkit-inner-spin-button,
-    .el-input__inner::-webkit-outer-spin-button {
+    .kc-input__inner::-webkit-inner-spin-button,
+    .kc-input__inner::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
@@ -194,7 +194,7 @@
   @include when(background) {
     .btn-prev,
     .btn-next,
-    .el-pager li {
+    .kc-pager li {
       margin: 0 5px;
       background-color: #F0F2F5;
       color: $--color-text-regular;
@@ -214,7 +214,7 @@
       }
     }
 
-    .el-pager li:not(.disabled) {
+    .kc-pager li:not(.disabled) {
       &:hover {
         color: $--pagination-hover-fill;
       }
@@ -225,10 +225,10 @@
       }
     }
 
-    &.el-pagination--small {
+    &.kc-pagination--small {
       .btn-prev,
       .btn-next,
-      .el-pager li {
+      .kc-pager li {
         margin: 0 3px;
         min-width: 22px;
       }
@@ -295,9 +295,9 @@
     }
   }
 }
-.el-pagination {
+.kc-pagination {
   &.is-border {
-    .el-pager {
+    .kc-pager {
       .number {
         width: 30px;
         min-width: 30px;
@@ -312,7 +312,7 @@
         border: none;
       }
     }
-    .el-icon-more,
+    .kc-icon-more,
     .btn-prev,
     .btn-next {
       width: 30px;
