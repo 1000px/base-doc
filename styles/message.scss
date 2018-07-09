@@ -25,7 +25,7 @@
 	}
 
 	@include when(closable) {
-		.el-message__content {
+		.kc-message__content {
 			padding-right: 16px;
 		}
 	}
@@ -35,7 +35,7 @@
 	}
 
 	@include m(info) {
-		.el-message__content {
+		.kc-message__content {
 			color: $--message-info-color;
 		}
 	}
@@ -44,7 +44,7 @@
 		background-color: $--message-background-color;
 		border-color: $--color-success-light;
 
-		.el-message__content {
+		.kc-message__content {
 			color: $--message-success-color;
 		}
 	}
@@ -53,7 +53,7 @@
 		background-color:$--message-background-color;
 		border-color: $--color-warning-light;
 
-		.el-message__content {
+		.kc-message__content {
 			color: $--message-warning-color;
 		}
 	}
@@ -62,7 +62,7 @@
 		background-color:$--message-background-color;
 		border-color: $--color-danger-light;
 
-		.el-message__content {
+		.kc-message__content {
 			color: $--message-danger-color;
 		}
 	}
@@ -97,25 +97,25 @@
 		}
 	}
 
-	& .el-icon-success {
+	& .kc-icon-success {
 		color: $--message-success-color;
 	}
 
-	& .el-icon-error {
+	& .kc-icon-error {
 		color: $--message-danger-color;
 	}
 
-	& .el-icon-info {
+	& .kc-icon-info {
 		color: $--message-info-color;
 	}
 
-	& .el-icon-warning {
+	& .kc-icon-warning {
 		color: $--message-warning-color;
 	}
 }
 
-.el-message-fade-enter,
-.el-message-fade-leave-active {
+.kc-message-fade-enter,
+.kc-message-fade-leave-active {
 	opacity: 0;
 	transform: translate(-50%, -100%);
 }
