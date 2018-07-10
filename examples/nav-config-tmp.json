@@ -124,6 +124,16 @@
 				"category-desc": "布局"
 			},
 			{
+				"name": "layout",
+				"path": "layout",
+				"type": "md",
+				"id": "10003007",
+				"pId": "10003",
+				"desc": "Layout 布局",
+				"category": "layout",
+				"category-desc": "布局"
+			},
+			{
 				"name": "affix",
 				"path": "affix",
 				"type": "md",
@@ -274,6 +284,16 @@
 				"category-desc": "数据入口"
 			},
 			{
+				"name": "mention",
+				"path": "mention",
+				"type": "md",
+				"id": "10003023",
+				"pId": "10003",
+				"desc": "Mention 提及",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
 				"name": "rate",
 				"path": "rate",
 				"type": "md",
@@ -330,6 +350,16 @@
 				"id": "10003029",
 				"pId": "10003",
 				"desc": "Colorpicker 颜色选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "treeselect",
+				"path": "treeselect",
+				"type": "md",
+				"id": "10003030",
+				"pId": "10003",
+				"desc": "Treeselect 树形选择器",
 				"category": "data entry",
 				"category-desc": "数据入口"
 			},
@@ -400,6 +430,26 @@
 				"id": "10003037",
 				"pId": "10003",
 				"desc": "Card 卡片",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "calendar",
+				"path": "calendar",
+				"type": "md",
+				"id": "10003038",
+				"pId": "10003",
+				"desc": "Calendar 日历",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "list",
+				"path": "list",
+				"type": "md",
+				"id": "10003039",
+				"pId": "10003",
+				"desc": "List 列表",
 				"category": "data display",
 				"category-desc": "数据展示"
 			},
@@ -532,6 +582,46 @@
 				"desc": "Spin 加载中",
 				"category": "feedback",
 				"category-desc": "反馈"
+			},
+			{
+				"name": "anchor",
+				"path": "anchor",
+				"type": "md",
+				"id": "10003054",
+				"pId": "10003",
+				"desc": "Anchor 锚点",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "backtop",
+				"path": "backtop",
+				"type": "md",
+				"id": "10003055",
+				"pId": "10003",
+				"desc": "Backtop 回到顶部",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "devider",
+				"path": "devider",
+				"type": "md",
+				"id": "10003056",
+				"pId": "10003",
+				"desc": "Devider 分割线",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "localeprovider",
+				"path": "localeprovider",
+				"type": "md",
+				"id": "10003057",
+				"pId": "10003",
+				"desc": "Localeprovider 国际化",
+				"category": "other",
+				"category-desc": "其它"
 			}
 		]
 	},
