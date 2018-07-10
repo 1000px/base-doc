@@ -164,8 +164,8 @@
 	} from './../util';
 	import Clickoutside from '_src/utils/clickoutside';
 	import Locale from '_src/mixins/locale';
-	import ElInput from './../../../input';
-	import ElButton from './../../../button';
+	import KcInput from './../../../input';
+	import KcButton from './../../../button';
 	import TimePicker from './time';
 	import YearTable from './../basic/year-table';
 	import MonthTable from './../basic/month-table';
@@ -481,7 +481,7 @@
 		},
 
 		components: {
-			TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton
+			TimePicker, YearTable, MonthTable, DateTable, KcInput, KcButton
 		},
 
 		data() {

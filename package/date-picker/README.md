@@ -11,15 +11,15 @@ npm i element-datepicker -S
 A:
 ```javascript
 import Vue from 'vue'
-import ElDatePicker from 'element-datepicker'
+import KcDatePicker from 'kc-datepicker'
 
-Vue.use(ElDatePicker)
+Vue.use(KcDatePicker)
 ```
 
 B:
 ```javascript
 import Vue from 'vue'
-import { DatePicker, TimePicker, TimeSelect } from 'element-datepicker'
+import { DatePicker, TimePicker, TimeSelect } from 'kc-datepicker'
 
 Vue.component(DatePicker.name, DatePicker);
 Vue.component(TimePicker.name, TimePicker);
@@ -31,7 +31,7 @@ C:
 <script src="path/to/vue/dist/vue.js"></script>
 <script src="path/to/datepicker/index.js"></script>
 <script>
-  Vue.use(ElDatePicker);
+  Vue.use(KcDatePicker);
 </script>
 ```
 
