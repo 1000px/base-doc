@@ -2,17 +2,17 @@
 	<transition name="el-zoom-in-top" @after-leave="doDestroy">
 		<div
 			v-show="showPopper"
-			class="el-autocomplete-suggestion"
+			class="kc-autocomplete-suggestion"
 			:class="{ 'is-loading': parent.loading }"
 			:style="{ width: dropdownWidth }"
 			role="region"
 		>
 			<el-scrollbar
 				tag="ul"
-				wrap-class="el-autocomplete-suggestion__wrap"
-				view-class="el-autocomplete-suggestion__list"
+				wrap-class="kc-autocomplete-suggestion__wrap"
+				view-class="kc-autocomplete-suggestion__list"
 			>
-			<li v-if="parent.loading"><i class="el-icon-loading"></i></li>
+			<li v-if="parent.loading"><i class="kc-icon-loading"></i></li>
 			<slot v-else>
 			</slot>
 			</el-scrollbar>
@@ -63,7 +63,7 @@
 		mounted() {
 			this.$parent.popperElm = this.popperElm = this.$el;
 			this.referenceElm = this.$parent.$refs.input.$refs.input;
-			this.referenceList = this.$el.querySelector('.el-autocomplete-suggestion__list');
+			this.referenceList = this.$el.querySelector('.kc-autocomplete-suggestion__list');
 			this.referenceList.setAttribute('role', 'listbox');
 			this.referenceList.setAttribute('id', this.id);
 		},

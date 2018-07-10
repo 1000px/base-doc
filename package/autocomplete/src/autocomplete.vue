@@ -1,6 +1,6 @@
 <template>
 	<div v-if="isConfigOption"
-		class="el-autocomplete"
+		class="kc-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
@@ -61,7 +61,7 @@
 
   <div
 		v-else
-    class="el-autocomplete"
+    class="kc-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
@@ -99,7 +99,7 @@
     <el-autocomplete-suggestions
 			v-if="queryModel"
       visible-arrow
-      class="el-autocomplete-suggestion-query-model"
+      class="kc-autocomplete-suggestion-query-model"
 			style="width:auto;"
 			ref="suggestions"
       placement="bottom-end"
@@ -259,7 +259,7 @@
 				return (isValidData || this.loading) && this.activated;
 			},
 			id() {
-				return `el-autocomplete-${generateId()}`;
+				return `kc-autocomplete-${generateId()}`;
 			}
 		},
 		watch: {
@@ -418,8 +418,8 @@
 				if (index >= this.suggestions.length) {
 					index = this.suggestions.length - 1;
 				}
-				const suggestion = this.$refs.suggestions.$el.querySelector('.el-autocomplete-suggestion__wrap');
-				const suggestionList = suggestion.querySelectorAll('.el-autocomplete-suggestion__list li');
+				const suggestion = this.$refs.suggestions.$el.querySelector('.kc-autocomplete-suggestion__wrap');
+				const suggestionList = suggestion.querySelectorAll('.kc-autocomplete-suggestion__list li');
 
 				let highlightItem = suggestionList[index];
 				let scrollTop = suggestion.scrollTop;
@@ -432,7 +432,7 @@
 					suggestion.scrollTop -= highlightItem.scrollHeight;
 				}
 				this.highlightedIndex = index;
-				this.$el.querySelector('.el-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
+				this.$el.querySelector('.kc-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
 			},
 			handleShowSuggestion (isShow) {
 				this.broadcast('ElAutocompleteSuggestions', 'visible', [isShow, this.$refs.input.$refs.input.offsetWidth]);
@@ -452,7 +452,7 @@
 			this.$on('item-click', item => {
 				this.select(item);
 			});
-			let $input = this.$el.querySelector('.el-input__inner');
+			let $input = this.$el.querySelector('.kc-input__inner');
 			$input.setAttribute('role', 'textbox');
 			$input.setAttribute('aria-autocomplete', 'list');
 			$input.setAttribute('aria-controls', 'id');
