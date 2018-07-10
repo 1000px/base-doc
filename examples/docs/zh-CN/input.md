@@ -6,9 +6,6 @@
         input: '',
         input1: '',
         input2: '',
-        input21: '',
-        input22: '',
-        input23: '',
         input3: '',
         input4: '',
         input5: '',
@@ -17,14 +14,12 @@
         input8: '',
         input9: '',
         input10: '',
-        textarea: '',
+        input11: '',
+        input12: '',
+        input13: '',
+        textarea1: '',
         textarea2: '',
-        textarea3: '',
-        select: '',
-        state1: '',
-        state2: '',
-        state3: '',
-        state4: ''
+        textarea3: ''
       };
     },
     methods: {
@@ -114,11 +109,16 @@
 </script>
 
 <style>
-
   .demo-base .kc-input,
   .demo-input-size .kc-input {
     margin-top: 15px;
   }
+  .kc-select .kc-input {
+      width: 130px;
+    }
+    .input-with-select .kc-input-group__prepend {
+      background-color: #fff;
+    }
 </style>
 
 ## Input 输入框
@@ -135,10 +135,10 @@
     <kc-input v-model="input" placeholder="基本使用"></kc-input>
   <div>
   <div>
-    <kc-input  placeholder="禁用状态"  v-model="input1"  :disabled="true"></kc-input>
+    <kc-input placeholder="禁用状态" v-model="input1" :disabled="true"></kc-input>
   </div>
   <div>
-    <kc-input  placeholder="可清除内容"  v-model="input2"  clearable></kc-input>
+    <kc-input placeholder="可清除内容" v-model="input2" clearable></kc-input>
   </div>
 </div>
 
@@ -146,8 +146,8 @@
 export default {
   data() {
     return {
-      input: ''，
-      input1: ''，
+      input: '',
+      input1: '',
       input2: ''
     }
   }
@@ -161,25 +161,10 @@ export default {
 :::demo 可通过 `size` 属性指定输入框的尺寸，除了默认的大小外，还提供了 large、small 和 mini 三种尺寸。
 ```html
 <div class="demo-input-size">
-  <kc-input
-    placeholder="尺寸：large"
-    v-model="input3">
-  </kc-input>
-  <kc-input
-    size="medium"
-    placeholder="尺寸：medium(默认尺寸)"
-    v-model="input4">
-  </kc-input>
-  <kc-input
-    size="small"
-    placeholder="尺寸：small"
-    v-model="input5">
-  </kc-input>
-  <kc-input
-    size="mini"
-    placeholder="尺寸：mini"
-    v-model="input6">
-  </kc-input>
+  <kc-input placeholder="尺寸：large" v-model="input3"></kc-input>
+  <kc-input size="medium" placeholder="尺寸：medium(默认尺寸)" v-model="input4"></kc-input>
+  <kc-input size="small" placeholder="尺寸：small" v-model="input5"></kc-input>
+  <kc-input size="mini" placeholder="尺寸：mini" v-model="input6"></kc-input>
 </div>
 
 <script>
@@ -204,28 +189,28 @@ export default {
 :::demo 可通过 slot 来指定在 input 中前置或者后置内容。
 ```html
 <div>
-  <kc-input placeholder="请输入内容" v-model="input3">
+  <kc-input placeholder="请输入内容" v-model="input7">
     <template slot="prepend">Http://</template>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
-  <kc-input placeholder="请输入内容" v-model="input4">
+  <kc-input placeholder="请输入内容" v-model="input8">
     <template slot="prepend">Http://</template>
     <template slot="append">.com</template>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
-  <kc-input placeholder="搜索内容" search>
+  <kc-input placeholder="搜索内容" v-model="input9">
     <kc-button slot="append" icon="kc-icon-search" type="default"></kc-button>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
-  <kc-input placeholder="搜索内容" search>
+  <kc-input placeholder="搜索内容" v-model="input10">
     <kc-button slot="append" icon="kc-icon-search" type="primary"></kc-button>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
-  <kc-input placeholder="搜索内容" search>
+  <kc-input placeholder="搜索内容" v-model="input11">
     <kc-button slot="append" type="primary">搜索</kc-button>
   </kc-input>
 </div>
@@ -241,10 +226,11 @@ export default {
 export default {
   data() {
     return {
-      input3: '',
-      input4: '',
-      input5: '',
-      select: ''
+      input7: '',
+      input8: '',
+      input9: '',
+      input10: '',
+      input11: ''
     }
   }
 }
@@ -262,14 +248,14 @@ export default {
   type="textarea"
   :rows="2"
   placeholder="请输入内容"
-  v-model="textarea">
+  v-model="textarea1">
 </kc-input>
 
 <script>
 export default {
   data() {
     return {
-      textarea: ''
+      textarea1: ''
     }
   }
 }
@@ -317,19 +303,21 @@ export default {
 :::demo 可通过 slot 来指定在 input 中前置或者后置内容。
 ```html
 <div>
-  <kc-input
-    placeholder="请输入内容"
-    prefix-icon="kc-icon-message"
-  >
-  </kc-input>
+  <kc-input v-model="input12" placeholder="请输入内容" prefix-icon="kc-icon-message"></kc-input>
 </div>
 <div style="margin-top:15px">
-  <kc-input
-    placeholder="请输入内容"
-    suffix-icon="kc-icon-time"
-  >
-  </kc-input>
+  <kc-input v-model="input13" placeholder="请输入内容" suffix-icon="kc-icon-time"></kc-input>
 </div>
+<script >
+export default {
+	data() {
+		return {
+			input12: '',
+			input13: ''
+		}
+	}
+}
+</script>
 ```
 :::
 
