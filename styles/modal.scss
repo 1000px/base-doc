@@ -46,12 +46,12 @@
     cursor: pointer;
     font-size: $--message-close-size;
 
-    .kc-dialog__close {
+    .kc-modal__close {
       color: $--color-info;
     }
 
     &:focus, &:hover {
-      .kc-dialog__close {
+      .kc-modal__close {
         color: $--color-primary;
       }
     }
