@@ -227,7 +227,7 @@
 					} else {
 						this.firstValue = val;
 						if (this.valueChanged()) {
-							this.dispatch('ElFormItem', 'el.form.change', val);
+							this.dispatch('KcFormItem', 'el.form.change', val);
 							this.oldValue = val;
 						}
 					}

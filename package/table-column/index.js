@@ -1,8 +1,8 @@
-import ElTableColumn from '../table/src/table-column';
+import KcTableColumn from '../table/src/table-column';
 
 /* istanbul ignore next */
-ElTableColumn.install = function(Vue) {
-	Vue.component(ElTableColumn.name, ElTableColumn);
+KcTableColumn.install = function(Vue) {
+	Vue.component(KcTableColumn.name, KcTableColumn);
 };
 
-export default ElTableColumn;
+export default KcTableColumn;

@@ -85,7 +85,7 @@
 	import {formatDate, parseDate, isDateObject, getWeekNumber} from './util';
 	import Popper from '_src/utils/vue-popper';
 	import Emitter from '_src/mixins/emitter';
-	import ElInput from './../../input';
+	import KcInput from './../../input';
 	import merge from '_src/utils/merge';
 
 	const NewPopper = {
@@ -385,7 +385,7 @@
 			unlinkPanels: Boolean
 		},
 
-		components: {ElInput},
+		components: {KcInput},
 
 		directives: {Clickoutside},
 

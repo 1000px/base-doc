@@ -8,7 +8,7 @@
     "component"
   ],
   "main": "./lib/index.js",
-  "repository": "https://github.com/ElemeFE/element/tree/master/packages/upload",
+  "repository": "https://github.com/1000px/base-doc/tree/dev/package/upload",
   "author": "elemefe",
   "license": "MIT",
   "dependencies": {},
