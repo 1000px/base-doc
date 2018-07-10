@@ -2,7 +2,7 @@
   module.exports = {
     methods: {
       open() {
-        this.$message('这是一条普通的提醒示');
+        this.$message('这是一条消息提示');
       },
 
       openVn() {

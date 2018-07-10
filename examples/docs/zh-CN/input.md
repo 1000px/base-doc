@@ -146,8 +146,8 @@
 export default {
   data() {
     return {
-      input: ''，
-      input1: ''，
+      input: '',
+      input1: '',
       input2: ''
     }
   }
@@ -216,12 +216,12 @@ export default {
 </div>
 <div style="margin-top: 15px;">
   <kc-input placeholder="搜索内容" search>
-    <kc-button slot="append" icon="kc-icon-search" type="default"></kc-button>
+    <kc-icon slot="append" name="setting" class="search"></kc-icon>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
   <kc-input placeholder="搜索内容" search>
-    <kc-button slot="append" icon="kc-icon-search" type="primary"></kc-button>
+    <kc-button slot="append" icon="kc-icon-search" type="primary" ></kc-button>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
@@ -232,9 +232,19 @@ export default {
 <style>
   .kc-select .kc-input {
     width: 130px;
+    
   }
   .input-with-select .kc-input-group__prepend {
     background-color: #fff;
+  }
+  .search{
+  /*display: inline-block;*/
+  /*width: 20px;*/
+  /*height: 20px;*/
+  /*font-size: 14px;*/
+  	/*background: #fff;*/
+  	/*border-left: 1px solid #ccc;*/
+  	
   }
 </style>
 <script>

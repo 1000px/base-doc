@@ -22,8 +22,8 @@ var tabEvent;
 
 aria.Dialog = function (dialog, focusAfterClosed, focusFirst) {
 	this.dialogNode = dialog;
-	if (this.dialogNode === null || this.dialogNode.getAttribute('role') !== 'modal') {
-		throw new Error('Dialog() requires a DOM element with ARIA role of modal.')
+	if (this.dialogNode === null || this.dialogNode.getAttribute('role') !== 'dialog') {
+		throw new Error('Dialog() requires a DOM element with ARIA role of modal.');
 	}
 
 	if (typeof focusAfterClosed === 'string') {
