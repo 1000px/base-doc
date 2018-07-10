@@ -65,6 +65,7 @@
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
+        console.log(results);
         // 调用 callback 返回建议列表的数据
         cb(results);
       },

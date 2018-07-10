@@ -1,5 +1,11 @@
 ### KFront-BaseUI
 
+#### KFront-BaseUI发布日志
+
+2018-07-10
+
+	kfront-baseui@1.0.1
+
 #### 1. 综述
 
 KFront-BaseUI是一款基于Vue.js(2.*)与ElementUI开发定制的UI解决方案。
@@ -22,4 +28,8 @@ KFront-BaseUI是一款基于Vue.js(2.*)与ElementUI开发定制的UI解决方案
 
 #### 3. 快速上手
 
-近期提供使用教程
+进入项目根目录，运行下述命令，安装依赖
+
+```
+npm install --save kfront-baseui@latest
+```

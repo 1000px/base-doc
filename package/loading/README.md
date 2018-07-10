@@ -12,10 +12,10 @@ npm i element-loading -D
 ## Usage
 ```javascript
 import Vue from 'vue'
-import ElLoading from 'element-loading'
+import KcLoading from 'kc-loading'
 import 'element-theme-chalk/dist/loading.css'
 
-Vue.use(ElLoading)
+Vue.use(KcLoading)
 ```
 
 ### 服务

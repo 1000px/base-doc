@@ -1,0 +1,653 @@
+[
+	{
+		"name": "index",
+		"path": "/",
+		"type": "page",
+		"id": "10001",
+		"pId": "0",
+		"desc": "主页"
+	},
+	{
+		"path": "/overview",
+		"type": "page",
+		"id": "10002",
+		"pId": "0",
+		"desc": "概览，引导用户使用脚手架与UI解决方案",
+		"items": [
+			{
+				"name": "introduce",
+				"path": "",
+				"type": "md",
+				"id": "10002001",
+				"pId": "10002",
+				"desc": "介绍"
+			},
+			{
+				"name": "install",
+				"path": "install",
+				"type": "md",
+				"id": "10002002",
+				"pId": "10002",
+				"desc": "安装"
+			},
+			{
+				"name": "quick-start",
+				"path": "quick-start",
+				"type": "md",
+				"id": "10002003",
+				"pId": "10002",
+				"desc": "快速开始"
+			},
+			{
+				"name": "code-standard",
+				"path": "code-standard",
+				"type": "md",
+				"id": "10002004",
+				"pId": "10002",
+				"desc": "编码规范"
+			},
+			{
+				"name": "log",
+				"path": "logs",
+				"type": "md",
+				"id": "10002004",
+				"pId": "10002",
+				"desc": "更新日志"
+			}
+		]
+	},
+	{
+		"path": "/api",
+		"type": "page",
+		"id": "10003",
+		"pId": "0",
+		"desc": "文档详情",
+		"items": [
+			{
+				"name": "default",
+				"path": "",
+				"type": "md",
+				"id": "10003001",
+				"pId": "10003",
+				"desc": "KFront-BaseUI",
+				"category": "index",
+				"category-desc": "文档概要"
+			},
+			{
+				"name": "color",
+				"path": "color",
+				"type": "md",
+				"id": "10003002",
+				"pId": "10003",
+				"desc": "Color 项目整体色系",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
+				"name": "typography",
+				"path": "typography",
+				"type": "md",
+				"id": "10003003",
+				"pId": "10003",
+				"desc": "Typography 字体",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
+				"name": "button",
+				"path": "button",
+				"type": "md",
+				"id": "10003004",
+				"pId": "10003",
+				"desc": "Button 按钮",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
+				"name": "icon",
+				"path": "icon",
+				"type": "md",
+				"id": "10003005",
+				"pId": "10003",
+				"desc": "Icon 图标",
+				"category": "general",
+				"category-desc": "通用设置"
+			},
+			{
+				"name": "grid",
+				"path": "grid",
+				"type": "md",
+				"id": "10003006",
+				"pId": "10003",
+				"desc": "Grid 栅格布局",
+				"category": "layout",
+				"category-desc": "布局"
+			},
+			{
+				"name": "layout",
+				"path": "layout",
+				"type": "md",
+				"id": "10003007",
+				"pId": "10003",
+				"desc": "Layout 布局",
+				"category": "layout",
+				"category-desc": "布局"
+			},
+			{
+				"name": "affix",
+				"path": "affix",
+				"type": "md",
+				"id": "10003008",
+				"pId": "10003",
+				"desc": "Affix 固钉",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "breadcrumb",
+				"path": "breadcrumb",
+				"type": "md",
+				"id": "10003009",
+				"pId": "10003",
+				"desc": "Breadcrumb 面包屑",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "dropdown",
+				"path": "dropdown",
+				"type": "md",
+				"id": "10003010",
+				"pId": "10003",
+				"desc": "Dropdown 下拉菜单",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "menu",
+				"path": "menu",
+				"type": "md",
+				"id": "10003011",
+				"pId": "10003",
+				"desc": "Menu 菜单",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "pagination",
+				"path": "pagination",
+				"type": "md",
+				"id": "10003012",
+				"pId": "10003",
+				"desc": "Pagination 分页",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "steps",
+				"path": "steps",
+				"type": "md",
+				"id": "10003013",
+				"pId": "10003",
+				"desc": "Steps 步骤条",
+				"category": "navigation",
+				"category-desc": "导航"
+			},
+			{
+				"name": "autocomplete",
+				"path": "autocomplete",
+				"type": "md",
+				"id": "10003014",
+				"pId": "10003",
+				"desc": "Autocomplete 自动完成",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "checkbox",
+				"path": "checkbox",
+				"type": "md",
+				"id": "10003015",
+				"pId": "10003",
+				"desc": "Checkbox 多选框",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "cascader",
+				"path": "cascader",
+				"type": "md",
+				"id": "10003016",
+				"pId": "10003",
+				"desc": "Cascader 级联选择",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "timepicker",
+				"path": "timepicker",
+				"type": "md",
+				"id": "10003017",
+				"pId": "10003",
+				"desc": "Timepicker 时间选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "datepicker",
+				"path": "datepicker",
+				"type": "md",
+				"id": "10003018",
+				"pId": "10003",
+				"desc": "Datepicker 日期选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "date-timepicker",
+				"path": "date-timepicker",
+				"type": "md",
+				"id": "10003019",
+				"pId": "10003",
+				"desc": "Date-Timepicker 日期-时间选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "form",
+				"path": "form",
+				"type": "md",
+				"id": "10003020",
+				"pId": "10003",
+				"desc": "Form 表单",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "number-input",
+				"path": "number-input",
+				"type": "md",
+				"id": "10003021",
+				"pId": "10003",
+				"desc": "Number-Input 数字输入框",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "input",
+				"path": "input",
+				"type": "md",
+				"id": "10003022",
+				"pId": "10003",
+				"desc": "Input 输入框",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "mention",
+				"path": "mention",
+				"type": "md",
+				"id": "10003023",
+				"pId": "10003",
+				"desc": "Mention 提及",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "rate",
+				"path": "rate",
+				"type": "md",
+				"id": "10003024",
+				"pId": "10003",
+				"desc": "Rate 评分",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "radio",
+				"path": "radio",
+				"type": "md",
+				"id": "10003025",
+				"pId": "10003",
+				"desc": "Radio 单选框",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "switch",
+				"path": "switch",
+				"type": "md",
+				"id": "10003026",
+				"pId": "10003",
+				"desc": "Switch 开关",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "slider",
+				"path": "slider",
+				"type": "md",
+				"id": "10003027",
+				"pId": "10003",
+				"desc": "Slider 滑动输入条",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "select",
+				"path": "select",
+				"type": "md",
+				"id": "10003028",
+				"pId": "10003",
+				"desc": "Select 选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "colorpicker",
+				"path": "colorpicker",
+				"type": "md",
+				"id": "10003029",
+				"pId": "10003",
+				"desc": "Colorpicker 颜色选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "treeselect",
+				"path": "treeselect",
+				"type": "md",
+				"id": "10003030",
+				"pId": "10003",
+				"desc": "Treeselect 树形选择器",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "transfer",
+				"path": "transfer",
+				"type": "md",
+				"id": "10003031",
+				"pId": "10003",
+				"desc": "Transfer 穿梭框",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "upload",
+				"path": "upload",
+				"type": "md",
+				"id": "10003032",
+				"pId": "10003",
+				"desc": "Upload上传",
+				"category": "data entry",
+				"category-desc": "数据入口"
+			},
+			{
+				"name": "avatar",
+				"path": "avatar",
+				"type": "md",
+				"id": "10003033",
+				"pId": "10003",
+				"desc": "Avatar 头像",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "badge",
+				"path": "badge",
+				"type": "md",
+				"id": "10003034",
+				"pId": "10003",
+				"desc": "Badge 徽标数",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "collapse",
+				"path": "collapse",
+				"type": "md",
+				"id": "10003035",
+				"pId": "10003",
+				"desc": "Collapse 折叠面板",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "carousel",
+				"path": "carousel",
+				"type": "md",
+				"id": "10003036",
+				"pId": "10003",
+				"desc": "Carousel 走马灯",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "card",
+				"path": "card",
+				"type": "md",
+				"id": "10003037",
+				"pId": "10003",
+				"desc": "Card 卡片",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "calendar",
+				"path": "calendar",
+				"type": "md",
+				"id": "10003038",
+				"pId": "10003",
+				"desc": "Calendar 日历",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "list",
+				"path": "list",
+				"type": "md",
+				"id": "10003039",
+				"pId": "10003",
+				"desc": "List 列表",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "popover",
+				"path": "popover",
+				"type": "md",
+				"id": "10003040",
+				"pId": "10003",
+				"desc": "Popover 气泡卡片",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "tree",
+				"path": "tree",
+				"type": "md",
+				"id": "10003041",
+				"pId": "10003",
+				"desc": "Tree 树形控件",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "tooltip",
+				"path": "tooltip",
+				"type": "md",
+				"id": "10003042",
+				"pId": "10003",
+				"desc": "Tooltip 文字提示",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "timeline",
+				"path": "timeline",
+				"type": "md",
+				"id": "10003043",
+				"pId": "10003",
+				"desc": "Timeline 时间轴",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "tag",
+				"path": "tag",
+				"type": "md",
+				"id": "10003044",
+				"pId": "10003",
+				"desc": "Tag 标签",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "tabs",
+				"path": "tabs",
+				"type": "md",
+				"id": "10003045",
+				"pId": "10003",
+				"desc": "Tabs 标签页",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "table",
+				"path": "table",
+				"type": "md",
+				"id": "10003046",
+				"pId": "10003",
+				"desc": "Table 表格",
+				"category": "data display",
+				"category-desc": "数据展示"
+			},
+			{
+				"name": "alert",
+				"path": "alert",
+				"type": "md",
+				"id": "10003047",
+				"pId": "10003",
+				"desc": "Alert 警告提示",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "modal",
+				"path": "modal",
+				"type": "md",
+				"id": "10003048",
+				"pId": "10003",
+				"desc": "Modal 对话框",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "message",
+				"path": "message",
+				"type": "md",
+				"id": "10003049",
+				"pId": "10003",
+				"desc": "Message 全局提示",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "notification",
+				"path": "notification",
+				"type": "md",
+				"id": "10003050",
+				"pId": "10003",
+				"desc": "Notification 通知提示框",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "progress",
+				"path": "progress",
+				"type": "md",
+				"id": "10003051",
+				"pId": "10003",
+				"desc": "Progress 进度条",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "spin",
+				"path": "spin",
+				"type": "md",
+				"id": "10003053",
+				"pId": "10003",
+				"desc": "Spin 加载中",
+				"category": "feedback",
+				"category-desc": "反馈"
+			},
+			{
+				"name": "anchor",
+				"path": "anchor",
+				"type": "md",
+				"id": "10003054",
+				"pId": "10003",
+				"desc": "Anchor 锚点",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "backtop",
+				"path": "backtop",
+				"type": "md",
+				"id": "10003055",
+				"pId": "10003",
+				"desc": "Backtop 回到顶部",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "devider",
+				"path": "devider",
+				"type": "md",
+				"id": "10003056",
+				"pId": "10003",
+				"desc": "Devider 分割线",
+				"category": "other",
+				"category-desc": "其它"
+			},
+			{
+				"name": "localeprovider",
+				"path": "localeprovider",
+				"type": "md",
+				"id": "10003057",
+				"pId": "10003",
+				"desc": "Localeprovider 国际化",
+				"category": "other",
+				"category-desc": "其它"
+			}
+		]
+	},
+	{
+		"path": "/resource",
+		"type": "page",
+		"id": "10003",
+		"pId": "0",
+		"desc": "资源",
+		"items": [
+			{
+				"name": "developer",
+				"path": "",
+				"type": "md",
+				"id": "10003001",
+				"pId": "10003",
+				"desc": "开发资源"
+			},
+			{
+				"name": "designer",
+				"path": "designer",
+				"type": "md",
+				"id": "10003002",
+				"pId": "10003",
+				"desc": "设计资源"
+			}
+		]
+	}
+]

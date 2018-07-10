@@ -12,17 +12,17 @@ npm i element-steps -D
 ## Usage
 ```javascript
 import Vue from 'vue'
-import ElStep from 'element-steps'
+import KcStep from 'kc-steps'
 import 'element-theme-chalk/dist/step.css'
 
-Vue.use(ElStep)
+Vue.use(KcStep)
 ```
 
 or
 
 ```javascript
 import Vue from 'vue'
-import { ElSteps, ElStep } from 'element-steps'
+import { KcSteps, KcStep } from 'kc-steps'
 
 Vue.component('kc-steps', KcSteps)
 Vue.component('kc-step', KcStep)
