@@ -1,0 +1,11 @@
+{
+  "name": "kfront-baseui",
+  "version": "1.0.2",
+  "description": "kfront-baseui elementui vue2.* webpack",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "1000px",
+  "license": "MIT"
+}
