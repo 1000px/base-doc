@@ -74,15 +74,15 @@
       }
     }
 
-    & .el-icon-loading {
+    & .kc-icon-loading {
       vertical-align: middle;
     }
   }
 }
-.el-autocomplete-suggestion__wrap.el-scrollbar__wrap {
+.kc-autocomplete-suggestion__wrap.kc-scrollbar__wrap {
   margin-bottom: 0 !important;
 }
-.el-autocomplete-suggestion-query-model {
+.kc-autocomplete-suggestion-query-model {
   // left: 385px !important;
 
   .query-model-group {
@@ -101,7 +101,7 @@
         line-height: 14px;
       }
     }
-  
+
     .query-model-search-url {
       margin-right: 14px;
       font-size: 14px;

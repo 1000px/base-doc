@@ -79,13 +79,13 @@
   @include e(checkbox-group) {
     padding: 10px;
 
-    label.el-checkbox {
+    label.kc-checkbox {
       display: block;
       margin-bottom: 8px;
       margin-left: 5px;
     }
 
-    .el-checkbox:last-child {
+    .kc-checkbox:last-child {
       margin-bottom: 0;
     }
   }
