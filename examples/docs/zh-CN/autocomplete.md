@@ -140,11 +140,13 @@
       margin-top: 10px;
     }
   }
-  .el-scrollbar__view.el-autocomplete-suggestion__list li:last-child {
+  .kc-scrollbar__view.kc-autocomplete-suggestion__list li:last-child {
     margin-bottom: 10px !important;
   }
 </style>
-### autocomplete 自动完成
+## autocomplete 自动完成
+-------------------
+
 
 ### 基本用法
 

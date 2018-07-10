@@ -25,7 +25,7 @@ KcSpin.newInstance = properties => {
 				});
 			}
 			return h('div', {
-				'class': 'ivu-spin-fullscreen ivu-spin-fullscreen-wrapper'
+				'class': 'kc-spin-fullscreen kc-spin-fullscreen-wrapper'
 			}, [vnode]);
 		}
 	});
@@ -42,8 +42,8 @@ KcSpin.newInstance = properties => {
 			Spin.visible = false;
 			setTimeout(function () {
 				Spin.$parent.$destroy();
-				if (document.getElementsByClassName('ivu-spin-fullscreen')[0] !== undefined) {
-					document.body.removeChild(document.getElementsByClassName('ivu-spin-fullscreen')[0]);
+				if (document.getElementsByClassName('kc-spin-fullscreen')[0] !== undefined) {
+					document.body.removeChild(document.getElementsByClassName('kc-spin-fullscreen')[0]);
 				}
 				cb();
 			}, 500);

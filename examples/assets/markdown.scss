@@ -16,16 +16,24 @@
 }
 
 .markcss{
-	p, blockquote, ul, ol, dl, pre {
+	padding-bottom: 50px;
+	blockquote, ul, ol, dl, pre {
 		line-height: 32px;
-		margin:10px 0;
+		margin:15px 0;
 	}
 	h1, h2, h3, h4, h5, h6 {
 		@include hCss;
 	}
-	h3{
-		padding: 15px 0;
+	h2{
+		font-size: 24px;
+		color: #273B55;
 	}
+	h3{
+		font-size: 18px;
+		color: #273B55;
+		padding: 10px 0;
+	}
+
 	a{
 		color: #b58900;
 		text-decoration: none;
@@ -42,7 +50,7 @@
 		}
 	}
 	ul,ol{
-		padding-left: 30px;
+		//padding-left: 30px;
 		li{
 			>:first-child,ul:first-of-type,ol:first-of-type{
 				margin-top: 0px;
@@ -129,7 +137,7 @@
 	}
 	hr{
 		clear: both;
-		margin: 15px 0;
+		margin: 7px 0 18px;
 		height: 0px;
 		overflow: hidden;
 		border: none;
@@ -143,23 +151,25 @@
 		line-height: 32px;
 		border-collapse:collapse;
 		border:none;
+		font-size: 14px;
+		text-align: left;
 		th{
 			font-weight: bold;
 		}
 		th,td{
-			border: 1px solid #ccc;
+			//border: 1px solid #ccc;
 			padding: 6px 13px;
 		}
 		tr{
-			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
 			background-color: #fff;
 			&:nth-child(2n) {
-				background-color: #f8f8f8;
+				//background-color: #f8f8f8;
 			}
 		}
 		tHead{
 			tr{
-				background-color:#f8f8f8 ;
+				//background-color:#f8f8f8 ;
 			}
 
 		}
@@ -168,6 +178,7 @@
 		max-width: 100%
 	}
 	p{
+		margin: 10px 0;
 		font-size: 14px;
 	}
 	#outline-list{

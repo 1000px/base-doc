@@ -249,12 +249,12 @@
 
 <style>
   .demo-cascader {
-    .el-cascader {
+    .kc-cascader {
       width: 222px;
     }
   }
   .demo-cascader-size {
-    .el-cascader {
+    .kc-cascader {
       vertical-align: top;
       margin-right: 15px;
     }
@@ -282,6 +282,7 @@
 </style>
 
 ## Cascader 级联选择器
+-------------------
 
 当一个数据集合有清晰的层级结构时，可通过级联选择器逐级查看并选择。
 

@@ -1,6 +1,5 @@
-### Upload 上传
-
-...开发中
+## Upload 上传
+-------------------
 
 <style>
   .markcss ul, .markcss ol {
@@ -20,7 +19,7 @@
       width: 360px;
     }
     .avatar-uploader {
-      .el-upload {
+      .kc-upload {
         border: 1px dashed #d9d9d9;
         border-radius: 6px;
         cursor: pointer;
@@ -126,7 +125,7 @@
 </script>
 
 
-<!-- 
+
 通过点击或者拖拽上传文件
 
 ### 点击上传
@@ -143,7 +142,7 @@
   :limit="3"
   :on-exceed="handleExceed"
   :file-list="fileList">
-  <kc-button size="small" type="dafault" style="width:113px;height:36px;"><i class="icon el-icon-upload2" style="font-size:14px;font-weight:700;color:#575A5F;margin-right:5px;"></i>点击上传</kc-button>
+  <kc-button size="small" type="dafault" style="width:113px;height:36px;"><i class="icon kc-icon-upload2" style="font-size:14px;font-weight:700;color:#575A5F;margin-right:5px;"></i>点击上传</kc-button>
   <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
@@ -185,18 +184,18 @@
   :on-success="handleAvatarSuccess"
   :before-upload="beforeAvatarUpload">
   <img v-if="imageUrl" :src="imageUrl" class="avatar">
-  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+  <i v-else class="kc-icon-plus avatar-uploader-icon"></i>
 </kc-upload>
 
 <style>
-  .avatar-uploader .el-upload {
+  .avatar-uploader .kc-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .avatar-uploader .el-upload:hover {
+  .avatar-uploader .kc-upload:hover {
     border-color: #409EFF;
   }
   .avatar-uploader-icon {
@@ -254,7 +253,7 @@
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
-  <i class="el-icon-plus"></i>
+  <i class="kc-icon-plus"></i>
 </kc-upload>
 <kc-dialog :visible.sync="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
@@ -293,7 +292,7 @@
   :file-list="fileList2"
   list-type="picture">
   <kc-button size="small" type="primary">点击上传</kc-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
   export default {
@@ -327,7 +326,7 @@
   :on-change="handleChange"
   :file-list="fileList3">
   <kc-button size="small" type="primary">点击上传</kc-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
   export default {
@@ -361,9 +360,9 @@
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
   multiple>
-  <i class="el-icon-upload"></i>
-  <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-  <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+  <i class="kc-icon-upload"></i>
+  <div class="kc-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+  <div class="kc-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 ```
 :::
@@ -382,7 +381,7 @@
   :auto-upload="false">
   <kc-button slot="trigger" size="small" type="primary">选取文件</kc-button>
   <kc-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</kc-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="kc-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </kc-upload>
 <script>
   export default {
@@ -439,4 +438,4 @@
 | 方法名      | 说明          | 参数 |
 |---------- |-------------- | -- |
 | clearFiles | 清空已上传的文件列表（该方法不支持在 before-upload 中调用） | — |
-| abort | 取消上传请求 | （ file: fileList 中的 file 对象 ） | -->
+| abort | 取消上传请求 | （ file: fileList 中的 file 对象 ） |

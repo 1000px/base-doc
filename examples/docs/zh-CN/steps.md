@@ -15,6 +15,7 @@
 </script>
 
 ## Steps 步骤条
+-------------------
 引导用户按照流程完成任务的分步导航条，可根据实际应用场景设定步骤，步骤不得少于 2 步。
 
 ### 基础用法
@@ -99,9 +100,9 @@
 ```html
 
 <kc-steps :active="1">
-  <kc-step title="步骤 1" icon="el-icon-edit"></kc-step>
-  <kc-step title="步骤 2" icon="el-icon-upload"></kc-step>
-  <kc-step title="步骤 3" icon="el-icon-picture"></kc-step>
+  <kc-step title="步骤 1" icon="kc-icon-edit"></kc-step>
+  <kc-step title="步骤 2" icon="kc-icon-upload"></kc-step>
+  <kc-step title="步骤 3" icon="kc-icon-picture"></kc-step>
 </kc-steps>
 ```
 :::
@@ -110,7 +111,7 @@
 
 竖直方向的步骤条。
 
-:::demo 只需要在`el-steps`元素中设置`direction`属性为`vertical`即可。
+:::demo 只需要在`kc-steps`元素中设置`direction`属性为`vertical`即可。
 ```html
 <div style="height: 300px;">
   <kc-steps direction="vertical" :active="1">
@@ -129,9 +130,9 @@
 ```html
 
 <kc-steps :active="1" simple>
-  <kc-step title="步骤 1" icon="el-icon-edit"></kc-step>
-  <kc-step title="步骤 2" icon="el-icon-upload"></kc-step>
-  <kc-step title="步骤 3" icon="el-icon-picture"></kc-step>
+  <kc-step title="步骤 1" icon="kc-icon-edit"></kc-step>
+  <kc-step title="步骤 2" icon="kc-icon-upload"></kc-step>
+  <kc-step title="步骤 3" icon="kc-icon-picture"></kc-step>
 </kc-steps>
 
 <kc-steps :active="1" finish-status="success" simple style="margin-top: 20px">

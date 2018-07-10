@@ -31,37 +31,26 @@ a {
 @mixin content{
 	@include clearFix;
 	position: relative;
-	width: 90%;
-	//height: 100%;
-	margin: 0 auto;
-	height: calc(100vh - 168px);
-	padding:32px 0;
+	height: 100%;
+	//height: calc(100vh - 168px);
 	background: #fff;
 	.right-content {
-		height: calc(100vh - 242px);
-		padding:0 50px;
+		//height: 100%;
+		//height: calc(100vh - 124px);
+		padding-left:50px;
+		padding-right: 130px;
 		//box-sizing: border-box;
 		//flex-grow: 1;
 		//float: left;
-		margin-left: 250px;
+		margin-left: 380px;
 		overflow: hidden;
-		> div.scrollBox{
-			overflow-y: auto;
-			height: 100%;
-			margin-right: -67px;
-			padding-right: 67px;
-		}
-
 	}
 }
 /*下部内容布局*/
 .view-box{
 	width: 100%;
-	height: calc(100% - 168px);//减去header高度和padding
-	padding: 44px 0;
-	position: relative;
-	background: #F8F8FC;
-	overflow: hidden;
+	height: calc(100% - 116px);
+	margin-top: 116px;
 	.view-content{
 		@include content;
 		//position: relative;
@@ -90,6 +79,6 @@ a {
 		}
 	}
 }
-.el-scrollbar__wrap {
+.kc-scrollbar__wrap {
 	overflow-x: hidden;
 }

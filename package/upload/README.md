@@ -12,19 +12,19 @@ npm i element-upload -D
 ## Usage
 ```javascript
 import Vue from 'vue'
-import ElUpload from 'element-upload'
+import KcUpload from 'element-upload'
 import 'element-theme-chalk/dist/upload.css'
 
-Vue.use(ElUpload)
+Vue.use(KcUpload)
 ```
 
 or
 
 ```javascript
 import Vue from 'vue'
-import ElUpload from 'element-upload'
+import KcUpload from 'element-upload'
 
-Vue.component('el-upload', ElUpload)
+Vue.component('kc-upload', KcUpload)
 ```
 
 ### Attribute

@@ -94,6 +94,7 @@
 
 </style>
 ## Tabs 标签页
+-------------------
 
 分隔内容上有关联但属于不同类别的数据集合。
 
@@ -250,7 +251,7 @@
 ```html
 <kc-tabs type="border-card">
   <kc-tab-pane>
-    <span slot="label"><i class="el-icon-date"></i> 我的行程</span>
+    <span slot="label"><i class="kc-icon-date"></i> 我的行程</span>
     我的行程
   </kc-tab-pane>
   <kc-tab-pane label="消息中心">消息中心</kc-tab-pane>

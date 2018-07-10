@@ -41,7 +41,7 @@ export default {
 		border: 1px solid #E0EBF3;
 		padding: 24px;
 	}
-	.demo-box.demo-button .el-row:last-child {
+	.demo-box.demo-button .kc-row:last-child {
 		margin-bottom: 0;
 	}
 	.demo-container {

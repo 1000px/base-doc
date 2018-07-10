@@ -14,9 +14,9 @@
 					key={+this.collapse}
 					style={{backgroundColor: this.backgroundColor || ''}}
 					class={{
-						'el-menu--horizontal': this.mode === 'horizontal',
-						'el-menu--collapse': this.collapse,
-						"el-menu": true
+						'kc-menu--horizontal': this.mode === 'horizontal',
+						'kc-menu--collapse': this.collapse,
+						"kc-menu": true
 					}}
 				>
 					{this.$slots.default}
@@ -25,9 +25,9 @@
 
 			if (this.collapseTransition) {
 				return (
-					<el-menu-collapse-transition>
+					<kc-menu-collapse-transition>
 						{component}
-					</el-menu-collapse-transition>
+					</kc-menu-collapse-transition>
 				);
 			} else {
 				return component;
@@ -45,7 +45,7 @@
 		},
 
 		components: {
-			'el-menu-collapse-transition': {
+			'kc-menu-collapse-transition': {
 				functional: true,
 				render(createElement, context) {
 					const data = {
@@ -58,28 +58,28 @@
 							},
 
 							enter(el) {
-								addClass(el, 'el-opacity-transition');
+								addClass(el, 'kc-opacity-transition');
 								el.style.opacity = 1;
 							},
 
 							afterEnter(el) {
-								removeClass(el, 'el-opacity-transition');
+								removeClass(el, 'kc-opacity-transition');
 								el.style.opacity = '';
 							},
 
 							beforeLeave(el) {
 								if (!el.dataset) el.dataset = {};
 
-								if (hasClass(el, 'el-menu--collapse')) {
-									removeClass(el, 'el-menu--collapse');
+								if (hasClass(el, 'kc-menu--collapse')) {
+									removeClass(el, 'kc-menu--collapse');
 									el.dataset.oldOverflow = el.style.overflow;
 									el.dataset.scrollWidth = el.clientWidth;
-									addClass(el, 'el-menu--collapse');
+									addClass(el, 'kc-menu--collapse');
 								} else {
-									addClass(el, 'el-menu--collapse');
+									addClass(el, 'kc-menu--collapse');
 									el.dataset.oldOverflow = el.style.overflow;
 									el.dataset.scrollWidth = el.clientWidth;
-									removeClass(el, 'el-menu--collapse');
+									removeClass(el, 'kc-menu--collapse');
 								}
 
 								el.style.width = el.scrollWidth + 'px';

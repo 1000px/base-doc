@@ -202,14 +202,14 @@
 			const scrollBtn = scrollable
 				? [
 					<span
-						class = {['el-tabs__nav-prev', scrollable.prev ? '' : 'is-disabled']}
+						class = {['kc-tabs__nav-prev', scrollable.prev ? '' : 'is-disabled']}
 						on-click={scrollPrev}>
-						<i class="el-icon-arrow-left"></i>
+						<i class="kc-icon-arrow-left"></i>
 					</span>,
 					<span
-						class={['el-tabs__nav-next', scrollable.next ? '' : 'is-disabled']}
+						class={['kc-tabs__nav-next', scrollable.next ? '' : 'is-disabled']}
 						on-click = {scrollNext}>
-						<i class="el-icon-arrow-right"></i>
+						<i class="kc-icon-arrow-right"></i>
 					</span>
 				] : null;
 
@@ -219,14 +219,14 @@
 
 				pane.index = `${index}`;
 
-				const btnClose = closable ? <span class="el-icon-close" on-click={(ev) => {onTabRemove(pane, ev);}}></span> : null;
+				const btnClose = closable ? <span class="kc-icon-close" on-click={(ev) => {onTabRemove(pane, ev);}}></span> : null;
 
 				const tabLabelContent = pane.$slots.label || pane.label;
 				const tabindex = pane.active ? 0 : -1;
 				return (
 					<div
 						class={{
-								'el-tabs__item': true,
+								'kc-tabs__item': true,
 								[`is-${this.rootTabs.tabPosition}`]: true,
 								'is-active': pane.active,
 								'is-disabled': pane.disabled,
@@ -254,11 +254,11 @@
 				);
 			});
 			return (
-				<div class={['el-tabs__nav-wrap', scrollable ? 'is-scrollable' : '', `is-${this.rootTabs.tabPosition}`]}>
+				<div class={['kc-tabs__nav-wrap', scrollable ? 'is-scrollable' : '', `is-${this.rootTabs.tabPosition}`]}>
 					{scrollBtn}
-					<div class={['el-tabs__nav-scroll']} ref = "navScroll">
+					<div class={['kc-tabs__nav-scroll']} ref = "navScroll">
 					<div
-						class="el-tabs__nav"
+						class="kc-tabs__nav"
 						ref= "nav"
 						style={navStyle}
 						role="tablist"

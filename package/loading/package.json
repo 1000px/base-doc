@@ -1,15 +1,15 @@
 {
-  "name": "element-loading",
+  "name": "kc-loading",
   "version": "2.0.0",
   "description": "A loading component for Vue.js.",
   "keywords": [
-    "element",
+    "kedacom",
     "vue",
     "component"
   ],
   "main": "./lib/index.js",
-  "repository": "https://github.com/ElemeFE/element/tree/master/packages/loading",
-  "author": "elemefe",
+  "repository": "https://github.com/1000px/base-doc/tree/dev/package/loading",
+  "author": "kc",
   "license": "MIT",
   "dependencies": {}
 }

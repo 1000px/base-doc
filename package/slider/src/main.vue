@@ -1,6 +1,6 @@
 <template>
-	<div class="el-slider"
-		 :class="{ 'is-vertical': vertical, 'el-slider--with-input': showInput }"
+	<div class="kc-slider"
+		 :class="{ 'is-vertical': vertical, 'kc-slider--with-input': showInput }"
 		 role="slider"
 		 :aria-valuemin="min"
 		 :aria-valuemax="max"
@@ -10,7 +10,7 @@
 		<kc-input-number
 			v-model="firstValue"
 			v-if="showInput && !range"
-			class="el-slider__input"
+			class="kc-slider__input"
 			ref="input"
 			@change="$nextTick(emitChange)"
 			:step="step"
@@ -21,13 +21,13 @@
 			:debounce="debounce"
 			:size="inputSize">
 		</kc-input-number>
-		<div class="el-slider__runway"
+		<div class="kc-slider__runway"
 			 :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"
 			 :style="runwayStyle"
 			 @click="onSliderClick"
 			 ref="slider">
 			<div
-				class="el-slider__bar"
+				class="kc-slider__bar"
 				:style="barStyle">
 			</div>
 			<kc-slider-button
@@ -44,7 +44,7 @@
 				v-if="range">
 			</kc-slider-button>
 			<div
-				class="el-slider__stop"
+				class="kc-slider__stop"
 				v-for="item in stops"
 				:style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
 				v-if="showStops">

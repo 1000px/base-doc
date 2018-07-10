@@ -1,11 +1,11 @@
 <template>
 	<div
-		class="el-select"
-		:class="[selectSize ? 'el-select--' + selectSize : '']"
+		class="kc-select"
+		:class="[selectSize ? 'kc-select--' + selectSize : '']"
 		@click.stop="toggleMenu"
 		v-clickoutside="handleClose">
 		<div
-			class="el-select__tags"
+			class="kc-select__tags"
 			v-if="multiple"
 			ref="tags"
 			:style="{ 'max-width': inputWidth - 32 + 'px' }">
@@ -17,7 +17,7 @@
 			type="info"
 			@close="deleteTag($event, selected[0])"
 			disable-transitions>
-          <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
+          <span class="kc-select__tags-text">{{ selected[0].currentLabel }}</span>
         </kc-tag>
         <kc-tag
 			v-if="selected.length > 1"
@@ -25,7 +25,7 @@
 			:size="collapseTagSize"
 			type="info"
 			disable-transitions>
-          <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
+          <span class="kc-select__tags-text">+ {{ selected.length - 1 }}</span>
         </kc-tag>
       </span>
 			<transition-group @after-leave="resetInputHeight" v-if="!collapseTags">
@@ -38,13 +38,13 @@
 					type="info"
 					@close="deleteTag($event, item)"
 					disable-transitions>
-					<span class="el-select__tags-text">{{ item.currentLabel }}</span>
+					<span class="kc-select__tags-text">{{ item.currentLabel }}</span>
 				</kc-tag>
 			</transition-group>
 
 			<input
 				type="text"
-				class="el-select__input"
+				class="kc-select__input"
 				:class="[selectSize ? `is-${ selectSize }` : '']"
 				:disabled="selectDisabled"
 				:autocomplete="autoComplete"
@@ -96,23 +96,23 @@
 				<slot name="prefix"></slot>
 			</template>
 			<i slot="suffix"
-			   :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"
+			   :class="['kc-select__caret', 'kc-input__icon', 'kc-icon-' + iconClass]"
 			   @click="handleIconClick"
 			></i>
 		</kc-input>
 		<transition
-			name="el-zoom-in-top"
+			name="kc-zoom-in-top"
 			@before-enter="handleMenuEnter"
 			@after-leave="doDestroy">
 			<kc-select-menu
 				ref="popper"
-				visible-arrow=false
+				:visible-arrow="false"
 				:append-to-body="popperAppendToBody"
 				v-show="visible && emptyText !== false">
 				<kc-scrollbar
 					tag="ul"
-					wrap-class="el-select-dropdown__wrap"
-					view-class="el-select-dropdown__list"
+					wrap-class="kc-select-dropdown__wrap"
+					view-class="kc-select-dropdown__list"
 					ref="scrollbar"
 					:class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
 					v-show="options.length > 0 && !loading">
@@ -124,7 +124,7 @@
 					<slot></slot>
 				</kc-scrollbar>
 				<p
-					class="el-select-dropdown__empty"
+					class="kc-select-dropdown__empty"
 					v-if="emptyText &&
             (!allowCreate || loading || (allowCreate && options.length === 0 ))">
 					{{ emptyText }}
@@ -482,15 +482,15 @@
 			},
 
 			handleIconHide() {
-				let icon = this.$el.querySelector('.el-input__icon');
+				let icon = this.$el.querySelector('.kc-input__icon');
 				if (icon) {
 					removeClass(icon, 'is-reverse');
 				}
 			},
 
 			handleIconShow() {
-				let icon = this.$el.querySelector('.el-input__icon');
-				if (icon && !hasClass(icon, 'el-icon-circle-close')) {
+				let icon = this.$el.querySelector('.kc-input__icon');
+				if (icon && !hasClass(icon, 'kc-icon-circle-close')) {
 					addClass(icon, 'is-reverse');
 				}
 			},
@@ -498,7 +498,7 @@
 			scrollToOption(option) {
 				const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
 				if (this.$refs.popper && target) {
-					const menu = this.$refs.popper.$el.querySelector('.el-select-dropdown__wrap');
+					const menu = this.$refs.popper.$el.querySelector('.kc-select-dropdown__wrap');
 					scrollIntoView(menu, target);
 				}
 				this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();

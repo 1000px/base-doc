@@ -139,7 +139,7 @@
 			 render: (h) => {
 				 return h('div', [
 					 h('i', {
-					   	'class': "el-icon-loading",
+					   	'class': "kc-icon-loading",
 						 props: {
 							 type: 'load-c',
 							 size: 18
@@ -157,6 +157,8 @@
      }
  </script>
 ## spin 加载中
+-------------------
+
 当区块正在获取数据中时可使用，适当的等待动画可以提升用户体验。
 
 ### spin 基础用法
@@ -240,7 +242,7 @@
 	</kc-col>
 	<kc-col class="demo-spin-col" :span="8">
 		<kc-spin fix>
-			<i class="el-icon-loading"></i>
+			<i class="kc-icon-loading"></i>
 			<div>Loading</div>
 		</kc-spin>
 	</kc-col>
@@ -318,7 +320,7 @@
                     render: (h) => {
                         return h('div', [
                             h('i', {
-                                'class': "el-icon-loading",
+                                'class': "kc-icon-loading",
                                 props: {
                                     type: 'load-c',
                                     size: 18

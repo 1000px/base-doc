@@ -24,7 +24,7 @@ or
 import Vue from 'vue'
 import ElPagination from 'element-pagination'
 
-Vue.component('el-pagination', ElPagination)
+Vue.component('kc-pagination', KcPagination)
 ```
 
 ### Attributes

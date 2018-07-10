@@ -1,24 +1,24 @@
 <template>
-	<div class="el-form-item" :class="[{
-      'el-form-item--feedback': elForm && elForm.statusIcon,
+	<div class="kc-form-item" :class="[{
+      'kc-form-item--feedback': elForm && elForm.statusIcon,
       'is-error': validateState === 'error',
       'is-validating': validateState === 'validating',
       'is-success': validateState === 'success',
       'is-required': isRequired || required
     },
-    sizeClass ? 'el-form-item--' + sizeClass : ''
+    sizeClass ? 'kc-form-item--' + sizeClass : ''
   ]">
-		<label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label">
+		<label :for="labelFor" class="kc-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label">
 			<slot name="label">{{label + form.labelSuffix}}</slot>
 		</label>
-		<div class="el-form-item__content" v-bind:style="contentStyle">
+		<div class="kc-form-item__content" v-bind:style="contentStyle">
 			<slot></slot>
-			<transition name="el-zoom-in-top">
+			<transition name="kc-zoom-in-top">
 				<div
 					v-if="validateState === 'error' && showMessage && form.showMessage"
-					class="el-form-item__error"
+					class="kc-form-item__error"
 					:class="{
-            'el-form-item__error--inline': typeof inlineMessage === 'boolean'
+            'kc-form-item__error--inline': typeof inlineMessage === 'boolean'
               ? inlineMessage
               : (elForm && elForm.inlineMessage || false)
           }"

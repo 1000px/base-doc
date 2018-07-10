@@ -5,7 +5,7 @@
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
-
+	margin-right: 16px;
 	@include e(content) {
 		top: auto;
 		background-color: $--badge-fill;

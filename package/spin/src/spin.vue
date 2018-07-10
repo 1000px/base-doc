@@ -13,7 +13,7 @@
 <script>
 	import { oneOf } from '_src/utils/util';
 	import ScrollbarMixins from './mixins-scrollbar';
-	const prefixCls = 'ivu-spin';
+	const prefixCls = 'kc-spin';
 
 	export default {
 		name: 'KcSpin',

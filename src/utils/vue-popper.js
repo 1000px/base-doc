@@ -5,6 +5,8 @@ import {
 
 const PopperJS = Vue.prototype.$isServer ? function () {
 } : require('./popper');
+
+
 const stop = e => e.stopPropagation();
 
 /**
@@ -109,9 +111,10 @@ export default {
 			options.offset = this.offset;
 			options.arrowOffset = this.arrowOffset;
 			options.arrowPointPlace = this.arrowPointPlace;
-			// this.popperJS = new PopperJS(reference, popper, options);//此处报错被注释
-			let Popper = PopperJS.Popper
-			this.popperJS = new Popper(reference, popper, options);
+			this.popperJS = new PopperJS(reference, popper, options);//此处报错被注释
+
+			// let Popper = PopperJS.Popper
+			// this.popperJS = new Popper(reference, popper, options);
 			this.popperJS.onCreate(_ => {
 				this.$emit('created', this);
 				this.resetTransformOrigin();

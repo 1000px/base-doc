@@ -15,13 +15,14 @@
 </script>
 
 <style>
- .demo-radio .el-img-radio {
+ .demo-radio .kc-img-radio {
     margin-top: 5px;
     margin-bottom: 5px;
  }
 </style>
 
 ## Radio 单选框
+-------------------
 
 在一组备选项中进行单选
 

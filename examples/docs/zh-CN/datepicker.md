@@ -113,6 +113,7 @@
 </style>
 
 ## DatePicker 日期选择器
+-------------------
 
 用于选择或输入日期
 
@@ -314,9 +315,9 @@
 
 默认情况下，组件接受并返回`Date`对象。以下为可用的格式化字串，以 UTC 2017年1月2日 03:04:05 为例：
 
-:::warning
-请注意大小写
-:::
+
+> 请注意大小写
+
 
 | 格式 | 含义 | 备注 | 举例 |
 |------|------|------|------|------|
@@ -341,7 +342,6 @@
 
 :::demo
 ```html
-<template>
   <div class="block">
     <span class="demonstration">默认为 Date 对象</span>
     <div class="demonstration">值：{{ value10 }}</div>
@@ -374,7 +374,6 @@
       value-format="timestamp">
     </kc-date-picker>
   </div>
-</template>
 
 <script>
   export default {
@@ -396,18 +395,16 @@
 
 :::demo 选择日期范围时，默认情况下，起始日期和结束日期的时间部分均为当天的 0 点 0 分 0 秒。通过`default-time`可以分别指定二者的具体时刻。`default-time`接受一个数组，其中的值为形如`12:00:00`的字符串，第一个值控制起始日期的时刻，第二个值控制结束日期的时刻。
 ```html
-<template>
-  <div class="block">
-    <p>组件值：{{ value13 }}</p>
-    <kc-date-picker
-      v-model="value13"
-      type="daterange"
-      start-placeholder="开始日期"
-      end-placeholder="结束日期"
-      :default-time="['00:00:00', '23:59:59']">
-    </kc-date-picker>
-  </div>
-</template>
+<div class="block">
+<p>组件值：{{ value13 }}</p>
+<kc-date-picker
+  v-model="value13"
+  type="daterange"
+  start-placeholder="开始日期"
+  end-placeholder="结束日期"
+  :default-time="['00:00:00', '23:59:59']">
+</kc-date-picker>
+</div>
 
 <script>
   export default {

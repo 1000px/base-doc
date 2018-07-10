@@ -55,12 +55,13 @@
     font-size: 14px;
     margin-bottom: 20px;
   }
-  .demo-colorpicker .el-color-picker + .el-color-picker {
+  .demo-colorpicker .kc-color-picker + .kc-color-picker {
     margin-left: 20px;
   }
 </style>
 
 ## ColorPicker 颜色选择器
+-------------------
 
 用于颜色选择，支持多种格式。
 

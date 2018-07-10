@@ -1,4 +1,5 @@
 ## Timeline 时间轴
+-------------------
 
 对一系列信息进行时间排序时，垂直地展示。
 
@@ -103,7 +104,7 @@
 ```html
 
 <kc-timeline>
-	<kc-timeline-item color="red">
+	<kc-timeline-item color="green">
 		<kc-icon name="time" slot="dot" class="timeline-icon"></kc-icon>
 		<span>发布里程碑版本</span>
 	</kc-timeline-item>
@@ -113,7 +114,7 @@
 </kc-timeline>
 <style>
 .timeline-icon{
-font-size: 20px;
+font-size: 18px;
 }
 </style>
 

@@ -42,17 +42,18 @@
     line-height: 44px;
   }
 
-  .demo-slider .demonstration + .el-slider {
+  .demo-slider .demonstration + .kc-slider {
     float: right;
     width: 70%;
     margin-right: 20px;
   }
-  .el-slider__input {
+  .kc-slider__input {
     margin-top: -13px !important;
   }
 </style>
 
 ## Slider 滑块
+-------------------
 
 通过拖动滑块在一个固定区间内进行选择
 

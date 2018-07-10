@@ -1,10 +1,9 @@
-.ivu-spin {
+.kc-spin {
 	color: #2d8cf0;
 	vertical-align: middle;
-	text-align: center
+	text-align: center;
 }
-
-.ivu-spin-dot {
+.kc-spin-dot {
 	position: relative;
 	display: block;
 	border-radius: 50%;
@@ -12,69 +11,66 @@
 	width: 20px;
 	height: 20px;
 	-webkit-animation: ani-spin-bounce 1s 0s ease-in-out infinite;
-	animation: ani-spin-bounce 1s 0s ease-in-out infinite
+	animation: ani-spin-bounce 1s 0s ease-in-out infinite;
 }
-
-.ivu-spin-large .ivu-spin-dot {
-	width: 32px;
-	height: 32px
+.kc-spin-large {
+	.kc-spin-dot {
+		width: 32px;
+		height: 32px;
+	}
 }
-
-.ivu-spin-small .ivu-spin-dot {
-	width: 12px;
-	height: 12px
+.kc-spin-small {
+	.kc-spin-dot {
+		width: 12px;
+		height: 12px;
+	}
 }
-
-.ivu-spin-fix {
+.kc-spin-fix {
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 8;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, .9)
+	background-color: rgba(255, 255, 255, .9);
+	.kc-spin-main {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.kc-spin-dot {
+		display: inline-block;
+	}
 }
-
-.ivu-spin-fullscreen {
-	z-index: 2010
+.kc-spin-fullscreen {
+	z-index: 2010;
 }
-
-.ivu-spin-fullscreen-wrapper {
+.kc-spin-fullscreen-wrapper {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0
+	left: 0;
 }
-
-.ivu-spin-fix .ivu-spin-main {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%)
+.kc-spin-show-text .kc-spin-dot,
+.kc-spin-text {
+	display: none;
 }
-
-.ivu-spin-fix .ivu-spin-dot {
-	display: inline-block
+.kc-spin-show-text {
+	.kc-spin-text {
+		display: block;
+	}
 }
-
-.ivu-spin-show-text .ivu-spin-dot,
-.ivu-spin-text {
-	display: none
+.kc-table-wrapper {
+	& > .kc-spin-fix {
+		border: 1px solid #dddee1;
+		border-top: 0;
+		border-left: 0;
+	}
 }
-
-.ivu-spin-show-text .ivu-spin-text {
-	display: block
-}
-
-.ivu-table-wrapper>.ivu-spin-fix {
-	border: 1px solid #dddee1;
-	border-top: 0;
-	border-left: 0
-}
-
 @-webkit-keyframes ani-spin-bounce {
 	0% {
 		-webkit-transform: scale(0);
@@ -98,3 +94,4 @@
 		opacity: 0
 	}
 }
+

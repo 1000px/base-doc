@@ -2,7 +2,7 @@
   export default {
     data () {
       return {
-        itemIcon: 'el-icon-setting'
+        itemIcon: 'kc-icon-setting'
       }
     }
   }
@@ -15,6 +15,7 @@
 
 </style>
 ## breadcrumb 面包屑
+-------------------
 
 显示当前页面的路径，快速返回之前的任意页面。
 
@@ -51,7 +52,7 @@
 :::demo
 ```html
   <kc-breadcrumb>
-    <kc-breadcrumb-item item-icon="el-icon-menu">首页</kc-breadcrumb-item>
+    <kc-breadcrumb-item item-icon="kc-icon-menu">首页</kc-breadcrumb-item>
     <kc-breadcrumb-item>活动管理</kc-breadcrumb-item>
     <kc-breadcrumb-item>活动列表</kc-breadcrumb-item>
     <kc-breadcrumb-item>活动详情</kc-breadcrumb-item>

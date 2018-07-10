@@ -1,12 +1,12 @@
 <template>
 	<span
-		class="el-cascader"
+		class="kc-cascader"
 		:class="[
 			{
 			'is-opened': menuVisible,
 			'is-disabled': cascaderDisabled
 			},
-			cascaderSize ? 'el-cascader--' + cascaderSize : ''
+			cascaderSize ? 'kc-cascader--' + cascaderSize : ''
 		]"
 		@click="handleClick"
 		@mouseenter="inputHover = true"
@@ -33,18 +33,18 @@
 				<i
 					key="1"
 					v-if="clearable && inputHover && currentLabels.length"
-					class="el-input__icon el-icon-circle-close el-cascader__clearIcon"
+					class="kc-input__icon kc-icon-circle-close kc-cascader__clearIcon"
 					@click="clearValue"
 				></i>
 				<i
 					key="2"
 					v-else
-					class="el-input__icon el-icon-arrow-down"
+					class="kc-input__icon kc-icon-arrow-down"
 					:class="{ 'is-reverse': menuVisible }"
 				></i>
 			</template>
 		</kc-input>
-		<span class="el-cascader__label" v-show="inputValue === ''">
+		<span class="kc-cascader__label" v-show="inputValue === ''">
 			<template v-if="showAllLevels">
 				<template v-for="(label, index) in currentLabels">
 					{{ label }}
@@ -294,7 +294,7 @@ export default {
 			} else if (keyCode === 40) { // down
 				this.menuVisible = true; // 打开
 				setTimeout(() => {
-					const firstMenu = this.popperElm.querySelectorAll('.el-cascader-menu')[0];
+					const firstMenu = this.popperElm.querySelectorAll('.kc-cascader-menu')[0];
 					firstMenu.querySelectorAll('[tabindex=\'-1\']')[0].focus();
 				});
 				e.stopPropagation();
@@ -362,7 +362,7 @@ export default {
 			const h = this._c;
 			return label.split(keyword)
 			.map((node, index) => index === 0 ? node : [
-				h('span', {class: { 'el-cascader-menu__item__keyword': true }}, [this._v(keyword)]),
+				h('span', {class: { 'kc-cascader-menu__item__keyword': true }}, [this._v(keyword)]),
 				node
 			]);
 		},

@@ -30,11 +30,11 @@
     margin-bottom: 20px;
   }
 
-  .demo-carousel .el-carousel__container {
+  .demo-carousel .kc-carousel__container {
     text-align: center;
   }
   
-  .demo-carousel .el-carousel__item {
+  .demo-carousel .kc-carousel__item {
     h3 {
       color: #fff;
       font-size: 18px;
@@ -60,6 +60,7 @@
   }
 </style>
 ## Carousel 走马灯
+-------------------
 
 在有限空间内，循环播放同一类型的图片、文字等内容
 
@@ -67,7 +68,7 @@
 
 适用广泛的基础用法
 
-:::demo 结合使用`el-carousel`和`el-carousel-item`标签就得到了一个走马灯。幻灯片的内容是任意的，需要放在`el-carousel-item`标签中。默认情况下，在鼠标 hover 底部的指示器时就会触发切换。通过设置`trigger`属性为`click`，可以达到点击触发的效果。
+:::demo 结合使用`kc-carousel`和`kc-carousel-item`标签就得到了一个走马灯。幻灯片的内容是任意的，需要放在`kc-carousel-item`标签中。默认情况下，在鼠标 hover 底部的指示器时就会触发切换。通过设置`trigger`属性为`click`，可以达到点击触发的效果。
 ```html
   <div class="block">
     <span class="demonstration">默认 Hover 指示器触发</span>
@@ -86,7 +87,7 @@
     </kc-carousel>
   </div>
 <style>
-  .el-carousel__item h3 {
+  .kc-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -94,11 +95,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .kc-carousel__item:nth-child(2n) {
      background-color: #99a9bf;
   }
   
-  .el-carousel__item:nth-child(2n+1) {
+  .kc-carousel__item:nth-child(2n+1) {
      background-color: #d3dce6;
   }
 </style>
@@ -118,7 +119,7 @@
   </kc-carousel>
 
 <style>
-  .el-carousel__item h3 {
+  .kc-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
@@ -126,11 +127,11 @@
     margin: 0;
   }
   
-  .el-carousel__item:nth-child(2n) {
+  .kc-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
   
-  .el-carousel__item:nth-child(2n+1) {
+  .kc-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -157,11 +158,11 @@
     margin: 0;
   }
   
-  .el-carousel__item:nth-child(2n) {
+  .kc-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
   
-  .el-carousel__item:nth-child(2n+1) {
+  .kc-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -180,7 +181,7 @@
   </kc-carousel>
 
 <style>
-  .el-carousel__item h3 {
+  .kc-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -188,11 +189,11 @@
     margin: 0;
   }
   
-  .el-carousel__item:nth-child(2n) {
+  .kc-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
   
-  .el-carousel__item:nth-child(2n+1) {
+  .kc-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -219,7 +220,7 @@
 ### Carousel Methods
 | 方法名      | 说明          | 参数 |
 |---------- |-------------- | -- |
-| setActiveItem | 手动切换幻灯片 | 需要切换的幻灯片的索引，从 0 开始；或相应 `el-carousel-item` 的 `name` 属性值 |
+| setActiveItem | 手动切换幻灯片 | 需要切换的幻灯片的索引，从 0 开始；或相应 `kc-carousel-item` 的 `name` 属性值 |
 | prev | 切换至上一张幻灯片 | — |
 | next | 切换至下一张幻灯片 | — |
 

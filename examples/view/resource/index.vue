@@ -1,14 +1,12 @@
 <template>
-	<div class="view-box">
+	<kc-scrollbar class="view-box">
 		<div class="resource view-content">
 			<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
 			<div class="right-content markcss">
-				<div class="scrollBox">
-					<router-view/>
-				</div>
+				<router-view/>
 			</div>
 		</div>
-	</div>
+	</kc-scrollbar>
 </template>
 
 <script>

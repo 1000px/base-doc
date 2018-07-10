@@ -19,12 +19,12 @@
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
-        dialogVisible: false,
-        dialogTableVisible: false,
-        dialogFormVisible: false,
+        modalVisible: false,
+        modalTableVisible: false,
+        modalFormVisible: false,
         outerVisible: false,
         innerVisible: false,
-        centerDialogVisible: false,
+        centerModalVisible: false,
         form: {
           name: '',
           region: '',
@@ -50,29 +50,31 @@
   };
 </script>
 
-<style>
-  .demo-box.demo-dialog {
-    .dialog-footer button:first-child {
+<style lang='scss'>
+  .demo-box.demo-modal {
+    .modal-footer button:first-child {
       margin-right: 10px;
     }
     .full-image {
       width: 100%;
     }
-    .el-dialog__wrapper {
+    .kc-modal__wrapper {
       margin: 0;
     }
-    .el-select {
+    .kc-select {
       width: 300px;
     }
-    .el-input {
+    .kc-input {
       width: 300px;
     }
-    .el-button--text {
+    .kc-button--text {
       margin-right: 15px;
     }
   }
 </style>
 ## Modal 对话框
+-------------------
+
 在保留当前页面状态的情况下，告知用户并承载相关操作。
 
 ### 基本用法
@@ -82,17 +84,17 @@ Modal 弹出一个对话框，适合需要定制性更大的场景。
 :::demo 需要设置`visible`属性，它接收`Boolean`，当为`true`时显示 Modal。Modal 分为两个部分：`body`和`footer`，`footer`需要具名为`footer`的`slot`。`title`属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了`before-close`的用法。
 
 ```html
-<kc-button type="primary" @click="dialogVisible = true">点击打开 Modal</kc-button>
+<kc-button type="primary" @click="modalVisible = true">点击打开 Modal</kc-button>
 
 <kc-modal
   title="提示"
-  :visible.sync="dialogVisible"
+  :visible.sync="modalVisible"
   width="30%"
   :before-close="handleClose">
   <span>这是一段信息</span>
-  <span slot="footer" class="dialog-footer">
-    <kc-button @click="dialogVisible = false">取 消</kc-button>
-    <kc-button type="primary" @click="dialogVisible = false">确 定</kc-button>
+  <span slot="footer" class="modal-footer">
+    <kc-button @click="modalVisible = false">取 消</kc-button>
+    <kc-button type="primary" @click="modalVisible = false">确 定</kc-button>
   </span>
 </kc-modal>
 
@@ -100,7 +102,7 @@ Modal 弹出一个对话框，适合需要定制性更大的场景。
   export default {
     data() {
       return {
-        dialogVisible: false
+        modalVisible: false
       };
     },
     methods: {
@@ -130,9 +132,9 @@ Modal 组件的内容可以是任意的，甚至可以是表格或表单，下�
 <!-- Table -->
 <!-- Form -->
 
-<kc-button type="primary" @click="dialogFormVisible = true">打开嵌套表单的 Modal</kc-button>
+<kc-button type="primary" @click="modalFormVisible = true">打开嵌套表单的 Modal</kc-button>
 
-<kc-modal title="收货地址" :visible.sync="dialogFormVisible">
+<kc-modal title="收货地址" :visible.sync="modalFormVisible">
   <kc-form :model="form">
     <kc-form-item label="活动名称" :labkc-width="formLabelWidth">
       <kc-input v-model="form.name" auto-complete="off"></kc-input>
@@ -144,9 +146,9 @@ Modal 组件的内容可以是任意的，甚至可以是表格或表单，下�
       </kc-select>
     </kc-form-item>
   </kc-form>
-  <div slot="footer" class="dialog-footer">
-    <kc-button @click="dialogFormVisible = false">取 消</kc-button>
-    <kc-button type="primary" @click="dialogFormVisible = false">确 定</kc-button>
+  <div slot="footer" class="modal-footer">
+    <kc-button @click="modalFormVisible = false">取 消</kc-button>
+    <kc-button type="primary" @click="modalFormVisible = false">确 定</kc-button>
   </div>
 </kc-modal>
 
@@ -171,8 +173,8 @@ Modal 组件的内容可以是任意的，甚至可以是表格或表单，下�
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
-        dialogTableVisible: false,
-        dialogFormVisible: false,
+        modalTableVisible: false,
+        modalFormVisible: false,
         form: {
           name: '',
           region: '',
@@ -205,7 +207,7 @@ Modal 组件的内容可以是任意的，甚至可以是表格或表单，下�
       :visible.sync="innerVisible"
       append-to-body>
     </kc-modal>
-    <div slot="footer" class="dialog-footer">
+    <div slot="footer" class="modal-footer">
       <kc-button @click="outerVisible = false">取 消</kc-button>
       <kc-button type="primary" @click="innerVisible = true">打开内层 Modal</kc-button>
     </div>
@@ -232,17 +234,17 @@ Modal 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 将`center`设置为`true`即可使标题和底部居中。`center`仅影响标题和底部区域。Modal 的内容是任意的，在一些情况下，内容并不适合居中布局。如果需要内容也水平居中，请自行为其添加 CSS。
 
 ```html
-<kc-button type="primary" @click="centerDialogVisible = true">点击打开 Modal</kc-button>
+<kc-button type="primary" @click="centerModalVisible = true">点击打开 Modal</kc-button>
 
 <kc-modal
   title="提示"
-  :visible.sync="centerDialogVisible"
+  :visible.sync="centerModalVisible"
   width="30%"
   center>
   <span>需要注意的是内容是默认不居中的</span>
-  <span slot="footer" class="dialog-footer">
-    <kc-button @click="centerDialogVisible = false">取 消</kc-button>
-    <kc-button type="primary" @click="centerDialogVisible = false">确 定</kc-button>
+  <span slot="footer" class="modal-footer">
+    <kc-button @click="centerModalVisible = false">取 消</kc-button>
+    <kc-button type="primary" @click="centerModalVisible = false">确 定</kc-button>
   </span>
 </kc-modal>
 

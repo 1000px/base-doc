@@ -1,9 +1,9 @@
 <template>
-	<div class="el-card" :class="[shadow ? 'is-' + shadow + '-shadow' : 'is-never-shadow', bordered ? '' : 'border-less', type==='inner' ? 'type-inner' : '']">
-		<div class="el-card__header" v-if="$slots.header || header">
+	<div class="kc-card" :class="[shadow ? 'is-' + shadow + '-shadow' : 'is-never-shadow', bordered ? '' : 'border-less', type==='inner' ? 'type-inner' : '']">
+		<div class="kc-card__header" v-if="$slots.header || header">
 			<slot name="header">{{ header }}</slot>
 		</div>
-		<div class="el-card__body" :style="bodyStyle">
+		<div class="kc-card__body" :style="bodyStyle">
 			<slot></slot>
 		</div>
 	</div>

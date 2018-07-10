@@ -1,4 +1,5 @@
 ## number input 数字输入框
+-------------------
 
 <script>
   export default {
@@ -25,7 +26,7 @@
 <style>
   
   .demo-box.demo-input-number {
-    .el-input-number + .el-input-number {
+    .kc-input-number + .kc-input-number {
       margin-left: 10px;
     }
   }
@@ -118,9 +119,9 @@
 
 :::
 
-:::tip
-`precision` 的值必须是一个正整数，并且不能小于 `step` 的小数位数。
-:::
+
+>`precision` 的值必须是一个正整数，并且不能小于 `step` 的小数位数。
+
 
 ### 尺寸
 

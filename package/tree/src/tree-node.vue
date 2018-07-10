@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-tree-node"
+		class="kc-tree-node"
 		@click.stop="handleClick"
 		@contextmenu="($event) => this.handleContextMenu($event)"
 		v-show="node.visible"
@@ -23,10 +23,10 @@
 		@drop.stop="handleDrop"
 		ref="node"
 	>
-		<div class="el-tree-node__content"
+		<div class="kc-tree-node__content"
 			 :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
       <span
-		  class="el-tree-node__expand-icon el-icon-caret-right"
+		  class="kc-tree-node__expand-icon kc-icon-caret-right"
 		  @click.stop="handleExpandIconClick"
 		  :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }">
       </span>
@@ -41,13 +41,13 @@
 			</kc-checkbox>
 			<span
 				v-if="node.loading"
-				class="el-tree-node__loading-icon el-icon-loading">
+				class="kc-tree-node__loading-icon kc-icon-loading">
       </span>
 			<node-content :node="node"></node-content>
 		</div>
 		<kc-collapse-transition>
 			<div
-				class="el-tree-node__children"
+				class="kc-tree-node__children"
 				v-if="!renderAfterExpand || childNodeRendered"
 				v-show="expanded"
 				role="group"
@@ -117,7 +117,7 @@
 							})
 							: tree.$scopedSlots.default
 							? tree.$scopedSlots.default({node, data})
-							: <span class="el-tree-node__label">{node.label}</span>
+							: <span class="kc-tree-node__label">{node.label}</span>
 					);
 				}
 			}

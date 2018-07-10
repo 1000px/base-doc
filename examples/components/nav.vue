@@ -56,7 +56,8 @@
 		},
 		methods: {
 			toTop: function () {
-				this.$el.nextElementSibling.querySelector('.scrollBox').scrollTo(0, 0);
+//				console.log(11, this.$el.parentNode.parentNode.parentNode);
+				this.$el.parentNode.parentNode.parentNode.scrollTop = 0;
 			}
 		},
 		watch: {
@@ -72,16 +73,16 @@
 <style lang="scss" type="text/scss" scoped>
 
 	.left-nav {
-		position: relative;
+		position: fixed !important;
+		top: 116px;
+		left: 0;
+		padding-left: 130px;
 		overflow: hidden;
 		width: 250px;
 		/*height: 100%;*/
-		height: calc(100vh - 252px);
+		height: calc(100% - 124px);
 		padding-top: 18px;
-		float: left;
-		/*position: absolute;*/
-		/*top: 0;*/
-		/*left: 0;*/
+
 		ul {
 			> li {
 				h3 {
@@ -89,17 +90,17 @@
 					color: #273B55;
 					font-weight: bold;
 					span {
-						padding-left: 24px;
+						/*padding-left: 24px;*/
 					}
 					ul {
-						padding: 10px 0;
+						padding: 10px 0 22px;
 						li {
 							position: relative;
-							padding-left: -24px;
+							/*padding-left: -24px;*/
 							height: 37px;
 							line-height: 37px;
 							> a {
-								padding-left: 24px;
+								padding-left: 10px;
 								display: block;
 								font-family: $typography;
 								font-size: 12px;
@@ -110,7 +111,8 @@
 								}
 							}
 							.router-link-active {
-								opacity: 0.9;
+								color: #6781F2;
+								/*opacity: 0.9;
 								font-family: $typography;
 								font-size: $medium;
 								color: #5572F1;
@@ -126,7 +128,7 @@
 									background: #6781F2;
 									box-shadow: 3px 0 8px 0 rgba(103, 129, 242, 0.41);
 									border-radius:0 100px 100px 0;
-								}
+								}*/
 							}
 						}
 					}
@@ -146,7 +148,8 @@
 						}
 					}
 					.router-link-active {
-						opacity: 0.9;
+						color: #6781F2;
+						/*opacity: 0.9;
 						font-family: $typography;
 						font-size: $medium;
 						color: #5572F1;
@@ -162,7 +165,7 @@
 							background: #6781F2;
 							box-shadow: 3px 0 8px 0 rgba(103, 129, 242, 0.41);
 							border-radius:0 100px 100px 0;
-						}
+						}*/
 					}
 				}
 			}
