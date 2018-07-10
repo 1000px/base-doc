@@ -14,13 +14,13 @@ gulp.task('compile', function () {
 		}))
 		.pipe(cssmin())
 		// .pipe(rename('index.css'))
-		.pipe(gulp.dest('./../lib/css'));
+		.pipe(gulp.dest('./../kfront-baseui/css'));
 });
 
 gulp.task('copyfont', function () {
 	return gulp.src('./../styles/fonts/**')
 		.pipe(cssmin())
-		.pipe(gulp.dest('./../lib/css/fonts'));
+		.pipe(gulp.dest('./../kfront-baseui/css/fonts'));
 });
 
 gulp.task('default', ['copyfont', 'compile']);
