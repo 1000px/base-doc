@@ -9,7 +9,7 @@ import Lang from '@/lang';
 import store from '@/store';
 import 'normalize.css';
 
-import KFront from '../package';
+import KFront from '../package/';
 // import locale from './../public/locale/lang/en';
 
 import 'highlight.js/styles/tomorrow.css';
