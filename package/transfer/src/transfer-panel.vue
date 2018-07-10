@@ -1,6 +1,6 @@
 <template>
-	<div class="el-transfer-panel">
-		<p class="el-transfer-panel__header">
+	<div class="kc-transfer-panel">
+		<p class="kc-transfer-panel__header">
 			<kc-checkbox
 				v-model="allChecked"
 				@change="handleAllCheckedChange"
@@ -10,9 +10,9 @@
 			</kc-checkbox>
 		</p>
 
-		<div :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
+		<div :class="['kc-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
 			<kc-input
-				class="el-transfer-panel__filter"
+				class="kc-transfer-panel__filter"
 				v-model="query"
 				size="small"
 				:placeholder="placeholder"
@@ -20,7 +20,7 @@
 				@mouseleave.native="inputHover = false"
 				v-if="filterable">
 				<i slot="suffix"
-				   :class="['el-input__icon', 'el-icon-' + inputIcon]"
+				   :class="['kc-input__icon', 'kc-icon-' + inputIcon]"
 				   @click="clearQuery"
 				></i>
 			</kc-input>
@@ -28,9 +28,9 @@
 				v-model="checked"
 				v-show="!hasNoMatch && data.length > 0"
 				:class="{ 'is-filterable': filterable }"
-				class="el-transfer-panel__list">
+				class="kc-transfer-panel__list">
 				<kc-checkbox
-					class="el-transfer-panel__item"
+					class="kc-transfer-panel__item"
 					:label="item[keyProp]"
 					:disabled="item[disabledProp]"
 					:key="item[keyProp]"
@@ -39,13 +39,13 @@
 				</kc-checkbox>
 			</kc-checkbox-group>
 			<p
-				class="el-transfer-panel__empty"
+				class="kc-transfer-panel__empty"
 				v-show="hasNoMatch">{{ t('el.transfer.noMatch') }}</p>
 			<p
-				class="el-transfer-panel__empty"
+				class="kc-transfer-panel__empty"
 				v-show="data.length === 0 && !hasNoMatch">{{ t('el.transfer.noData') }}</p>
 		</div>
-		<p class="el-transfer-panel__footer" v-if="hasFooter">
+		<p class="kc-transfer-panel__footer" v-if="hasFooter">
 			<slot></slot>
 		</p>
 	</div>

@@ -1,9 +1,9 @@
 <style>
-  .demo-box.demo-progress .el-progress--line {
+  .demo-box.demo-progress .kc-progress--line {
       margin-bottom: 15px;
       width: 350px;
     }
-    .el-progress--circle {
+    .kc-progress--circle {
       margin-right: 15px;
     }
 </style>

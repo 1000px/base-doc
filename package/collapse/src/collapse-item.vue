@@ -1,15 +1,15 @@
 <template>
-	<div class="el-collapse-item" :class="{'is-active': isActive}" :style="customStyle">
+	<div class="kc-collapse-item" :class="{'is-active': isActive}" :style="customStyle">
 		<div
 			role="tab"
 			:aria-expanded="isActive"
-			:aria-controls="`el-collapse-content-${id}`"
-			:aria-describedby="`el-collapse-content-${id}`">
+			:aria-controls="`kc-collapse-content-${id}`"
+			:aria-describedby="`kc-collapse-content-${id}`">
 			<div
-				class="el-collapse-item__header"
+				class="kc-collapse-item__header"
 				@click="handleHeaderClick"
 				role="button"
-				:id="`el-collapse-head-${id}`"
+				:id="`kc-collapse-head-${id}`"
 				tabindex="0"
 				@keyup.space.enter.stop="handleEnterClick"
 				:class="{
@@ -19,7 +19,7 @@
 				}"
 				@focus="handleFocus"
 				@blur="focusing = false">
-				<i v-if="showArrow" class="el-collapse-item__arrow el-icon-arrow-right"
+				<i v-if="showArrow" class="kc-collapse-item__arrow kc-icon-arrow-right"
 				   :class="{'is-active': isActive}">
 				</i>
 				<slot name="title">{{title}}</slot>
@@ -27,13 +27,13 @@
 		</div>
 		<kc-collapse-transition>
 			<div
-				class="el-collapse-item__wrap"
+				class="kc-collapse-item__wrap"
 				v-show="isActive"
 				role="tabpanel"
 				:aria-hidden="!isActive"
-				:aria-labelledby="`el-collapse-head-${id}`"
-				:id="`el-collapse-content-${id}`">
-				<div class="el-collapse-item__content">
+				:aria-labelledby="`kc-collapse-head-${id}`"
+				:id="`kc-collapse-content-${id}`">
+				<div class="kc-collapse-item__content">
 					<slot></slot>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="el-button-group">
+	<div class="kc-button-group">
 		<slot></slot>
 	</div>
 </template>

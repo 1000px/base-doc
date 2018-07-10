@@ -1,6 +1,6 @@
 <style>
   .demo-box.demo-switch {
-    .el-switch {
+    .kc-switch {
       margin: 20px 20px 20px 0;
     }
   }

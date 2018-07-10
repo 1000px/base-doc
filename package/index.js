@@ -1,4 +1,5 @@
 import Alert from './alert';
+import Affix from './affix';
 import Autocomplete from './autocomplete';
 import Avatar from './avatar/index.js';
 import Badge from './badge';
@@ -74,6 +75,7 @@ import Tree from './tree';
 import Upload from './upload';
 
 const components = [
+	Affix,
 	Alert,
 	Autocomplete,
 	Avatar,
@@ -166,6 +168,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
+	Affix,
 	Alert,
 	Autocomplete,
 	Avatar,

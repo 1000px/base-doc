@@ -4,7 +4,7 @@
 		:class="wrapClasses"
 		:style="wrapStyles">
         <span v-show="showZeroTrigger" @click="toggleCollapse" :class="zeroWidthTriggerClasses">
-            <i class="ivu-icon ivu-icon-navicon-round"></i>
+            <i class="kc-icon kc-icon-navicon-round"></i>
         </span>
 		<div :class="childClasses">
 			<slot></slot>
@@ -21,7 +21,7 @@
 	import { on, off } from '_src/utils/dom';
 	import { oneOf, dimensionMap, setMatchMedia } from '_src/utils/util';
 
-	const prefixCls = 'ivu-layout-sider';
+	const prefixCls = 'kc-layout-sider';
 	setMatchMedia();
 	export default {
 		name: 'KcSider',
@@ -100,8 +100,8 @@
 			},
 			triggerIconClasses () {
 				return [
-					'ivu-icon',
-					`ivu-icon-chevron-${this.reverseArrow ? 'right' : 'left'}`,
+					'kc-icon',
+					`kc-icon-chevron-${this.reverseArrow ? 'right' : 'left'}`,
 					`${prefixCls}-trigger-icon`
 				];
 			},

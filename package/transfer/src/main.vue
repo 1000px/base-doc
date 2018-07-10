@@ -1,5 +1,5 @@
 <template>
-	<div class="el-transfer">
+	<div class="kc-transfer">
 		<transfer-panel
 			v-bind="$props"
 			ref="leftPanel"
@@ -10,22 +10,22 @@
 			@checked-change="onSourceCheckedChange">
 			<slot name="left-footer"></slot>
 		</transfer-panel>
-		<div class="el-transfer__buttons">
+		<div class="kc-transfer__buttons">
 			<kc-button
 				type="primary"
-				:class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+				:class="['kc-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
 				@click.native="addToLeft"
 				:disabled="rightChecked.length === 0">
-				<i class="el-icon-arrow-left"></i>
+				<i class="kc-icon-arrow-left"></i>
 				<span v-if="buttonTexts[0] !== undefined">{{ buttonTexts[0] }}</span>
 			</kc-button>
 			<kc-button
 				type="primary"
-				:class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+				:class="['kc-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
 				@click.native="addToRight"
 				:disabled="leftChecked.length === 0">
 				<span v-if="buttonTexts[1] !== undefined">{{ buttonTexts[1] }}</span>
-				<i class="el-icon-arrow-right"></i>
+				<i class="kc-icon-arrow-right"></i>
 			</kc-button>
 		</div>
 		<transfer-panel

@@ -8,7 +8,7 @@
   };
 </script>
 <style>
-  .box .el-tooltip{
+  .box .kc-tooltip{
     margin-top: 15px;
   }
 </style>
@@ -113,8 +113,8 @@
       margin: 4px;
     }
 
-    .left .el-tooltip__popper,
-    .right .el-tooltip__popper {
+    .left .kc-tooltip__popper,
+    .right .kc-tooltip__popper {
       padding: 8px 10px;
     }
   }
@@ -210,7 +210,7 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 |  value(v-model) |  状态是否可见  | Boolean           | — |  false |
 |  disabled       |  Tooltip 是否可用  | Boolean           | — |  false |
 |  offset        |  出现位置的偏移量  | Number           | — |  0 |
-|  transition     |  定义渐变动画      | String             | — | el-fade-in-linear |
+|  transition     |  定义渐变动画      | String             | — | kc-fade-in-linear |
 |  visible-arrow   |  是否显示 Tooltip 箭头，更多参数可见[Vue-popper](https://github.com/element-component/vue-popper) | Boolean | — | true |
 |  popper-options        | [popper.js](https://popper.js.org/documentation.html) 的参数 | Object            | 参考 [popper.js](https://popper.js.org/documentation.html) 文档 | { boundariesElement: 'body', gpuAcceleration: false } |
 | open-delay | 延迟出现，单位毫秒 | Number | — | 0 |

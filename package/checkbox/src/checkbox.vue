@@ -1,13 +1,13 @@
 <template>
 	<div v-if="hasImg===true" :class="[
-		'el-img-checkbox', 
+		'kc-img-checkbox', 
 		isChecked ? 'is-checked' : '',
-		inline ? 'el-img-checkbox-inline':'el-img-checkbox-block']">
-		<div class="el-img-checkbox-item">
+		inline ? 'kc-img-checkbox-inline':'kc-img-checkbox-block']">
+		<div class="kc-img-checkbox-item">
 			<label
-			class="el-checkbox"
+			class="kc-checkbox"
 			:class="[
-				border && checkboxSize ? 'el-checkbox--' + checkboxSize : '',
+				border && checkboxSize ? 'kc-checkbox--' + checkboxSize : '',
 				{ 'is-disabled': isDisabled },
 				{ 'is-bordered': border },
 				{ 'is-checked': isChecked }
@@ -17,7 +17,7 @@
 			:aria-disabled="isDisabled"
 			:id="id"
 		>
-			<span class="el-checkbox__input"
+			<span class="kc-checkbox__input"
 				:class="{
 					'is-disabled': isDisabled,
 					'is-checked': isChecked,
@@ -26,10 +26,10 @@
 				}"
 				aria-checked="mixed"
 			>
-				<span class="el-checkbox__inner"></span>
+				<span class="kc-checkbox__inner"></span>
 				<input
 					v-if="trueLabel || falseLabel"
-					class="el-checkbox__original"
+					class="kc-checkbox__original"
 					type="checkbox"
 					aria-hidden="true"
 					:name="name"
@@ -42,7 +42,7 @@
 					@blur="focus = false">
 				<input
 					v-else
-					class="el-checkbox__original"
+					class="kc-checkbox__original"
 					type="checkbox"
 					aria-hidden="true"
 					:disabled="isDisabled"
@@ -55,20 +55,20 @@
 			</span>
 		</label>
 		</div>
-		<div class="el-img-checkbox-item">
+		<div class="kc-img-checkbox-item">
 			<img :src="src" class="checkbox-img">
 		</div>
-		<div class="el-img-checkbox-item">
-			<div v-if="title" class="el-img-checkbox-item-title">{{title}}</div>
-			<div v-if="description" class="el-img-checkbox-item-desc">{{description}}</div>
+		<div class="kc-img-checkbox-item">
+			<div v-if="title" class="kc-img-checkbox-item-title">{{title}}</div>
+			<div v-if="description" class="kc-img-checkbox-item-desc">{{description}}</div>
 		</div>
   </div>
 
 	<label
 		v-else
-		class="el-checkbox"
+		class="kc-checkbox"
 		:class="[
-			border && checkboxSize ? 'el-checkbox--' + checkboxSize : '',
+			border && checkboxSize ? 'kc-checkbox--' + checkboxSize : '',
 			{ 'is-disabled': isDisabled },
 			{ 'is-bordered': border },
 			{ 'is-checked': isChecked }
@@ -78,7 +78,7 @@
 		:aria-disabled="isDisabled"
 		:id="id"
 	>
-		<span class="el-checkbox__input"
+		<span class="kc-checkbox__input"
 			:class="{
 				'is-disabled': isDisabled,
 				'is-checked': isChecked,
@@ -87,10 +87,10 @@
 			}"
 			aria-checked="mixed"
 		>
-			<span class="el-checkbox__inner"></span>
+			<span class="kc-checkbox__inner"></span>
 			<input
 				v-if="trueLabel || falseLabel"
-				class="el-checkbox__original"
+				class="kc-checkbox__original"
 				type="checkbox"
 				aria-hidden="true"
 				:name="name"
@@ -103,7 +103,7 @@
 				@blur="focus = false">
 			<input
 				v-else
-				class="el-checkbox__original"
+				class="kc-checkbox__original"
 				type="checkbox"
 				aria-hidden="true"
 				:disabled="isDisabled"
@@ -114,7 +114,7 @@
 				@focus="focus = true"
 				@blur="focus = false">
 		</span>
-		<span class="el-checkbox__label" v-if="$slots.default || label">
+		<span class="kc-checkbox__label" v-if="$slots.default || label">
 			<slot></slot>
 			<template v-if="!$slots.default">{{label}}</template>
 		</span>

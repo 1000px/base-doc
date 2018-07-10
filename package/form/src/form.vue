@@ -1,7 +1,7 @@
 <template>
-	<form class="el-form" :class="[
-    labelPosition ? 'el-form--label-' + labelPosition : '',
-    { 'el-form--inline': inline }
+	<form class="kc-form" :class="[
+    labelPosition ? 'kc-form--label-' + labelPosition : '',
+    { 'kc-form--inline': inline }
   ]">
 		<slot></slot>
 	</form>

@@ -1,14 +1,14 @@
 <template>
-  <span class="el-breadcrumb__item">
+  <span class="kc-breadcrumb__item">
     <span v-if="itemIcon"><i class="icon" :class="itemIcon" style="font-size:12px;color:#8C9097;background-color:#fff;"></i></span>
     <span
-      :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
+      :class="['kc-breadcrumb__inner', to ? 'is-link' : '']"
       ref="link"
       role="link">
       <slot></slot>
     </span>
-    <i v-if="separatorClass" class="el-breadcrumb__separator" :class="separatorClass"></i>
-    <span v-else class="el-breadcrumb__separator" role="presentation">{{separator}}</span>
+    <i v-if="separatorClass" class="kc-breadcrumb__separator" :class="separatorClass"></i>
+    <span v-else class="kc-breadcrumb__separator" role="presentation">{{separator}}</span>
   </span>
 </template>
 <script>

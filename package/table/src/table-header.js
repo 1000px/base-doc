@@ -1,6 +1,6 @@
 import { hasClass, addClass, removeClass } from '_src/utils/dom';
-import ElCheckbox from '../../checkbox';
-import ElTag from '../../tag';
+import KcCheckbox from '../../checkbox';
+import KcTag from '../../tag';
 import Vue from 'vue';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
@@ -64,7 +64,7 @@ const convertToRows = (originColumns) => {
 };
 
 export default {
-	name: 'ElTableHeader',
+	name: 'KcTableHeader',
 
 	mixins: [LayoutObserver],
 
@@ -76,7 +76,7 @@ export default {
 		if (isGroup) this.$parent.isGroup = true;
 		return (
       <table
-        class="el-table__header"
+        class="kc-table__header"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -125,7 +125,7 @@ export default {
                         }
                         {
                           column.filterable
-                            ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ ['el-icon-arrow-down', column.filterOpened ? 'el-icon-arrow-up' : ''] }></i></span>
+                            ? <span class="kc-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ ['kc-icon-arrow-down', column.filterOpened ? 'kc-icon-arrow-up' : ''] }></i></span>
                             : ''
                         }
                       </div>
@@ -161,8 +161,8 @@ export default {
 	},
 
 	components: {
-		ElCheckbox,
-		ElTag
+		KcCheckbox,
+		KcTag
 	},
 
 	computed: {
@@ -326,7 +326,7 @@ export default {
 			event.stopPropagation();
 			const target = event.target;
 			let cell = target.tagName === 'TH' ? target : target.parentNode;
-			cell = cell.querySelector('.el-table__column-filter-trigger') || cell;
+			cell = cell.querySelector('.kc-table__column-filter-trigger') || cell;
 			const table = this.$parent;
 
 			let filterPanel = this.filterPanels[column.id];

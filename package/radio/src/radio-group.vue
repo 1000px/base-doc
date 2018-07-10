@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="el-radio-group"
+		class="kc-radio-group"
 		role="radiogroup"
 		@keydown="handleKeydown"
 	>

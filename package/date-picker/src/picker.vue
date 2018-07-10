@@ -1,7 +1,7 @@
 <template>
 	<kc-input
-		class="el-date-editor"
-		:class="'el-date-editor--' + type"
+		class="kc-date-editor"
+		:class="'kc-date-editor--' + type"
 		:readonly="!editable || readonly || type === 'dates'"
 		:disabled="pickerDisabled"
 		:size="pickerSize"
@@ -20,22 +20,22 @@
 		:validateEvent="false"
 		ref="reference">
 		<i slot="prefix"
-		   class="el-input__icon"
+		   class="kc-input__icon"
 		   :class="triggerClass"
 		   @click="handleFocus">
 		</i>
 		<i slot="suffix"
-		   class="el-input__icon"
+		   class="kc-input__icon"
 		   @click="handleClickIcon"
 		   :class="[showClose ? '' + clearIcon : '']"
 		   v-if="haveTrigger">
 		</i>
 	</kc-input>
 	<div
-		class="el-date-editor el-range-editor el-input__inner"
+		class="kc-date-editor kc-range-editor kc-input__inner"
 		:class="[
-      'el-date-editor--' + type,
-      pickerSize ? `el-range-editor--${ pickerSize }` : '',
+      'kc-date-editor--' + type,
+      pickerSize ? `kc-range-editor--${ pickerSize }` : '',
       pickerDisabled ? 'is-disabled' : '',
       pickerVisible ? 'is-active' : ''
     ]"
@@ -46,7 +46,7 @@
 		ref="reference"
 		v-clickoutside="handleClose"
 		v-else>
-		<i :class="['el-input__icon', 'el-range__icon', triggerClass]"></i>
+		<i :class="['kc-input__icon', 'kc-range__icon', triggerClass]"></i>
 		<input
 			:placeholder="startPlaceholder"
 			:value="displayValue && displayValue[0]"
@@ -57,8 +57,8 @@
 			@input="handleStartInput"
 			@change="handleStartChange"
 			@focus="handleFocus"
-			class="el-range-input">
-		<span class="el-range-separator">{{ rangeSeparator }}</span>
+			class="kc-range-input">
+		<span class="kc-range-separator">{{ rangeSeparator }}</span>
 		<input
 			:placeholder="endPlaceholder"
 			:value="displayValue && displayValue[1]"
@@ -69,12 +69,12 @@
 			@input="handleEndInput"
 			@change="handleEndChange"
 			@focus="handleFocus"
-			class="el-range-input">
+			class="kc-range-input">
 		<i
 			@click="handleClickIcon"
 			v-if="haveTrigger"
 			:class="[showClose ? '' + clearIcon : '']"
-			class="el-input__icon el-range__close-icon">
+			class="kc-input__icon kc-range__close-icon">
 		</i>
 	</div>
 </template>
@@ -351,7 +351,7 @@
 			prefixIcon: String,
 			clearIcon: {
 				type: String,
-				default: 'el-icon-circle-close'
+				default: 'kc-icon-circle-close'
 			},
 			name: {
 				default: '',
@@ -465,7 +465,7 @@
 			},
 
 			triggerClass() {
-				return this.prefixIcon || (this.type.indexOf('time') !== -1 ? 'el-icon-time' : 'el-icon-date');
+				return this.prefixIcon || (this.type.indexOf('time') !== -1 ? 'kc-icon-time' : 'kc-icon-date');
 			},
 
 			selectionMode() {

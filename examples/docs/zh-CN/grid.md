@@ -1,12 +1,12 @@
 <style>
   .demo-layout {
-    .el-row {
+    .kc-row {
       margin-bottom: 20px;
       &:last-child {
         margin-bottom: 0;
       }
     }
-    .el-col {
+    .kc-col {
       border-radius: 4px;
     }
     .bg-purple-dark {
@@ -68,13 +68,13 @@
 </kc-row>
 
 <style>
-  .el-row {
+  .kc-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -112,13 +112,13 @@
 </kc-row>
 
 <style>
-  .el-row {
+  .kc-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -165,13 +165,13 @@
 </kc-row>
 
 <style>
-  .el-row {
+  .kc-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -214,13 +214,13 @@
 </kc-row>
 
 <style>
-  .el-row {
+  .kc-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -277,13 +277,13 @@
 </kc-row>
 
 <style>
-  .el-row {
+  .kc-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -321,7 +321,7 @@
 </kc-row>
 
 <style>
-  .el-col {
+  .kc-col {
     border-radius: 4px;
   }
   .bg-purple-dark {

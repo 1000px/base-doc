@@ -263,8 +263,8 @@
 					return (
 						<li
 							class={{
-								'el-cascader-menu__item': true,
-								'el-cascader-menu__item--extensible': item.children,
+								'kc-cascader-menu__item': true,
+								'kc-cascader-menu__item--extensible': item.children,
 								'is-active': item.value === activeValue[menuIndex],
 								'is-disabled': item.disabled
 							}}
@@ -300,8 +300,8 @@
 				return (
 				<ul
 					class={{
-						'el-cascader-menu': true,
-						'el-cascader-menu--flexible': isFlat
+						'kc-cascader-menu': true,
+						'kc-cascader-menu--flexible': isFlat
 					}}
 					{...hoverMenuEvent}
 					style={menuStyle}
@@ -349,11 +349,11 @@
 			}
 
 			return (
-				<transition name="el-zoom-in-top" on-before-enter={this.handleMenuEnter} on-after-leave={this.handleMenuLeave}>
+				<transition name="kc-zoom-in-top" on-before-enter={this.handleMenuEnter} on-after-leave={this.handleMenuLeave}>
 					<div
 						v-show={visible}
 						class={[
-							'el-cascader-menus el-popper',
+							'kc-cascader-menus kc-popper',
 							popperClass
 						]}
 						ref="wrapper"

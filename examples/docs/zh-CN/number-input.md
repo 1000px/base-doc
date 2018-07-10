@@ -26,7 +26,7 @@
 <style>
   
   .demo-box.demo-input-number {
-    .el-input-number + .el-input-number {
+    .kc-input-number + .kc-input-number {
       margin-left: 10px;
     }
   }

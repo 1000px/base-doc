@@ -1,16 +1,16 @@
 <template>
-	<ul @click="onPagerClick" class="el-pager">
+	<ul @click="onPagerClick" class="kc-pager">
 		<li
 			:class="{ active: currentPage === 1, disabled }"
 			v-if="pageCount > 0"
 			class="number">1
 		</li>
 		<li
-			class="el-icon more btn-quickprev"
+			class="kc-icon more btn-quickprev"
 			:class="[quickprevIconClass, { disabled }]"
 			v-if="showPrevMore"
 			@mouseenter="onMouseenter('left')"
-			@mouseleave="quickprevIconClass = 'el-icon-more'">
+			@mouseleave="quickprevIconClass = 'kc-icon-more'">
 		</li>
 		<li
 			v-for="pager in pagers"
@@ -19,11 +19,11 @@
 			class="number">{{ pager }}
 		</li>
 		<li
-			class="el-icon more btn-quicknext"
+			class="kc-icon more btn-quicknext"
 			:class="[quicknextIconClass, { disabled }]"
 			v-if="showNextMore"
 			@mouseenter="onMouseenter('right')"
-			@mouseleave="quicknextIconClass = 'el-icon-more'">
+			@mouseleave="quicknextIconClass = 'kc-icon-more'">
 		</li>
 		<li
 			:class="{ active: currentPage === pageCount, disabled }"
@@ -49,11 +49,11 @@
 
 		watch: {
 			showPrevMore(val) {
-				if (!val) this.quickprevIconClass = 'el-icon-more';
+				if (!val) this.quickprevIconClass = 'kc-icon-more';
 			},
 
 			showNextMore(val) {
-				if (!val) this.quicknextIconClass = 'el-icon-more';
+				if (!val) this.quicknextIconClass = 'kc-icon-more';
 			}
 		},
 
@@ -96,9 +96,9 @@
 			onMouseenter(direction) {
 				if (this.disabled) return;
 				if (direction === 'left') {
-					this.quickprevIconClass = 'el-icon-d-arrow-left';
+					this.quickprevIconClass = 'kc-icon-d-arrow-left';
 				} else {
-					this.quicknextIconClass = 'el-icon-d-arrow-right';
+					this.quicknextIconClass = 'kc-icon-d-arrow-right';
 				}
 			}
 		},
@@ -158,8 +158,8 @@
 				current: null,
 				showPrevMore: false,
 				showNextMore: false,
-				quicknextIconClass: 'el-icon-more',
-				quickprevIconClass: 'el-icon-more'
+				quicknextIconClass: 'kc-icon-more',
+				quickprevIconClass: 'kc-icon-more'
 			};
 		}
 	};

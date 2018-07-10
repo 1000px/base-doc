@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "马理想 <malixiang@kedacom.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "build:file": "node build/iconInit.js",
     "build:style": "gulp --gulpfile build/gulpfile.js",
@@ -14,7 +14,10 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "build": "node build/build.js & cnpm run build:style"
+    "build": "node build/build.js & cnpm run build:style",
+    "clean": "gulp --gulpfile build/build.clean.js",
+    "build:utils": "npm run build:file &&  webpack --config build/webpack.build.utils.js",
+    "dist": "npm run clean && npm run build:file && npm run build:utils && webpack --config build/webpack.component.js && npm run build:style"
   },
   "dependencies": {
     "async-validator": "^1.8.2",
@@ -99,7 +102,10 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "progress-bar-webpack-plugin": "1.11.0",
+    "webpack-node-externals": "1.7.2",
+    "file-save": "^0.2.0"
   },
   "engines": {
     "node": ">= 4.0.0",

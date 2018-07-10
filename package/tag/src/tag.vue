@@ -1,17 +1,17 @@
 <template>
-	<transition :name="disableTransitions ? '' : 'el-zoom-in-center'">
+	<transition :name="disableTransitions ? '' : 'kc-zoom-in-center'">
     <span
-		class="el-tag"
+		class="kc-tag"
 		:class="[
-        type ? 'el-tag--' + type : '',
-        tagSize && `el-tag--${tagSize}`,
+        type ? 'kc-tag--' + type : '',
+        tagSize && `kc-tag--${tagSize}`,
         {'is-hit': hit},
         {'is-selected': selectedStatus}
       ]"
 		:style="customColorStyle"
 		@click="changeSelectState()">
       <slot></slot>
-      <i class="el-tag__close el-icon-close"
+      <i class="kc-tag__close kc-icon-close"
 		 v-if="closable"
 		 @click.stop="handleClose"></i>
     </span>

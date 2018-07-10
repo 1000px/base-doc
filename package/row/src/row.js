@@ -35,10 +35,10 @@ export default {
 	render(h) {
 		return h(this.tag, {
 			class: [
-				'el-row',
+				'kc-row',
 				this.justify !== 'start' ? `is-justify-${this.justify}` : '',
 				this.align !== 'top' ? `is-align-${this.align}` : '',
-        { 'el-row--flex': this.type === 'flex' }
+        { 'kc-row--flex': this.type === 'flex' }
 			],
 			style: this.style
 		}, this.$slots.default);

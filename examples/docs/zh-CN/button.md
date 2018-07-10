@@ -1,18 +1,18 @@
 <style lang="scss">
   .demo-block {
     div{
-    	.el-row {
+    	.kc-row {
               margin-bottom: 20px;
             }
-            .el-button + .el-button {
+            .kc-button + .kc-button {
               margin-left: 10px;
             }
-            .el-button-group {
-              .el-button + .el-button {
+            .kc-button-group {
+              .kc-button + .kc-button {
                 margin-left: 0;
               }
 
-              & + .el-button-group {
+              & + .kc-button-group {
                 margin-left: 10px;
               }
             }
@@ -112,11 +112,11 @@
 
 ```html
 <kc-row>
-<kc-button type="primary" icon="el-icon-edit"></kc-button>
-<kc-button type="primary" icon="el-icon-share"></kc-button>
-<kc-button type="primary" icon="el-icon-delete"></kc-button>
-<kc-button type="primary" icon="el-icon-search">搜索</kc-button>
-<kc-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></kc-button>
+<kc-button type="primary" icon="kc-icon-edit"></kc-button>
+<kc-button type="primary" icon="kc-icon-share"></kc-button>
+<kc-button type="primary" icon="kc-icon-delete"></kc-button>
+<kc-button type="primary" icon="kc-icon-search">搜索</kc-button>
+<kc-button type="primary">上传<i class="kc-icon-upload kc-icon--right"></i></kc-button>
 </kc-row>
 ```
 :::
@@ -130,13 +130,13 @@
 ```html
 <kc-row>
 <kc-button-group>
-  <kc-button type="primary" icon="el-icon-arrow-left">上一页</kc-button>
-  <kc-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></kc-button>
+  <kc-button type="primary" icon="kc-icon-arrow-left">上一页</kc-button>
+  <kc-button type="primary">下一页<i class="kc-icon-arrow-right kc-icon--right"></i></kc-button>
 </kc-button-group>
 <kc-button-group>
-  <kc-button type="primary" icon="el-icon-edit"></kc-button>
-  <kc-button type="primary" icon="el-icon-share"></kc-button>
-  <kc-button type="primary" icon="el-icon-delete"></kc-button>
+  <kc-button type="primary" icon="kc-icon-edit"></kc-button>
+  <kc-button type="primary" icon="kc-icon-share"></kc-button>
+  <kc-button type="primary" icon="kc-icon-delete"></kc-button>
 </kc-button-group>
 </kc-row>
 ```

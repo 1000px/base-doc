@@ -80,15 +80,15 @@
 
 ### 使用方法
 
-直接通过设置类名为 `el-icon-iconName` 来使用即可。例如：
+直接通过设置类名为 `kc-icon-iconName` 来使用即可。例如：
 
 :::demo
 ```html
-<i class="el-icon-edit"></i>
-<i class="el-icon-delete"></i>
-<i class="el-icon-share"></i>
+<i class="kc-icon-edit"></i>
+<i class="kc-icon-delete"></i>
+<i class="kc-icon-share"></i>
 <kc-icon name="info"></kc-icon>
-<kc-button type="primary" icon="el-icon-search">搜索</kc-button>
+<kc-button type="primary" icon="kc-icon-search">搜索</kc-button>
 <kc-button type="primary"><kc-icon name="error"></kc-icon></kc-button>
 
 ```
@@ -99,8 +99,8 @@
 <ul class="icon-list">
   <li v-for="name in icons" :key="name">
     <span>
-      <i :class="'el-icon-' + name"></i>
-      <span class="icon-name">{{'el-icon-' + name}}</span>
+      <i :class="'kc-icon-' + name"></i>
+      <span class="icon-name">{{'kc-icon-' + name}}</span>
     </span>
   </li>
 </ul>

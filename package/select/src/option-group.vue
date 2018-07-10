@@ -1,8 +1,8 @@
 <template>
-	<ul class="el-select-group__wrap" v-show="visible">
-		<li class="el-select-group__title">{{ label }}</li>
+	<ul class="kc-select-group__wrap" v-show="visible">
+		<li class="kc-select-group__title">{{ label }}</li>
 		<li>
-			<ul class="el-select-group">
+			<ul class="kc-select-group">
 				<slot></slot>
 			</ul>
 		</li>

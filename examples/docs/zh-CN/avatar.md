@@ -1,7 +1,7 @@
 <style lang="scss">
 	.demo-avatar{
 		margin-bottom:10px;
-		>.ivu-avatar{
+		>.kc-avatar{
 			margin-right: 16px;
 		}
 	}

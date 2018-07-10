@@ -1,6 +1,6 @@
 <template>
 	<div v-if="isConfigOption"
-		class="el-autocomplete"
+		class="kc-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
@@ -35,7 +35,7 @@
         <slot name="suffix"></slot>
       </template>
     </kc-input>
-		<el-autocomplete-suggestions
+		<kc-autocomplete-suggestions
 			v-if="feedbacks.length > 0"
       visible-arrow
       :class="[popperClass ? popperClass : '']"
@@ -56,12 +56,12 @@
           {{ item }}
         </slot>
       </li>
-    </el-autocomplete-suggestions>
+    </kc-autocomplete-suggestions>
 	</div>
 
   <div
 		v-else
-    class="el-autocomplete"
+    class="kc-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
@@ -96,10 +96,10 @@
         <slot name="suffix"></slot>
       </template>
     </kc-input>
-    <el-autocomplete-suggestions
+    <kc-autocomplete-suggestions
 			v-if="queryModel"
       visible-arrow
-      class="el-autocomplete-suggestion-query-model"
+      class="kc-autocomplete-suggestion-query-model"
 			style="width:auto;"
 			ref="suggestions"
       placement="bottom-end"
@@ -114,8 +114,8 @@
 					<span class="query-model-title">{{item.title}}</span>
 					<span>
 						<a
-							style="float: right"	
-							:href="item.searchUrl" 
+							style="float: right"
+							:href="item.searchUrl"
 							target="_blank"
 							class="query-model-search-url"
 						>
@@ -137,7 +137,7 @@
 						<span style="float:right;">{{item.description}}</span>
 					</li>
 				</div>
-			</div>	
+			</div>
 
 				<!-- <li
 					v-else
@@ -149,8 +149,8 @@
 					<span style="float:right;">{{item.result}}</span>
 				</li> -->
 
-    </el-autocomplete-suggestions>
-    <el-autocomplete-suggestions
+    </kc-autocomplete-suggestions>
+    <kc-autocomplete-suggestions
 			v-else
       visible-arrow
       :class="[popperClass ? popperClass : '']"
@@ -172,14 +172,14 @@
           {{ item[valueKey] }}
         </slot>
       </li>
-    </el-autocomplete-suggestions>
+    </kc-autocomplete-suggestions>
   </div>
 </template>
 <script>
 	import debounce from 'throttle-debounce/debounce';
 	import KcInput from './../../input';
 	import Clickoutside from '_src/utils/clickoutside';
-	import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';
+	import KcAutocompleteSuggestions from './autocomplete-suggestions.vue';
 	import Emitter from '_src/mixins/emitter';
 	import Migrating from '_src/mixins/migrating';
 	import { generateId } from '_src/utils/util';
@@ -194,7 +194,7 @@
 
 		components: {
 			KcInput,
-			ElAutocompleteSuggestions
+			KcAutocompleteSuggestions
 		},
 		directives: { Clickoutside },
 		props: {
@@ -259,7 +259,7 @@
 				return (isValidData || this.loading) && this.activated;
 			},
 			id() {
-				return `el-autocomplete-${generateId()}`;
+				return `kc-autocomplete-${generateId()}`;
 			}
 		},
 		watch: {
@@ -387,7 +387,7 @@
 			select(item) {
 				if (this.queryModel) {
 					this.$refs.input.$refs.input.value = item.title;
-				
+
 					this.$nextTick(_ => {
 						this.handleShowSuggestion(false);
 						this.highlightedIndex = -1;
@@ -418,8 +418,8 @@
 				if (index >= this.suggestions.length) {
 					index = this.suggestions.length - 1;
 				}
-				const suggestion = this.$refs.suggestions.$el.querySelector('.el-autocomplete-suggestion__wrap');
-				const suggestionList = suggestion.querySelectorAll('.el-autocomplete-suggestion__list li');
+				const suggestion = this.$refs.suggestions.$el.querySelector('.kc-autocomplete-suggestion__wrap');
+				const suggestionList = suggestion.querySelectorAll('.kc-autocomplete-suggestion__list li');
 
 				let highlightItem = suggestionList[index];
 				let scrollTop = suggestion.scrollTop;
@@ -432,7 +432,7 @@
 					suggestion.scrollTop -= highlightItem.scrollHeight;
 				}
 				this.highlightedIndex = index;
-				this.$el.querySelector('.el-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
+				this.$el.querySelector('.kc-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
 			},
 			handleShowSuggestion (isShow) {
 				this.broadcast('ElAutocompleteSuggestions', 'visible', [isShow, this.$refs.input.$refs.input.offsetWidth]);
@@ -452,7 +452,7 @@
 			this.$on('item-click', item => {
 				this.select(item);
 			});
-			let $input = this.$el.querySelector('.el-input__inner');
+			let $input = this.$el.querySelector('.kc-input__inner');
 			$input.setAttribute('role', 'textbox');
 			$input.setAttribute('aria-autocomplete', 'list');
 			$input.setAttribute('aria-controls', 'id');

@@ -115,8 +115,8 @@
 
 <style>
 
-  .demo-base .el-input,
-  .demo-input-size .el-input {
+  .demo-base .kc-input,
+  .demo-input-size .kc-input {
     margin-top: 15px;
   }
 </style>
@@ -216,12 +216,12 @@ export default {
 </div>
 <div style="margin-top: 15px;">
   <kc-input placeholder="搜索内容" search>
-    <kc-button slot="append" icon="el-icon-search" type="default"></kc-button>
+    <kc-button slot="append" icon="kc-icon-search" type="default"></kc-button>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
   <kc-input placeholder="搜索内容" search>
-    <kc-button slot="append" icon="el-icon-search" type="primary"></kc-button>
+    <kc-button slot="append" icon="kc-icon-search" type="primary"></kc-button>
   </kc-input>
 </div>
 <div style="margin-top: 15px;">
@@ -230,10 +230,10 @@ export default {
   </kc-input>
 </div>
 <style>
-  .el-select .el-input {
+  .kc-select .kc-input {
     width: 130px;
   }
-  .input-with-select .el-input-group__prepend {
+  .input-with-select .kc-input-group__prepend {
     background-color: #fff;
   }
 </style>
@@ -319,14 +319,14 @@ export default {
 <div>
   <kc-input
     placeholder="请输入内容"
-    prefix-icon="el-icon-message"
+    prefix-icon="kc-icon-message"
   >
   </kc-input>
 </div>
 <div style="margin-top:15px">
   <kc-input
     placeholder="请输入内容"
-    suffix-icon="el-icon-time"
+    suffix-icon="kc-icon-time"
   >
   </kc-input>
 </div>

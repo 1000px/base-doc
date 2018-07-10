@@ -1,6 +1,6 @@
 <style>
   .demo-box {
-    .el-date-editor + .el-date-editor {
+    .kc-date-editor + .kc-date-editor {
       margin-left: 10px;
     }
   }

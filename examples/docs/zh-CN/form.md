@@ -165,10 +165,10 @@
 
 <style>
   .demo-form.demo-zh-CN {
-    .el-select .el-input {
+    .kc-select .kc-input {
       width: 380px;
     }
-    .el-form {
+    .kc-form {
       width: 460px;
     }
 
@@ -176,7 +176,7 @@
       text-align: center;
     }
 
-    .el-checkbox-group {
+    .kc-checkbox-group {
       width: 320px;
       margin: 0;
       padding: 0;
@@ -193,14 +193,14 @@
         height: 0;
       }
 
-      .el-checkbox {
+      .kc-checkbox {
         float: left;
         width: 160px;
         padding-right: 20px;
         margin: 0;
         padding: 0;
 
-        + .el-checkbox {
+        + .kc-checkbox {
           margin-left: 0;
         }
       }
@@ -211,7 +211,7 @@
     .demo-form-inline {
       width: auto;
 
-      .el-input {
+      .kc-input {
         width: 150px;
       }
       > * {
@@ -221,12 +221,12 @@
     .demo-ruleForm {
       width: 460px;
 
-      .el-select .el-input {
+      .kc-select .kc-input {
         width: 360px;
       }
     }
     .demo-dynamic {
-      .el-input {
+      .kc-input {
         margin-right: 10px;
         width: 270px;
         vertical-align: top;
@@ -323,7 +323,7 @@
 > W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2)：
 > <i>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</i>
 
-即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<el-form>` 标签上添加 
+即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<kc-form>` 标签上添加 
 
 ### 行内表单
 
@@ -741,7 +741,6 @@
 </script>
 ```
 :::
-
 
 >嵌套在 `el-form-item` 中的 `el-form-item` 标签宽度默认为零，不会继承 `el-form` 的 `label-width`。如果需要可以为其单独设置 `label-width` 属性。
 

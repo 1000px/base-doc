@@ -70,10 +70,10 @@ export default {
 	},
 
 	render(h) {
-		let template = <div class={['el-pagination', {
+		let template = <div class={['kc-pagination', {
 			'is-background': this.background,
 			'is-border': this.border,
-			'el-pagination--small': this.small
+			'kc-pagination--small': this.small
 		}] }></div>;
 		const layout = this.layout || '';
 		if (!layout) return;
@@ -87,7 +87,7 @@ export default {
 			total: <total></total>
 		};
 		const components = layout.split(',').map((item) => item.trim());
-		const rightWrapper = <div class="el-pagination__rightwrapper"></div>;
+		const rightWrapper = <div class="kc-pagination__rightwrapper"></div>;
 		let haveRightWrapper = false;
 
 		template.children = template.children || [];
@@ -133,7 +133,7 @@ export default {
             {
               this.$parent.prevText
                 ? <span>{ this.$parent.prevText }</span>
-                : <i class="el-icon el-icon-arrow-left"></i>
+                : <i class="kc-icon kc-icon-arrow-left"></i>
             }
           </button>
 				);
@@ -151,7 +151,7 @@ export default {
             {
               this.$parent.nextText
                 ? <span>{ this.$parent.nextText }</span>
-                : <i class="el-icon el-icon-arrow-right"></i>
+                : <i class="kc-icon kc-icon-arrow-right"></i>
             }
           </button>
 				);
@@ -181,7 +181,7 @@ export default {
 
 			render(h) {
 				return (
-          <span class="el-pagination__sizes">
+          <span class="kc-pagination__sizes">
 						每页
             <kc-select
               value={ this.$parent.internalPageSize }
@@ -275,10 +275,10 @@ export default {
 
 			render(h) {
 				return (
-          <span class="el-pagination__jump">
+          <span class="kc-pagination__jump">
             { this.t('el.pagination.goto') }
             <kc-input
-              class="el-pagination__editor is-in-pagination"
+              class="kc-pagination__editor is-in-pagination"
               min={ 1 }
               max={ this.$parent.internalPageCount }
               value={ this.$parent.internalCurrentPage }
@@ -302,7 +302,7 @@ export default {
 			render(h) {
 				return (
           typeof this.$parent.total === 'number'
-            ? <span class="el-pagination__total">{ this.t('el.pagination.total', { total: this.$parent.total }) }</span>
+            ? <span class="kc-pagination__total">{ this.t('el.pagination.total', { total: this.$parent.total }) }</span>
             : ''
 				);
 			}
