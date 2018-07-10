@@ -12,18 +12,18 @@ npm i element-table -D
 ## Usage
 ```javascript
 import Vue from 'vue'
-import ElTable from 'element-table'
+import KcTable from 'ekc-table'
 import 'element-theme-chalk'
 
-Vue.use(ElTable)
+Vue.use(KcTable)
 ```
 
 or
 
 ```javascript
 import Vue from 'vue'
-import { ElTable } from 'element-table'
-import { ElTableColumn } from 'element-table'
+import { KcTable } from 'kc-table'
+import { KcTableColumn } from 'kc-table'
 
 Vue.component('kc-table', KcTable)
 Vue.component('kc-table-column', KcTableColumn)

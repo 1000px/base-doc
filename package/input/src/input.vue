@@ -235,7 +235,7 @@
 				this.focused = false;
 				this.$emit('blur', event);
 				if (this.validateEvent) {
-					this.dispatch('ElFormItem', 'el.form.blur', [this.currentValue]);
+					this.dispatch('KcFormItem', 'el.form.blur', [this.currentValue]);
 				}
 			},
 			select() {
@@ -286,7 +286,7 @@
 				});
 				this.currentValue = value;
 				if (this.validateEvent) {
-					this.dispatch('ElFormItem', 'el.form.change', [value]);
+					this.dispatch('KcFormItem', 'el.form.change', [value]);
 				}
 			},
 			calcIconOffset(place) {

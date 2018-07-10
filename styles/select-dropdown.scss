@@ -65,10 +65,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-.kc-select-dropdown__wrap .kc-select-dropdown__item:last-child {
-  margin-bottom: 0px;
+.kc-select-dropdown__wrap.kc-scrollbar__wrap {
+	margin-bottom: 0 !important;
 }
-.kc-select-dropdown__wrap .kc-select-dropdown__list:last-child {
-  margin-bottom: 18px;
+.kc-select-dropdown.kc-popper[x-placement^="bottom"] {
+	margin-top: 5px;
 }

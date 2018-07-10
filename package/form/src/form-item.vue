@@ -231,7 +231,7 @@
                    确保 Select 下一次值改变时能正确触发校验 */
 				this.broadcast('KcSelect', 'fieldReset');
 
-				this.broadcast('ElTimeSelect', 'fieldReset', this.initialValue);
+				this.broadcast('KcTimeSelect', 'fieldReset', this.initialValue);
 			},
 			getRules() {
 				let formRules = this.form.rules;

@@ -142,7 +142,7 @@
 	import KcSelectMenu from './select-dropdown.vue';
 	import KcOption from './option.vue';
 	import KcTag from './../../tag';
-	import ElScrollbar from './../../scrollbar';
+	import KcScrollbar from './../../scrollbar';
 	import debounce from 'throttle-debounce/debounce';
 	import Clickoutside from '_src/utils/clickoutside';
 	import {addClass, removeClass, hasClass} from '_src/utils/dom';
@@ -248,7 +248,7 @@
 			KcSelectMenu,
 			KcOption,
 			KcTag,
-			ElScrollbar
+			KcScrollbar
 		},
 
 		directives: {Clickoutside},
@@ -406,7 +406,7 @@
 							this.$refs.input.focus();
 						} else {
 							if (!this.remote) {
-								this.broadcast('ElOption', 'queryChange', '');
+								this.broadcast('KcOption', 'queryChange', '');
 								this.broadcast('KcOptionGroup', 'queryChange');
 							}
 							this.broadcast('KcInput', 'inputSelect');

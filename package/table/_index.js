@@ -1,10 +1,10 @@
-import ElTableColumn from './src/table-column';
-import ElTable from './src/table';
+import KcTableColumn from './src/table-column';
+import KcTable from './src/table';
 
 /* istanbul ignore next */
 export default function(Vue) {
-	Vue.component(ElTable.name, ElTable);
-	Vue.component(ElTableColumn.name, ElTableColumn);
+	Vue.component(KcTable.name, KcTable);
+	Vue.component(KcTableColumn.name, KcTableColumn);
 };
 
-export { ElTable, ElTableColumn };
+export { KcTable, KcTableColumn };

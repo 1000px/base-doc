@@ -215,7 +215,7 @@
 </template>
 
 <script type="text/babel">
-	import ElCheckbox from '../../checkbox';
+	import KcCheckbox from '../../checkbox';
 	import debounce from 'throttle-debounce/debounce';
 	import {addResizeListener, removeResizeListener} from '_src/utils/resize-event';
 	import Mousewheel from '_src/directives/mousewheel';
@@ -320,7 +320,7 @@
 			TableHeader,
 			TableFooter,
 			TableBody,
-			ElCheckbox
+			KcCheckbox
 		},
 
 		methods: {

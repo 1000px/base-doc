@@ -290,6 +290,7 @@
 
 				this.fetchSuggestions(queryString, (suggestions) => {
 					this.loading = false;
+					console.log(111, suggestions)
 					if (this.isConfigOption) {
 						this.suggestions = this.feedbacks;
 					} else {

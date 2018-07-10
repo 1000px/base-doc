@@ -12,17 +12,17 @@ npm i element-pagination -D
 ## Usage
 ```javascript
 import Vue from 'vue'
-import ElPagination from 'element-pagination'
+import KcPagination from 'kc-pagination'
 import 'element-theme-chalk/dist/pagination.css'
 
-Vue.use(ElPagination)
+Vue.use(KcPagination)
 ```
 
 or
 
 ```javascript
 import Vue from 'vue'
-import ElPagination from 'element-pagination'
+import KcPagination from 'kc-pagination'
 
 Vue.component('kc-pagination', KcPagination)
 ```

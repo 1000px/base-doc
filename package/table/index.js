@@ -1,8 +1,8 @@
-import ElTable from './src/table';
+import KcTable from './src/table';
 
 /* istanbul ignore next */
-ElTable.install = function(Vue) {
-	Vue.component(ElTable.name, ElTable);
+KcTable.install = function(Vue) {
+	Vue.component(KcTable.name, KcTable);
 };
 
-export default ElTable;
+export default KcTable;
