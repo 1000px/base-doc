@@ -83,8 +83,8 @@ export default {
 					name={this.transition}
 					onAfterLeave={this.doDestroy}>
 					<div
-						onMouseleave = {() => {this.setExpectedState(false); this.debounceClose();}}
-						onMouseenter = {() => {this.setExpectedState(true);}}
+						onMouseleave = {() => { this.setExpectedState(false); this.debounceClose(); }}
+						onMouseenter = {() => { this.setExpectedState(true); }}
 						ref="popper"
 						role="tooltip"
 						id={this.tooltipId}

@@ -234,7 +234,7 @@
 
   @include e((append, prepend)) {
     background-color: $--background-color-base;
-    color: $--color-info;
+    color: $--input-group-color;
     vertical-align: middle;
     display: table-cell;
     position: relative;
@@ -277,9 +277,14 @@
   }
 
   @include e(append) {
-    border-left: 0;
+    border-left: 1px solid #dcdfe6;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+	  .kc-button {
+		  border: 0;
+		  border-top-left-radius: 0;
+		  border-bottom-left-radius: 0;
+	  }
   }
 
   @include m(prepend) {
