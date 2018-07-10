@@ -9,8 +9,8 @@ const config = require('./config');
 const webpackConfig = {
   entry: Components,
   output: {
-    path: path.resolve(process.cwd(), './lib/package/'),
-    publicPath: '/lib/',
+    path: path.resolve(process.cwd(), './kfront-baseui/package/'),
+    publicPath: '/kfront-baseui/',
     filename: '[name].js',
     chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
