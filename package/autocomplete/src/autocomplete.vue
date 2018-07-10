@@ -435,7 +435,7 @@
 				this.$el.querySelector('.kc-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
 			},
 			handleShowSuggestion (isShow) {
-				this.broadcast('ElAutocompleteSuggestions', 'visible', [isShow, this.$refs.input.$refs.input.offsetWidth]);
+				this.broadcast('KcAutocompleteSuggestions', 'visible', [isShow, this.$refs.input.$refs.input.offsetWidth]);
 			}
 		},
 		mounted() {
