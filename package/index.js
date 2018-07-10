@@ -25,8 +25,8 @@ import Dialog from './dialog';
 import Dropdown from './dropdown';
 import DropdownItem from './dropdown-item';
 import DropdownMemu from './dropdown-menu';
-import Footer from './footer';
 import DropdownMultiple from './dropdown-multiple';
+import Footer from './footer';
 import Form from './form';
 import FormItem from './form-item';
 import Header from './header';
@@ -34,13 +34,13 @@ import Icon from './icon';
 import Input from './input';
 import InputNumber from './input-number';
 import Layout from './layout';
-import Modal from './modal';
-import Message from './message/index.js';
-import MessageBox from './message-box/index.js';
-import Notification from './notification';
 import Menu from './menu';
 import MenuGroup from './menu-item-group';
 import MenuItem from './menu-item';
+import Message from './message/index.js';
+import MessageBox from './message-box/index.js';
+import Modal from './modal';
+import Notification from './notification';
 import Option from './option';
 import OptionGroup from './option-group';
 import Pagination from './pagination';
@@ -53,17 +53,17 @@ import Rate from './rate';
 import Row from './row';
 import Scrollbar from './scrollbar';
 import Select from './select';
-import Slider from './slider';
 import Sider from './sider';
+import Slider from './slider';
 import Spin from './spin';
 import Step from './step';
 import Steps from './steps';
 import Switch from './switch';
 import Submenu from './submenu';
-import Tabs from './tabs';
 import Table from './table';
 import TableColumn from './table-column';
 import TabPane from './tab-pane';
+import Tabs from './tabs';
 import Tag from './tag';
 import TimePicker from './time-picker';
 import TimeSelect from './time-select';
@@ -102,8 +102,8 @@ const components = [
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
-	Footer,
 	DropdownMultiple,
+	Footer,
 	Form,
 	FormItem,
 	Header,
@@ -111,11 +111,13 @@ const components = [
 	Input,
 	InputNumber,
 	Layout,
-	Sider,
-	Modal,
 	Menu,
 	MenuItem,
 	MenuGroup,
+	Message,
+	MessageBox,
+	Modal,
+	Notification,
 	Option,
 	OptionGroup,
 	Pagination,
@@ -128,6 +130,7 @@ const components = [
 	Row,
 	Scrollbar,
 	Select,
+	Sider,
 	Slider,
 	Spin,
 	Step,
@@ -136,8 +139,8 @@ const components = [
 	Submenu,
 	Table,
 	TableColumn,
-	Tabs,
 	TabPane,
+	Tabs,
 	Tag,
 	Timeline,
 	TimelineItem,
@@ -195,23 +198,22 @@ export default {
 	Dropdown,
 	DropdownItem,
 	DropdownMemu,
-	Footer,
 	DropdownMultiple,
+	Footer,
 	Form,
-	Header,
 	FormItem,
+	Header,
 	Icon,
 	Input,
 	InputNumber,
 	Layout,
-	Sider,
+	Menu,
+	MenuItem,
+	MenuGroup,
 	Message,
 	MessageBox,
 	Modal,
 	Notification,
-	Menu,
-	MenuItem,
-	MenuGroup,
 	Option,
 	OptionGroup,
 	Pagination,
@@ -223,17 +225,18 @@ export default {
 	Rate,
 	Row,
 	Select,
+	Scrollbar,
+	Sider,
 	Slider,
+	Spin,
 	Step,
 	Steps,
 	Switch,
-	Scrollbar,
-	Spin,
 	Submenu,
 	Table,
 	TableColumn,
-	Tabs,
 	TabPane,
+	Tabs,
 	Tag,
 	Timeline,
 	TimelineItem,
