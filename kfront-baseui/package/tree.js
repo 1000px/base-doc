@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 419);
+/******/ 	return __webpack_require__(__webpack_require__.s = 418);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -183,14 +183,7 @@ module.exports = require("vue");
 
 /***/ }),
 
-/***/ 11:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/core-js/object/keys");
-
-/***/ }),
-
-/***/ 17:
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -201,11 +194,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.i18n = exports.use = exports.t = undefined;
 
-var _getPrototypeOf = __webpack_require__(29);
+var _getPrototypeOf = __webpack_require__(26);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _zhCN = __webpack_require__(30);
+var _zhCN = __webpack_require__(27);
 
 var _zhCN2 = _interopRequireDefault(_zhCN);
 
@@ -213,11 +206,11 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _deepmerge = __webpack_require__(31);
+var _deepmerge = __webpack_require__(28);
 
 var _deepmerge2 = _interopRequireDefault(_deepmerge);
 
-var _format = __webpack_require__(32);
+var _format = __webpack_require__(29);
 
 var _format2 = _interopRequireDefault(_format);
 
@@ -266,7 +259,7 @@ exports.default = { use: use, t: t, i18n: i18n };
 
 /***/ }),
 
-/***/ 196:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -276,19 +269,19 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _treeStore = __webpack_require__(421);
+var _treeStore = __webpack_require__(420);
 
 var _treeStore2 = _interopRequireDefault(_treeStore);
 
-var _util = __webpack_require__(70);
+var _util = __webpack_require__(68);
 
-var _treeNode = __webpack_require__(425);
+var _treeNode = __webpack_require__(424);
 
 var _treeNode2 = _interopRequireDefault(_treeNode);
 
-var _locale = __webpack_require__(17);
+var _locale = __webpack_require__(16);
 
-var _emitter = __webpack_require__(4);
+var _emitter = __webpack_require__(3);
 
 var _emitter2 = _interopRequireDefault(_emitter);
 
@@ -755,7 +748,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 197:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -765,19 +758,19 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _collapseTransition = __webpack_require__(51);
+var _collapseTransition = __webpack_require__(49);
 
 var _collapseTransition2 = _interopRequireDefault(_collapseTransition);
 
-var _checkbox = __webpack_require__(35);
+var _checkbox = __webpack_require__(32);
 
 var _checkbox2 = _interopRequireDefault(_checkbox);
 
-var _emitter = __webpack_require__(4);
+var _emitter = __webpack_require__(3);
 
 var _emitter2 = _interopRequireDefault(_emitter);
 
-var _util = __webpack_require__(70);
+var _util = __webpack_require__(68);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1064,7 +1057,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = exports.once = exports.off = exports.on = undefined;
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -1253,21 +1246,14 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
-/***/ 29:
+/***/ 26:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/object/get-prototype-of");
 
 /***/ }),
 
-/***/ 3:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/typeof");
-
-/***/ }),
-
-/***/ 30:
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1388,14 +1374,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 31:
+/***/ 28:
 /***/ (function(module, exports) {
 
 module.exports = require("deepmerge");
 
 /***/ }),
 
-/***/ 32:
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1405,7 +1391,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -1451,7 +1437,7 @@ exports.default = function (Vue) {
 	return template;
 };
 
-var _util = __webpack_require__(5);
+var _util = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1464,39 +1450,7 @@ var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 
 /***/ }),
 
-/***/ 35:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _checkbox = __webpack_require__(56);
-
-var _checkbox2 = _interopRequireDefault(_checkbox);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* istanbul ignore next */
-_checkbox2.default.install = function (Vue) {
-	Vue.component(_checkbox2.default.name, _checkbox2.default);
-};
-
-exports.default = _checkbox2.default;
-
-/***/ }),
-
-/***/ 39:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/classCallCheck");
-
-/***/ }),
-
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1542,14 +1496,53 @@ exports.default = {
 
 /***/ }),
 
-/***/ 40:
+/***/ 32:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _checkbox = __webpack_require__(54);
+
+var _checkbox2 = _interopRequireDefault(_checkbox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* istanbul ignore next */
+_checkbox2.default.install = function (Vue) {
+	Vue.component(_checkbox2.default.name, _checkbox2.default);
+};
+
+exports.default = _checkbox2.default;
+
+/***/ }),
+
+/***/ 36:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/core-js/object/keys");
+
+/***/ }),
+
+/***/ 37:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/helpers/classCallCheck");
+
+/***/ }),
+
+/***/ 38:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/createClass");
 
 /***/ }),
 
-/***/ 419:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1558,23 +1551,385 @@ module.exports = require("babel-runtime/helpers/createClass");
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.dimensionMap = exports.valueEquals = exports.generateId = exports.getValueByPath = undefined;
 
-var _tree = __webpack_require__(420);
+var _getIterator2 = __webpack_require__(7);
 
-var _tree2 = _interopRequireDefault(_tree);
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+exports.noop = noop;
+exports.hasOwn = hasOwn;
+exports.oneOf = oneOf;
+exports.toObject = toObject;
+exports.getPropByPath = getPropByPath;
+exports.findComponentDownward = findComponentDownward;
+exports.setMatchMedia = setMatchMedia;
+exports.rgbToHex = rgbToHex;
+exports.hexToRgb = hexToRgb;
+exports.hslToRgb = hslToRgb;
+exports.rgbToHsl = rgbToHsl;
+exports.colorNameToRgb = colorNameToRgb;
+exports.getScrollBarSize = getScrollBarSize;
+
+var _vue = __webpack_require__(1);
+
+var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* istanbul ignore next */
-_tree2.default.install = function (Vue) {
-	Vue.component(_tree2.default.name, _tree2.default);
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function noop() {};
+
+function hasOwn(obj, key) {
+	return hasOwnProperty.call(obj, key);
 };
 
-exports.default = _tree2.default;
+function extend(to, _from) {
+	for (var key in _from) {
+		to[key] = _from[key];
+	}
+	return to;
+};
+
+// 判断参数是否是其中之一
+function oneOf(value, validList) {
+	for (var i = 0; i < validList.length; i++) {
+		if (value === validList[i]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+function toObject(arr) {
+	var res = {};
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i]) {
+			extend(res, arr[i]);
+		}
+	}
+	return res;
+};
+
+var getValueByPath = exports.getValueByPath = function getValueByPath(object, prop) {
+	prop = prop || '';
+	var paths = prop.split('.');
+	var current = object;
+	var result = null;
+	for (var i = 0, j = paths.length; i < j; i++) {
+		var path = paths[i];
+		if (!current) break;
+
+		if (i === j - 1) {
+			result = current[path];
+			break;
+		}
+		current = current[path];
+	}
+	return result;
+};
+
+function getPropByPath(obj, path, strict) {
+	var tempObj = obj;
+	path = path.replace(/\[(\w+)\]/g, '.$1');
+	path = path.replace(/^\./, '');
+
+	var keyArr = path.split('.');
+	var i = 0;
+	for (var len = keyArr.length; i < len - 1; ++i) {
+		if (!tempObj && !strict) break;
+		var key = keyArr[i];
+		if (key in tempObj) {
+			tempObj = tempObj[key];
+		} else {
+			if (strict) {
+				throw new Error('please transfer a valid prop path to form item!');
+			}
+			break;
+		}
+	}
+	return {
+		o: tempObj,
+		k: keyArr[i],
+		v: tempObj ? tempObj[keyArr[i]] : null
+	};
+};
+
+var generateId = exports.generateId = function generateId() {
+	return Math.floor(Math.random() * 10000);
+};
+
+var valueEquals = exports.valueEquals = function valueEquals(a, b) {
+	// see: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
+	if (a === b) return true;
+	if (!(a instanceof Array)) return false;
+	if (!(b instanceof Array)) return false;
+	if (a.length !== b.length) return false;
+	for (var i = 0; i !== a.length; ++i) {
+		if (a[i] !== b[i]) return false;
+	}
+	return true;
+};
+
+// Find component downward
+function findComponentDownward(context, componentName) {
+	var childrens = context.$children;
+	var children = null;
+
+	if (childrens.length) {
+		var _iteratorNormalCompletion = true;
+		var _didIteratorError = false;
+		var _iteratorError = undefined;
+
+		try {
+			for (var _iterator = (0, _getIterator3.default)(childrens), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+				var child = _step.value;
+
+				var name = child.$options.name;
+				if (name === componentName) {
+					children = child;
+					break;
+				} else {
+					children = findComponentDownward(child, componentName);
+					if (children) break;
+				}
+			}
+		} catch (err) {
+			_didIteratorError = true;
+			_iteratorError = err;
+		} finally {
+			try {
+				if (!_iteratorNormalCompletion && _iterator.return) {
+					_iterator.return();
+				}
+			} finally {
+				if (_didIteratorError) {
+					throw _iteratorError;
+				}
+			}
+		}
+	}
+	return children;
+}
+
+var dimensionMap = exports.dimensionMap = {
+	xs: '480px',
+	sm: '768px',
+	md: '992px',
+	lg: '1200px',
+	xl: '1600px'
+};
+
+function setMatchMedia() {
+	if (typeof window !== 'undefined') {
+		var matchMediaPolyfill = function matchMediaPolyfill(mediaQuery) {
+			return {
+				media: mediaQuery,
+				matches: false,
+				on: function on() {},
+				off: function off() {}
+			};
+		};
+		window.matchMedia = window.matchMedia || matchMediaPolyfill;
+	}
+};
+
+function rgbToHex(color) {
+	// 十六进制颜色值的正则表达式
+	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+	// 如果是rgb颜色表示
+	if (/^(rgb|RGB)/.test(color)) {
+		var aColor = color.replace(/(?:\(|\)|rgb|RGB)*/g, '').split(',');
+		var strHex = '#';
+		for (var i = 0; i < aColor.length; i++) {
+			var hex = Number(aColor[i]).toString(16);
+			if (hex.length < 2) {
+				hex = '0' + hex;
+			}
+			strHex += hex;
+		}
+		if (strHex.length !== 7) {
+			strHex = color;
+		}
+		return strHex;
+	} else if (reg.test(color)) {
+		var aNum = color.replace(/#/, '').split('');
+		if (aNum.length === 6) {
+			return color;
+		} else if (aNum.length === 3) {
+			var numHex = '#';
+			for (var _i = 0; _i < aNum.length; _i += 1) {
+				numHex += aNum[_i] + aNum[_i];
+			}
+			return numHex;
+		}
+	}
+	return color;
+};
+
+function hexToRgb(color) {
+	var sColor = color.toLowerCase();
+	// 十六进制颜色值的正则表达式
+	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+	// 如果是16进制颜色
+	if (sColor && reg.test(sColor)) {
+		if (sColor.length === 4) {
+			var sColorNew = '#';
+			for (var i = 1; i < 4; i += 1) {
+				sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
+			}
+			sColor = sColorNew;
+		}
+		// 处理六位的颜色值
+		var sColorChange = [];
+		for (var _i2 = 1; _i2 < 7; _i2 += 2) {
+			sColorChange.push(parseInt('0x' + sColor.slice(_i2, _i2 + 2)));
+		}
+		return 'RGB(' + sColorChange.join(',') + ')';
+	}
+	return sColor;
+};
+
+/**
+ * HSL颜色值转换为RGB.
+ * 换算公式改编自 http://en.wikipedia.org/wiki/HSL_color_space.
+ * h, s, 和 l 设定在 [0, 1] 之间
+ * 返回的 r, g, 和 b 在 [0, 255]之间
+ *
+ * @param   Number  h       色相
+ * @param   Number  s       饱和度
+ * @param   Number  l       亮度
+ * @return  Array           RGB色值数值
+ */
+function hslToRgb(h, s, l) {
+	var r = void 0,
+	    g = void 0,
+	    b = void 0;
+
+	if (s == 0) {
+		r = g = b = l; // achromatic
+	} else {
+		var hue2rgb = function hue2rgb(p, q, t) {
+			if (t < 0) t += 1;
+			if (t > 1) t -= 1;
+			if (t < 1 / 6) return p + (q - p) * 6 * t;
+			if (t < 1 / 2) return q;
+			if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+			return p;
+		};
+
+		var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+		var p = 2 * l - q;
+		r = hue2rgb(p, q, h + 1 / 3);
+		g = hue2rgb(p, q, h);
+		b = hue2rgb(p, q, h - 1 / 3);
+	}
+
+	return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+/**
+ * RGB 颜色值转换为 HSL.
+ * 转换公式参考自 http://en.wikipedia.org/wiki/HSL_color_space.
+ * r, g, 和 b 需要在 [0, 255] 范围内
+ * 返回的 h, s, 和 l 在 [0, 1] 之间
+ *
+ * @param   Number  r       红色色值
+ * @param   Number  g       绿色色值
+ * @param   Number  b       蓝色色值
+ * @return  Array           HSL各值数组
+ */
+function rgbToHsl(r, g, b) {
+	r /= 255, g /= 255, b /= 255;
+	var max = Math.max(r, g, b),
+	    min = Math.min(r, g, b);
+	var h = void 0,
+	    s = void 0,
+	    l = (max + min) / 2;
+
+	if (max == min) {
+		h = s = 0; // achromatic
+	} else {
+		var d = max - min;
+		s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+		switch (max) {
+			case r:
+				h = (g - b) / d + (g < b ? 6 : 0);
+				break;
+			case g:
+				h = (b - r) / d + 2;
+				break;
+			case b:
+				h = (r - g) / d + 4;
+				break;
+		}
+		h /= 6;
+	}
+
+	return [h, s, l];
+}
+
+/**
+ * 颜色名称转rgb
+ * @param color 颜色名称
+ * @return {*}
+ */
+function colorNameToRgb(color) {
+	var div = document.createElement('div');
+	div.style.backgroundColor = color;
+	document.body.appendChild(div);
+	var c = window.getComputedStyle(div).backgroundColor;
+	document.body.removeChild(div);
+	return c;
+};
+
+// For Modal scrollBar hidden
+
+var isServer = _vue2.default.prototype.$isServer;
+var cached = void 0;
+
+function getScrollBarSize(fresh) {
+	if (isServer) return 0;
+	if (fresh || cached === undefined) {
+		var inner = document.createElement('div');
+		inner.style.width = '100%';
+		inner.style.height = '200px';
+
+		var outer = document.createElement('div');
+		var outerStyle = outer.style;
+
+		outerStyle.position = 'absolute';
+		outerStyle.top = 0;
+		outerStyle.left = 0;
+		outerStyle.pointerEvents = 'none';
+		outerStyle.visibility = 'hidden';
+		outerStyle.width = '200px';
+		outerStyle.height = '150px';
+		outerStyle.overflow = 'hidden';
+
+		outer.appendChild(inner);
+
+		document.body.appendChild(outer);
+
+		var widthContained = inner.offsetWidth;
+		outer.style.overflow = 'scroll';
+		var widthScroll = inner.offsetWidth;
+
+		if (widthContained === widthScroll) {
+			widthScroll = outer.clientWidth;
+		}
+
+		document.body.removeChild(outer);
+
+		cached = widthContained - widthScroll;
+	}
+	return cached;
+}
 
 /***/ }),
 
-/***/ 42:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1584,7 +1939,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _emitter = __webpack_require__(4);
+var _emitter = __webpack_require__(3);
 
 var _emitter2 = _interopRequireDefault(_emitter);
 
@@ -1853,15 +2208,40 @@ exports.default = {
 
 /***/ }),
 
-/***/ 420:
+/***/ 418:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _tree = __webpack_require__(419);
+
+var _tree2 = _interopRequireDefault(_tree);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* istanbul ignore next */
+_tree2.default.install = function (Vue) {
+	Vue.component(_tree2.default.name, _tree2.default);
+};
+
+exports.default = _tree2.default;
+
+/***/ }),
+
+/***/ 419:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_0590ff33_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_vue__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c267bf1e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_vue__ = __webpack_require__(426);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -1878,7 +2258,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_0590ff33_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c267bf1e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1890,7 +2270,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 421:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1900,31 +2280,31 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _keys = __webpack_require__(11);
+var _keys = __webpack_require__(36);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _create = __webpack_require__(422);
+var _create = __webpack_require__(421);
 
 var _create2 = _interopRequireDefault(_create);
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _classCallCheck2 = __webpack_require__(39);
+var _classCallCheck2 = __webpack_require__(37);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(40);
+var _createClass2 = __webpack_require__(38);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _node = __webpack_require__(423);
+var _node = __webpack_require__(422);
 
 var _node2 = _interopRequireDefault(_node);
 
-var _util = __webpack_require__(70);
+var _util = __webpack_require__(68);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2328,14 +2708,14 @@ exports.default = TreeStore;
 
 /***/ }),
 
-/***/ 422:
+/***/ 421:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/object/create");
 
 /***/ }),
 
-/***/ 423:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2346,15 +2726,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getChildState = undefined;
 
-var _keys = __webpack_require__(11);
+var _keys = __webpack_require__(36);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _classCallCheck2 = __webpack_require__(39);
+var _classCallCheck2 = __webpack_require__(37);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(40);
+var _createClass2 = __webpack_require__(38);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -2362,7 +2742,7 @@ var _merge = __webpack_require__(6);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _util = __webpack_require__(70);
+var _util = __webpack_require__(68);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2907,22 +3287,22 @@ exports.default = Node;
 
 /***/ }),
 
-/***/ 424:
+/***/ 423:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/object/define-property");
 
 /***/ }),
 
-/***/ 425:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_4ccd2c4b_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_node_vue__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_78c413c0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_node_vue__ = __webpack_require__(425);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -2939,7 +3319,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tree_node_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_4ccd2c4b_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_node_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_78c413c0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tree_node_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2951,7 +3331,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 426:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2970,7 +3350,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
-/***/ 427:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2986,394 +3366,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.dimensionMap = exports.valueEquals = exports.generateId = exports.getValueByPath = undefined;
-
-var _getIterator2 = __webpack_require__(7);
-
-var _getIterator3 = _interopRequireDefault(_getIterator2);
-
-exports.noop = noop;
-exports.hasOwn = hasOwn;
-exports.oneOf = oneOf;
-exports.toObject = toObject;
-exports.getPropByPath = getPropByPath;
-exports.findComponentDownward = findComponentDownward;
-exports.setMatchMedia = setMatchMedia;
-exports.rgbToHex = rgbToHex;
-exports.hexToRgb = hexToRgb;
-exports.hslToRgb = hslToRgb;
-exports.rgbToHsl = rgbToHsl;
-exports.colorNameToRgb = colorNameToRgb;
-exports.getScrollBarSize = getScrollBarSize;
-
-var _vue = __webpack_require__(1);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-function noop() {};
-
-function hasOwn(obj, key) {
-	return hasOwnProperty.call(obj, key);
-};
-
-function extend(to, _from) {
-	for (var key in _from) {
-		to[key] = _from[key];
-	}
-	return to;
-};
-
-// 判断参数是否是其中之一
-function oneOf(value, validList) {
-	for (var i = 0; i < validList.length; i++) {
-		if (value === validList[i]) {
-			return true;
-		}
-	}
-	return false;
-};
-
-function toObject(arr) {
-	var res = {};
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i]) {
-			extend(res, arr[i]);
-		}
-	}
-	return res;
-};
-
-var getValueByPath = exports.getValueByPath = function getValueByPath(object, prop) {
-	prop = prop || '';
-	var paths = prop.split('.');
-	var current = object;
-	var result = null;
-	for (var i = 0, j = paths.length; i < j; i++) {
-		var path = paths[i];
-		if (!current) break;
-
-		if (i === j - 1) {
-			result = current[path];
-			break;
-		}
-		current = current[path];
-	}
-	return result;
-};
-
-function getPropByPath(obj, path, strict) {
-	var tempObj = obj;
-	path = path.replace(/\[(\w+)\]/g, '.$1');
-	path = path.replace(/^\./, '');
-
-	var keyArr = path.split('.');
-	var i = 0;
-	for (var len = keyArr.length; i < len - 1; ++i) {
-		if (!tempObj && !strict) break;
-		var key = keyArr[i];
-		if (key in tempObj) {
-			tempObj = tempObj[key];
-		} else {
-			if (strict) {
-				throw new Error('please transfer a valid prop path to form item!');
-			}
-			break;
-		}
-	}
-	return {
-		o: tempObj,
-		k: keyArr[i],
-		v: tempObj ? tempObj[keyArr[i]] : null
-	};
-};
-
-var generateId = exports.generateId = function generateId() {
-	return Math.floor(Math.random() * 10000);
-};
-
-var valueEquals = exports.valueEquals = function valueEquals(a, b) {
-	// see: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
-	if (a === b) return true;
-	if (!(a instanceof Array)) return false;
-	if (!(b instanceof Array)) return false;
-	if (a.length !== b.length) return false;
-	for (var i = 0; i !== a.length; ++i) {
-		if (a[i] !== b[i]) return false;
-	}
-	return true;
-};
-
-// Find component downward
-function findComponentDownward(context, componentName) {
-	var childrens = context.$children;
-	var children = null;
-
-	if (childrens.length) {
-		var _iteratorNormalCompletion = true;
-		var _didIteratorError = false;
-		var _iteratorError = undefined;
-
-		try {
-			for (var _iterator = (0, _getIterator3.default)(childrens), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-				var child = _step.value;
-
-				var name = child.$options.name;
-				if (name === componentName) {
-					children = child;
-					break;
-				} else {
-					children = findComponentDownward(child, componentName);
-					if (children) break;
-				}
-			}
-		} catch (err) {
-			_didIteratorError = true;
-			_iteratorError = err;
-		} finally {
-			try {
-				if (!_iteratorNormalCompletion && _iterator.return) {
-					_iterator.return();
-				}
-			} finally {
-				if (_didIteratorError) {
-					throw _iteratorError;
-				}
-			}
-		}
-	}
-	return children;
-}
-
-var dimensionMap = exports.dimensionMap = {
-	xs: '480px',
-	sm: '768px',
-	md: '992px',
-	lg: '1200px',
-	xl: '1600px'
-};
-
-function setMatchMedia() {
-	if (typeof window !== 'undefined') {
-		var matchMediaPolyfill = function matchMediaPolyfill(mediaQuery) {
-			return {
-				media: mediaQuery,
-				matches: false,
-				on: function on() {},
-				off: function off() {}
-			};
-		};
-		window.matchMedia = window.matchMedia || matchMediaPolyfill;
-	}
-};
-
-function rgbToHex(color) {
-	// 十六进制颜色值的正则表达式
-	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-	// 如果是rgb颜色表示
-	if (/^(rgb|RGB)/.test(color)) {
-		var aColor = color.replace(/(?:\(|\)|rgb|RGB)*/g, '').split(',');
-		var strHex = '#';
-		for (var i = 0; i < aColor.length; i++) {
-			var hex = Number(aColor[i]).toString(16);
-			if (hex.length < 2) {
-				hex = '0' + hex;
-			}
-			strHex += hex;
-		}
-		if (strHex.length !== 7) {
-			strHex = color;
-		}
-		return strHex;
-	} else if (reg.test(color)) {
-		var aNum = color.replace(/#/, '').split('');
-		if (aNum.length === 6) {
-			return color;
-		} else if (aNum.length === 3) {
-			var numHex = '#';
-			for (var _i = 0; _i < aNum.length; _i += 1) {
-				numHex += aNum[_i] + aNum[_i];
-			}
-			return numHex;
-		}
-	}
-	return color;
-};
-
-function hexToRgb(color) {
-	var sColor = color.toLowerCase();
-	// 十六进制颜色值的正则表达式
-	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-	// 如果是16进制颜色
-	if (sColor && reg.test(sColor)) {
-		if (sColor.length === 4) {
-			var sColorNew = '#';
-			for (var i = 1; i < 4; i += 1) {
-				sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
-			}
-			sColor = sColorNew;
-		}
-		// 处理六位的颜色值
-		var sColorChange = [];
-		for (var _i2 = 1; _i2 < 7; _i2 += 2) {
-			sColorChange.push(parseInt('0x' + sColor.slice(_i2, _i2 + 2)));
-		}
-		return 'RGB(' + sColorChange.join(',') + ')';
-	}
-	return sColor;
-};
-
-/**
- * HSL颜色值转换为RGB.
- * 换算公式改编自 http://en.wikipedia.org/wiki/HSL_color_space.
- * h, s, 和 l 设定在 [0, 1] 之间
- * 返回的 r, g, 和 b 在 [0, 255]之间
- *
- * @param   Number  h       色相
- * @param   Number  s       饱和度
- * @param   Number  l       亮度
- * @return  Array           RGB色值数值
- */
-function hslToRgb(h, s, l) {
-	var r = void 0,
-	    g = void 0,
-	    b = void 0;
-
-	if (s == 0) {
-		r = g = b = l; // achromatic
-	} else {
-		var hue2rgb = function hue2rgb(p, q, t) {
-			if (t < 0) t += 1;
-			if (t > 1) t -= 1;
-			if (t < 1 / 6) return p + (q - p) * 6 * t;
-			if (t < 1 / 2) return q;
-			if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-			return p;
-		};
-
-		var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-		var p = 2 * l - q;
-		r = hue2rgb(p, q, h + 1 / 3);
-		g = hue2rgb(p, q, h);
-		b = hue2rgb(p, q, h - 1 / 3);
-	}
-
-	return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
-}
-
-/**
- * RGB 颜色值转换为 HSL.
- * 转换公式参考自 http://en.wikipedia.org/wiki/HSL_color_space.
- * r, g, 和 b 需要在 [0, 255] 范围内
- * 返回的 h, s, 和 l 在 [0, 1] 之间
- *
- * @param   Number  r       红色色值
- * @param   Number  g       绿色色值
- * @param   Number  b       蓝色色值
- * @return  Array           HSL各值数组
- */
-function rgbToHsl(r, g, b) {
-	r /= 255, g /= 255, b /= 255;
-	var max = Math.max(r, g, b),
-	    min = Math.min(r, g, b);
-	var h = void 0,
-	    s = void 0,
-	    l = (max + min) / 2;
-
-	if (max == min) {
-		h = s = 0; // achromatic
-	} else {
-		var d = max - min;
-		s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-		switch (max) {
-			case r:
-				h = (g - b) / d + (g < b ? 6 : 0);
-				break;
-			case g:
-				h = (b - r) / d + 2;
-				break;
-			case b:
-				h = (r - g) / d + 4;
-				break;
-		}
-		h /= 6;
-	}
-
-	return [h, s, l];
-}
-
-/**
- * 颜色名称转rgb
- * @param color 颜色名称
- * @return {*}
- */
-function colorNameToRgb(color) {
-	var div = document.createElement('div');
-	div.style.backgroundColor = color;
-	document.body.appendChild(div);
-	var c = window.getComputedStyle(div).backgroundColor;
-	document.body.removeChild(div);
-	return c;
-};
-
-// For Modal scrollBar hidden
-
-var isServer = _vue2.default.prototype.$isServer;
-var cached = void 0;
-
-function getScrollBarSize(fresh) {
-	if (isServer) return 0;
-	if (fresh || cached === undefined) {
-		var inner = document.createElement('div');
-		inner.style.width = '100%';
-		inner.style.height = '200px';
-
-		var outer = document.createElement('div');
-		var outerStyle = outer.style;
-
-		outerStyle.position = 'absolute';
-		outerStyle.top = 0;
-		outerStyle.left = 0;
-		outerStyle.pointerEvents = 'none';
-		outerStyle.visibility = 'hidden';
-		outerStyle.width = '200px';
-		outerStyle.height = '150px';
-		outerStyle.overflow = 'hidden';
-
-		outer.appendChild(inner);
-
-		document.body.appendChild(outer);
-
-		var widthContained = inner.offsetWidth;
-		outer.style.overflow = 'scroll';
-		var widthScroll = inner.offsetWidth;
-
-		if (widthContained === widthScroll) {
-			widthScroll = outer.clientWidth;
-		}
-
-		document.body.removeChild(outer);
-
-		cached = widthContained - widthScroll;
-	}
-	return cached;
-}
-
-/***/ }),
-
-/***/ 51:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3383,11 +3376,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _classCallCheck2 = __webpack_require__(39);
+var _classCallCheck2 = __webpack_require__(37);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(40);
+var _createClass2 = __webpack_require__(38);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -3488,15 +3481,22 @@ exports.default = {
 
 /***/ }),
 
-/***/ 56:
+/***/ 5:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/helpers/typeof");
+
+/***/ }),
+
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_43fa10a0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_2d4277a4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__ = __webpack_require__(55);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -3513,7 +3513,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_43fa10a0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_2d4277a4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -3525,7 +3525,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 57:
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3589,14 +3589,7 @@ exports.default = function (target) {
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/core-js/get-iterator");
-
-/***/ }),
-
-/***/ 70:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3607,7 +3600,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.findNearestComponent = exports.getNodeKey = exports.markNodeData = exports.NODE_KEY = undefined;
 
-var _defineProperty = __webpack_require__(424);
+var _defineProperty = __webpack_require__(423);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -3640,6 +3633,13 @@ var findNearestComponent = exports.findNearestComponent = function findNearestCo
 	}
 	return null;
 };
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/core-js/get-iterator");
 
 /***/ })
 

@@ -1,6 +1,6 @@
 @import "common/var";
 
-$--fonts-path: '/styles/fonts';
+$--fonts-path: '/static/fonts';
 @font-face {
   font-family: 'element-icons';
   src: url('#{$--fonts-path}/element-icons.woff') format('woff'), /* chrome, firefox */

@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 397);
+/******/ 	return __webpack_require__(__webpack_require__.s = 396);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -183,7 +183,53 @@ module.exports = require("vue");
 
 /***/ }),
 
-/***/ 35:
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function _broadcast(componentName, eventName, params) {
+	this.$children.forEach(function (child) {
+		var name = child.$options.componentName;
+
+		if (name === componentName) {
+			child.$emit.apply(child, [eventName].concat(params));
+		} else {
+			_broadcast.apply(child, [componentName, eventName].concat([params]));
+		}
+	});
+}
+
+exports.default = {
+	methods: {
+		dispatch: function dispatch(componentName, eventName, params) {
+			var parent = this.$parent || this.$root;
+			var name = parent.$options.componentName;
+
+			while (parent && (!name || name !== componentName)) {
+				parent = parent.$parent;
+
+				if (parent) {
+					name = parent.$options.componentName;
+				}
+			}
+			if (parent) {
+				parent.$emit.apply(parent, [eventName].concat(params));
+			}
+		},
+		broadcast: function broadcast(componentName, eventName, params) {
+			_broadcast.call(this, componentName, eventName, params);
+		}
+	}
+};
+
+/***/ }),
+
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -193,7 +239,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _checkbox = __webpack_require__(56);
+var _checkbox = __webpack_require__(54);
 
 var _checkbox2 = _interopRequireDefault(_checkbox);
 
@@ -208,7 +254,7 @@ exports.default = _checkbox2.default;
 
 /***/ }),
 
-/***/ 397:
+/***/ 396:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -218,7 +264,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _tableColumn = __webpack_require__(398);
+var _tableColumn = __webpack_require__(397);
 
 var _tableColumn2 = _interopRequireDefault(_tableColumn);
 
@@ -233,7 +279,7 @@ exports.default = _tableColumn2.default;
 
 /***/ }),
 
-/***/ 398:
+/***/ 397:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -243,11 +289,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _checkbox = __webpack_require__(35);
+var _checkbox = __webpack_require__(32);
 
 var _checkbox2 = _interopRequireDefault(_checkbox);
 
-var _tag = __webpack_require__(48);
+var _tag = __webpack_require__(46);
 
 var _tag2 = _interopRequireDefault(_tag);
 
@@ -255,7 +301,7 @@ var _merge = __webpack_require__(6);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _util = __webpack_require__(5);
+var _util = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -728,448 +774,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-function _broadcast(componentName, eventName, params) {
-	this.$children.forEach(function (child) {
-		var name = child.$options.componentName;
-
-		if (name === componentName) {
-			child.$emit.apply(child, [eventName].concat(params));
-		} else {
-			_broadcast.apply(child, [componentName, eventName].concat([params]));
-		}
-	});
-}
-
-exports.default = {
-	methods: {
-		dispatch: function dispatch(componentName, eventName, params) {
-			var parent = this.$parent || this.$root;
-			var name = parent.$options.componentName;
-
-			while (parent && (!name || name !== componentName)) {
-				parent = parent.$parent;
-
-				if (parent) {
-					name = parent.$options.componentName;
-				}
-			}
-			if (parent) {
-				parent.$emit.apply(parent, [eventName].concat(params));
-			}
-		},
-		broadcast: function broadcast(componentName, eventName, params) {
-			_broadcast.call(this, componentName, eventName, params);
-		}
-	}
-};
-
-/***/ }),
-
-/***/ 42:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _emitter = __webpack_require__(4);
-
-var _emitter2 = _interopRequireDefault(_emitter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-	name: 'KcCheckbox',
-
-	mixins: [_emitter2.default],
-
-	inject: {
-		elForm: {
-			default: ''
-		},
-		elFormItem: {
-			default: ''
-		}
-	},
-
-	componentName: 'KcCheckbox',
-
-	data: function data() {
-		return {
-			selfModel: false,
-			focus: false,
-			isLimitExceeded: false
-		};
-	},
-
-
-	computed: {
-		model: {
-			get: function get() {
-				return this.isGroup ? this.store : this.value !== undefined ? this.value : this.selfModel;
-			},
-			set: function set(val) {
-				if (this.isGroup) {
-					this.isLimitExceeded = false;
-					this._checkboxGroup.min !== undefined && val.length < this._checkboxGroup.min && (this.isLimitExceeded = true);
-
-					this._checkboxGroup.max !== undefined && val.length > this._checkboxGroup.max && (this.isLimitExceeded = true);
-
-					this.isLimitExceeded === false && this.dispatch('KcCheckboxGroup', 'input', [val]);
-				} else {
-					this.$emit('input', val);
-					this.selfModel = val;
-				}
-			}
-		},
-
-		isChecked: function isChecked() {
-			if ({}.toString.call(this.model) === '[object Boolean]') {
-				return this.model;
-			} else if (Array.isArray(this.model)) {
-				return this.model.indexOf(this.label) > -1;
-			} else if (this.model !== null && this.model !== undefined) {
-				return this.model === this.trueLabel;
-			}
-		},
-		isGroup: function isGroup() {
-			var parent = this.$parent;
-			while (parent) {
-				if (parent.$options.componentName !== 'KcCheckboxGroup') {
-					parent = parent.$parent;
-				} else {
-					this._checkboxGroup = parent;
-					return true;
-				}
-			}
-			return false;
-		},
-		store: function store() {
-			return this._checkboxGroup ? this._checkboxGroup.value : this.value;
-		},
-		isDisabled: function isDisabled() {
-			return this.isGroup ? this._checkboxGroup.disabled || this.disabled || (this.elForm || {}).disabled : this.disabled || (this.elForm || {}).disabled;
-		},
-		_elFormItemSize: function _elFormItemSize() {
-			return (this.elFormItem || {}).elFormItemSize;
-		},
-		checkboxSize: function checkboxSize() {
-			var temCheckboxSize = this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
-			return this.isGroup ? this._checkboxGroup.checkboxGroupSize || temCheckboxSize : temCheckboxSize;
-		}
-	},
-
-	props: {
-		value: {},
-		label: {},
-		indeterminate: Boolean,
-		disabled: Boolean,
-		checked: Boolean,
-		name: String,
-		trueLabel: [String, Number],
-		falseLabel: [String, Number],
-		id: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
-		controls: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
-		border: Boolean,
-		size: String,
-		hasImg: Boolean,
-		vModel: Boolean,
-		src: String,
-		title: String,
-		description: String,
-		inline: Boolean
-	},
-
-	methods: {
-		addToStore: function addToStore() {
-			if (Array.isArray(this.model) && this.model.indexOf(this.label) === -1) {
-				this.model.push(this.label);
-			} else {
-				this.model = this.trueLabel || true;
-			}
-		},
-		handleChange: function handleChange(ev) {
-			var _this = this;
-
-			if (this.isLimitExceeded) return;
-			var value = void 0;
-			if (ev.target.checked) {
-				value = this.trueLabel === undefined ? true : this.trueLabel;
-			} else {
-				value = this.falseLabel === undefined ? false : this.falseLabel;
-			}
-			this.$emit('change', value, ev);
-			this.$nextTick(function () {
-				if (_this.isGroup) {
-					_this.dispatch('KcCheckboxGroup', 'change', [_this._checkboxGroup.value]);
-				}
-			});
-		}
-	},
-
-	created: function created() {
-		this.checked && this.addToStore();
-	},
-	mounted: function mounted() {
-		// 为indeterminate元素 添加aria-controls 属性
-		if (this.indeterminate) {
-			this.$el.setAttribute('aria-controls', this.controls);
-		}
-	}
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 43:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _util = __webpack_require__(5);
-
-exports.default = {
-	name: 'KcTag',
-	props: {
-		text: String,
-		closable: Boolean,
-		type: String,
-		hit: Boolean,
-		disableTransitions: Boolean,
-		color: String,
-		size: String,
-		selected: {
-			type: Boolean,
-			default: false
-		}
-	},
-	data: function data() {
-		return {
-			selectedStatus: this.selected
-		};
-	},
-
-	methods: {
-		handleClose: function handleClose(event) {
-			this.$emit('close', event);
-		},
-		changeSelectState: function changeSelectState() {
-			this.selectedStatus = !this.selectedStatus;
-			this.$emit('click', this.selectedStatus);
-		}
-	},
-	computed: {
-		tagSize: function tagSize() {
-			return this.size || (this.$ELEMENT || {}).size;
-		},
-		customColorStyle: function customColorStyle() {
-			var mainColor = void 0;
-			if (this.color) {
-				if (this.color.indexOf('#') > -1) {
-					mainColor = (0, _util.hexToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
-				} else {
-					mainColor = (0, _util.colorNameToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
-				}
-			} else {
-				mainColor = this.color;
-			}
-			if (this.selectedStatus) {
-				return {
-					color: this.color
-				};
-			} else {
-				return {
-					color: this.color,
-					backgroundColor: mainColor,
-					borderColor: mainColor ? mainColor.replace('.1)', '.2)') : ''
-				};
-			}
-		}
-	}
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 48:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _tag = __webpack_require__(61);
-
-var _tag2 = _interopRequireDefault(_tag);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* istanbul ignore next */
-_tag2.default.install = function (Vue) {
-	Vue.component(_tag2.default.name, _tag2.default);
-};
-
-exports.default = _tag2.default;
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
 exports.dimensionMap = exports.valueEquals = exports.generateId = exports.getValueByPath = undefined;
 
 var _getIterator2 = __webpack_require__(7);
@@ -1548,15 +1152,411 @@ function getScrollBarSize(fresh) {
 
 /***/ }),
 
-/***/ 56:
+/***/ 40:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _emitter = __webpack_require__(3);
+
+var _emitter2 = _interopRequireDefault(_emitter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+	name: 'KcCheckbox',
+
+	mixins: [_emitter2.default],
+
+	inject: {
+		elForm: {
+			default: ''
+		},
+		elFormItem: {
+			default: ''
+		}
+	},
+
+	componentName: 'KcCheckbox',
+
+	data: function data() {
+		return {
+			selfModel: false,
+			focus: false,
+			isLimitExceeded: false
+		};
+	},
+
+
+	computed: {
+		model: {
+			get: function get() {
+				return this.isGroup ? this.store : this.value !== undefined ? this.value : this.selfModel;
+			},
+			set: function set(val) {
+				if (this.isGroup) {
+					this.isLimitExceeded = false;
+					this._checkboxGroup.min !== undefined && val.length < this._checkboxGroup.min && (this.isLimitExceeded = true);
+
+					this._checkboxGroup.max !== undefined && val.length > this._checkboxGroup.max && (this.isLimitExceeded = true);
+
+					this.isLimitExceeded === false && this.dispatch('KcCheckboxGroup', 'input', [val]);
+				} else {
+					this.$emit('input', val);
+					this.selfModel = val;
+				}
+			}
+		},
+
+		isChecked: function isChecked() {
+			if ({}.toString.call(this.model) === '[object Boolean]') {
+				return this.model;
+			} else if (Array.isArray(this.model)) {
+				return this.model.indexOf(this.label) > -1;
+			} else if (this.model !== null && this.model !== undefined) {
+				return this.model === this.trueLabel;
+			}
+		},
+		isGroup: function isGroup() {
+			var parent = this.$parent;
+			while (parent) {
+				if (parent.$options.componentName !== 'KcCheckboxGroup') {
+					parent = parent.$parent;
+				} else {
+					this._checkboxGroup = parent;
+					return true;
+				}
+			}
+			return false;
+		},
+		store: function store() {
+			return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+		},
+		isDisabled: function isDisabled() {
+			return this.isGroup ? this._checkboxGroup.disabled || this.disabled || (this.elForm || {}).disabled : this.disabled || (this.elForm || {}).disabled;
+		},
+		_elFormItemSize: function _elFormItemSize() {
+			return (this.elFormItem || {}).elFormItemSize;
+		},
+		checkboxSize: function checkboxSize() {
+			var temCheckboxSize = this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+			return this.isGroup ? this._checkboxGroup.checkboxGroupSize || temCheckboxSize : temCheckboxSize;
+		}
+	},
+
+	props: {
+		value: {},
+		label: {},
+		indeterminate: Boolean,
+		disabled: Boolean,
+		checked: Boolean,
+		name: String,
+		trueLabel: [String, Number],
+		falseLabel: [String, Number],
+		id: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
+		controls: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系 */
+		border: Boolean,
+		size: String,
+		hasImg: Boolean,
+		vModel: Boolean,
+		src: String,
+		title: String,
+		description: String,
+		inline: Boolean
+	},
+
+	methods: {
+		addToStore: function addToStore() {
+			if (Array.isArray(this.model) && this.model.indexOf(this.label) === -1) {
+				this.model.push(this.label);
+			} else {
+				this.model = this.trueLabel || true;
+			}
+		},
+		handleChange: function handleChange(ev) {
+			var _this = this;
+
+			if (this.isLimitExceeded) return;
+			var value = void 0;
+			if (ev.target.checked) {
+				value = this.trueLabel === undefined ? true : this.trueLabel;
+			} else {
+				value = this.falseLabel === undefined ? false : this.falseLabel;
+			}
+			this.$emit('change', value, ev);
+			this.$nextTick(function () {
+				if (_this.isGroup) {
+					_this.dispatch('KcCheckboxGroup', 'change', [_this._checkboxGroup.value]);
+				}
+			});
+		}
+	},
+
+	created: function created() {
+		this.checked && this.addToStore();
+	},
+	mounted: function mounted() {
+		// 为indeterminate元素 添加aria-controls 属性
+		if (this.indeterminate) {
+			this.$el.setAttribute('aria-controls', this.controls);
+		}
+	}
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 41:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _util = __webpack_require__(4);
+
+exports.default = {
+	name: 'KcTag',
+	props: {
+		text: String,
+		closable: Boolean,
+		type: String,
+		hit: Boolean,
+		disableTransitions: Boolean,
+		color: String,
+		size: String,
+		selected: {
+			type: Boolean,
+			default: false
+		}
+	},
+	data: function data() {
+		return {
+			selectedStatus: this.selected
+		};
+	},
+
+	methods: {
+		handleClose: function handleClose(event) {
+			this.$emit('close', event);
+		},
+		changeSelectState: function changeSelectState() {
+			this.selectedStatus = !this.selectedStatus;
+			this.$emit('click', this.selectedStatus);
+		}
+	},
+	computed: {
+		tagSize: function tagSize() {
+			return this.size || (this.$ELEMENT || {}).size;
+		},
+		customColorStyle: function customColorStyle() {
+			var mainColor = void 0;
+			if (this.color) {
+				if (this.color.indexOf('#') > -1) {
+					mainColor = (0, _util.hexToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
+				} else {
+					mainColor = (0, _util.colorNameToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
+				}
+			} else {
+				mainColor = this.color;
+			}
+			if (this.selectedStatus) {
+				return {
+					color: this.color
+				};
+			} else {
+				return {
+					color: this.color,
+					backgroundColor: mainColor,
+					borderColor: mainColor ? mainColor.replace('.1)', '.2)') : ''
+				};
+			}
+		}
+	}
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 46:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _tag = __webpack_require__(59);
+
+var _tag2 = _interopRequireDefault(_tag);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* istanbul ignore next */
+_tag2.default.install = function (Vue) {
+	Vue.component(_tag2.default.name, _tag2.default);
+};
+
+exports.default = _tag2.default;
+
+/***/ }),
+
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_43fa10a0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_2d4277a4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__ = __webpack_require__(55);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -1573,7 +1573,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_checkbox_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_43fa10a0_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_2d4277a4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_checkbox_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1585,7 +1585,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 57:
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1619,6 +1619,43 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
+/***/ 59:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c2c9c010_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__ = __webpack_require__(60);
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c2c9c010_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
 /***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1649,44 +1686,7 @@ exports.default = function (target) {
 
 /***/ }),
 
-/***/ 61:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__);
-/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_695ccae7_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__ = __webpack_require__(62);
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_695ccae7_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ 62:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

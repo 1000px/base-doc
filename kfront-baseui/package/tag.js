@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -183,124 +183,7 @@ module.exports = require("vue");
 
 /***/ }),
 
-/***/ 43:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _util = __webpack_require__(5);
-
-exports.default = {
-	name: 'KcTag',
-	props: {
-		text: String,
-		closable: Boolean,
-		type: String,
-		hit: Boolean,
-		disableTransitions: Boolean,
-		color: String,
-		size: String,
-		selected: {
-			type: Boolean,
-			default: false
-		}
-	},
-	data: function data() {
-		return {
-			selectedStatus: this.selected
-		};
-	},
-
-	methods: {
-		handleClose: function handleClose(event) {
-			this.$emit('close', event);
-		},
-		changeSelectState: function changeSelectState() {
-			this.selectedStatus = !this.selectedStatus;
-			this.$emit('click', this.selectedStatus);
-		}
-	},
-	computed: {
-		tagSize: function tagSize() {
-			return this.size || (this.$ELEMENT || {}).size;
-		},
-		customColorStyle: function customColorStyle() {
-			var mainColor = void 0;
-			if (this.color) {
-				if (this.color.indexOf('#') > -1) {
-					mainColor = (0, _util.hexToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
-				} else {
-					mainColor = (0, _util.colorNameToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
-				}
-			} else {
-				mainColor = this.color;
-			}
-			if (this.selectedStatus) {
-				return {
-					color: this.color
-				};
-			} else {
-				return {
-					color: this.color,
-					backgroundColor: mainColor,
-					borderColor: mainColor ? mainColor.replace('.1)', '.2)') : ''
-				};
-			}
-		}
-	}
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 48:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _tag = __webpack_require__(61);
-
-var _tag2 = _interopRequireDefault(_tag);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* istanbul ignore next */
-_tag2.default.install = function (Vue) {
-	Vue.component(_tag2.default.name, _tag2.default);
-};
-
-exports.default = _tag2.default;
-
-/***/ }),
-
-/***/ 5:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -687,15 +570,132 @@ function getScrollBarSize(fresh) {
 
 /***/ }),
 
-/***/ 61:
+/***/ 41:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _util = __webpack_require__(4);
+
+exports.default = {
+	name: 'KcTag',
+	props: {
+		text: String,
+		closable: Boolean,
+		type: String,
+		hit: Boolean,
+		disableTransitions: Boolean,
+		color: String,
+		size: String,
+		selected: {
+			type: Boolean,
+			default: false
+		}
+	},
+	data: function data() {
+		return {
+			selectedStatus: this.selected
+		};
+	},
+
+	methods: {
+		handleClose: function handleClose(event) {
+			this.$emit('close', event);
+		},
+		changeSelectState: function changeSelectState() {
+			this.selectedStatus = !this.selectedStatus;
+			this.$emit('click', this.selectedStatus);
+		}
+	},
+	computed: {
+		tagSize: function tagSize() {
+			return this.size || (this.$ELEMENT || {}).size;
+		},
+		customColorStyle: function customColorStyle() {
+			var mainColor = void 0;
+			if (this.color) {
+				if (this.color.indexOf('#') > -1) {
+					mainColor = (0, _util.hexToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
+				} else {
+					mainColor = (0, _util.colorNameToRgb)(this.color).replace('(', 'a(').replace(')', ', .1)');
+				}
+			} else {
+				mainColor = this.color;
+			}
+			if (this.selectedStatus) {
+				return {
+					color: this.color
+				};
+			} else {
+				return {
+					color: this.color,
+					backgroundColor: mainColor,
+					borderColor: mainColor ? mainColor.replace('.1)', '.2)') : ''
+				};
+			}
+		}
+	}
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 46:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _tag = __webpack_require__(59);
+
+var _tag2 = _interopRequireDefault(_tag);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* istanbul ignore next */
+_tag2.default.install = function (Vue) {
+	Vue.component(_tag2.default.name, _tag2.default);
+};
+
+exports.default = _tag2.default;
+
+/***/ }),
+
+/***/ 59:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_695ccae7_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c2c9c010_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__ = __webpack_require__(60);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -712,7 +712,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_tag_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_695ccae7_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_c2c9c010_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_tag_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -724,7 +724,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 62:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

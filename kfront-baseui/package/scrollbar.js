@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -84,7 +84,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = exports.once = exports.off = exports.on = undefined;
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -273,7 +273,7 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 23:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -288,7 +288,7 @@ var _getIterator2 = __webpack_require__(7);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
-var _resizeObserverPolyfill = __webpack_require__(34);
+var _resizeObserverPolyfill = __webpack_require__(31);
 
 var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
 
@@ -351,21 +351,14 @@ var removeResizeListener = exports.removeResizeListener = function removeResizeL
 
 /***/ }),
 
-/***/ 3:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/typeof");
-
-/***/ }),
-
-/***/ 34:
+/***/ 31:
 /***/ (function(module, exports) {
 
 module.exports = require("resize-observer-polyfill");
 
 /***/ }),
 
-/***/ 38:
+/***/ 35:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -375,7 +368,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _main = __webpack_require__(45);
+var _main = __webpack_require__(43);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -390,323 +383,7 @@ exports.default = _main2.default;
 
 /***/ }),
 
-/***/ 45:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _resizeEvent = __webpack_require__(26);
-
-var _scrollbarWidth = __webpack_require__(9);
-
-var _scrollbarWidth2 = _interopRequireDefault(_scrollbarWidth);
-
-var _util = __webpack_require__(5);
-
-var _bar = __webpack_require__(46);
-
-var _bar2 = _interopRequireDefault(_bar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* istanbul ignore next */
-// reference https://github.com/noeldelgado/gemini-scrollbar/blob/master/index.js
-
-exports.default = {
-	name: 'KcScrollbar',
-
-	components: { Bar: _bar2.default },
-
-	props: {
-		native: Boolean,
-		wrapStyle: {},
-		wrapClass: {},
-		viewClass: {},
-		viewStyle: {},
-		noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
-		tag: {
-			type: String,
-			default: 'div'
-		}
-	},
-
-	data: function data() {
-		return {
-			sizeWidth: '0',
-			sizeHeight: '0',
-			moveX: 0,
-			moveY: 0
-		};
-	},
-
-
-	computed: {
-		wrap: function wrap() {
-			return this.$refs.wrap;
-		}
-	},
-
-	render: function render(h) {
-		var gutter = (0, _scrollbarWidth2.default)();
-		var style = this.wrapStyle;
-
-		if (gutter) {
-			var gutterWith = '-' + gutter + 'px';
-			var gutterStyle = 'margin-bottom: ' + gutterWith + '; margin-right: ' + gutterWith + ';';
-			if (Array.isArray(this.wrapStyle)) {
-				style = (0, _util.toObject)(this.wrapStyle);
-				style.marginRight = style.marginBottom = gutterWith;
-			} else if (typeof this.wrapStyle === 'string') {
-				style += gutterStyle;
-			} else {
-				style = gutterStyle;
-			}
-		}
-
-		var view = h(this.tag, {
-			class: ['kc-scrollbar__view', this.viewClass],
-			style: this.viewStyle,
-			ref: 'resize'
-		}, this.$slots.default);
-		var wrap = h(
-			'div',
-			{
-				ref: 'wrap',
-				style: style,
-				on: {
-					'scroll': this.handleScroll
-				},
-
-				'class': [this.wrapClass, 'kc-scrollbar__wrap', gutter ? '' : 'kc-scrollbar__wrap--hidden-default'] },
-			[[view]]
-		);
-
-		var nodes = void 0;
-
-		if (!this.native) {
-			nodes = [wrap, h(_bar2.default, {
-				attrs: {
-					move: this.moveX,
-					size: this.sizeWidth }
-			}), h(_bar2.default, {
-				attrs: {
-					vertical: true,
-					move: this.moveY,
-					size: this.sizeHeight }
-			})];
-		} else {
-			nodes = [h(
-				'div',
-				{
-					ref: 'wrap',
-					'class': [this.wrapClass, 'kc-scrollbar__wrap'],
-					style: style },
-				[[view]]
-			)];
-		}
-		return h('div', { class: 'kc-scrollbar' }, nodes);
-	},
-
-
-	methods: {
-		handleScroll: function handleScroll() {
-			var wrap = this.wrap;
-
-			this.moveY = wrap.scrollTop * 100 / wrap.clientHeight;
-			this.moveX = wrap.scrollLeft * 100 / wrap.clientWidth;
-		},
-		update: function update() {
-			var heightPercentage = void 0,
-			    widthPercentage = void 0;
-			var wrap = this.wrap;
-			if (!wrap) return;
-
-			heightPercentage = wrap.clientHeight * 100 / wrap.scrollHeight;
-			widthPercentage = wrap.clientWidth * 100 / wrap.scrollWidth;
-
-			this.sizeHeight = heightPercentage < 100 ? heightPercentage + '%' : '';
-			this.sizeWidth = widthPercentage < 100 ? widthPercentage + '%' : '';
-		}
-	},
-
-	mounted: function mounted() {
-		if (this.native) return;
-		this.$nextTick(this.update);
-		!this.noresize && (0, _resizeEvent.addResizeListener)(this.$refs.resize, this.update);
-	},
-	beforeDestroy: function beforeDestroy() {
-		if (this.native) return;
-		!this.noresize && (0, _resizeEvent.removeResizeListener)(this.$refs.resize, this.update);
-	}
-};
-
-/***/ }),
-
-/***/ 46:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _dom = __webpack_require__(2);
-
-var _util = __webpack_require__(47);
-
-/* istanbul ignore next */
-exports.default = {
-	name: 'Bar',
-
-	props: {
-		vertical: Boolean,
-		size: String,
-		move: Number
-	},
-
-	computed: {
-		bar: function bar() {
-			return _util.BAR_MAP[this.vertical ? 'vertical' : 'horizontal'];
-		},
-		wrap: function wrap() {
-			return this.$parent.wrap;
-		}
-	},
-
-	render: function render(h) {
-		var size = this.size,
-		    move = this.move,
-		    bar = this.bar;
-
-
-		return h(
-			'div',
-			{
-				'class': ['kc-scrollbar__bar', 'is-' + bar.key],
-				on: {
-					'mousedown': this.clickTrackHandler
-				}
-			},
-			[h('div', {
-				ref: 'thumb',
-				'class': 'kc-scrollbar__thumb',
-				on: {
-					'mousedown': this.clickThumbHandler
-				},
-
-				style: (0, _util.renderThumbStyle)({ size: size, move: move, bar: bar }) })]
-		);
-	},
-
-
-	methods: {
-		clickThumbHandler: function clickThumbHandler(e) {
-			this.startDrag(e);
-			this[this.bar.axis] = e.currentTarget[this.bar.offset] - (e[this.bar.client] - e.currentTarget.getBoundingClientRect()[this.bar.direction]);
-		},
-		clickTrackHandler: function clickTrackHandler(e) {
-			var offset = Math.abs(e.target.getBoundingClientRect()[this.bar.direction] - e[this.bar.client]);
-			var thumbHalf = this.$refs.thumb[this.bar.offset] / 2;
-			var thumbPositionPercentage = (offset - thumbHalf) * 100 / this.$el[this.bar.offset];
-
-			this.wrap[this.bar.scroll] = thumbPositionPercentage * this.wrap[this.bar.scrollSize] / 100;
-		},
-		startDrag: function startDrag(e) {
-			e.stopImmediatePropagation();
-			this.cursorDown = true;
-
-			(0, _dom.on)(document, 'mousemove', this.mouseMoveDocumentHandler);
-			(0, _dom.on)(document, 'mouseup', this.mouseUpDocumentHandler);
-			document.onselectstart = function () {
-				return false;
-			};
-		},
-		mouseMoveDocumentHandler: function mouseMoveDocumentHandler(e) {
-			if (this.cursorDown === false) return;
-			var prevPage = this[this.bar.axis];
-
-			if (!prevPage) return;
-
-			var offset = (this.$el.getBoundingClientRect()[this.bar.direction] - e[this.bar.client]) * -1;
-			var thumbClickPosition = this.$refs.thumb[this.bar.offset] - prevPage;
-			var thumbPositionPercentage = (offset - thumbClickPosition) * 100 / this.$el[this.bar.offset];
-
-			this.wrap[this.bar.scroll] = thumbPositionPercentage * this.wrap[this.bar.scrollSize] / 100;
-		},
-		mouseUpDocumentHandler: function mouseUpDocumentHandler(e) {
-			this.cursorDown = false;
-			this[this.bar.axis] = 0;
-			(0, _dom.off)(document, 'mousemove', this.mouseMoveDocumentHandler);
-			document.onselectstart = null;
-		}
-	},
-
-	destroyed: function destroyed() {
-		(0, _dom.off)(document, 'mouseup', this.mouseUpDocumentHandler);
-	}
-};
-
-/***/ }),
-
-/***/ 47:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.renderThumbStyle = renderThumbStyle;
-var BAR_MAP = exports.BAR_MAP = {
-	vertical: {
-		offset: 'offsetHeight',
-		scroll: 'scrollTop',
-		scrollSize: 'scrollHeight',
-		size: 'height',
-		key: 'vertical',
-		axis: 'Y',
-		client: 'clientY',
-		direction: 'top'
-	},
-	horizontal: {
-		offset: 'offsetWidth',
-		scroll: 'scrollLeft',
-		scrollSize: 'scrollWidth',
-		size: 'width',
-		key: 'horizontal',
-		axis: 'X',
-		client: 'clientX',
-		direction: 'left'
-	}
-};
-
-function renderThumbStyle(_ref) {
-	var move = _ref.move,
-	    size = _ref.size,
-	    bar = _ref.bar;
-
-	var style = {};
-	var translate = 'translate' + bar.axis + '(' + move + '%)';
-
-	style[bar.size] = size;
-	style.transform = translate;
-	style.msTransform = translate;
-	style.webkitTransform = translate;
-
-	return style;
-};
-
-/***/ }),
-
-/***/ 5:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1090,6 +767,329 @@ function getScrollBarSize(fresh) {
 	}
 	return cached;
 }
+
+/***/ }),
+
+/***/ 43:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _resizeEvent = __webpack_require__(23);
+
+var _scrollbarWidth = __webpack_require__(9);
+
+var _scrollbarWidth2 = _interopRequireDefault(_scrollbarWidth);
+
+var _util = __webpack_require__(4);
+
+var _bar = __webpack_require__(44);
+
+var _bar2 = _interopRequireDefault(_bar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* istanbul ignore next */
+// reference https://github.com/noeldelgado/gemini-scrollbar/blob/master/index.js
+
+exports.default = {
+	name: 'KcScrollbar',
+
+	components: { Bar: _bar2.default },
+
+	props: {
+		native: Boolean,
+		wrapStyle: {},
+		wrapClass: {},
+		viewClass: {},
+		viewStyle: {},
+		noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
+		tag: {
+			type: String,
+			default: 'div'
+		}
+	},
+
+	data: function data() {
+		return {
+			sizeWidth: '0',
+			sizeHeight: '0',
+			moveX: 0,
+			moveY: 0
+		};
+	},
+
+
+	computed: {
+		wrap: function wrap() {
+			return this.$refs.wrap;
+		}
+	},
+
+	render: function render(h) {
+		var gutter = (0, _scrollbarWidth2.default)();
+		var style = this.wrapStyle;
+
+		if (gutter) {
+			var gutterWith = '-' + gutter + 'px';
+			var gutterStyle = 'margin-bottom: ' + gutterWith + '; margin-right: ' + gutterWith + ';';
+			if (Array.isArray(this.wrapStyle)) {
+				style = (0, _util.toObject)(this.wrapStyle);
+				style.marginRight = style.marginBottom = gutterWith;
+			} else if (typeof this.wrapStyle === 'string') {
+				style += gutterStyle;
+			} else {
+				style = gutterStyle;
+			}
+		}
+
+		var view = h(this.tag, {
+			class: ['kc-scrollbar__view', this.viewClass],
+			style: this.viewStyle,
+			ref: 'resize'
+		}, this.$slots.default);
+		var wrap = h(
+			'div',
+			{
+				ref: 'wrap',
+				style: style,
+				on: {
+					'scroll': this.handleScroll
+				},
+
+				'class': [this.wrapClass, 'kc-scrollbar__wrap', gutter ? '' : 'kc-scrollbar__wrap--hidden-default'] },
+			[[view]]
+		);
+
+		var nodes = void 0;
+
+		if (!this.native) {
+			nodes = [wrap, h(_bar2.default, {
+				attrs: {
+					move: this.moveX,
+					size: this.sizeWidth }
+			}), h(_bar2.default, {
+				attrs: {
+					vertical: true,
+					move: this.moveY,
+					size: this.sizeHeight }
+			})];
+		} else {
+			nodes = [h(
+				'div',
+				{
+					ref: 'wrap',
+					'class': [this.wrapClass, 'kc-scrollbar__wrap'],
+					style: style },
+				[[view]]
+			)];
+		}
+		return h('div', { class: 'kc-scrollbar' }, nodes);
+	},
+
+
+	methods: {
+		handleScroll: function handleScroll() {
+			var wrap = this.wrap;
+
+			this.moveY = wrap.scrollTop * 100 / wrap.clientHeight;
+			this.moveX = wrap.scrollLeft * 100 / wrap.clientWidth;
+		},
+		update: function update() {
+			var heightPercentage = void 0,
+			    widthPercentage = void 0;
+			var wrap = this.wrap;
+			if (!wrap) return;
+
+			heightPercentage = wrap.clientHeight * 100 / wrap.scrollHeight;
+			widthPercentage = wrap.clientWidth * 100 / wrap.scrollWidth;
+
+			this.sizeHeight = heightPercentage < 100 ? heightPercentage + '%' : '';
+			this.sizeWidth = widthPercentage < 100 ? widthPercentage + '%' : '';
+		}
+	},
+
+	mounted: function mounted() {
+		if (this.native) return;
+		this.$nextTick(this.update);
+		!this.noresize && (0, _resizeEvent.addResizeListener)(this.$refs.resize, this.update);
+	},
+	beforeDestroy: function beforeDestroy() {
+		if (this.native) return;
+		!this.noresize && (0, _resizeEvent.removeResizeListener)(this.$refs.resize, this.update);
+	}
+};
+
+/***/ }),
+
+/***/ 44:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _dom = __webpack_require__(2);
+
+var _util = __webpack_require__(45);
+
+/* istanbul ignore next */
+exports.default = {
+	name: 'Bar',
+
+	props: {
+		vertical: Boolean,
+		size: String,
+		move: Number
+	},
+
+	computed: {
+		bar: function bar() {
+			return _util.BAR_MAP[this.vertical ? 'vertical' : 'horizontal'];
+		},
+		wrap: function wrap() {
+			return this.$parent.wrap;
+		}
+	},
+
+	render: function render(h) {
+		var size = this.size,
+		    move = this.move,
+		    bar = this.bar;
+
+
+		return h(
+			'div',
+			{
+				'class': ['kc-scrollbar__bar', 'is-' + bar.key],
+				on: {
+					'mousedown': this.clickTrackHandler
+				}
+			},
+			[h('div', {
+				ref: 'thumb',
+				'class': 'kc-scrollbar__thumb',
+				on: {
+					'mousedown': this.clickThumbHandler
+				},
+
+				style: (0, _util.renderThumbStyle)({ size: size, move: move, bar: bar }) })]
+		);
+	},
+
+
+	methods: {
+		clickThumbHandler: function clickThumbHandler(e) {
+			this.startDrag(e);
+			this[this.bar.axis] = e.currentTarget[this.bar.offset] - (e[this.bar.client] - e.currentTarget.getBoundingClientRect()[this.bar.direction]);
+		},
+		clickTrackHandler: function clickTrackHandler(e) {
+			var offset = Math.abs(e.target.getBoundingClientRect()[this.bar.direction] - e[this.bar.client]);
+			var thumbHalf = this.$refs.thumb[this.bar.offset] / 2;
+			var thumbPositionPercentage = (offset - thumbHalf) * 100 / this.$el[this.bar.offset];
+
+			this.wrap[this.bar.scroll] = thumbPositionPercentage * this.wrap[this.bar.scrollSize] / 100;
+		},
+		startDrag: function startDrag(e) {
+			e.stopImmediatePropagation();
+			this.cursorDown = true;
+
+			(0, _dom.on)(document, 'mousemove', this.mouseMoveDocumentHandler);
+			(0, _dom.on)(document, 'mouseup', this.mouseUpDocumentHandler);
+			document.onselectstart = function () {
+				return false;
+			};
+		},
+		mouseMoveDocumentHandler: function mouseMoveDocumentHandler(e) {
+			if (this.cursorDown === false) return;
+			var prevPage = this[this.bar.axis];
+
+			if (!prevPage) return;
+
+			var offset = (this.$el.getBoundingClientRect()[this.bar.direction] - e[this.bar.client]) * -1;
+			var thumbClickPosition = this.$refs.thumb[this.bar.offset] - prevPage;
+			var thumbPositionPercentage = (offset - thumbClickPosition) * 100 / this.$el[this.bar.offset];
+
+			this.wrap[this.bar.scroll] = thumbPositionPercentage * this.wrap[this.bar.scrollSize] / 100;
+		},
+		mouseUpDocumentHandler: function mouseUpDocumentHandler(e) {
+			this.cursorDown = false;
+			this[this.bar.axis] = 0;
+			(0, _dom.off)(document, 'mousemove', this.mouseMoveDocumentHandler);
+			document.onselectstart = null;
+		}
+	},
+
+	destroyed: function destroyed() {
+		(0, _dom.off)(document, 'mouseup', this.mouseUpDocumentHandler);
+	}
+};
+
+/***/ }),
+
+/***/ 45:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.renderThumbStyle = renderThumbStyle;
+var BAR_MAP = exports.BAR_MAP = {
+	vertical: {
+		offset: 'offsetHeight',
+		scroll: 'scrollTop',
+		scrollSize: 'scrollHeight',
+		size: 'height',
+		key: 'vertical',
+		axis: 'Y',
+		client: 'clientY',
+		direction: 'top'
+	},
+	horizontal: {
+		offset: 'offsetWidth',
+		scroll: 'scrollLeft',
+		scrollSize: 'scrollWidth',
+		size: 'width',
+		key: 'horizontal',
+		axis: 'X',
+		client: 'clientX',
+		direction: 'left'
+	}
+};
+
+function renderThumbStyle(_ref) {
+	var move = _ref.move,
+	    size = _ref.size,
+	    bar = _ref.bar;
+
+	var style = {};
+	var translate = 'translate' + bar.axis + '(' + move + '%)';
+
+	style[bar.size] = size;
+	style.transform = translate;
+	style.msTransform = translate;
+	style.webkitTransform = translate;
+
+	return style;
+};
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/helpers/typeof");
 
 /***/ }),
 

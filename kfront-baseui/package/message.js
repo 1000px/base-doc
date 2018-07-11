@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 306);
+/******/ 	return __webpack_require__(__webpack_require__.s = 304);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -202,7 +202,7 @@ var _merge = __webpack_require__(6);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _popupManager = __webpack_require__(16);
+var _popupManager = __webpack_require__(15);
 
 var _popupManager2 = _interopRequireDefault(_popupManager);
 
@@ -433,136 +433,7 @@ exports.PopupManager = _popupManager2.default;
 
 /***/ }),
 
-/***/ 156:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var typeMap = {
-	success: 'success',
-	info: 'info',
-	warning: 'warning',
-	error: 'error'
-};
-
-exports.default = {
-	data: function data() {
-		return {
-			visible: false,
-			message: '',
-			duration: 3000,
-			type: 'info',
-			iconClass: '',
-			customClass: '',
-			onClose: null,
-			showClose: false,
-			closed: false,
-			timer: null,
-			dangerouslyUseHTMLString: false,
-			center: false
-		};
-	},
-
-
-	computed: {
-		iconWrapClass: function iconWrapClass() {
-			var classes = ['kc-message__icon'];
-			if (this.type && !this.iconClass) {
-				classes.push('kc-message__icon--' + this.type);
-			}
-			return classes;
-		},
-		typeClass: function typeClass() {
-			return this.type && !this.iconClass ? 'kc-message__icon kc-icon-' + typeMap[this.type] : '';
-		}
-	},
-
-	watch: {
-		closed: function closed(newVal) {
-			if (newVal) {
-				this.visible = false;
-				this.$el.addEventListener('transitionend', this.destroyElement);
-			}
-		}
-	},
-
-	methods: {
-		destroyElement: function destroyElement() {
-			this.$el.removeEventListener('transitionend', this.destroyElement);
-			this.$destroy(true);
-			this.$el.parentNode.removeChild(this.$el);
-		},
-		close: function close() {
-			this.closed = true;
-			if (typeof this.onClose === 'function') {
-				this.onClose(this);
-			}
-		},
-		clearTimer: function clearTimer() {
-			clearTimeout(this.timer);
-		},
-		startTimer: function startTimer() {
-			var _this = this;
-
-			if (this.duration > 0) {
-				this.timer = setTimeout(function () {
-					if (!_this.closed) {
-						_this.close();
-					}
-				}, this.duration);
-			}
-		},
-		keydown: function keydown(e) {
-			if (e.keyCode === 27) {
-				// esc关闭消息
-				if (!this.closed) {
-					this.close();
-				}
-			}
-		}
-	},
-	mounted: function mounted() {
-		this.startTimer();
-		document.addEventListener('keydown', this.keydown);
-	},
-	beforeDestroy: function beforeDestroy() {
-		document.removeEventListener('keydown', this.keydown);
-	}
-};
-
-/***/ }),
-
-/***/ 16:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -776,6 +647,135 @@ exports.default = PopupManager;
 
 /***/ }),
 
+/***/ 154:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var typeMap = {
+	success: 'success',
+	info: 'info',
+	warning: 'warning',
+	error: 'error'
+};
+
+exports.default = {
+	data: function data() {
+		return {
+			visible: false,
+			message: '',
+			duration: 3000,
+			type: 'info',
+			iconClass: '',
+			customClass: '',
+			onClose: null,
+			showClose: false,
+			closed: false,
+			timer: null,
+			dangerouslyUseHTMLString: false,
+			center: false
+		};
+	},
+
+
+	computed: {
+		iconWrapClass: function iconWrapClass() {
+			var classes = ['kc-message__icon'];
+			if (this.type && !this.iconClass) {
+				classes.push('kc-message__icon--' + this.type);
+			}
+			return classes;
+		},
+		typeClass: function typeClass() {
+			return this.type && !this.iconClass ? 'kc-message__icon kc-icon-' + typeMap[this.type] : '';
+		}
+	},
+
+	watch: {
+		closed: function closed(newVal) {
+			if (newVal) {
+				this.visible = false;
+				this.$el.addEventListener('transitionend', this.destroyElement);
+			}
+		}
+	},
+
+	methods: {
+		destroyElement: function destroyElement() {
+			this.$el.removeEventListener('transitionend', this.destroyElement);
+			this.$destroy(true);
+			this.$el.parentNode.removeChild(this.$el);
+		},
+		close: function close() {
+			this.closed = true;
+			if (typeof this.onClose === 'function') {
+				this.onClose(this);
+			}
+		},
+		clearTimer: function clearTimer() {
+			clearTimeout(this.timer);
+		},
+		startTimer: function startTimer() {
+			var _this = this;
+
+			if (this.duration > 0) {
+				this.timer = setTimeout(function () {
+					if (!_this.closed) {
+						_this.close();
+					}
+				}, this.duration);
+			}
+		},
+		keydown: function keydown(e) {
+			if (e.keyCode === 27) {
+				// esc关闭消息
+				if (!this.closed) {
+					this.close();
+				}
+			}
+		}
+	},
+	mounted: function mounted() {
+		this.startTimer();
+		document.addEventListener('keydown', this.keydown);
+	},
+	beforeDestroy: function beforeDestroy() {
+		document.removeEventListener('keydown', this.keydown);
+	}
+};
+
+/***/ }),
+
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -787,7 +787,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = exports.once = exports.off = exports.on = undefined;
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -976,14 +976,7 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
-/***/ 3:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/typeof");
-
-/***/ }),
-
-/***/ 306:
+/***/ 304:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -993,7 +986,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _main = __webpack_require__(307);
+var _main = __webpack_require__(305);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -1003,7 +996,7 @@ exports.default = _main2.default;
 
 /***/ }),
 
-/***/ 307:
+/***/ 305:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1017,13 +1010,13 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _main = __webpack_require__(308);
+var _main = __webpack_require__(306);
 
 var _main2 = _interopRequireDefault(_main);
 
 var _popup = __webpack_require__(10);
 
-var _vdom = __webpack_require__(41);
+var _vdom = __webpack_require__(39);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1098,15 +1091,15 @@ exports.default = Message;
 
 /***/ }),
 
-/***/ 308:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_96a70734_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_804e853e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(307);
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -1123,7 +1116,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_main_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_96a70734_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_main_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_2_vue_loader_lib_template_compiler_index_id_data_v_804e853e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_template_index_0_main_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1135,7 +1128,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 309:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1151,7 +1144,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
-/***/ 41:
+/***/ 39:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1161,7 +1154,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _typeof2 = __webpack_require__(3);
+var _typeof2 = __webpack_require__(5);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -1169,7 +1162,7 @@ exports.isVNode = isVNode;
 exports.getFirstComponentChild = getFirstComponentChild;
 exports.getComponentChildrenCount = getComponentChildrenCount;
 
-var _util = __webpack_require__(5);
+var _util = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1192,7 +1185,7 @@ function getComponentChildrenCount(children) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1576,6 +1569,13 @@ function getScrollBarSize(fresh) {
 	}
 	return cached;
 }
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/helpers/typeof");
 
 /***/ }),
 
