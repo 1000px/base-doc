@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 318);
+/******/ 	return __webpack_require__(__webpack_require__.s = 320);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -183,7 +183,7 @@ module.exports = require("vue");
 
 /***/ }),
 
-/***/ 157:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -193,7 +193,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _emitter = __webpack_require__(3);
+var _emitter = __webpack_require__(4);
 
 var _emitter2 = _interopRequireDefault(_emitter);
 
@@ -201,7 +201,7 @@ var _migrating = __webpack_require__(8);
 
 var _migrating2 = _interopRequireDefault(_migrating);
 
-var _ariaMenubar = __webpack_require__(320);
+var _ariaMenubar = __webpack_require__(322);
 
 var _ariaMenubar2 = _interopRequireDefault(_ariaMenubar);
 
@@ -542,7 +542,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = exports.once = exports.off = exports.on = undefined;
 
-var _typeof2 = __webpack_require__(5);
+var _typeof2 = __webpack_require__(3);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -732,52 +732,13 @@ function setStyle(element, styleName, value) {
 /***/ }),
 
 /***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-function _broadcast(componentName, eventName, params) {
-	this.$children.forEach(function (child) {
-		var name = child.$options.componentName;
-
-		if (name === componentName) {
-			child.$emit.apply(child, [eventName].concat(params));
-		} else {
-			_broadcast.apply(child, [componentName, eventName].concat([params]));
-		}
-	});
-}
-
-exports.default = {
-	methods: {
-		dispatch: function dispatch(componentName, eventName, params) {
-			var parent = this.$parent || this.$root;
-			var name = parent.$options.componentName;
-
-			while (parent && (!name || name !== componentName)) {
-				parent = parent.$parent;
-
-				if (parent) {
-					name = parent.$options.componentName;
-				}
-			}
-			if (parent) {
-				parent.$emit.apply(parent, [eventName].concat(params));
-			}
-		},
-		broadcast: function broadcast(componentName, eventName, params) {
-			_broadcast.call(this, componentName, eventName, params);
-		}
-	}
-};
+module.exports = require("babel-runtime/helpers/typeof");
 
 /***/ }),
 
-/***/ 318:
+/***/ 320:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -787,7 +748,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _menu = __webpack_require__(319);
+var _menu = __webpack_require__(321);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -802,12 +763,12 @@ exports.default = _menu2.default;
 
 /***/ }),
 
-/***/ 319:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_2_vue_loader_lib_selector_type_script_index_0_menu_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 var normalizeComponent = __webpack_require__(0)
@@ -838,7 +799,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 320:
+/***/ 322:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -848,7 +809,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _ariaMenuitem = __webpack_require__(321);
+var _ariaMenuitem = __webpack_require__(323);
 
 var _ariaMenuitem2 = _interopRequireDefault(_ariaMenuitem);
 
@@ -871,7 +832,7 @@ exports.default = Menu;
 
 /***/ }),
 
-/***/ 321:
+/***/ 323:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -881,11 +842,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _ariaUtils = __webpack_require__(78);
+var _ariaUtils = __webpack_require__(80);
 
 var _ariaUtils2 = _interopRequireDefault(_ariaUtils);
 
-var _ariaSubmenu = __webpack_require__(322);
+var _ariaSubmenu = __webpack_require__(324);
 
 var _ariaSubmenu2 = _interopRequireDefault(_ariaSubmenu);
 
@@ -942,7 +903,7 @@ exports.default = MenuItem;
 
 /***/ }),
 
-/***/ 322:
+/***/ 324:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -952,7 +913,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _ariaUtils = __webpack_require__(78);
+var _ariaUtils = __webpack_require__(80);
 
 var _ariaUtils2 = _interopRequireDefault(_ariaUtils);
 
@@ -1020,14 +981,126 @@ exports.default = SubMenu;
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, exports) {
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("babel-runtime/helpers/typeof");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function _broadcast(componentName, eventName, params) {
+	this.$children.forEach(function (child) {
+		var name = child.$options.componentName;
+
+		if (name === componentName) {
+			child.$emit.apply(child, [eventName].concat(params));
+		} else {
+			_broadcast.apply(child, [componentName, eventName].concat([params]));
+		}
+	});
+}
+
+exports.default = {
+	methods: {
+		dispatch: function dispatch(componentName, eventName, params) {
+			var parent = this.$parent || this.$root;
+			var name = parent.$options.componentName;
+
+			while (parent && (!name || name !== componentName)) {
+				parent = parent.$parent;
+
+				if (parent) {
+					name = parent.$options.componentName;
+				}
+			}
+			if (parent) {
+				parent.$emit.apply(parent, [eventName].concat(params));
+			}
+		},
+		broadcast: function broadcast(componentName, eventName, params) {
+			_broadcast.call(this, componentName, eventName, params);
+		}
+	}
+};
 
 /***/ }),
 
-/***/ 78:
+/***/ 8:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+/**
+ * Show migrating guide in browser console.
+ *
+ * Usage:
+ * import Migrating from 'element-ui/src/mixins/migrating';
+ *
+ * mixins: [Migrating]
+ *
+ * add getMigratingConfig method for your component.
+ *  getMigratingConfig() {
+ *    return {
+ *      props: {
+ *        'allow-no-selection': 'allow-no-selection is removed.',
+ *        'selection-mode': 'selection-mode is removed.'
+ *      },
+ *      events: {
+ *        selectionchange: 'selectionchange is renamed to selection-change.'
+ *      }
+ *    };
+ *  },
+ */
+exports.default = {
+	mounted: function mounted() {
+		if (true) return;
+		if (!this.$vnode) return;
+
+		var _getMigratingConfig = this.getMigratingConfig(),
+		    _getMigratingConfig$p = _getMigratingConfig.props,
+		    props = _getMigratingConfig$p === undefined ? {} : _getMigratingConfig$p,
+		    _getMigratingConfig$e = _getMigratingConfig.events,
+		    events = _getMigratingConfig$e === undefined ? {} : _getMigratingConfig$e;
+
+		var _$vnode = this.$vnode,
+		    data = _$vnode.data,
+		    componentOptions = _$vnode.componentOptions;
+
+		var definedProps = data.attrs || {};
+		var definedEvents = componentOptions.listeners || {};
+
+		for (var propName in definedProps) {
+			if (definedProps.hasOwnProperty(propName) && props[propName]) {
+				console.warn('[Element Migrating][' + this.$options.name + '][Attribute]: ' + props[propName]);
+			}
+		}
+
+		for (var eventName in definedEvents) {
+			if (definedEvents.hasOwnProperty(eventName) && events[eventName]) {
+				console.warn('[Element Migrating][' + this.$options.name + '][Event]: ' + events[eventName]);
+			}
+		}
+	},
+
+	methods: {
+		getMigratingConfig: function getMigratingConfig() {
+			return {
+				props: {},
+				events: {}
+			};
+		}
+	}
+};
+
+/***/ }),
+
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1158,79 +1231,6 @@ aria.Utils.keys = {
 };
 
 exports.default = aria.Utils;
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-/**
- * Show migrating guide in browser console.
- *
- * Usage:
- * import Migrating from 'element-ui/src/mixins/migrating';
- *
- * mixins: [Migrating]
- *
- * add getMigratingConfig method for your component.
- *  getMigratingConfig() {
- *    return {
- *      props: {
- *        'allow-no-selection': 'allow-no-selection is removed.',
- *        'selection-mode': 'selection-mode is removed.'
- *      },
- *      events: {
- *        selectionchange: 'selectionchange is renamed to selection-change.'
- *      }
- *    };
- *  },
- */
-exports.default = {
-	mounted: function mounted() {
-		if (true) return;
-		if (!this.$vnode) return;
-
-		var _getMigratingConfig = this.getMigratingConfig(),
-		    _getMigratingConfig$p = _getMigratingConfig.props,
-		    props = _getMigratingConfig$p === undefined ? {} : _getMigratingConfig$p,
-		    _getMigratingConfig$e = _getMigratingConfig.events,
-		    events = _getMigratingConfig$e === undefined ? {} : _getMigratingConfig$e;
-
-		var _$vnode = this.$vnode,
-		    data = _$vnode.data,
-		    componentOptions = _$vnode.componentOptions;
-
-		var definedProps = data.attrs || {};
-		var definedEvents = componentOptions.listeners || {};
-
-		for (var propName in definedProps) {
-			if (definedProps.hasOwnProperty(propName) && props[propName]) {
-				console.warn('[Element Migrating][' + this.$options.name + '][Attribute]: ' + props[propName]);
-			}
-		}
-
-		for (var eventName in definedEvents) {
-			if (definedEvents.hasOwnProperty(eventName) && events[eventName]) {
-				console.warn('[Element Migrating][' + this.$options.name + '][Event]: ' + events[eventName]);
-			}
-		}
-	},
-
-	methods: {
-		getMigratingConfig: function getMigratingConfig() {
-			return {
-				props: {},
-				events: {}
-			};
-		}
-	}
-};
 
 /***/ })
 

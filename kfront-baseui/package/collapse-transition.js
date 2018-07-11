@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 49);
+/******/ 	return __webpack_require__(__webpack_require__.s = 51);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -84,7 +84,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = exports.once = exports.off = exports.on = undefined;
 
-var _typeof2 = __webpack_require__(5);
+var _typeof2 = __webpack_require__(3);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -273,21 +273,28 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
-/***/ 37:
+/***/ 3:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/helpers/typeof");
+
+/***/ }),
+
+/***/ 39:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/classCallCheck");
 
 /***/ }),
 
-/***/ 38:
+/***/ 40:
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/createClass");
 
 /***/ }),
 
-/***/ 49:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -297,11 +304,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _classCallCheck2 = __webpack_require__(37);
+var _classCallCheck2 = __webpack_require__(39);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(38);
+var _createClass2 = __webpack_require__(40);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -399,13 +406,6 @@ exports.default = {
 		return h('transition', data, children);
 	}
 };
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/typeof");
 
 /***/ })
 
