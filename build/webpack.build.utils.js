@@ -4,13 +4,13 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const Components = require('./../build-utils.json');
 const config = require('./config');
-  
+
 const webpackConfig = {
   entry: Components,
   output: {
     path: path.resolve(process.cwd(), './kfront-baseui/src/'),
     publicPath: '/kfront-baseui/',
-    filename: '[name].js',
+    filename: '[name]',
     chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
   },

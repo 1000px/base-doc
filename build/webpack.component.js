@@ -11,7 +11,7 @@ const webpackConfig = {
   output: {
     path: path.resolve(process.cwd(), './kfront-baseui/package/'),
     publicPath: '/kfront-baseui/',
-    filename: '[name]',
+    filename: '[name].js',
     chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
   },
