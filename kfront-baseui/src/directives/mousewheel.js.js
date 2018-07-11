@@ -61,12 +61,20 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 18);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ 18:
+=======
+/***/ 21:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,7 +84,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+<<<<<<< HEAD
 var _normalizeWheel = __webpack_require__(19);
+=======
+var _normalizeWheel = __webpack_require__(22);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 var _normalizeWheel2 = _interopRequireDefault(_normalizeWheel);
 
@@ -101,7 +113,11 @@ exports.default = {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 19:
+=======
+/***/ 22:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports) {
 
 module.exports = require("normalize-wheel");

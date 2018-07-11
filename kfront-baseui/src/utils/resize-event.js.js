@@ -61,7 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 76);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -73,7 +77,11 @@ module.exports = require("babel-runtime/core-js/get-iterator");
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 76:
+=======
+/***/ 79:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88,7 +96,11 @@ var _getIterator2 = __webpack_require__(3);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
+<<<<<<< HEAD
 var _resizeObserverPolyfill = __webpack_require__(77);
+=======
+var _resizeObserverPolyfill = __webpack_require__(80);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
 
@@ -151,7 +163,11 @@ var removeResizeListener = exports.removeResizeListener = function removeResizeL
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 77:
+=======
+/***/ 80:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports) {
 
 module.exports = require("resize-observer-polyfill");

@@ -61,7 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 83);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 86);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -595,7 +599,32 @@ exports.PopupManager = _popupManager2.default;
 /***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+=======
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+var _getOwnPropertyDescriptor = __webpack_require__(18);
+
+var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+
+var _keys = __webpack_require__(19);
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _assign = __webpack_require__(20);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _typeof2 = __webpack_require__(1);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version {{version}}
  * @license
@@ -632,7 +661,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
 				__WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+<<<<<<< HEAD
 	} else if (typeof module === 'object' && module.exports) {
+=======
+	} else if ((typeof module === 'undefined' ? 'undefined' : (0, _typeof3.default)(module)) === 'object' && module.exports) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		// Node. Does not work with strict CommonJS, but
 		// only CommonJS-like environments that support module.exports,
 		// like Node.
@@ -641,7 +674,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		// Browser globals (root is window)
 		root.Popper = factory();
 	}
+<<<<<<< HEAD
 }(this, function () {
+=======
+})(undefined, function () {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 	'use strict';
 
@@ -683,6 +720,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Create a new Popper.js instance
 	 * @constructor Popper
 	 * @param {HTMLElement} reference - The reference element used to position the popper
@@ -748,6 +786,73 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 *      Set to true if you want to automatically remove the popper when you call the `destroy` method.
 	 */
 	function Popper (reference, popper, options) {
+=======
+  * Create a new Popper.js instance
+  * @constructor Popper
+  * @param {HTMLElement} reference - The reference element used to position the popper
+  * @param {HTMLElement|Object} popper
+  *      The HTML element used as popper, or a configuration used to generate the popper.
+  * @param {String} [popper.tagName='div'] The tag name of the generated popper.
+  * @param {Array} [popper.classNames=['popper']] Array of classes to apply to the generated popper.
+  * @param {Array} [popper.attributes] Array of attributes to apply, specify `attr:value` to assign a value to it.
+  * @param {HTMLElement|String} [popper.parent=window.document.body] The parent element, given as HTMLElement or as query string.
+  * @param {String} [popper.content=''] The content of the popper, it can be text, html, or node; if it is not text, set `contentType` to `html` or `node`.
+  * @param {String} [popper.contentType='text'] If `html`, the `content` will be parsed as HTML. If `node`, it will be appended as-is.
+  * @param {String} [popper.arrowTagName='div'] Same as `popper.tagName` but for the arrow element.
+  * @param {Array} [popper.arrowClassNames='popper__arrow'] Same as `popper.classNames` but for the arrow element.
+  * @param {String} [popper.arrowAttributes=['x-arrow']] Same as `popper.attributes` but for the arrow element.
+  * @param {Object} options
+  * @param {String} [options.placement=bottom]
+  *      Placement of the popper accepted values: `top(-start, -end), right(-start, -end), bottom(-start, -right),
+  *      left(-start, -end)`
+  *
+  * @param {HTMLElement|String} [options.arrowElement='[x-arrow]']
+  *      The DOM Node used as arrow for the popper, or a CSS selector used to get the DOM node. It must be child of
+  *      its parent Popper. Popper.js will apply to the given element the style required to align the arrow with its
+  *      reference element.
+  *      By default, it will look for a child node of the popper with the `x-arrow` attribute.
+  *
+  * @param {Boolean} [options.gpuAcceleration=true]
+  *      When this property is set to true, the popper position will be applied using CSS3 translate3d, allowing the
+  *      browser to use the GPU to accelerate the rendering.
+  *      If set to false, the popper will be placed using `top` and `left` properties, not using the GPU.
+  *
+  * @param {Number} [options.offset=0]
+  *      Amount of pixels the popper will be shifted (can be negative).
+  *
+  * @param {String|Element} [options.boundariesElement='viewport']
+  *      The element which will define the boundaries of the popper position, the popper will never be placed outside
+  *      of the defined boundaries (except if `keepTogether` is enabled)
+  *
+  * @param {Number} [options.boundariesPadding=5]
+  *      Additional padding for the boundaries
+  *
+  * @param {Array} [options.preventOverflowOrder=['left', 'right', 'top', 'bottom']]
+  *      Order used when Popper.js tries to avoid overflows from the boundaries, they will be checked in order,
+  *      this means that the last ones will never overflow
+  *
+  * @param {String|Array} [options.flipBehavior='flip']
+  *      The behavior used by the `flip` modifier to change the placement of the popper when the latter is trying to
+  *      overlap its reference element. Defining `flip` as value, the placement will be flipped on
+  *      its axis (`right - left`, `top - bottom`).
+  *      You can even pass an array of placements (eg: `['right', 'left', 'top']` ) to manually specify
+  *      how alter the placement when a flip is needed. (eg. in the above example, it would first flip from right to left,
+  *      then, if even in its new placement, the popper is overlapping its reference element, it will be moved to top)
+  *
+  * @param {Array} [options.modifiers=[ 'shift', 'offset', 'preventOverflow', 'keepTogether', 'arrow', 'flip', 'applyStyle']]
+  *      List of functions used to modify the data before they are applied to the popper, add your custom functions
+  *      to this array to edit the offsets and placement.
+  *      The function should reflect the @params and @returns of preventOverflow
+  *
+  * @param {Array} [options.modifiersIgnored=[]]
+  *      Put here any built-in modifier name you want to exclude from the modifiers list
+  *      The function should reflect the @params and @returns of preventOverflow
+  *
+  * @param {Boolean} [options.removeOnDestroy=false]
+  *      Set to true if you want to automatically remove the popper when you call the `destroy` method.
+  */
+	function Popper(reference, popper, options) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		this._reference = reference.jquery ? reference[0] : reference;
 		this.state = {};
 
@@ -760,11 +865,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		}
 		// otherwise, use the given HTMLElement as popper
 		else {
+<<<<<<< HEAD
 			this._popper = popper.jquery ? popper[0] : popper;
 		}
 
 		// with {} we create a new object with the options inside it
 		this._options = Object.assign({}, DEFAULTS, options);
+=======
+				this._popper = popper.jquery ? popper[0] : popper;
+			}
+
+		// with {} we create a new object with the options inside it
+		this._options = (0, _assign2.default)({}, DEFAULTS, options);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		// refactoring modifiers' list
 		this._options.modifiers = this._options.modifiers.map(function (modifier) {
@@ -783,7 +896,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 		// make sure to apply the popper position before any computation
 		this.state.position = this._getPosition(this._popper, this._reference);
+<<<<<<< HEAD
 		setStyle(this._popper, {position: this.state.position, top: 0});
+=======
+		setStyle(this._popper, { position: this.state.position, top: 0 });
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		// fire the first update to position the popper in the right place
 		this.update();
@@ -797,10 +914,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	// Methods
 	//
 	/**
+<<<<<<< HEAD
 	 * Destroy the popper
 	 * @method
 	 * @memberof Popper
 	 */
+=======
+  * Destroy the popper
+  * @method
+  * @memberof Popper
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.destroy = function () {
 		this._popper.removeAttribute('x-placement');
 		this._popper.style.left = '';
@@ -817,12 +941,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Updates the position of the popper, computing the new offsets and applying the new style
 	 * @method
 	 * @memberof Popper
 	 */
 	Popper.prototype.update = function () {
 		var data = {instance: this, styles: {}};
+=======
+  * Updates the position of the popper, computing the new offsets and applying the new style
+  * @method
+  * @memberof Popper
+  */
+	Popper.prototype.update = function () {
+		var data = { instance: this, styles: {} };
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		// store placement inside the data object, modifiers will be able to edit `placement` if needed
 		// and refer to _originalPlacement to know the original value
@@ -844,11 +977,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * If a function is passed, it will be executed after the initialization of popper with as first argument the Popper instance.
 	 * @method
 	 * @memberof Popper
 	 * @param {Function} callback
 	 */
+=======
+  * If a function is passed, it will be executed after the initialization of popper with as first argument the Popper instance.
+  * @method
+  * @memberof Popper
+  * @param {Function} callback
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.onCreate = function (callback) {
 		// the createCallbacks return as first argument the popper instance
 		callback(this);
@@ -856,6 +997,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * If a function is passed, it will be executed after each update of popper with as first argument the set of coordinates and informations
 	 * used to style popper and its arrow.
 	 * NOTE: it doesn't get fired on the first call of the `Popper.update()` method inside the `Popper` constructor!
@@ -863,18 +1005,36 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @memberof Popper
 	 * @param {Function} callback
 	 */
+=======
+  * If a function is passed, it will be executed after each update of popper with as first argument the set of coordinates and informations
+  * used to style popper and its arrow.
+  * NOTE: it doesn't get fired on the first call of the `Popper.update()` method inside the `Popper` constructor!
+  * @method
+  * @memberof Popper
+  * @param {Function} callback
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.onUpdate = function (callback) {
 		this.state.updateCallback = callback;
 		return this;
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Helper used to generate poppers from a configuration file
 	 * @method
 	 * @memberof Popper
 	 * @param config {Object} configuration
 	 * @returns {HTMLElement} popper
 	 */
+=======
+  * Helper used to generate poppers from a configuration file
+  * @method
+  * @memberof Popper
+  * @param config {Object} configuration
+  * @returns {HTMLElement} popper
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.parse = function (config) {
 		var defaultConfig = {
 			tagName: 'div',
@@ -887,7 +1047,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 			arrowClassNames: ['popper__arrow'],
 			arrowAttributes: ['x-arrow']
 		};
+<<<<<<< HEAD
 		config = Object.assign({}, defaultConfig, config);
+=======
+		config = (0, _assign2.default)({}, defaultConfig, config);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		var d = root.document;
 
@@ -937,6 +1101,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		return popper;
 
 		/**
+<<<<<<< HEAD
 		 * Adds class names to the given element
 		 * @function
 		 * @ignore
@@ -944,12 +1109,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		 * @param {Array} classes
 		 */
 		function addClassNames (element, classNames) {
+=======
+   * Adds class names to the given element
+   * @function
+   * @ignore
+   * @param {HTMLElement} target
+   * @param {Array} classes
+   */
+		function addClassNames(element, classNames) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			classNames.forEach(function (className) {
 				element.classList.add(className);
 			});
 		}
 
 		/**
+<<<<<<< HEAD
 		 * Adds attributes to the given element
 		 * @function
 		 * @ignore
@@ -959,10 +1134,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		 * addAttributes(element, [ 'data-info:foobar' ]);
 		 */
 		function addAttributes (element, attributes) {
+=======
+   * Adds attributes to the given element
+   * @function
+   * @ignore
+   * @param {HTMLElement} target
+   * @param {Array} attributes
+   * @example
+   * addAttributes(element, [ 'data-info:foobar' ]);
+   */
+		function addAttributes(element, attributes) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			attributes.forEach(function (attribute) {
 				element.setAttribute(attribute.split(':')[0], attribute.split(':')[1] || '');
 			});
 		}
+<<<<<<< HEAD
 
 	};
 
@@ -974,6 +1161,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @param reference {HTMLElement} reference element
 	 * @returns {String} position
 	 */
+=======
+	};
+
+	/**
+  * Helper used to get the position which will be applied to the popper
+  * @method
+  * @memberof Popper
+  * @param config {HTMLElement} popper element
+  * @param reference {HTMLElement} reference element
+  * @returns {String} position
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype._getPosition = function (popper, reference) {
 		var container = getOffsetParent(reference);
 
@@ -988,6 +1187,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Get offsets to the popper
 	 * @method
 	 * @memberof Popper
@@ -996,6 +1196,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @param {Element} reference - the reference element (the popper will be relative to this)
 	 * @returns {Object} An object containing the offsets which will be applied to the popper
 	 */
+=======
+  * Get offsets to the popper
+  * @method
+  * @memberof Popper
+  * @access private
+  * @param {Element} popper - the popper element
+  * @param {Element} reference - the reference element (the popper will be relative to this)
+  * @returns {Object} An object containing the offsets which will be applied to the popper
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype._getOffsets = function (popper, reference, placement, arrowPointPlace) {
 		placement = placement.split('-')[0];
 		var popperOffsets = {};
@@ -1026,7 +1236,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 				popperOffsets.left = referenceOffsets.right;
 			}
 		} else {
+<<<<<<< HEAD
 			let rewidth = arrowPointPlace === 'start' ? 0 : (arrowPointPlace === 'end' ? referenceOffsets.width : referenceOffsets.width / 2);
+=======
+			var rewidth = arrowPointPlace === 'start' ? 0 : arrowPointPlace === 'end' ? referenceOffsets.width : referenceOffsets.width / 2;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			popperOffsets.left = referenceOffsets.left + rewidth - popperRect.width / 2;
 			if (placement === 'top') {
 				popperOffsets.top = referenceOffsets.top - popperRect.height;
@@ -1046,11 +1260,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Setup needed event listeners used to update the popper position
 	 * @method
 	 * @memberof Popper
 	 * @access private
 	 */
+=======
+  * Setup needed event listeners used to update the popper position
+  * @method
+  * @memberof Popper
+  * @access private
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype._setupEventListeners = function () {
 		// NOTE: 1 DOM access here
 		this.state.updateBound = this.update.bind(this);
@@ -1068,11 +1290,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Remove event listeners used to update the popper position
 	 * @method
 	 * @memberof Popper
 	 * @access private
 	 */
+=======
+  * Remove event listeners used to update the popper position
+  * @method
+  * @memberof Popper
+  * @access private
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype._removeEventListeners = function () {
 		// NOTE: 1 DOM access here
 		root.removeEventListener('resize', this.state.updateBound);
@@ -1084,6 +1314,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Computed the boundaries limits and return them
 	 * @method
 	 * @memberof Popper
@@ -1093,13 +1324,28 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @param {Element} boundariesElement - Element used to define the boundaries
 	 * @returns {Object} Coordinates of the boundaries
 	 */
+=======
+  * Computed the boundaries limits and return them
+  * @method
+  * @memberof Popper
+  * @access private
+  * @param {Object} data - Object containing the property "offsets" generated by `_getOffsets`
+  * @param {Number} padding - Boundaries padding
+  * @param {Element} boundariesElement - Element used to define the boundaries
+  * @returns {Object} Coordinates of the boundaries
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype._getBoundaries = function (data, padding, boundariesElement) {
 		// NOTE: 1 DOM access here
 		var boundaries = {};
 		var width, height;
 		if (boundariesElement === 'window') {
 			var body = root.document.body,
+<<<<<<< HEAD
 				html = root.document.documentElement;
+=======
+			    html = root.document.documentElement;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 			height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 			width = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
@@ -1116,10 +1362,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 			var offsetParentRect = getOffsetRect(offsetParent);
 
 			// Thanks the fucking native API, `document.body.scrollTop` & `document.documentElement.scrollTop`
+<<<<<<< HEAD
 			var getScrollTopValue = function (element) {
 				return element == document.body ? Math.max(document.documentElement.scrollTop, document.body.scrollTop) : element.scrollTop;
 			};
 			var getScrollLeftValue = function (element) {
+=======
+			var getScrollTopValue = function getScrollTopValue(element) {
+				return element == document.body ? Math.max(document.documentElement.scrollTop, document.body.scrollTop) : element.scrollTop;
+			};
+			var getScrollLeftValue = function getScrollLeftValue(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				return element == document.body ? Math.max(document.documentElement.scrollLeft, document.body.scrollLeft) : element.scrollLeft;
 			};
 
@@ -1153,6 +1406,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Loop trough the list of modifiers and run them in order, each of them will then edit the data object
 	 * @method
 	 * @memberof Popper
@@ -1161,6 +1415,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @param {Array} modifiers
 	 * @param {Function} ends
 	 */
+=======
+  * Loop trough the list of modifiers and run them in order, each of them will then edit the data object
+  * @method
+  * @memberof Popper
+  * @access public
+  * @param {Object} data
+  * @param {Array} modifiers
+  * @param {Function} ends
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.runModifiers = function (data, modifiers, ends) {
 		var modifiersToRun = modifiers.slice();
 		if (ends !== undefined) {
@@ -1177,6 +1441,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Helper used to know if the given modifier depends from another one.
 	 * @method
 	 * @memberof Popper
@@ -1184,6 +1449,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @param {String} requested - name of requested modifier
 	 * @returns {Boolean}
 	 */
+=======
+  * Helper used to know if the given modifier depends from another one.
+  * @method
+  * @memberof Popper
+  * @param {String} requesting - name of requesting modifier
+  * @param {String} requested - name of requested modifier
+  * @returns {Boolean}
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.isModifierRequired = function (requesting, requested) {
 		var index = getArrayKeyIndex(this._options.modifiers, requesting);
 		return !!this._options.modifiers.slice(0, index).filter(function (modifier) {
@@ -1196,6 +1470,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	//
 
 	/**
+<<<<<<< HEAD
 	 * Modifiers list
 	 * @namespace Popper.modifiers
 	 * @memberof Popper
@@ -1210,6 +1485,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @argument {Object} data - The data object generated by `update` method
 	 * @returns {Object} The same data object
 	 */
+=======
+  * Modifiers list
+  * @namespace Popper.modifiers
+  * @memberof Popper
+  * @type {Object}
+  */
+	Popper.prototype.modifiers = {};
+
+	/**
+  * Apply the computed styles_tmp to the popper element
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by `update` method
+  * @returns {Object} The same data object
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.applyStyle = function (data) {
 		// apply the final offsets to the popper
 		// NOTE: 1 DOM access here
@@ -1231,15 +1522,25 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		}
 		// othwerise, we use the standard `left` and `top` properties
 		else {
+<<<<<<< HEAD
 			styles.left = left;
 			styles.top = top;
 		}
+=======
+				styles.left = left;
+				styles.top = top;
+			}
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		// any property present in `data.styles_tmp` will be applied to the popper,
 		// in this way we can make the 3rd party modifiers add custom styles_tmp to it
 		// Be aware, modifiers could override the properties defined in the previous
 		// lines of this modifier!
+<<<<<<< HEAD
 		Object.assign(styles, data.styles);
+=======
+		(0, _assign2.default)(styles, data.styles);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		setStyle(this._popper, styles);
 
@@ -1256,12 +1557,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to shift the popper on the start or end of its reference element side
 	 * @method
 	 * @memberof Popper.modifiers
 	 * @argument {Object} data - The data object generated by `update` method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to shift the popper on the start or end of its reference element side
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by `update` method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.shift = function (data) {
 		var placement = data.placement;
 		var basePlacement = placement.split('-')[0];
@@ -1274,79 +1584,140 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 			var shiftOffsets = {
 				y: {
+<<<<<<< HEAD
 					start: {top: reference.top},
 					end: {top: reference.top + reference.height - popper.height}
 				},
 				x: {
 					start: {left: reference.left},
 					end: {left: reference.left + reference.width - popper.width}
+=======
+					start: { top: reference.top },
+					end: { top: reference.top + reference.height - popper.height }
+				},
+				x: {
+					start: { left: reference.left },
+					end: { left: reference.left + reference.width - popper.width }
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				}
 			};
 
 			var axis = ['bottom', 'top'].indexOf(basePlacement) !== -1 ? 'x' : 'y';
 
+<<<<<<< HEAD
 			data.offsets.popper = Object.assign(popper, shiftOffsets[axis][shiftVariation]);
+=======
+			data.offsets.popper = (0, _assign2.default)(popper, shiftOffsets[axis][shiftVariation]);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		}
 
 		return data;
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to make sure the popper does not overflows from it's boundaries
 	 * @method
 	 * @memberof Popper.modifiers
 	 * @argument {Object} data - The data object generated by `update` method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to make sure the popper does not overflows from it's boundaries
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by `update` method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.preventOverflow = function (data) {
 		var order = this._options.preventOverflowOrder;
 		var popper = getPopperClientRect(data.offsets.popper);
 
 		var check = {
+<<<<<<< HEAD
 			left: function () {
+=======
+			left: function left() {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				var left = popper.left;
 				if (popper.left < data.boundaries.left) {
 					left = Math.max(popper.left, data.boundaries.left);
 				}
+<<<<<<< HEAD
 				return {left: left};
 			},
 			right: function () {
+=======
+				return { left: left };
+			},
+			right: function right() {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				var left = popper.left;
 				if (popper.right > data.boundaries.right) {
 					left = Math.min(popper.left, data.boundaries.right - popper.width);
 				}
+<<<<<<< HEAD
 				return {left: left};
 			},
 			top: function () {
+=======
+				return { left: left };
+			},
+			top: function top() {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				var top = popper.top;
 				if (popper.top < data.boundaries.top) {
 					top = Math.max(popper.top, data.boundaries.top);
 				}
+<<<<<<< HEAD
 				return {top: top};
 			},
 			bottom: function () {
+=======
+				return { top: top };
+			},
+			bottom: function bottom() {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				var top = popper.top;
 				if (popper.bottom > data.boundaries.bottom) {
 					top = Math.min(popper.top, data.boundaries.bottom - popper.height);
 				}
+<<<<<<< HEAD
 				return {top: top};
+=======
+				return { top: top };
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			}
 		};
 
 		order.forEach(function (direction) {
+<<<<<<< HEAD
 			data.offsets.popper = Object.assign(popper, check[direction]());
+=======
+			data.offsets.popper = (0, _assign2.default)(popper, check[direction]());
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		});
 
 		return data;
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to make sure the popper is always near its reference
 	 * @method
 	 * @memberof Popper.modifiers
 	 * @argument {Object} data - The data object generated by _update method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to make sure the popper is always near its reference
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by _update method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.keepTogether = function (data) {
 		var popper = getPopperClientRect(data.offsets.popper);
 		var reference = data.offsets.reference;
@@ -1369,6 +1740,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to flip the placement of the popper when the latter is starting overlapping its reference element.
 	 * Requires the `preventOverflow` modifier before it in order to work.
 	 * **NOTE:** This modifier will run all its previous modifiers everytime it tries to flip the popper!
@@ -1377,6 +1749,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @argument {Object} data - The data object generated by _update method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to flip the placement of the popper when the latter is starting overlapping its reference element.
+  * Requires the `preventOverflow` modifier before it in order to work.
+  * **NOTE:** This modifier will run all its previous modifiers everytime it tries to flip the popper!
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by _update method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.flip = function (data) {
 		// check if preventOverflow is in the list of modifiers before the flip modifier.
 		// otherwise flip would not work as expected.
@@ -1396,10 +1778,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 		var flipOrder = [];
 		if (this._options.flipBehavior === 'flip') {
+<<<<<<< HEAD
 			flipOrder = [
 				placement,
 				placementOpposite
 			];
+=======
+			flipOrder = [placement, placementOpposite];
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		} else {
 			flipOrder = this._options.flipBehavior;
 		}
@@ -1419,10 +1805,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 			var a = ['right', 'bottom'].indexOf(placement) !== -1;
 
 			// using Math.floor because the reference offsets may contain decimals we are not going to consider here
+<<<<<<< HEAD
 			if (
 				a && Math.floor(data.offsets.reference[placement]) > Math.floor(popperOffsets[placementOpposite]) ||
 				!a && Math.floor(data.offsets.reference[placement]) < Math.floor(popperOffsets[placementOpposite])
 			) {
+=======
+			if (a && Math.floor(data.offsets.reference[placement]) > Math.floor(popperOffsets[placementOpposite]) || !a && Math.floor(data.offsets.reference[placement]) < Math.floor(popperOffsets[placementOpposite])) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				// we'll use this boolean to detect any flip loop
 				data.flipped = true;
 				data.placement = flipOrder[index + 1];
@@ -1439,6 +1829,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to add an offset to the popper, useful if you more granularity positioning your popper.
 	 * The offsets will shift the popper on the side of its reference element.
 	 * @method
@@ -1446,6 +1837,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @argument {Object} data - The data object generated by _update method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to add an offset to the popper, useful if you more granularity positioning your popper.
+  * The offsets will shift the popper on the side of its reference element.
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by _update method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.offset = function (data) {
 		var offset = this._options.offset;
 		var popper = data.offsets.popper;
@@ -1463,6 +1863,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Modifier used to move the arrows on the edge of the popper to make sure them are always between the popper and the reference element
 	 * It will use the CSS outer size of the arrow element to know how many pixels of conjuction are needed
 	 * @method
@@ -1470,6 +1871,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @argument {Object} data - The data object generated by _update method
 	 * @returns {Object} The data object, properly modified
 	 */
+=======
+  * Modifier used to move the arrows on the edge of the popper to make sure them are always between the popper and the reference element
+  * It will use the CSS outer size of the arrow element to know how many pixels of conjuction are needed
+  * @method
+  * @memberof Popper.modifiers
+  * @argument {Object} data - The data object generated by _update method
+  * @returns {Object} The data object, properly modified
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	Popper.prototype.modifiers.arrow = function (data) {
 		var arrow = this._options.arrowElement;
 		var arrowOffset = this._options.arrowOffset;
@@ -1519,11 +1929,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		}
 		// bottom/right side
 		if (reference[side] + arrowSize > popper[opSide]) {
+<<<<<<< HEAD
 			data.offsets.popper[side] += (reference[side] + arrowSize) - popper[opSide];
 		}
 
 		// compute center of the popper
 		var center = reference[side] + (arrowOffset || (reference[len] / 2) - (arrowSize / 2));
+=======
+			data.offsets.popper[side] += reference[side] + arrowSize - popper[opSide];
+		}
+
+		// compute center of the popper
+		var center = reference[side] + (arrowOffset || reference[len] / 2 - arrowSize / 2);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		var sideValue = center - popper[side];
 
@@ -1543,6 +1961,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	//
 
 	/**
+<<<<<<< HEAD
 	 * Get the outer sizes of the given element (offset size + margins)
 	 * @function
 	 * @ignore
@@ -1552,6 +1971,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	function getOuterSizes (element) {
 		// NOTE: 1 DOM access here
 		var _display = element.style.display, _visibility = element.style.visibility;
+=======
+  * Get the outer sizes of the given element (offset size + margins)
+  * @function
+  * @ignore
+  * @argument {Element} element
+  * @returns {Object} object containing width and height properties
+  */
+	function getOuterSizes(element) {
+		// NOTE: 1 DOM access here
+		var _display = element.style.display,
+		    _visibility = element.style.visibility;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		element.style.display = 'block';
 		element.style.visibility = 'hidden';
 		var calcWidthToForceRepaint = element.offsetWidth;
@@ -1560,7 +1991,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		var styles = root.getComputedStyle(element);
 		var x = parseFloat(styles.marginTop) + parseFloat(styles.marginBottom);
 		var y = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
+<<<<<<< HEAD
 		var result = {width: element.offsetWidth + y, height: element.offsetHeight + x};
+=======
+		var result = { width: element.offsetWidth + y, height: element.offsetHeight + x };
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		// reset element styles_tmp
 		element.style.display = _display;
@@ -1569,6 +2004,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the opposite placement of the given one/
 	 * @function
 	 * @ignore
@@ -1577,12 +2013,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 */
 	function getOppositePlacement (placement) {
 		var hash = {left: 'right', right: 'left', bottom: 'top', top: 'bottom'};
+=======
+  * Get the opposite placement of the given one/
+  * @function
+  * @ignore
+  * @argument {String} placement
+  * @returns {String} flipped placement
+  */
+	function getOppositePlacement(placement) {
+		var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		return placement.replace(/left|right|bottom|top/g, function (matched) {
 			return hash[matched];
 		});
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Given the popper offsets, generate an output similar to getBoundingClientRect
 	 * @function
 	 * @ignore
@@ -1591,12 +2038,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 */
 	function getPopperClientRect (popperOffsets) {
 		var offsets = Object.assign({}, popperOffsets);
+=======
+  * Given the popper offsets, generate an output similar to getBoundingClientRect
+  * @function
+  * @ignore
+  * @argument {Object} popperOffsets
+  * @returns {Object} ClientRect like output
+  */
+	function getPopperClientRect(popperOffsets) {
+		var offsets = (0, _assign2.default)({}, popperOffsets);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		offsets.right = offsets.left + offsets.width;
 		offsets.bottom = offsets.top + offsets.height;
 		return offsets;
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Given an array and the key to find, returns its index
 	 * @function
 	 * @ignore
@@ -1606,6 +2064,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 */
 	function getArrayKeyIndex (arr, keyToFind) {
 		var i = 0, key;
+=======
+  * Given an array and the key to find, returns its index
+  * @function
+  * @ignore
+  * @argument {Array} arr
+  * @argument keyToFind
+  * @returns index or null
+  */
+	function getArrayKeyIndex(arr, keyToFind) {
+		var i = 0,
+		    key;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		for (key in arr) {
 			if (arr[key] === keyToFind) {
 				return i;
@@ -1616,6 +2086,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get CSS computed property of the given element
 	 * @function
 	 * @ignore
@@ -1623,12 +2094,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @argument {String} property
 	 */
 	function getStyleComputedProperty (element, property) {
+=======
+  * Get CSS computed property of the given element
+  * @function
+  * @ignore
+  * @argument {Eement} element
+  * @argument {String} property
+  */
+	function getStyleComputedProperty(element, property) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		// NOTE: 1 DOM access here
 		var css = root.getComputedStyle(element, null);
 		return css[property];
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the offset parent of the given element
 	 * @function
 	 * @ignore
@@ -1636,12 +2117,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @returns {Element} offset parent
 	 */
 	function getOffsetParent (element) {
+=======
+  * Returns the offset parent of the given element
+  * @function
+  * @ignore
+  * @argument {Element} element
+  * @returns {Element} offset parent
+  */
+	function getOffsetParent(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		// NOTE: 1 DOM access here
 		var offsetParent = element.offsetParent;
 		return offsetParent === root.document.body || !offsetParent ? root.document.documentElement : offsetParent;
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the scrolling parent of the given element
 	 * @function
 	 * @ignore
@@ -1649,6 +2140,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @returns {Element} offset parent
 	 */
 	function getScrollParent (element) {
+=======
+  * Returns the scrolling parent of the given element
+  * @function
+  * @ignore
+  * @argument {Element} element
+  * @returns {Element} offset parent
+  */
+	function getScrollParent(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var parent = element.parentNode;
 
 		if (!parent) {
@@ -1666,11 +2166,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		}
 
 		// Firefox want us to check `-x` and `-y` variations as well
+<<<<<<< HEAD
 		if (
 			['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow')) !== -1 ||
 			['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow-x')) !== -1 ||
 			['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow-y')) !== -1
 		) {
+=======
+		if (['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow')) !== -1 || ['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow-x')) !== -1 || ['scroll', 'auto'].indexOf(getStyleComputedProperty(parent, 'overflow-y')) !== -1) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			// If the detected scrollParent is body, we perform an additional check on its parentNode
 			// in this way we'll get body if the browser is Chrome-ish, or documentElement otherwise
 			// fixes issue #65
@@ -1680,6 +2184,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Check if the given element is fixed or is inside a fixed parent
 	 * @function
 	 * @ignore
@@ -1688,6 +2193,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @returns {Boolean} answer to "isFixed?"
 	 */
 	function isFixed (element) {
+=======
+  * Check if the given element is fixed or is inside a fixed parent
+  * @function
+  * @ignore
+  * @argument {Element} element
+  * @argument {Element} customContainer
+  * @returns {Boolean} answer to "isFixed?"
+  */
+	function isFixed(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		if (element === root.document.body) {
 			return false;
 		}
@@ -1698,6 +2213,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Set the style to the given popper
 	 * @function
 	 * @ignore
@@ -1710,6 +2226,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		}
 
 		Object.keys(styles).forEach(function (prop) {
+=======
+  * Set the style to the given popper
+  * @function
+  * @ignore
+  * @argument {Element} element - Element to apply the style to
+  * @argument {Object} styles_tmp - Object with a list of properties and values which will be applied to the element
+  */
+	function setStyle(element, styles) {
+		function is_numeric(n) {
+			return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
+		}
+
+		(0, _keys2.default)(styles).forEach(function (prop) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			var unit = '';
 			// add unit if the value is numeric and is one of the following
 			if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && is_numeric(styles[prop])) {
@@ -1720,6 +2250,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Check if the given variable is a function
 	 * @function
 	 * @ignore
@@ -1727,11 +2258,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @returns {Boolean} answer to: is a function?
 	 */
 	function isFunction (functionToCheck) {
+=======
+  * Check if the given variable is a function
+  * @function
+  * @ignore
+  * @argument {*} functionToCheck - variable to check
+  * @returns {Boolean} answer to: is a function?
+  */
+	function isFunction(functionToCheck) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var getType = {};
 		return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the position of the given element, relative to its offset parent
 	 * @function
 	 * @ignore
@@ -1739,6 +2280,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @return {Object} position - Coordinates of the element and its `scrollTop`
 	 */
 	function getOffsetRect (element) {
+=======
+  * Get the position of the given element, relative to its offset parent
+  * @function
+  * @ignore
+  * @param {Element} element
+  * @return {Object} position - Coordinates of the element and its `scrollTop`
+  */
+	function getOffsetRect(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var elementRect = {
 			width: element.offsetWidth,
 			height: element.offsetHeight,
@@ -1754,6 +2304,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get bounding client rect of given element
 	 * @function
 	 * @ignore
@@ -1761,15 +2312,28 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @return {Object} client rect
 	 */
 	function getBoundingClientRect (element) {
+=======
+  * Get bounding client rect of given element
+  * @function
+  * @ignore
+  * @param {HTMLElement} element
+  * @return {Object} client rect
+  */
+	function getBoundingClientRect(element) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var rect = element.getBoundingClientRect();
 
 		// whether the IE version is lower than 11
 		var isIE = navigator.userAgent.indexOf('MSIE') != -1;
 
 		// fix ie document bounding top always 0 bug
+<<<<<<< HEAD
 		var rectTop = isIE && element.tagName === 'HTML'
 			? -element.scrollTop
 			: rect.top;
+=======
+		var rectTop = isIE && element.tagName === 'HTML' ? -element.scrollTop : rect.top;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 		return {
 			left: rect.left,
@@ -1782,6 +2346,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Given an element and one of its parents, return the offset
 	 * @function
 	 * @ignore
@@ -1790,6 +2355,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @return {Object} rect
 	 */
 	function getOffsetRectRelativeToCustomParent (element, parent, fixed) {
+=======
+  * Given an element and one of its parents, return the offset
+  * @function
+  * @ignore
+  * @param {HTMLElement} element
+  * @param {HTMLElement} parent
+  * @return {Object} rect
+  */
+	function getOffsetRectRelativeToCustomParent(element, parent, fixed) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var elementRect = getBoundingClientRect(element);
 		var parentRect = getBoundingClientRect(parent);
 
@@ -1804,8 +2379,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 		var rect = {
 			top: elementRect.top - parentRect.top,
 			left: elementRect.left - parentRect.left,
+<<<<<<< HEAD
 			bottom: (elementRect.top - parentRect.top) + elementRect.height,
 			right: (elementRect.left - parentRect.left) + elementRect.width,
+=======
+			bottom: elementRect.top - parentRect.top + elementRect.height,
+			right: elementRect.left - parentRect.left + elementRect.width,
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			width: elementRect.width,
 			height: elementRect.height
 		};
@@ -1813,6 +2393,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the prefixed supported property name
 	 * @function
 	 * @ignore
@@ -1820,6 +2401,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @returns {String} prefixed property (camelCase)
 	 */
 	function getSupportedPropertyName (property) {
+=======
+  * Get the prefixed supported property name
+  * @function
+  * @ignore
+  * @argument {String} property (camelCase)
+  * @returns {String} prefixed property (camelCase)
+  */
+	function getSupportedPropertyName(property) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		var prefixes = ['', 'ms', 'webkit', 'moz', 'o'];
 
 		for (var i = 0; i < prefixes.length; i++) {
@@ -1832,6 +2422,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	/**
+<<<<<<< HEAD
 	 * The Object.assign() method is used to copy the values of all enumerable own properties from one or more source
 	 * objects to a target object. It will return the target object.
 	 * This polyfill doesn't support symbol properties, since ES5 doesn't have symbols anyway
@@ -1840,11 +2431,25 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * @ignore
 	 */
 	if (!Object.assign) {
+=======
+  * The Object.assign() method is used to copy the values of all enumerable own properties from one or more source
+  * objects to a target object. It will return the target object.
+  * This polyfill doesn't support symbol properties, since ES5 doesn't have symbols anyway
+  * Source: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+  * @function
+  * @ignore
+  */
+	if (!_assign2.default) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		Object.defineProperty(Object, 'assign', {
 			enumerable: false,
 			configurable: true,
 			writable: true,
+<<<<<<< HEAD
 			value: function (target) {
+=======
+			value: function value(target) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 				if (target === undefined || target === null) {
 					throw new TypeError('Cannot convert first argument to object');
 				}
@@ -1857,10 +2462,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 					}
 					nextSource = Object(nextSource);
 
+<<<<<<< HEAD
 					var keysArray = Object.keys(nextSource);
 					for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
 						var nextKey = keysArray[nextIndex];
 						var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+=======
+					var keysArray = (0, _keys2.default)(nextSource);
+					for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+						var nextKey = keysArray[nextIndex];
+						var desc = (0, _getOwnPropertyDescriptor2.default)(nextSource, nextKey);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 						if (desc !== undefined && desc.enumerable) {
 							to[nextKey] = nextSource[nextKey];
 						}
@@ -1872,8 +2484,26 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	}
 
 	return Popper;
+<<<<<<< HEAD
 }));
 
+=======
+});
+
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/core-js/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/core-js/object/keys");
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 /***/ }),
 
@@ -2077,7 +2707,18 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 83:
+=======
+/***/ 20:
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/core-js/object/assign");
+
+/***/ }),
+
+/***/ 86:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

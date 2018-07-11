@@ -61,12 +61,20 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 80);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 83);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ 80:
+=======
+/***/ 83:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,7 +84,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+<<<<<<< HEAD
 var _defineProperty = __webpack_require__(81);
+=======
+var _defineProperty = __webpack_require__(84);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -141,7 +153,11 @@ exports.default = {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 81:
+=======
+/***/ 84:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/object/define-property");

@@ -61,7 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 75);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 78);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -280,7 +284,11 @@ function setStyle(element, styleName, value) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 75:
+=======
+/***/ 78:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

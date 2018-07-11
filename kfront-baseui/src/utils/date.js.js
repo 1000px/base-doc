@@ -61,15 +61,29 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 84);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 87);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhakes/fecha
+=======
+/***/ 87:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_RESULT__;
+
+/* Modified from https://github.com/taylorhakes/fecha
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
  *
  * The MIT License (MIT)
  *
@@ -100,17 +114,28 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	'use strict';
 
 	/**
+<<<<<<< HEAD
 	 * Parse or format dates
 	 * @class fecha
 	 */
+=======
+  * Parse or format dates
+  * @class fecha
+  */
+
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	var fecha = {};
 	var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
 	var twoDigits = /\d\d?/;
 	var threeDigits = /\d{3}/;
 	var fourDigits = /\d{4}/;
 	var word = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i;
+<<<<<<< HEAD
 	var noop = function () {
 	};
+=======
+	var noop = function noop() {};
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 	function shorten(arr, sLen) {
 		var newArr = [];
@@ -154,6 +179,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	};
 
 	var formatFlags = {
+<<<<<<< HEAD
 		D: function (dateObj) {
 			return dateObj.getDay();
 		},
@@ -233,6 +259,87 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 			return dateObj.getHours() < 12 ? i18n.amPm[0].toUpperCase() : i18n.amPm[1].toUpperCase();
 		},
 		ZZ: function (dateObj) {
+=======
+		D: function D(dateObj) {
+			return dateObj.getDay();
+		},
+		DD: function DD(dateObj) {
+			return pad(dateObj.getDay());
+		},
+		Do: function Do(dateObj, i18n) {
+			return i18n.DoFn(dateObj.getDate());
+		},
+		d: function d(dateObj) {
+			return dateObj.getDate();
+		},
+		dd: function dd(dateObj) {
+			return pad(dateObj.getDate());
+		},
+		ddd: function ddd(dateObj, i18n) {
+			return i18n.dayNamesShort[dateObj.getDay()];
+		},
+		dddd: function dddd(dateObj, i18n) {
+			return i18n.dayNames[dateObj.getDay()];
+		},
+		M: function M(dateObj) {
+			return dateObj.getMonth() + 1;
+		},
+		MM: function MM(dateObj) {
+			return pad(dateObj.getMonth() + 1);
+		},
+		MMM: function MMM(dateObj, i18n) {
+			return i18n.monthNamesShort[dateObj.getMonth()];
+		},
+		MMMM: function MMMM(dateObj, i18n) {
+			return i18n.monthNames[dateObj.getMonth()];
+		},
+		yy: function yy(dateObj) {
+			return String(dateObj.getFullYear()).substr(2);
+		},
+		yyyy: function yyyy(dateObj) {
+			return dateObj.getFullYear();
+		},
+		h: function h(dateObj) {
+			return dateObj.getHours() % 12 || 12;
+		},
+		hh: function hh(dateObj) {
+			return pad(dateObj.getHours() % 12 || 12);
+		},
+		H: function H(dateObj) {
+			return dateObj.getHours();
+		},
+		HH: function HH(dateObj) {
+			return pad(dateObj.getHours());
+		},
+		m: function m(dateObj) {
+			return dateObj.getMinutes();
+		},
+		mm: function mm(dateObj) {
+			return pad(dateObj.getMinutes());
+		},
+		s: function s(dateObj) {
+			return dateObj.getSeconds();
+		},
+		ss: function ss(dateObj) {
+			return pad(dateObj.getSeconds());
+		},
+		S: function S(dateObj) {
+			return Math.round(dateObj.getMilliseconds() / 100);
+		},
+		SS: function SS(dateObj) {
+			return pad(Math.round(dateObj.getMilliseconds() / 10), 2);
+		},
+		SSS: function SSS(dateObj) {
+			return pad(dateObj.getMilliseconds(), 3);
+		},
+		a: function a(dateObj, i18n) {
+			return dateObj.getHours() < 12 ? i18n.amPm[0] : i18n.amPm[1];
+		},
+		A: function A(dateObj, i18n) {
+			return dateObj.getHours() < 12 ? i18n.amPm[0].toUpperCase() : i18n.amPm[1].toUpperCase();
+		},
+		ZZ: function ZZ(dateObj) {
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			var o = dateObj.getTimezoneOffset();
 			return (o > 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4);
 		}
@@ -246,7 +353,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 			d.month = v - 1;
 		}],
 		yy: [twoDigits, function (d, v) {
+<<<<<<< HEAD
 			var da = new Date(), cent = +('' + da.getFullYear()).substr(0, 2);
+=======
+			var da = new Date(),
+			    cent = +('' + da.getFullYear()).substr(0, 2);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 			d.year = '' + (v > 68 ? cent - 1 : cent) + v;
 		}],
 		h: [twoDigits, function (d, v) {
@@ -283,7 +395,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 			}
 		}],
 		ZZ: [/[\+\-]\d\d:?\d\d/, function (d, v) {
+<<<<<<< HEAD
 			var parts = (v + '').match(/([\+\-]|\d\d)/gi), minutes;
+=======
+			var parts = (v + '').match(/([\+\-]|\d\d)/gi),
+			    minutes;
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 			if (parts) {
 				minutes = +(parts[1] * 60) + parseInt(parts[2], 10);
@@ -300,7 +417,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	parseFlags.ss = parseFlags.s;
 	parseFlags.A = parseFlags.a;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	// Some common format strings
 	fecha.masks = {
 		'default': 'ddd MMM dd yyyy HH:mm:ss',
@@ -314,11 +434,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	};
 
 	/***
+<<<<<<< HEAD
 	 * Format a date
 	 * @method format
 	 * @param {Date|number} dateObj
 	 * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
 	 */
+=======
+  * Format a date
+  * @method format
+  * @param {Date|number} dateObj
+  * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	fecha.format = function (dateObj, mask, i18nSettings) {
 		var i18n = i18nSettings || fecha.i18n;
 
@@ -338,12 +466,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Parse a date string into an object, changes - into /
 	 * @method parse
 	 * @param {string} dateStr Date string
 	 * @param {string} format Date parse format
 	 * @returns {Date|boolean}
 	 */
+=======
+  * Parse a date string into an object, changes - into /
+  * @method parse
+  * @param {string} dateStr Date string
+  * @param {string} format Date parse format
+  * @returns {Date|boolean}
+  */
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 	fecha.parse = function (dateStr, format, i18nSettings) {
 		var i18n = i18nSettings || fecha.i18n;
 
@@ -393,11 +530,17 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 		var date;
 		if (dateInfo.timezoneOffset != null) {
 			dateInfo.minute = +(dateInfo.minute || 0) - +dateInfo.timezoneOffset;
+<<<<<<< HEAD
 			date = new Date(Date.UTC(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
 				dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0));
 		} else {
 			date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
 				dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
+=======
+			date = new Date(Date.UTC(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1, dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0));
+		} else {
+			date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1, dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 		}
 		return date;
 	};
@@ -413,8 +556,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Modified from https://github.com/taylorhake
 	} else {
 		main.fecha = fecha;
 	}
+<<<<<<< HEAD
 })(this);
 
+=======
+})(undefined);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 
 /***/ })
 

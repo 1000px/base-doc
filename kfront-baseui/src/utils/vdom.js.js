@@ -61,7 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "/kfront-baseui/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 82);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 85);
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -474,7 +478,11 @@ function getScrollBarSize(fresh) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 82:
+=======
+/***/ 85:
+>>>>>>> 23a74fde13bcd1dcb466eff602c21d0b6017ecb4
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
