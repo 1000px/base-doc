@@ -1,8 +1,8 @@
 {
   "name": "kfront-baseui",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "kfront-baseui elementui vue2.* webpack",
-  "main": "./package/index.js",  
+  "main": "./package/index.js",
   "author": "马理想 <malixiang@kedacom.com>",
   "private": false,
   "scripts": {
