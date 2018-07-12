@@ -4,13 +4,14 @@
 	author: malixiang
 -->
 <template>
-	<kc-scrollbar class="view-box">
+	<kc-scrollbar class="view-box" id="scrollbar">
 		<div class="overview view-content">
 			<k-nav :left-nav="splitNav" :cur-path="path"></k-nav>
 			<div class="right-content markcss">
 				<router-view/>
 			</div>
 		</div>
+		<kc-backtop :target="dom"></kc-backtop>
 	</kc-scrollbar>
 </template>
 
@@ -32,6 +33,11 @@ export default {
 				}
 			});
 			return menus;
+		}
+	},
+	methods: {
+		dom () {
+			return document.querySelector('#scrollbar').children[0];
 		}
 	},
 	components: {

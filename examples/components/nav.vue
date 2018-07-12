@@ -57,7 +57,8 @@
 		methods: {
 			toTop: function () {
 //				console.log(11, this.$el.parentNode.parentNode.parentNode);
-				this.$el.parentNode.parentNode.parentNode.scrollTop = 0;
+				let oScrollBar = document.querySelector('#scrollbar').children[0];
+				oScrollBar.scrollTop = 0;
 			}
 		},
 		watch: {

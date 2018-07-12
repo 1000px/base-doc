@@ -1,7 +1,8 @@
 import Alert from './alert';
 import Affix from './affix';
 import Autocomplete from './autocomplete';
-import Avatar from './avatar/index.js';
+import Avatar from './avatar';
+import Backtop from './backtop';
 import Badge from './badge';
 import Breadcrumb from './breadcrumb';
 import BreadcrumbItem from './breadcrumb-item';
@@ -80,6 +81,7 @@ const components = [
 	Autocomplete,
 	Avatar,
 	Badge,
+	Backtop,
 	Breadcrumb,
 	BreadcrumbItem,
 	Button,
@@ -176,6 +178,7 @@ export default {
 	Autocomplete,
 	Avatar,
 	Badge,
+	Backtop,
 	Breadcrumb,
 	BreadcrumbItem,
 	Button,

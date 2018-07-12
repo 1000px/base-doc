@@ -532,6 +532,16 @@
 				"desc": "Spin 加载中",
 				"category": "feedback",
 				"category-desc": "反馈"
+			},
+			{
+				"name": "backtop",
+				"path": "backtop",
+				"type": "md",
+				"id": "10003055",
+				"pId": "10003",
+				"desc": "Backtop 回到顶部",
+				"category": "other",
+				"category-desc": "其它"
 			}
 		]
 	},

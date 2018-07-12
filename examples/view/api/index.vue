@@ -4,14 +4,16 @@
 	author: malixiang
 -->
 <template>
-	<kc-scrollbar class="view-box">
+	<kc-scrollbar class="view-box" id="scrollbar">
 		<div class="api view-content">
 			<k-nav :left-nav="splitNav"></k-nav>
 			<div class="right-content markcss" ref="markCon">
 				<router-view/>
 			</div>
 		</div>
+		<kc-backtop :target="dom1"></kc-backtop>
 	</kc-scrollbar>
+
 </template>
 
 <script>
@@ -23,6 +25,7 @@ import navLists from '@/nav-config.json';
 export default {
 	data() {
 		return {
+
 		};
 	},
 	computed: {
@@ -34,6 +37,11 @@ export default {
 				}
 			});
 			return menus;
+		}
+	},
+	methods: {
+		dom1 () {
+			return document.querySelector('#scrollbar').children[0];
 		}
 	},
 	components: {
